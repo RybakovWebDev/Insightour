@@ -1,0 +1,45 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper p {
+  margin: 0 0 2rem 0;
+  padding: 0 0 0 1rem;
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+}
+
+.wrapper p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ff4783;
+  border-radius: 50%;
+}
+
+.wrapper h1 {
+  margin: 0 0 2rem 0;
+  color: #35293b;
+  font-size: 8vw;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.wrapper h1 span {
+  color: rgb(109, 48, 157);
+}
+
+.wrapper video {
+  margin: 2.5rem 0 0 0;
+  height: 30rem;
+  pointer-events: none;
+  touch-action: none;
+}

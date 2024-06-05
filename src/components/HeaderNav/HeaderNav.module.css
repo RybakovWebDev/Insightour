@@ -1,0 +1,8 @@
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.link {
+  margin: 0 0 0 1rem;
+}
