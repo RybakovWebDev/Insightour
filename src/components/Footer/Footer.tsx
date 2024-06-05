@@ -6,17 +6,20 @@ import styles from "./Footer.module.css";
 import ExternalLinkIcon from "../ExternalLinkIcon";
 
 import { CONTACTS, SOCIALS } from "@/constants";
+import Link from "next/link";
 
 function Footer() {
   return (
     <footer className={styles.footer}>
-      {CONTACTS.map((c) => {
-        return (
-          <a key={c.number} href={c.link}>
-            {c.number}
-          </a>
-        );
-      })}
+      <div className={styles.contactsWrapper}>
+        {CONTACTS.map((c) => {
+          return (
+            <a key={c.number} href={c.link}>
+              {c.number}
+            </a>
+          );
+        })}
+      </div>
       <div className={styles.socialIconWrapper}>
         {SOCIALS.map((s, i) => {
           return (
@@ -29,6 +32,9 @@ function Footer() {
           );
         })}
       </div>
+      <Link href={`/legal`} aria-label={`Legal information`} className={styles.legal}>
+        Legal
+      </Link>
     </footer>
   );
 }
