@@ -9,7 +9,15 @@ interface RefsContextType {
   footerRef: RefObject<HTMLParagraphElement>;
 }
 
-const RefsContext = createContext<RefsContextType | undefined>(undefined);
+const defaultValue: RefsContextType = {
+  headerRef: { current: null },
+  aboutRef: { current: null },
+  offersRef: { current: null },
+  contactRef: { current: null },
+  footerRef: { current: null },
+};
+
+const RefsContext = createContext<RefsContextType>(defaultValue);
 
 export function RefsProvider({ children }: { children: ReactNode }) {
   const headerRef = useRef<HTMLElement>(null);

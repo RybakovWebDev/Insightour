@@ -1,4 +1,8 @@
 import logo from "../public/images/logo.png";
+import photoAbout1 from "../public/images/photos/photo1.webp";
+import photoAbout2 from "../public/images/photos/photo2.webp";
+import photoAbout3 from "../public/images/photos/photo3.webp";
+import photoAbout4 from "../public/images/photos/photo4.webp";
 
 export const logoImage = logo;
 
@@ -10,13 +14,31 @@ export const NAVLINKS = [
   },
   {
     title: "Tours",
-    slug: "projects",
+    slug: "offers",
     href: "/",
   },
   {
     title: "Contacts",
     slug: "contact",
     href: "/",
+  },
+];
+
+export const OFFER_PACKAGES = [
+  {
+    slug: "package1",
+    title: "Economy",
+    length: ["1 Day", "3 Days", "7 Days"],
+  },
+  {
+    slug: "package2",
+    title: "Luxe",
+    length: ["1 Day", "3 Days", "7 Days"],
+  },
+  {
+    slug: "package3",
+    title: "VIP",
+    length: ["1 Day", "3 Days", "7 Days"],
   },
 ];
 
@@ -50,6 +72,13 @@ export const CONTACTS = [
     iconProps: { src: "/images/contacts/phone-call.svg", alt: "Call phone number 2" },
     description: "Contact us by phone",
   },
+];
+
+export const PHOTOS_ABOUT = [
+  { src: photoAbout1, alt: "Photo TODO" },
+  { src: photoAbout2, alt: "Photo TODO" },
+  { src: photoAbout3, alt: "Photo TODO" },
+  { src: photoAbout4, alt: "Photo TODO" },
 ];
 
 export const smoothSpring = {

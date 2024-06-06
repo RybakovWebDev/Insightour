@@ -1,0 +1,18 @@
+.sectionName,
+.sectionName span {
+  color: #6d309d;
+}
+
+.sectionName {
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sectionName span {
+  padding: 0 0.5rem 0 0.5rem;
+  font-size: 30px;
+  font-weight: 300;
+}

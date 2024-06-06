@@ -27,14 +27,14 @@
 .wrapper h1 {
   margin: 0 0 2rem 0;
   color: #35293b;
-  font-size: 8vw;
+  font-size: clamp(30px, 8vw, 64px);
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
 }
 
 .wrapper h1 span {
-  color: rgb(109, 48, 157);
+  color: #6d309d;
 }
 
 .wrapper video {

@@ -1,7 +1,22 @@
-import React from 'react';
+"use client";
+import styles from "./Offers.module.css";
+
+import SectionName from "../SectionName";
+import Package from "../Package";
+
+import { useRefsContext } from "@/contexts/RefsContext";
+import { OFFER_PACKAGES } from "@/constants";
 
 function Offers() {
-  return <div></div>;
+  const { offersRef } = useRefsContext();
+  return (
+    <section ref={offersRef} className={styles.wrapper}>
+      <SectionName>our tours</SectionName>
+      {OFFER_PACKAGES.map((p) => {
+        return <Package key={p.slug} title={p.title} length={p.length} />;
+      })}
+    </section>
+  );
 }
 
 export default Offers;

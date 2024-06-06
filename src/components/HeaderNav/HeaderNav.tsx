@@ -4,9 +4,12 @@ import { usePathname, useRouter } from "next/navigation";
 
 import styles from "./HeaderNav.module.css";
 
+import { useRefsContext } from "@/contexts/RefsContext";
 import { NAVLINKS } from "@/constants";
+import { scrollToRef } from "@/helpers";
 
 function HeaderNav() {
+  const { aboutRef, offersRef, contactRef } = useRefsContext();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -16,12 +19,12 @@ function HeaderNav() {
     if (pathname !== "/") router.push(`/#${slug}`);
 
     if (pathname === "/") {
-      if (slug === "projects") {
-        // scrollToRef(projectSelectorRef);
-      } else if (slug === "about") {
-        // scrollToRef(aboutRef);
+      if (slug === "about") {
+        scrollToRef(aboutRef);
+      } else if (slug === "offers") {
+        scrollToRef(offersRef);
       } else if (slug === "contact") {
-        // scrollToRef(footerRef);
+        scrollToRef(contactRef);
       }
     }
   };

@@ -1,16 +1,18 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./Footer.module.css";
 
 import ExternalLinkIcon from "../ExternalLinkIcon";
 
+import { useRefsContext } from "@/contexts/RefsContext";
 import { CONTACTS, SOCIALS } from "@/constants";
-import Link from "next/link";
 
 function Footer() {
+  const { contactRef } = useRefsContext();
   return (
-    <footer className={styles.footer}>
+    <footer ref={contactRef} className={styles.footer}>
       <div className={styles.contactsWrapper}>
         {CONTACTS.map((c) => {
           return (
