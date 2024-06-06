@@ -12,6 +12,7 @@
   max-width: 40rem;
   text-align: center;
   font-weight: 500;
+  z-index: 1;
 }
 
 .wrapper h2 span,

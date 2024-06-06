@@ -4,3 +4,15 @@
   flex-direction: column;
   align-items: center;
 }
+
+.packagesWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .packagesWrapper {
+    flex-direction: column;
+  }
+}

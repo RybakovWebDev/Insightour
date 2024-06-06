@@ -12,9 +12,11 @@ function Offers() {
   return (
     <section ref={offersRef} className={styles.wrapper}>
       <SectionName>our tours</SectionName>
-      {OFFER_PACKAGES.map((p) => {
-        return <Package key={p.slug} title={p.title} length={p.length} />;
-      })}
+      <div className={styles.packagesWrapper}>
+        {OFFER_PACKAGES.map((p) => {
+          return <Package key={p.slug} title={p.title} length={p.length} />;
+        })}
+      </div>
     </section>
   );
 }

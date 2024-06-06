@@ -12,9 +12,9 @@ import background from "../../public/images/background/Group_53.png";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.backgroundImageWrapper}>
-        <Image src={background} alt='Background image' height={1350} sizes={"400px"} />
-      </div>
+      {/* <div className={styles.backgroundImageWrapper}>
+        <Image src={background} alt='Background image' width={700} sizes={"400px"} />
+      </div> */}
       <Header />
       <Hero />
       <About />
