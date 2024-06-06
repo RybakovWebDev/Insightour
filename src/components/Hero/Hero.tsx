@@ -14,7 +14,7 @@ function Hero() {
       </h1>
       <CallToActionButton />
       <video
-        src='https://storage.cloud.google.com/insightour_media/insightour_hero_mute.mp4'
+        src='https://storage.googleapis.com/insightour_media/insightour_hero_mute.mp4'
         playsInline
         autoPlay
         loop
