@@ -13,14 +13,16 @@ function Hero() {
         <br /> and audio guided experiences of Tbilisi
       </h1>
       <CallToActionButton />
-      <video
-        src='https://storage.googleapis.com/insightour_media/insightour_hero_mute.mp4'
-        playsInline
-        autoPlay
-        loop
-        muted
-        preload='auto'
-      />
+      <div className={styles.videoWrapper}>
+        <video
+          src='https://storage.googleapis.com/insightour_media/insightour_hero_mute.mp4'
+          playsInline
+          autoPlay
+          loop
+          muted
+          preload='auto'
+        />
+      </div>
     </section>
   );
 }

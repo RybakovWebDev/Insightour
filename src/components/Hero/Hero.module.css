@@ -37,9 +37,16 @@
   color: #6d309d;
 }
 
-.wrapper video {
+.videoWrapper {
   margin: 2.5rem 0 0 0;
-  height: 30rem;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
   pointer-events: none;
   touch-action: none;
+  overflow: hidden;
+}
+
+.videoWrapper video {
+  width: 80%;
 }
