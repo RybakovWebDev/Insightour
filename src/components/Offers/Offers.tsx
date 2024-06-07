@@ -13,9 +13,10 @@ function Offers() {
     <section ref={offersRef} className={styles.wrapper}>
       <SectionName>our tours</SectionName>
       <div className={styles.packagesWrapper}>
-        {OFFER_PACKAGES.map((p) => {
+        {/* {OFFER_PACKAGES.map((p) => {
           return <Package key={p.slug} title={p.title} length={p.length} />;
-        })}
+        })} */}
+        <Package title={OFFER_PACKAGES[0].title} length={OFFER_PACKAGES[0].length} />
       </div>
     </section>
   );

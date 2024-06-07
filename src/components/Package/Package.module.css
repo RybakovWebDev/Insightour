@@ -1,6 +1,5 @@
 .wrapper {
   margin: 1rem;
-  padding: 1rem;
   height: 20rem;
   width: 22rem;
   display: flex;
@@ -11,9 +10,49 @@
   border-radius: 15px;
 }
 
-.wrapper h3 {
-  font-size: 24px;
+.packageSelector {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid rgb(109, 48, 157, 0.1);
+  overflow: hidden;
+}
+
+.packageSelector button:nth-child(2) {
+  border-left: 1px solid rgb(109, 48, 157, 0.1);
+  border-right: 1px solid rgb(109, 48, 157, 0.1);
+}
+
+.packageSelector button {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+}
+
+.packageSelector button h3 {
   color: #6d309d;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.hovered {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(272, 100%, 90%);
+}
+
+.listWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper ul {

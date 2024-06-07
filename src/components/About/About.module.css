@@ -42,7 +42,7 @@
   background-image: url("/images/background/Vector_7.png");
   background-repeat: no-repeat;
   background-size: cover;
-  transform: rotate(35deg); /* Adjust the rotation angle as needed */
+  transform: rotate(20deg);
 }
 
 .textBlock1,

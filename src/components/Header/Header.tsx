@@ -15,7 +15,7 @@ function Header() {
   return (
     <header ref={headerRef} className={styles.wrapper}>
       <Link href={"/"}>
-        <Image className={styles.image} src={logoImage} alt='Insightour logo' sizes={"100px"} />
+        <Image className={styles.image} src={logoImage} height={80} alt='Insightour logo' sizes={"100px"} />
       </Link>
       <HeaderNav />
     </header>
