@@ -7,11 +7,24 @@ import styles from "./HeaderNav.module.css";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
+import { useEffect } from "react";
 
 function HeaderNav() {
   const { aboutRef, offersRef, contactRef } = useRefsContext();
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    if (hash === "#about") {
+      scrollToRef(aboutRef);
+    } else if (hash === "#offers") {
+      scrollToRef(offersRef);
+    } else if (hash === "#contact") {
+      scrollToRef(contactRef);
+    }
+  });
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
     e.preventDefault();

@@ -6,10 +6,70 @@
 }
 
 .packagesWrapper {
+  margin: 1rem;
+  /* height: 30rem; */
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f0ff;
+  border: 1px solid rgb(109, 48, 157, 0.1);
+  border-radius: 15px;
+}
+
+.packageSelector {
+  height: 3rem;
   width: 100%;
   display: flex;
-  align-items: center;
+  border-bottom: 1px solid rgb(109, 48, 157, 0.1);
+  overflow: hidden;
+}
+
+.packageSelector button:nth-child(2) {
+  border-left: 1px solid rgb(109, 48, 157, 0.1);
+  border-right: 1px solid rgb(109, 48, 157, 0.1);
+}
+
+.packageSelector button {
+  position: relative;
+  display: flex;
+  flex: 1;
   justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.packageSelector button h3 {
+  color: #6d309d;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.hovered {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(272, 100%, 90%);
+}
+
+.listWrapper {
+  width: 80%;
+}
+
+.detailsBtn {
+  margin: 1rem;
+  height: 4rem;
+  width: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #6d309d;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 @media (max-width: 1080px) {

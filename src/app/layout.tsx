@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { RefsProvider } from "@/contexts/RefsContext";
+import { DayProvider } from "@/contexts/DayContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <RefsProvider>{children}</RefsProvider>
+        <RefsProvider>
+          <DayProvider>{children}</DayProvider>
+        </RefsProvider>
       </body>
     </html>
   );

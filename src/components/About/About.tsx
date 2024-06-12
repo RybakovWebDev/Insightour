@@ -5,8 +5,31 @@ import styles from "./About.module.css";
 
 import SectionName from "../SectionName";
 
-import { PHOTOS_ABOUT } from "@/constants";
 import { useRefsContext } from "@/contexts/RefsContext";
+
+import { PHOTOS_ABOUT } from "@/constants";
+
+interface TextBlockProps {
+  rotation: number;
+  children: React.ReactNode;
+  left?: string;
+  right?: string;
+  top?: string;
+  bottom?: string;
+}
+
+function TextBlock({ rotation, children, left, right, top, bottom }: TextBlockProps) {
+  return (
+    <div
+      className={styles.textBlock}
+      style={{
+        transform: `rotate(${rotation}deg)`,
+      }}
+    >
+      <p>{children}</p>
+    </div>
+  );
+}
 
 function About() {
   const { aboutRef } = useRefsContext();
@@ -19,16 +42,12 @@ function About() {
         <span> THROUGH STORIES, URBAN&nbsp;LEGENDS AND&nbsp;THEIR&nbsp;HEROES.</span>
       </h2>
       <div className={styles.textBlocksWrapper}>
-        <div className={styles.textBlock1}>
-          <p>
-            Audio tours for <br /> solo travelers
-          </p>
-        </div>
-        <div className={styles.textBlock2}>
-          <p>
-            Immersive tours - <br /> performances guided by actors
-          </p>
-        </div>
+        <TextBlock rotation={3}>
+          Audio tours for <br /> solo travelers
+        </TextBlock>
+        <TextBlock rotation={-3}>
+          Immersive tours - <br /> performances guided by actors
+        </TextBlock>
       </div>
       <div className={styles.h1Wrapper}>
         <h1>We help discover</h1>

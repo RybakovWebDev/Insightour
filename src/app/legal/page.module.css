@@ -7,3 +7,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.wrapper div {
+  margin: 2rem;
+}
+
+.wrapper hr {
+  width: 100%;
+}

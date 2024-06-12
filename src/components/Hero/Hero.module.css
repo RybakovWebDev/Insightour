@@ -40,14 +40,15 @@
 
 .videoWrapper {
   margin: 2.5rem 0 0 0;
-  height: 40rem;
+  height: 30rem;
   display: flex;
   justify-content: center;
   pointer-events: none;
   touch-action: none;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .videoWrapper video {
-  width: 80%;
+  width: 290px;
+  border-radius: 20px;
 }

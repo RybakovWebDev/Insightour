@@ -26,19 +26,68 @@ export const NAVLINKS = [
 
 export const OFFER_PACKAGES = [
   {
-    slug: "package1",
+    slug: "economy",
     title: "Economy",
-    length: ["1 Day", "3 Days", "7 Days"],
+    lengthDays: [1, 3, 7],
+    benefits: ["4* hotel", "Comfortable transportation", "3 activities per day"],
   },
   {
-    slug: "package2",
+    slug: "luxe",
     title: "Luxe",
-    length: ["1 Day", "3 Days", "7 Days"],
+    lengthDays: [1, 3, 7],
+    benefits: ["5* hotel", "Premium transportion", "5 activities per day", "Photographer", "Example", "Example"],
   },
   {
-    slug: "package3",
+    slug: "vip",
     title: "VIP",
-    length: ["1 Day", "3 Days", "7 Days"],
+    lengthDays: [1, 3, 7],
+    benefits: [
+      "Fully custom experience tailored to your needs",
+      "5* hotel",
+      "VIP transportion",
+      "5 activities per day",
+      "Photographer",
+      "Example",
+      "Example",
+    ],
+  },
+];
+
+export const DAYS_BREAKDOWN = [
+  {
+    title: "Day 1",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 2",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 4",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 5",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 6",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
+  },
+  {
+    title: "Day 7",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
   },
 ];
 
