@@ -7,6 +7,7 @@ import styles from "./Header.module.css";
 import HeaderNav from "../HeaderNav";
 
 import { useRefsContext } from "@/contexts/RefsContext";
+
 import { logoImage } from "@/constants";
 
 function Header() {

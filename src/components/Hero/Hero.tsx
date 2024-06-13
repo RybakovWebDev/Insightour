@@ -7,12 +7,11 @@ import CallToActionButton from "../CallToActionButton";
 function Hero() {
   return (
     <section className={styles.wrapper}>
-      <p>A new way to get to know the city</p>
+      <p className={styles.intro}>A new way to get to know the city</p>
       <h1>
         <span>Immersive tours</span>
         <br /> and audio guided experiences of Tbilisi
       </h1>
-      <CallToActionButton />
       <div className={styles.videoWrapper}>
         <video
           src='https://storage.googleapis.com/insightour_media/insightour_hero_mute.mp4'
@@ -23,6 +22,7 @@ function Hero() {
           preload='auto'
         />
       </div>
+      <CallToActionButton />
     </section>
   );
 }
