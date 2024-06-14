@@ -28,11 +28,11 @@ function CallToActionButton() {
     setErrorText("");
   };
 
-  useEffect(() => {
-    if (modalOpen && nameInputRef.current) {
-      nameInputRef.current.focus();
-    }
-  }, [modalOpen]);
+  // useEffect(() => {
+  //   if (modalOpen && !smallScreen && nameInputRef.current) {
+  //     nameInputRef.current.focus();
+  //   }
+  // }, [modalOpen]);
 
   const handleOpenModal = () => {
     !modalOpen && setModalOpen(true);
@@ -140,7 +140,7 @@ function CallToActionButton() {
                       type='text'
                       name='phone'
                       required
-                      placeholder='Phone number or nickname'
+                      placeholder='Phone number or @nickname'
                       value={phoneText}
                       maxLength={50}
                       onChange={(e) => setPhoneText(e.target.value)}

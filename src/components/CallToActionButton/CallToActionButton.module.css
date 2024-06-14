@@ -97,6 +97,7 @@
 
 .messengerInput {
   height: 2rem;
+  color: #000000;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -127,10 +128,6 @@
   height: 2rem;
   color: #6d309d;
 }
-.form input,
-.form textarea {
-  /* color: var(--color-text); */
-}
 
 .closeButton,
 .sendWrapper button,
@@ -142,6 +139,7 @@
 .form input,
 .form textarea {
   background-color: white;
+  color: #000000;
 }
 
 @media (max-width: 1430px) {
