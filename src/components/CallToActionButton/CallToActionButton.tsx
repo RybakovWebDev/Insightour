@@ -11,6 +11,7 @@ function CallToActionButton() {
   const [modalOpen, setModalOpen] = useState(false);
   const [nameText, setNameText] = useState("");
   const [phoneText, setPhoneText] = useState("");
+  const [messengerText, setMessengerText] = useState("");
   const [emailText, setEmailText] = useState("");
   const [commentText, setCommentText] = useState("");
   const [errorText, setErrorText] = useState("");
@@ -21,6 +22,7 @@ function CallToActionButton() {
   const clearForm = () => {
     setNameText("");
     setPhoneText("");
+    setMessengerText("");
     setEmailText("");
     setCommentText("");
     setErrorText("");
@@ -46,40 +48,41 @@ function CallToActionButton() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formURL = "";
+    // const formURL = "";
 
-    if (!formURL) {
-      return;
-    }
+    // if (!formURL) {
+    //   return;
+    // }
 
     const formData = {
       name: nameText,
       phone: phoneText,
+      messenger: messengerText,
       email: emailText,
       comment: commentText,
     };
-
+    setMessageSent(true);
+    console.log("Sent");
     try {
-      const response = await fetch(formURL, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
-      });
+      // const response = await fetch(formURL, {
+      //   method: "POST",
+      //   body: JSON.stringify(formData),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   mode: "no-cors",
+      // });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      clearForm();
+      // if (!response.ok) {
+      //   throw new Error("Network response was not ok");
+      // }
+      // clearForm();
       setMessageSent(true);
+      console.log("Sent");
     } catch (error) {
       setErrorText(`${error}. Could not send contact data 😥`);
       console.error("An error occurred while submitting the form!", error);
     }
-
-    handleCloseModal();
   };
 
   return (
@@ -145,6 +148,20 @@ function CallToActionButton() {
                   </div>
 
                   <div className={styles.inputWrapper}>
+                    <label htmlFor='messenger'>Select messenger:</label>
+                    <select
+                      className={styles.messengerInput}
+                      name='messenger'
+                      required
+                      onChange={(e) => setMessengerText(e.target.value)}
+                    >
+                      <option value=''>--Please choose an option--</option>
+                      <option value='Telegram'>Telegram</option>
+                      <option value='Whatsapp'>Whatsapp</option>
+                    </select>
+                  </div>
+
+                  <div className={styles.inputWrapper}>
                     <label htmlFor='email'>Contact email:</label>
                     <input
                       type='email'
@@ -162,8 +179,7 @@ function CallToActionButton() {
                 <textarea
                   name='comment'
                   cols={60}
-                  rows={8}
-                  required
+                  rows={4}
                   spellCheck
                   placeholder='Comment text'
                   value={commentText}
@@ -191,7 +207,7 @@ function CallToActionButton() {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                         >
-                          Message sent!
+                          Message sent! We will contact you soon 😊
                         </m.p>
                       </AnimatePresence>
                     ) : (
