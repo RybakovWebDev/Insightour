@@ -107,3 +107,13 @@
   height: 100%;
   z-index: 1;
 }
+
+.animatePath {
+  animation: drawPath 2s ease-in-out forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

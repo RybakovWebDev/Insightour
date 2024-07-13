@@ -53,9 +53,9 @@ function About() {
   const { aboutRef } = useRefsContext();
 
   const h3WrapperRef = useRef(null);
-  const pathRef = useRef(null);
+  const textBlocksRef = useRef(null);
 
-  const pathInView = useInView(pathRef, { once: true, amount: 0.2 });
+  const textBlocksInView = useInView(textBlocksRef, { once: true, amount: 0.3 });
   const h3WrapperInView = useInView(h3WrapperRef, { once: true, amount: 0.5 });
 
   return (
@@ -66,7 +66,7 @@ function About() {
           WE OFFER A BRAND NEW FORMAT OF EXPLORING GEORGIA -
           <span> THROUGH STORIES, URBAN&nbsp;LEGENDS AND&nbsp;THEIR&nbsp;HEROES.</span>
         </h2>
-        <div className={styles.textBlocksWrapper}>
+        <div ref={textBlocksRef} className={styles.textBlocksWrapper}>
           <svg className={styles.snakePath} viewBox='0 0 100 400' xmlns='http://www.w3.org/2000/svg'>
             <defs>
               <mask id='lineMask'>
@@ -76,13 +76,12 @@ function About() {
                   strokeWidth='2'
                   fill='none'
                   initial={{ pathLength: 0 }}
-                  animate={pathInView ? { pathLength: 1 } : { pathLength: 0 }}
+                  animate={textBlocksInView ? { pathLength: 1 } : { pathLength: 0 }}
                   transition={{ duration: 2, ease: "easeInOut" }}
                 />
               </mask>
             </defs>
             <path
-              ref={pathRef}
               d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 31 399'
               stroke='#6d309d'
               strokeWidth='2'
