@@ -35,6 +35,7 @@ function Package({ slug }: PackageProps) {
           <AnimatePresence>
             {selectedPackage?.benefits.map((l, i) => (
               <m.li variants={item} key={i}>
+                <span />
                 {l}
               </m.li>
             ))}

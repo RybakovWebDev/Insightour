@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,6 @@
 }
 
 .videoWrapper {
-  margin: 0 0 2rem 0;
   height: 30rem;
   display: flex;
   justify-content: center;

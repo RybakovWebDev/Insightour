@@ -1,0 +1,43 @@
+.wrapper,
+.wrapperPortrait {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wrapper {
+  height: 12rem;
+  width: 22rem;
+}
+
+.wrapperPortrait {
+  height: 30rem;
+  width: 22rem;
+}
+
+.imageWrapper {
+  position: absolute;
+}
+
+@media (max-width: 1080px) {
+  .wrapper,
+  .wrapperPortrait {
+    width: 90%;
+  }
+  .wrapper {
+    height: 12rem;
+  }
+
+  .wrapperPortrait {
+    height: 27rem;
+  }
+
+  .imageWrapper {
+    position: absolute;
+    object-fit: contain;
+  }
+}

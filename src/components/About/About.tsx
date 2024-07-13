@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { LazyMotion, m, useInView } from "framer-motion";
 
 import styles from "./About.module.css";
 
@@ -8,6 +9,10 @@ import SectionName from "../SectionName";
 import { useRefsContext } from "@/contexts/RefsContext";
 
 import { PHOTOS_ABOUT } from "@/constants";
+import CallToActionButton from "../CallToActionButton";
+import { useRef } from "react";
+
+const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 interface TextBlockProps {
   rotation: number;
@@ -17,6 +22,19 @@ interface TextBlockProps {
   top?: string;
   bottom?: string;
 }
+
+const container = {
+  show: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
+};
 
 function TextBlock({ rotation, children, left, right, top, bottom }: TextBlockProps) {
   return (
@@ -34,53 +52,81 @@ function TextBlock({ rotation, children, left, right, top, bottom }: TextBlockPr
 function About() {
   const { aboutRef } = useRefsContext();
 
+  const h3WrapperRef = useRef(null);
+  const pathRef = useRef(null);
+
+  const pathInView = useInView(pathRef, { once: true, amount: 0.2 });
+  const h3WrapperInView = useInView(h3WrapperRef, { once: true, amount: 0.5 });
+
   return (
-    <section ref={aboutRef} className={styles.wrapper}>
-      <SectionName>about us</SectionName>
-      <h2>
-        WE OFFER A BRAND NEW FORMAT OF EXPLORING THE CITY -
-        <span> THROUGH STORIES, URBAN&nbsp;LEGENDS AND&nbsp;THEIR&nbsp;HEROES.</span>
-      </h2>
-      <div className={styles.textBlocksWrapper}>
-        <TextBlock rotation={3}>
-          Audio tours for <br /> solo travelers
-        </TextBlock>
-        <TextBlock rotation={-3}>
-          Immersive tours - <br /> performances guided by actors
-        </TextBlock>
-      </div>
-      <div className={styles.h1Wrapper}>
-        <h1>We help discover</h1>
-        <br />
-        <h1>the city</h1>
-        <h1 className={styles.accent}>Not through a set of</h1>
-        <br />
-        <h1 className={styles.accent}>dry facts,</h1>
-        <br />
-        <h1 className={styles.accent}>but through</h1>
-        <br />
-        <h1 className={styles.accent}>emotions</h1>
-      </div>
-      <div className={styles.infoWrapper}>
-        <p>
-          Insightour is a new way to get to know the city, a project for those that believe that &ldquo;excursions are
-          not their thing&rdquo;.
-        </p>
-        <p>
-          We help discover the city not through a set of dry facts, but through emotions, all because we have long been
-          in love with Georgia, its history, legends and architecture.
-        </p>
-      </div>
-      <div className={styles.photosWrapper}>
-        {PHOTOS_ABOUT.map((p, i) => {
-          return (
-            <div key={i} className={styles.imageWrapper}>
-              <Image src={p.src} alt={p.alt} width={350} sizes={"400px"} />
-            </div>
-          );
-        })}
-      </div>
-    </section>
+    <LazyMotion features={loadFeatures}>
+      <section ref={aboutRef} className={styles.wrapper}>
+        <SectionName>about us</SectionName>
+        <h2>
+          WE OFFER A BRAND NEW FORMAT OF EXPLORING GEORGIA -
+          <span> THROUGH STORIES, URBAN&nbsp;LEGENDS AND&nbsp;THEIR&nbsp;HEROES.</span>
+        </h2>
+        <div className={styles.textBlocksWrapper}>
+          <svg className={styles.snakePath} viewBox='0 0 100 400' xmlns='http://www.w3.org/2000/svg'>
+            <defs>
+              <mask id='lineMask'>
+                <m.path
+                  d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 31 399'
+                  stroke='white'
+                  strokeWidth='2'
+                  fill='none'
+                  initial={{ pathLength: 0 }}
+                  animate={pathInView ? { pathLength: 1 } : { pathLength: 0 }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                />
+              </mask>
+            </defs>
+            <path
+              ref={pathRef}
+              d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 31 399'
+              stroke='#6d309d'
+              strokeWidth='2'
+              strokeDasharray='10 10'
+              fill='none'
+              mask='url(#lineMask)'
+            />
+          </svg>
+          <TextBlock rotation={3}>Safety and comfort</TextBlock>
+          <TextBlock rotation={-3}>Nature and architecture</TextBlock>
+          <TextBlock rotation={3}>
+            Bright gastronomic <br /> experience
+          </TextBlock>
+          <TextBlock rotation={-3}>Local color and traditions</TextBlock>
+        </div>
+        <m.div
+          ref={h3WrapperRef}
+          variants={container}
+          initial='hidden'
+          animate={h3WrapperInView ? "show" : "hidden"}
+          className={styles.h3Wrapper}
+        >
+          <m.h3 variants={item}>DISCOVER</m.h3>
+          <br />
+          <m.h3 variants={item}>GEORGIA</m.h3>
+          <br />
+          <m.h3 variants={item}>THROUGH</m.h3>
+          <br />
+          <m.h3 variants={item} className={styles.accent}>
+            EMOTIONS
+          </m.h3>
+        </m.div>
+        <div className={styles.photosWrapper}>
+          {PHOTOS_ABOUT.map((p, i) => {
+            return (
+              <div key={i} className={styles.imageWrapper}>
+                <Image src={p.src} alt={p.alt} width={350} sizes={"400px"} />
+              </div>
+            );
+          })}
+        </div>
+        <CallToActionButton />
+      </section>
+    </LazyMotion>
   );
 }
 

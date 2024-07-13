@@ -1,7 +1,6 @@
 "use client";
-import { useId, useState } from "react";
-import Link from "next/link";
-import { AnimatePresence, LazyMotion, m } from "framer-motion";
+import { useId, useRef, useState } from "react";
+import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
 
 import styles from "./Offers.module.css";
 
@@ -14,15 +13,62 @@ import { AnimateChangeInHeight } from "@/helpers";
 
 import { OFFER_PACKAGES } from "@/constants";
 import CallToActionButton from "../CallToActionButton";
+import ArrowIcon from "../DetailsArrow/DetailsArrow";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
+const listVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+  exit: { opacity: 0, transition: { duration: 0.3 } },
+};
+
+const priceVariants = {
+  hidden: { opacity: 0.5, y: "-3rem" },
+  show: { opacity: 1, y: 0 },
+  exit: { opacity: 0.5, y: "3rem" },
+};
+
+const detailsVariants = {
+  hidden: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+  show: {
+    height: "auto",
+    transition: {
+      when: "beforeChildren",
+    },
+  },
+};
+
+const contentVariants = {
+  hidden: {
+    opacity: 0,
+    transition: { duration: 0.2 },
+  },
+  show: {
+    opacity: 1,
+    transition: { duration: 0.2 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.2 },
+  },
+};
+
 function Offers() {
   const [currentPackage, setCurrentPackage] = useState("economy");
+  const [openDetails, setOpenDetails] = useState({ services: false, notIncluded: false });
 
   const { offersRef } = useRefsContext();
 
   const id = useId();
+  const packagesRef = useRef(null);
+
+  const packagesInView = useInView(packagesRef, { once: true, amount: 0.6 });
 
   const selectedPackage = OFFER_PACKAGES.find((p) => p.slug === currentPackage);
 
@@ -30,17 +76,15 @@ function Offers() {
     setCurrentPackage(slug);
   };
 
-  const list = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-    exit: { opacity: 0, transition: { duration: 0.3 } },
+  const toggleDetails = (key: keyof typeof openDetails) => {
+    setOpenDetails((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
     <LazyMotion features={loadFeatures}>
       <section ref={offersRef} className={styles.wrapper}>
         <SectionName>our tours</SectionName>
-        <div className={styles.packagesWrapper}>
+        <div ref={packagesRef} className={styles.packagesWrapper}>
           <div className={styles.packageSelector}>
             {OFFER_PACKAGES.map((p) => {
               return (
@@ -68,26 +112,92 @@ function Offers() {
           </div>
           <AnimateChangeInHeight className={styles.listWrapper}>
             <AnimatePresence mode='wait'>
-              <m.article key={currentPackage} initial='hidden' animate='show' exit='exit' variants={list}>
+              <m.article
+                key={currentPackage}
+                initial='hidden'
+                animate={packagesInView ? "show" : "hidden"}
+                exit='exit'
+                variants={listVariants}
+              >
                 <Package slug={currentPackage} />
               </m.article>
             </AnimatePresence>
           </AnimateChangeInHeight>
-          <Link
-            href={`/${selectedPackage?.title.toLowerCase()}`}
-            aria-label={`Open detailed project information for current ${selectedPackage?.title} package`}
-            className={styles.detailsBtn}
+
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: packagesInView ? 1 : 0 }}
+            className={styles.servicesWrapper}
           >
-            <m.span
-              initial={{ borderBottom: "2px solid rgba(var(--color-underline), 0.3)" }}
-              whileHover={{ borderBottom: "6px solid rgba(var(--color-underline), 0.8)" }}
-              transition={{ duration: 0.1 }}
-            >
-              View tour details
-            </m.span>
-          </Link>
+            <div>
+              <button
+                onClick={() => toggleDetails("services")}
+                className={styles.summary}
+                aria-expanded={openDetails.services}
+                aria-controls='included-services-content'
+              >
+                {packagesInView && <ArrowIcon isOpen={openDetails.services} />}
+                Tour services included
+              </button>
+              <AnimatePresence initial={false}>
+                {openDetails.services && (
+                  <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
+                    <m.div variants={contentVariants}>
+                      <ul>
+                        <li>- Pick-up and drop-off to and from the airport</li>
+                        <li>- Hotel reservations for six nights in the cities of Tbilisi and Batumi</li>
+                        <li>- Buffet breakfast</li>
+                        <li>- All transfers by private car for a tour to enjoy privacy with family or friends</li>
+                        <li>- Tour guide fluent in Arabic and English</li>
+                      </ul>
+                    </m.div>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            <div>
+              <button
+                onClick={() => toggleDetails("notIncluded")}
+                className={styles.summary}
+                aria-expanded={openDetails.notIncluded}
+                aria-controls='not-included-services-content'
+              >
+                {packagesInView && <ArrowIcon isOpen={openDetails.notIncluded} />}
+                Not included
+              </button>
+              <AnimatePresence initial={false}>
+                {openDetails.notIncluded && (
+                  <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
+                    <m.div variants={contentVariants}>
+                      <ul>
+                        <li>- Airline tickets</li>
+                        <li>- Lunch and dinner</li>
+                        <li>- Entry tickets to tourist places</li>
+                      </ul>
+                    </m.div>
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </m.div>
+
+          <div className={styles.price}>
+            <m.h3 initial={{ opacity: 0 }} animate={{ opacity: packagesInView ? 1 : 0 }}>
+              From&nbsp;
+            </m.h3>
+            <AnimatePresence mode='wait'>
+              <m.span
+                key={selectedPackage?.price}
+                initial='hidden'
+                animate={packagesInView ? "show" : "hidden"}
+                exit='exit'
+                transition={{ type: "spring", damping: 60, stiffness: 900 }}
+                variants={priceVariants}
+              >{`$${selectedPackage?.price}`}</m.span>
+            </AnimatePresence>
+          </div>
         </div>
-        <CallToActionButton />
       </section>
     </LazyMotion>
   );

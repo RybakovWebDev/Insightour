@@ -3,11 +3,19 @@
 }
 
 .wrapper ul {
-  /* list-style: circle; */
+  list-style: none;
 }
 
 .wrapper li {
   padding: 1rem;
   font-size: 18px;
   font-weight: 500;
+}
+
+.wrapper span::before {
+  content: "•";
+  color: #6d309d;
+  font-size: 1rem;
+  padding-right: 0.5rem;
+  display: inline-block;
 }
