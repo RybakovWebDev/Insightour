@@ -14,6 +14,7 @@ import { AnimateChangeInHeight } from "@/helpers";
 import { OFFER_PACKAGES } from "@/constants";
 import CallToActionButton from "../CallToActionButton";
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
+import { Check, X } from "react-feather";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -132,23 +133,34 @@ function Offers() {
             <div>
               <button
                 onClick={() => toggleDetails("services")}
-                className={styles.summary}
+                className={styles.summaryBtn}
                 aria-expanded={openDetails.services}
                 aria-controls='included-services-content'
               >
+                Services included
                 {packagesInView && <ArrowIcon isOpen={openDetails.services} />}
-                Tour services included
               </button>
               <AnimatePresence initial={false}>
                 {openDetails.services && (
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
                       <ul>
-                        <li>- Pick-up and drop-off to and from the airport</li>
-                        <li>- Hotel reservations for six nights in the cities of Tbilisi and Batumi</li>
-                        <li>- Buffet breakfast</li>
-                        <li>- All transfers by private car for a tour to enjoy privacy with family or friends</li>
-                        <li>- Tour guide fluent in Arabic and English</li>
+                        <li>
+                          <Check size={12} /> Pick-up and drop-off to and from the airport
+                        </li>
+                        <li>
+                          <Check size={12} /> Hotel reservations for six nights in the cities of Tbilisi and Batumi
+                        </li>
+                        <li>
+                          <Check size={12} /> Buffet breakfast
+                        </li>
+                        <li>
+                          <Check size={12} /> All transfers by private car for a tour to enjoy privacy with family or
+                          friends
+                        </li>
+                        <li>
+                          <Check size={12} /> Tour guide fluent in Arabic and English
+                        </li>
                       </ul>
                     </m.div>
                   </m.div>
@@ -159,21 +171,27 @@ function Offers() {
             <div>
               <button
                 onClick={() => toggleDetails("notIncluded")}
-                className={styles.summary}
+                className={styles.summaryBtn}
                 aria-expanded={openDetails.notIncluded}
                 aria-controls='not-included-services-content'
               >
+                Services not included
                 {packagesInView && <ArrowIcon isOpen={openDetails.notIncluded} />}
-                Not included
               </button>
               <AnimatePresence initial={false}>
                 {openDetails.notIncluded && (
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
                       <ul>
-                        <li>- Airline tickets</li>
-                        <li>- Lunch and dinner</li>
-                        <li>- Entry tickets to tourist places</li>
+                        <li>
+                          <X size={12} /> Airline tickets
+                        </li>
+                        <li>
+                          <X size={12} /> Lunch and dinner
+                        </li>
+                        <li>
+                          <X size={12} /> Entry tickets to tourist places
+                        </li>
                       </ul>
                     </m.div>
                   </m.div>

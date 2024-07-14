@@ -1,14 +1,12 @@
 "use client";
 import { useState } from "react";
-import { animate, AnimatePresence, LazyMotion, m } from "framer-motion";
+import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
 import styles from "./DaysBreakdown.module.css";
 
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
 
 import { sevenDayTourBreakdown, tenDayTourBreakdown, threeDayTourBreakdown, TOUR_DURATIONS } from "@/constants";
-import { AnimateChangeInHeight } from "@/helpers";
-import CallToActionButton from "../CallToActionButton";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 

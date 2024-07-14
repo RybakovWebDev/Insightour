@@ -23,6 +23,8 @@ interface TextBlockProps {
   bottom?: string;
 }
 
+const mainLineDrawDuration = 2;
+
 const container = {
   show: {
     transition: {
@@ -71,23 +73,48 @@ function About() {
             <defs>
               <mask id='lineMask'>
                 <m.path
-                  d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 31 399'
+                  d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 46 391'
                   stroke='white'
                   strokeWidth='2'
                   fill='none'
                   initial={{ pathLength: 0 }}
                   animate={textBlocksInView ? { pathLength: 1 } : { pathLength: 0 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
+                  transition={{ duration: mainLineDrawDuration, ease: "easeInOut" }}
                 />
               </mask>
             </defs>
             <path
-              d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 31 399'
+              d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 46 391'
               stroke='#6d309d'
               strokeWidth='2'
               strokeDasharray='10 10'
               fill='none'
               mask='url(#lineMask)'
+            />
+
+            <m.path
+              d='M 34 389 L 44 399'
+              stroke='#6d309d'
+              strokeWidth='2'
+              strokeLinecap='round'
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={textBlocksInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+              transition={{
+                pathLength: { duration: 0.25, ease: "easeInOut", delay: mainLineDrawDuration },
+                opacity: { duration: 0.01, delay: mainLineDrawDuration },
+              }}
+            />
+            <m.path
+              d='M 34 399 L 44 389'
+              stroke='#6d309d'
+              strokeWidth='2'
+              strokeLinecap='round'
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={textBlocksInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+              transition={{
+                pathLength: { duration: 0.25, ease: "easeInOut", delay: mainLineDrawDuration + 0.25 },
+                opacity: { duration: 0.01, delay: mainLineDrawDuration + 0.25 },
+              }}
             />
           </svg>
           <TextBlock rotation={3}>Safety and comfort</TextBlock>
