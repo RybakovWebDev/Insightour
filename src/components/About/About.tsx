@@ -118,7 +118,7 @@ function About() {
           {PHOTOS_ABOUT.map((p, i) => {
             return (
               <div key={i} className={styles.imageWrapper}>
-                <Image src={p.src} alt={p.alt} width={350} sizes={"400px"} />
+                <Image src={p.src} alt={p.alt} width={350} priority sizes={"300px"} />
               </div>
             );
           })}

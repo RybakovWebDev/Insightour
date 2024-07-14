@@ -37,6 +37,12 @@ export const NAVLINKS = [
   },
 ];
 
+export const TOUR_DURATIONS = [
+  { slug: "3days", title: "3 Days" },
+  { slug: "7days", title: "7 Days" },
+  { slug: "10days", title: "10 Days" },
+];
+
 export const OFFER_PACKAGES = [
   {
     slug: "economy",

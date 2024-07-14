@@ -6,19 +6,20 @@ import styles from "./DaysBreakdown.module.css";
 
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
 
-import { sevenDayTourBreakdown, tenDayTourBreakdown, threeDayTourBreakdown } from "@/constants";
+import { sevenDayTourBreakdown, tenDayTourBreakdown, threeDayTourBreakdown, TOUR_DURATIONS } from "@/constants";
 import { AnimateChangeInHeight } from "@/helpers";
 import CallToActionButton from "../CallToActionButton";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
-const TOUR_DURATIONS = [
-  { slug: "3days", title: "3 Days" },
-  { slug: "7days", title: "7 Days" },
-  { slug: "10days", title: "10 Days" },
-];
-
 const daysVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+  },
+};
+
+const daysItemVariants = {
   hidden: {
     height: 0,
     opacity: 0,
@@ -29,7 +30,7 @@ const daysVariants = {
   },
 };
 
-const detailsVariants = {
+const ulVariants = {
   hidden: {
     height: 0,
     transition: {
@@ -51,7 +52,7 @@ const detailsVariants = {
   },
 };
 
-const contentVariants = {
+const liVariants = {
   hidden: {
     opacity: 0,
     y: 10,
@@ -110,7 +111,7 @@ const DaysBreakdown = () => {
           ))}
         </div>
 
-        <m.div className={styles.daysWrapper} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <m.div className={styles.daysWrapper} initial='hidden' animate='show' variants={daysVariants}>
           <AnimatePresence>
             {getCurrentTourBreakdown().map((day, i) => (
               <m.div
@@ -119,7 +120,7 @@ const DaysBreakdown = () => {
                 initial='hidden'
                 animate='show'
                 exit='hidden'
-                variants={daysVariants}
+                variants={daysItemVariants}
               >
                 <button
                   onClick={() => toggleDay(day.title)}
@@ -132,9 +133,9 @@ const DaysBreakdown = () => {
                 </button>
                 <AnimatePresence mode='wait'>
                   {openDays[day.title] && (
-                    <m.ul key={day.title + i} initial='hidden' animate='show' exit='exit' variants={detailsVariants}>
+                    <m.ul key={day.title + i} initial='hidden' animate='show' exit='exit' variants={ulVariants}>
                       {day.activities.map((activity, index) => (
-                        <m.li key={index} variants={contentVariants}>
+                        <m.li key={index} variants={liVariants}>
                           {activity}
                         </m.li>
                       ))}

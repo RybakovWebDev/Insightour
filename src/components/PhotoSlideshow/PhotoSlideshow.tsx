@@ -13,36 +13,49 @@ interface PhotoSlideshowProps {
 }
 
 const slideVariants = {
-  enter: () => ({
+  enter: {
     x: "100%",
-  }),
+  },
   center: {
     x: 0,
   },
-  exit: () => ({
+  exit: {
     x: "-100%",
-  }),
+  },
 };
 
 function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const filteredPhotos = PHOTOS_ALL.filter((photo) => photo.isPortrait === portrait);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prevIndex) => (prevIndex + 1) % filteredPhotos.length);
+      setCurrentImage((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % filteredPhotos.length;
+        return nextIndex;
+      });
     }, 2000);
 
     return () => clearInterval(timer);
   }, [filteredPhotos.length]);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <LazyMotion features={loadFeatures}>
-      <section className={portrait ? styles.wrapperPortrait : styles.wrapper}>
+      <m.section
+        className={portrait ? styles.wrapperPortrait : styles.wrapper}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: imageLoaded ? 1 : 0 }}
+      >
         <AnimatePresence initial={false}>
           <m.div
             className={styles.imageWrapper}
             key={currentImage}
+            custom={currentImage}
             initial='enter'
             animate='center'
             exit='exit'
@@ -55,11 +68,13 @@ function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
               src={filteredPhotos[currentImage].src}
               alt={filteredPhotos[currentImage].alt}
               width={350}
-              sizes={"400px"}
+              sizes={"350px"}
+              priority
+              onLoad={handleImageLoad}
             />
           </m.div>
         </AnimatePresence>
-      </section>
+      </m.section>
     </LazyMotion>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -7,7 +8,6 @@ import styles from "./HeaderNav.module.css";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { NAVLINKS } from "@/constants";
 import { scrollToRef } from "@/helpers";
-import { useEffect } from "react";
 
 function HeaderNav() {
   const { aboutRef, offersRef, contactRef } = useRefsContext();
@@ -15,15 +15,16 @@ function HeaderNav() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const hash = window.location.hash;
-
-    if (hash === "#about") {
-      scrollToRef(aboutRef);
-    } else if (hash === "#offers") {
-      scrollToRef(offersRef);
-    } else if (hash === "#contact") {
-      scrollToRef(contactRef);
-    }
+    setTimeout(() => {
+      const hash = window.location.hash;
+      if (hash === "#about") {
+        scrollToRef(aboutRef);
+      } else if (hash === "#offers") {
+        scrollToRef(offersRef);
+      } else if (hash === "#contact") {
+        scrollToRef(contactRef);
+      }
+    }, 50);
   });
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
