@@ -1,5 +1,4 @@
-.contactBtn,
-.contactBtn div {
+.contactBtn {
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -18,13 +17,8 @@
   border: none;
 }
 
-.contactBtn img {
-  color: white;
-}
-
 @media (max-width: 1430px) {
-  .contactBtn,
-  .contactBtn div {
+  .contactBtn {
     width: 3rem;
     height: 3rem;
   }
