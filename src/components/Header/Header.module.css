@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   height: 8rem;
   width: 100%;
   display: flex;
@@ -7,5 +7,15 @@
 }
 
 .wrapper a {
-  height: 80px;
+  height: 8rem;
+}
+
+.logoWrapper {
+  position: relative;
+  height: 100%;
+  width: 9rem;
+}
+
+.logo {
+  object-fit: contain;
 }

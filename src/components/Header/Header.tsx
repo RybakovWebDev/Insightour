@@ -31,7 +31,17 @@ function Header() {
         transition={{ duration: 0.5 }}
       >
         <Link href={"/"}>
-          <Image src={logoImage} height={80} alt='Insightour logo' sizes={"100px"} onLoad={handleLoaded} />
+          <div className={styles.logoWrapper}>
+            <Image
+              className={styles.logo}
+              src={logoImage}
+              alt='Insightour logo'
+              priority
+              fill
+              sizes={"400px"}
+              onLoad={handleLoaded}
+            />
+          </div>
         </Link>
         <HeaderNav />
       </m.header>

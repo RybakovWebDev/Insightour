@@ -1,4 +1,4 @@
-import logo from "../public/images/logo.png";
+import logo from "../public/images/logo_image.webp";
 import photoAbout5 from "../public/images/photos/photo5.webp";
 import photoAbout6 from "../public/images/photos/photo6.webp";
 import photoAbout7 from "../public/images/photos/photo7.webp";
