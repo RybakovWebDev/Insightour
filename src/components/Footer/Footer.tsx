@@ -7,14 +7,18 @@ import styles from "./Footer.module.css";
 import ExternalLinkIcon from "../ExternalLinkIcon";
 
 import { useRefsContext } from "@/contexts/RefsContext";
-import { CONTACTS, SOCIALS } from "@/constants";
+import { ICONS, PHONES, SOCIALS } from "@/constants";
 
 function Footer() {
   const { contactRef } = useRefsContext();
   return (
     <footer ref={contactRef} className={styles.footer}>
+      <div className={styles.btcWrapper}>
+        <p>We accept crypto!</p>
+        <Image src={ICONS.Bitcoin.src} alt={ICONS.Bitcoin.alt} height={32} width={32} />
+      </div>
       <div className={styles.contactsWrapper}>
-        {CONTACTS.map((c) => {
+        {PHONES.map((c) => {
           return (
             <a key={c.number} href={c.link}>
               {c.number}

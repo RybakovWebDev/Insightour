@@ -11,6 +11,7 @@ import { useRefsContext } from "@/contexts/RefsContext";
 import { PHOTOS_ABOUT } from "@/constants";
 import CallToActionButton from "../CallToActionButton";
 import { useRef } from "react";
+import PhotoSlider from "../PhotoSlider";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -73,7 +74,7 @@ function About() {
             <defs>
               <mask id='lineMask'>
                 <m.path
-                  d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 46 391'
+                  d='M 6 -17 C -42 44 138 97 82 150 C -121 245 39 229 108 315 C 103 349 78 369 46 391'
                   stroke='white'
                   strokeWidth='2'
                   fill='none'
@@ -84,7 +85,7 @@ function About() {
               </mask>
             </defs>
             <path
-              d='M 6 -17 C -42 44 138 97 82 150 C -123 234 39 229 108 315 C 103 349 78 369 46 391'
+              d='M 6 -17 C -42 44 138 97 82 150 C -121 245 39 229 108 315 C 103 349 78 369 46 391'
               stroke='#6d309d'
               strokeWidth='2'
               strokeDasharray='10 10'
@@ -141,15 +142,16 @@ function About() {
             EMOTIONS
           </m.h3>
         </m.div>
-        <div className={styles.photosWrapper}>
+        {/* <div className={styles.photosWrapper}>
           {PHOTOS_ABOUT.map((p, i) => {
             return (
               <div key={i} className={styles.imageWrapper}>
-                <Image src={p.src} alt={p.alt} width={350} priority sizes={"300px"} />
+                <Image src={p.src} alt={p.alt} width={350} priority sizes={"350px"} />
               </div>
             );
           })}
-        </div>
+        </div> */}
+        <PhotoSlider />
         <CallToActionButton />
       </section>
     </LazyMotion>

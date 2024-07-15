@@ -135,30 +135,16 @@ function CallToActionButton() {
                   </div>
 
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='phone'>Contact phone:</label>
+                    <label htmlFor='phone'>Whatsapp number:</label>
                     <input
                       type='text'
                       name='phone'
                       required
-                      placeholder='Phone number or @nickname'
+                      placeholder='Phone number'
                       value={phoneText}
                       maxLength={50}
                       onChange={(e) => setPhoneText(e.target.value)}
                     />
-                  </div>
-
-                  <div className={styles.inputWrapper}>
-                    <label htmlFor='messenger'>Select messenger:</label>
-                    <select
-                      className={styles.messengerInput}
-                      name='messenger'
-                      required
-                      onChange={(e) => setMessengerText(e.target.value)}
-                    >
-                      <option value=''>--Please choose an option--</option>
-                      <option value='Telegram'>Telegram</option>
-                      <option value='Whatsapp'>Whatsapp</option>
-                    </select>
                   </div>
 
                   <div className={styles.inputWrapper}>

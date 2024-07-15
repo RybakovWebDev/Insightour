@@ -57,7 +57,7 @@
 }
 
 .listWrapper {
-  width: 80%;
+  width: 90%;
 }
 
 .servicesWrapper {
@@ -136,5 +136,15 @@
 
   .summaryBtn:hover {
     background-color: transparent;
+  }
+}
+
+@media (max-width: 300px) {
+  .packagesWrapper {
+    width: 95vw;
+  }
+
+  .packageSelector button h3 {
+    font-size: 16px;
   }
 }

@@ -9,6 +9,7 @@ import BackToTop from "@/components/BackToTop";
 import DaysBreakdown from "@/components/DaysBreakdown";
 import PhotoSlideshow from "@/components/PhotoSlideshow";
 import CallToActionButton from "@/components/CallToActionButton";
+import ContactButton from "@/components/ContactButton";
 
 export default function Home() {
   return (
@@ -20,9 +21,10 @@ export default function Home() {
       <PhotoSlideshow />
       <DaysBreakdown />
       <CallToActionButton />
-      <PhotoSlideshow portrait />
+      {/* <PhotoSlideshow portrait /> */}
       <Footer />
       <BackToTop />
+      <ContactButton />
     </main>
   );
 }

@@ -19,6 +19,14 @@ import photoAbout21 from "../public/images/photos/photo21.webp";
 
 export const logoImage = logo;
 
+export const ICONS = {
+  Whatsapp: { src: "/images/contacts/whatsapp.svg", alt: "Contact on Whatsapp" },
+  WhatsappColor: { src: "/images/contacts/whatsapp-color.svg", alt: "Contact on Whatsapp" },
+  TikTok: { src: "/images/contacts/tiktok.svg", alt: "Contact on TikTok" },
+  Phone: { src: "/images/contacts/phone-call.svg", alt: "Call phone number 1" },
+  Bitcoin: { src: "/images/contacts/btc.svg", alt: "Bitcoin logo" },
+};
+
 export const NAVLINKS = [
   {
     title: "About Us",
@@ -227,6 +235,30 @@ export const tenDayTourBreakdown = [
       "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
     ],
   },
+  {
+    title: "Day 8",
+    activities: [
+      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
+      "See a dolphin show and enjoy a free tour around Lake Batumi.",
+      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+    ],
+  },
+  {
+    title: "Day 9",
+    activities: [
+      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
+      "See a dolphin show and enjoy a free tour around Lake Batumi.",
+      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+    ],
+  },
+  {
+    title: "Day 10",
+    activities: [
+      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
+      "See a dolphin show and enjoy a free tour around Lake Batumi.",
+      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+    ],
+  },
 ];
 
 export const DAYS_BREAKDOWN = [
@@ -267,27 +299,35 @@ export const DAYS_BREAKDOWN = [
   },
 ];
 
-export const SOCIALS = [
+interface ContactsInterface {
+  title: string;
+  link: string;
+  iconProps: { src: string; alt: string };
+  description: string;
+  number?: string;
+}
+
+export const SOCIALS: ContactsInterface[] = [
   {
     title: "Whatsapp",
     link: "https://t.me/poka_katt",
-    iconProps: { src: "/images/contacts/whatsapp.svg", alt: "Contact on Whatsapp" },
+    iconProps: ICONS.Whatsapp,
     description: "Contact us on Whatsapp",
   },
   {
     title: "TikTok",
     link: "https://www.instagram.com/insightour.ge",
-    iconProps: { src: "/images/contacts/tiktok.svg", alt: "Contact on TikTok" },
+    iconProps: ICONS.TikTok,
     description: "Follow us on TikTok",
   },
 ];
 
-export const CONTACTS = [
+export const PHONES: ContactsInterface[] = [
   {
     title: "Phone1",
     number: "+995591022961",
     link: "tel:+995591022961",
-    iconProps: { src: "/images/contacts/phone-call.svg", alt: "Call phone number 1" },
+    iconProps: ICONS.Phone,
     description: "Contact us by phone",
   },
 ];
@@ -315,7 +355,6 @@ export const PHOTOS_ALL = [
 export const PHOTOS_ABOUT = [
   { src: photoAbout10, alt: "Georgian landscape" },
   { src: photoAbout18, alt: "Georgian landscape" },
-  { src: photoAbout17, alt: "Georgian landscape" },
 ];
 
 export const smoothSpring = {

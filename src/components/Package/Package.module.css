@@ -8,8 +8,8 @@
 
 .wrapper li {
   padding: 1rem;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .wrapper span::before {

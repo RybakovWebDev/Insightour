@@ -125,3 +125,9 @@
     background-color: transparent;
   }
 }
+
+@media (max-width: 300px) {
+  .wrapper {
+    width: 95vw;
+  }
+}

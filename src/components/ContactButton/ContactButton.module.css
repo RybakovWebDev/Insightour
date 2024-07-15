@@ -1,0 +1,35 @@
+.contactBtn,
+.contactBtn div {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: white;
+  z-index: 100;
+}
+
+.contactBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3rem 3rem 8rem 3rem;
+  border: none;
+}
+
+.contactBtn img {
+  color: white;
+}
+
+@media (max-width: 1430px) {
+  .contactBtn,
+  .contactBtn div {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .contactBtn {
+    margin: 0 1rem 7rem 0;
+  }
+}
