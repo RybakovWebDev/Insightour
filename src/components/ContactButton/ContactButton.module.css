@@ -1,20 +1,23 @@
 .contactBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3rem 3rem 8rem 3rem;
   width: 4rem;
   height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   border-radius: 100%;
-  background-color: white;
   z-index: 100;
 }
 
-.contactBtn {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 3rem 3rem 8rem 3rem;
-  border: none;
+.contactBtn div {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  background-color: white;
 }
 
 @media (max-width: 1430px) {

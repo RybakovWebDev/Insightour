@@ -35,7 +35,9 @@ function ContactButton() {
             exit={{ opacity: 0 }}
             transition={smoothSpring}
           >
-            <Image src={ICONS.WhatsappColor.src} alt={ICONS.WhatsappColor.alt} fill objectFit='contain' />
+            <div>
+              <Image src={ICONS.WhatsappColor.src} alt={ICONS.WhatsappColor.alt} fill objectFit='contain' />
+            </div>
           </m.a>
         )}
       </AnimatePresence>
