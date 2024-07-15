@@ -13,11 +13,8 @@
   z-index: 100;
 }
 
-.contactBtn div {
-  height: 100%;
-  width: 100%;
-  border-radius: 100%;
-  background-color: white;
+.contactBtn img {
+  object-fit: contain;
 }
 
 @media (max-width: 1430px) {

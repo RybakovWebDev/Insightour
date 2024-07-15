@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <About />
       <Offers />
-      <PhotoSlideshow />
+      <PhotoSlideshow portrait />
       <DaysBreakdown />
       <CallToActionButton />
       {/* <PhotoSlideshow portrait /> */}

@@ -16,6 +16,7 @@ import photoAbout18 from "../public/images/photos/photo18.webp";
 import photoAbout19 from "../public/images/photos/photo19.webp";
 import photoAbout20 from "../public/images/photos/photo20.webp";
 import photoAbout21 from "../public/images/photos/photo21.webp";
+import photoAbout22 from "../public/images/photos/photo22.webp";
 
 export const logoImage = logo;
 
@@ -85,6 +86,7 @@ export const OFFER_PACKAGES = [
 export const threeDayTourBreakdown = [
   {
     title: "Day 1",
+    description: "Discover the magic of Tbilisi",
     activities: [
       "Visit the unique Immersive tour with actors in the city center",
       "Enjoy nature in the Botanical Garden Park",
@@ -93,6 +95,7 @@ export const threeDayTourBreakdown = [
   },
   {
     title: "Day 2",
+    description: "Hidden Gems in Georgia's Heart",
     activities: [
       "Visit Mtskheta, ancient capital of Georgia",
       "See the confluence of the rivers Mtkvari and Argevi from the mountain Jvari",
@@ -103,6 +106,7 @@ export const threeDayTourBreakdown = [
   },
   {
     title: "Day 3",
+    description: "Coastal Charm: Nature's Best Secrets",
     activities: [
       "Visit the most beautiful and the largest natural reservoir, which lies on the shores of the Black Sea",
       "Watch the waterfall and bridge Queen Tamara in Makhuntseti",
@@ -114,6 +118,7 @@ export const threeDayTourBreakdown = [
 export const sevenDayTourBreakdown = [
   {
     title: "Day 1",
+    description: "Discover the magic of Tbilisi",
     activities: [
       "Visit the unique Immersive tour with actors in the city center",
       "Enjoy nature in the Botanical Garden Park",
@@ -122,6 +127,7 @@ export const sevenDayTourBreakdown = [
   },
   {
     title: "Day 2",
+    description: "Mountain Majesty & Ancient Castle",
     activities: [
       "Visit the historical Ananuri castle, located on Argevi River",
       "See breathtaking view from peaks of the Caucasus Mountains at an altitude of 5500 meters above sea level",
@@ -131,6 +137,7 @@ export const sevenDayTourBreakdown = [
   },
   {
     title: "Day 3",
+    description: "Explore Kutaisi's Marvels: Waterfalls and Valleys",
     activities: [
       "Go to the city of Kutaisi, the second largest city in Georgia",
       "Go to the Okatse valley, which has lots of waterfalls and wonderful nature",
@@ -140,6 +147,7 @@ export const sevenDayTourBreakdown = [
   },
   {
     title: "Day 4",
+    description: "Batumi: Where Lush Gardens Meet Cultural Splendor",
     activities: [
       "Visit the Botanical Garden, which was established 103 years ago and includes many rare trees from all over the world",
       "Have a walking tour around the city",
@@ -149,6 +157,7 @@ export const sevenDayTourBreakdown = [
   },
   {
     title: "Day 5",
+    description: "Experience Batumi's Majestic Attractions",
     activities: [
       "Visit the Makhuntseti Waterfall and Makhuntseti Bridge named after Queen Tamara",
       "See the Dolphin show",
@@ -158,15 +167,17 @@ export const sevenDayTourBreakdown = [
   },
   {
     title: "Day 6",
+    description: "Borjomi's Natural Wonders",
     activities: [
-      "Visit Borjomi, famous for its sulphuric waters and lush towering mountains.",
+      "Visit Borjomi, famous for its sulphuric waters and lush towering mountains",
       "Go to Batumi",
-      "Wander through the national park, one of Europe's largest parks.",
+      "Wander through the national park, one of Europe's largest parks",
       "Take a cable car ride to the mountain peak to admire the panoramic view of the city from above",
     ],
   },
   {
     title: "Day 7",
+    description: "From Mtskheta to Tbilisi: River Views & Retail Therapy",
     activities: [
       "Visit Mtskheta, ancient capital of Georgia",
       "See the confluence of the rivers Mtkvari and Argevi from the mountain Jvari",
@@ -179,6 +190,7 @@ export const sevenDayTourBreakdown = [
 export const tenDayTourBreakdown = [
   {
     title: "Day 1",
+    description: "Immersive City Tour",
     activities: [
       "Visit the unique Immersive tour with actors in the city center",
       "Enjoy nature in the Botanical Garden Park",
@@ -187,6 +199,7 @@ export const tenDayTourBreakdown = [
   },
   {
     title: "Day 2",
+    description: "Ananuri Castle & Mountain Adventure",
     activities: [
       "Visit the historical Ananuri castle, located on Argevi River",
       "See breathtaking view from peaks of the Caucasus Mountains at an altitude of 5500 meters above sea level",
@@ -196,23 +209,26 @@ export const tenDayTourBreakdown = [
   },
   {
     title: "Day 3",
+    description: "Experience Georgian Natural Wonders",
     activities: [
-      "Visit Borjomi, famous for its sulfuric waters and green towering mountains.",
+      "Visit Borjomi, famous for its sulfuric waters and green towering mountains",
       "Explore one of Europe's largest national parks and take a cable car ride to the top of the mountain to enjoy panoramic views",
       "Relax in the sulfur swimming pool",
-      "Continue our journey to Kutaisi and visit the caves of Sataplia and Prometheus, the second-largest caves in Europe.",
-      "Visit the bottom of the cave where there is a lake and take boat rides.",
+      "Continue our journey to Kutaisi and visit the caves of Sataplia and Prometheus, the second-largest caves in Europe",
+      "Visit the bottom of the cave where there is a lake and take boat rides",
     ],
   },
   {
     title: "Day 4",
+    description: "Discover Georgian Waterfall Wonders",
     activities: [
-      "Visit the Okatse Valley, which is about 16 km long and boasts numerous waterfalls surrounded by lush green nature, offering picturesque scenery.",
-      "Proceed to Martvili Canyon to experience a boat ride in the narrow valley.",
+      "Visit the Okatse Valley, which is about 16 km long and boasts numerous waterfalls surrounded by lush green nature, offering picturesque scenery",
+      "Proceed to Martvili Canyon to experience a boat ride in the narrow valley",
     ],
   },
   {
     title: "Day 5",
+    description: "Batumi: Where Lush Gardens Meet Cultural Splendor",
     activities: [
       "Visit the Botanical Garden, which was established 103 years ago and includes many rare trees from all over the world",
       "Have a walking tour around the city",
@@ -221,81 +237,50 @@ export const tenDayTourBreakdown = [
   },
   {
     title: "Day 6",
+    description: "Capture Unforgettable Memories",
     activities: [
-      "Wander through the national park, one of Europe's largest parks.",
+      "Wander through the national park, one of Europe's largest parks",
       "Take a cable car ride to the mountain peak to admire the panoramic view of the city from above",
       "Have a memorable Photoshoot",
     ],
   },
   {
     title: "Day 7",
+    description: "Experience Batumi's Majestic Attractions",
     activities: [
-      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
-      "See a dolphin show and enjoy a free tour around Lake Batumi.",
-      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world",
+      "See a dolphin show and enjoy a free tour around Lake Batumi",
+      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above",
     ],
   },
   {
     title: "Day 8",
+    description: "Uncover the city of LOVE",
     activities: [
-      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
-      "See a dolphin show and enjoy a free tour around Lake Batumi.",
-      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+      "Visit Sighnaghi, famous city",
+      "Сollect Georgia's cultural code by participating in a quest with professional actors",
+      "Visit local wineries to see breathtaking views from the mountain",
+      "Come back to Tbilisi",
+      "Explore the Chardin area with its many restaurants and cafes in European and Arab styles",
     ],
   },
   {
     title: "Day 9",
+    description: "Mtskheta's Historical Treasures",
     activities: [
-      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
-      "See a dolphin show and enjoy a free tour around Lake Batumi.",
-      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+      "Visit Mtskheta, ancient capital of Georgia",
+      "See the confluence of the rivers Mtkvari and Argevi from the mountain Jvari",
+      "Have lunch at a beautiful tavern with products from local farms",
+      "Get back to Tbilisi",
     ],
   },
   {
     title: "Day 10",
+    description: "Explore Tbilisi's Hidden Gems!",
     activities: [
-      "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world.",
-      "See a dolphin show and enjoy a free tour around Lake Batumi.",
-      "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above.",
+      "Visit the European Park (Rike Park) to see the dancing fountain and the famous Bridge of Peace",
+      "Go to the biggest mall in Georgia for shopping",
     ],
-  },
-];
-
-export const DAYS_BREAKDOWN = [
-  {
-    title: "Day 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 4",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 5",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 6",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
-  },
-  {
-    title: "Day 7",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Sed ullamcorper morbi tincidunt ornare. Sit amet nisl suscipit adipiscing. Rhoncus dolor purus non enim praesent. Non quam lacus suspendisse faucibus interdum. Et leo duis ut diam quam nulla porttitor. Morbi tristique senectus et netus et. Turpis cursus in hac habitasse platea. Aliquam id diam maecenas ultricies. Id nibh tortor id aliquet lectus proin nibh nisl condimentum. Diam volutpat commodo sed egestas egestas fringilla phasellus. Neque convallis a cras semper. Sed sed risus pretium quam vulputate.",
   },
 ];
 
@@ -350,6 +335,19 @@ export const PHOTOS_ALL = [
   { src: photoAbout19, alt: "Georgian landscape", isPortrait: true },
   { src: photoAbout20, alt: "Georgian landscape", isPortrait: false },
   { src: photoAbout21, alt: "Georgian landscape", isPortrait: true },
+];
+
+export const PHOTOS_VERT = [
+  { src: photoAbout19, alt: "Georgian landscape" },
+  { src: photoAbout12, alt: "Georgian landscape" },
+  { src: photoAbout17, alt: "Georgian landscape" },
+];
+
+export const PHOTOS_HOR = [
+  { src: photoAbout18, alt: "Georgian landscape" },
+  { src: photoAbout6, alt: "Georgian landscape" },
+  { src: photoAbout9, alt: "Georgian landscape" },
+  { src: photoAbout22, alt: "Georgian landscape" },
 ];
 
 export const PHOTOS_ABOUT = [

@@ -126,8 +126,21 @@ const DaysBreakdown = () => {
                   aria-expanded={openDays[day.title]}
                   aria-controls={`activities-on-${day.title}`}
                 >
+                  <div className={styles.titleWrapper}>
+                    <p className={styles.dayTitle}>{day.title}:</p>
+                    <AnimatePresence mode='wait'>
+                      <m.p
+                        className={styles.dayDescription}
+                        key={day.description + currentDuration}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      >
+                        {day.description}
+                      </m.p>
+                    </AnimatePresence>
+                  </div>
                   <ArrowIcon isOpen={openDays[day.title]} />
-                  {day.title}
                 </button>
                 <AnimatePresence mode='wait'>
                   {openDays[day.title] && (

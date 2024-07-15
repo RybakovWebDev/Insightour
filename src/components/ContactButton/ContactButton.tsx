@@ -6,10 +6,14 @@ import styles from "./ContactButton.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import { ICONS, smoothSpring, SOCIALS } from "@/constants";
+import { useState } from "react";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
+const whatsappIcon = SOCIALS[0];
+
 function ContactButton() {
+  const [logoReady, setlogoReady] = useState(false);
   const { headerRef, contactRef } = useRefsContext();
 
   const headerVisible = !useInView(headerRef);
@@ -17,7 +21,9 @@ function ContactButton() {
 
   const showButton = headerVisible && contactsVisible;
 
-  const whatsappIcon = SOCIALS[0];
+  const handleLoad = () => {
+    setlogoReady(true);
+  };
 
   return (
     <LazyMotion features={loadFeatures}>
@@ -29,15 +35,13 @@ function ContactButton() {
             href={whatsappIcon.link}
             whileTap={{ scale: 0.9 }}
             animate={{
-              opacity: 1,
+              opacity: logoReady ? 1 : 0,
             }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={smoothSpring}
           >
-            <div>
-              <Image src={ICONS.WhatsappColor.src} alt={ICONS.WhatsappColor.alt} fill objectFit='contain' />
-            </div>
+            <Image src={ICONS.WhatsappColor.src} alt={ICONS.WhatsappColor.alt} fill onLoad={handleLoad} />
           </m.a>
         )}
       </AnimatePresence>

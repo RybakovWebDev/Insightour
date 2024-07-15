@@ -1,7 +1,7 @@
 .outerWrapper {
   padding: 0 0.5rem;
   margin: 1rem 0 0 0;
-  height: 27rem;
+  height: 19rem;
   width: 100vw;
   max-width: 1080px;
   display: flex;
@@ -40,6 +40,7 @@
 .image {
   flex-shrink: 0;
   height: auto;
+  height: 300px;
   width: auto;
   object-fit: contain;
 }

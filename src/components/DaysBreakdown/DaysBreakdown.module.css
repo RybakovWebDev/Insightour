@@ -63,15 +63,22 @@
 }
 
 .dayItem button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 15px;
   font-weight: 600;
   color: #6d309d;
+  overflow: hidden;
+}
+
+.dayItem button svg {
+  margin: 0 1rem 0 0;
 }
 
 .dayItem li {
   padding: 0 0 0.5rem 0;
   width: 80%;
-  font-size: 16px;
   color: #6d309d;
 }
 
@@ -87,9 +94,25 @@
   display: inline-block;
 }
 
+.titleWrapper {
+  padding: 0 0 0 1rem;
+  width: 75%;
+}
+
+.dayTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 16px;
+}
+
+.dayDescription {
+  height: 2rem;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .summary {
-  padding: 2rem 0 2rem 0;
-  height: 2.5rem;
+  padding: 1.5rem 0 1.5rem 0;
+  /* height: 2.5rem; */
   width: 100%;
   display: flex;
   align-items: center;

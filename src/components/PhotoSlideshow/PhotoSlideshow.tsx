@@ -4,7 +4,7 @@ import Image from "next/image";
 import { LazyMotion, AnimatePresence, m } from "framer-motion";
 
 import styles from "./PhotoSlideshow.module.css";
-import { PHOTOS_ALL } from "@/constants";
+import { PHOTOS_ALL, PHOTOS_HOR, PHOTOS_VERT } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -27,7 +27,8 @@ const slideVariants = {
 function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
   const [currentImage, setCurrentImage] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const filteredPhotos = PHOTOS_ALL.filter((photo) => photo.isPortrait === portrait);
+
+  const filteredPhotos = portrait ? PHOTOS_VERT : PHOTOS_HOR;
 
   useEffect(() => {
     const timer = setInterval(() => {

@@ -4,14 +4,14 @@ import { LazyMotion, m } from "framer-motion";
 
 import styles from "./PhotoSlider.module.css";
 
-import { PHOTOS_ALL } from "@/constants";
+import { PHOTOS_ALL, PHOTOS_HOR } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 function PhotoSlider() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const filteredPhotos = PHOTOS_ALL.filter((photo) => photo.isPortrait === true);
+  const filteredPhotos = PHOTOS_HOR;
 
   const handleLoad = () => {
     setImageLoaded(true);
@@ -28,10 +28,8 @@ function PhotoSlider() {
                   className={styles.image}
                   src={photo.src}
                   alt={photo.alt}
-                  width={350}
-                  height={450}
                   priority={index === 0}
-                  sizes='350px'
+                  sizes='650px'
                   onLoad={handleLoad}
                 />
               </div>

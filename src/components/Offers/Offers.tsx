@@ -149,7 +149,7 @@ function Offers() {
                           <Check size={12} /> Pick-up and drop-off to and from the airport
                         </li>
                         <li>
-                          <Check size={12} /> Hotel reservations for six nights in the cities of Tbilisi and Batumi
+                          <Check size={12} /> Hotel reservations
                         </li>
                         <li>
                           <Check size={12} /> Buffet breakfast
