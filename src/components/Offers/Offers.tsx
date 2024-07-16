@@ -12,7 +12,7 @@ import ArrowIcon from "../DetailsArrow/DetailsArrow";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
-import { OFFER_PACKAGES, Offers_Text } from "@/constants";
+import { OFFER_PACKAGES, Offers_Text } from "@/constantsText";
 import CallToActionButton from "../CallToActionButton";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
@@ -68,7 +68,7 @@ function Offers() {
   const id = useId();
   const packagesRef = useRef(null);
 
-  const packagesInView = useInView(packagesRef, { once: true, amount: 0.6 });
+  const packagesInView = useInView(packagesRef, { once: true, amount: 0.5 });
 
   const selectedPackage = OFFER_PACKAGES.find((p) => p.slug === currentPackage);
 

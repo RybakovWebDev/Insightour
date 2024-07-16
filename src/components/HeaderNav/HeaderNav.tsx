@@ -9,14 +9,15 @@ import styles from "./HeaderNav.module.css";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
-import { NAVLINKS } from "@/constants";
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
+import { NAVLINKS } from "@/constantsText";
 import { scrollToRef } from "@/helpers";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 function HeaderNav() {
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
+  const isMobileView = useScreenWidthDetect(450);
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage } = useLanguageContext();
   const { aboutRef, ratesRef, offersRef, contactRef } = useRefsContext();
@@ -26,15 +27,6 @@ function HeaderNav() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobileView(window.innerWidth <= 450);
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -104,13 +96,19 @@ function HeaderNav() {
               exit={isMobileView ? { opacity: 0 } : {}}
               transition={{ duration: 0.2 }}
             >
-              <ul className={styles.list}>
+              <m.ul
+                className={styles.list}
+                key={"heroh1" + selectedLanguage}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.3 } }}
+                exit={{ opacity: 0, transition: { duration: 0 } }}
+              >
                 {NAVLINKS.map((l) => (
                   <Link key={l.slug} href={l.href} onClick={(e) => handleLinkClick(e, l.slug)}>
                     <li>{l.titles[selectedLanguage]}</li>
                   </Link>
                 ))}
-              </ul>
+              </m.ul>
             </m.nav>
           )}
         </AnimatePresence>

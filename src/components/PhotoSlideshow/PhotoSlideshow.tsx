@@ -4,7 +4,10 @@ import Image from "next/image";
 import { LazyMotion, AnimatePresence, m } from "framer-motion";
 
 import styles from "./PhotoSlideshow.module.css";
-import { PHOTOS_ALL, PHOTOS_HOR, PHOTOS_VERT } from "@/constants";
+
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
+import { PHOTOS_HOR, PHOTOS_VERT } from "@/constants";
+import { shuffleArray } from "@/helpers";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -25,21 +28,23 @@ const slideVariants = {
 };
 
 function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
+  const isMobileView = useScreenWidthDetect(1080);
   const [currentImage, setCurrentImage] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [photos, setPhotos] = useState(portrait ? PHOTOS_VERT : PHOTOS_HOR);
 
-  const filteredPhotos = portrait ? PHOTOS_VERT : PHOTOS_HOR;
+  useEffect(() => {
+    // Shuffle the array only on the client-side after the initial render
+    setPhotos(shuffleArray([...photos]));
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prevIndex) => {
-        const nextIndex = (prevIndex + 1) % filteredPhotos.length;
-        return nextIndex;
-      });
+      setCurrentImage((prevIndex) => (prevIndex + 1) % photos.length);
     }, 2000);
 
     return () => clearInterval(timer);
-  }, [filteredPhotos.length]);
+  }, [photos.length]);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -66,10 +71,11 @@ function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
             }}
           >
             <Image
-              src={filteredPhotos[currentImage].src}
-              alt={filteredPhotos[currentImage].alt}
-              width={350}
-              sizes={"350px"}
+              src={photos[currentImage].src}
+              alt={photos[currentImage].alt}
+              width={isMobileView ? 350 : 550}
+              // height={1000}
+              sizes={isMobileView ? "350px" : "550px"}
               priority
               onLoad={handleImageLoad}
             />

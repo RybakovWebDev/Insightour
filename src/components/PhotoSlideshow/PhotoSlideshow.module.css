@@ -15,8 +15,8 @@
 }
 
 .wrapperPortrait {
-  height: 30rem;
-  width: 22rem;
+  height: 50rem;
+  width: 32rem;
 }
 
 .imageWrapper {
@@ -30,10 +30,12 @@
   }
   .wrapper {
     height: 12rem;
+    width: 22rem;
   }
 
   .wrapperPortrait {
     height: 27rem;
+    width: 22rem;
   }
 
   .imageWrapper {

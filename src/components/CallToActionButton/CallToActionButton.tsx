@@ -5,7 +5,7 @@ import { X } from "react-feather";
 
 import styles from "./CallToActionButton.module.css";
 import { useLanguageContext } from "@/contexts/LanguageContext";
-import { CallToActionButton_Text } from "@/constants";
+import { CallToActionButton_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 

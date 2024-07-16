@@ -8,7 +8,8 @@ import ExternalLinkIcon from "../ExternalLinkIcon";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
-import { Footer_Text, ICONS, PHONES, SOCIALS } from "@/constants";
+import { ICONS, PHONES, SOCIALS } from "@/constants";
+import { Footer_Text } from "@/constantsText";
 
 function Footer() {
   const { selectedLanguage } = useLanguageContext();

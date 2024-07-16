@@ -15,7 +15,7 @@ import {
   tenDayTourBreakdown,
   threeDayTourBreakdown,
   TOUR_DURATIONS,
-} from "@/constants";
+} from "@/constantsText";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 

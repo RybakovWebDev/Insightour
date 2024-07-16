@@ -135,6 +135,7 @@ html[data-language-selected="ar"] .dayTitle {
 }
 
 html[data-language-selected="ar"] .dayDescription {
+  height: 3rem;
   font-size: clamp(20px, 6vw, 25px);
 }
 

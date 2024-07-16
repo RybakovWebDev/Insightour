@@ -7,10 +7,10 @@ import { LazyMotion, m } from "framer-motion";
 import styles from "./Header.module.css";
 
 import HeaderNav from "../HeaderNav";
+import LanguageSelector from "../LanguageSelector";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import { logoImage } from "@/constants";
-import LanguageSelector from "../LanguageSelector";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 

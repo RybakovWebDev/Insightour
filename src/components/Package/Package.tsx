@@ -4,7 +4,7 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import styles from "./Package.module.css";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
-import { OFFER_PACKAGES } from "@/constants";
+import { OFFER_PACKAGES } from "@/constantsText";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 

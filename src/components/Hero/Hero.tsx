@@ -1,12 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { LazyMotion, m } from "framer-motion";
+import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
 import styles from "./Hero.module.css";
 
 import CallToActionButton from "../CallToActionButton";
 import { useLanguageContext } from "@/contexts/LanguageContext";
-import { Hero_Text } from "@/constants";
+import { Hero_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -41,12 +41,19 @@ function Hero() {
   return (
     <LazyMotion features={loadFeatures}>
       <section className={styles.wrapper}>
-        <h1>
-          <span className={styles.lineOne}>{Hero_Text.line1[selectedLanguage]}</span>
-          <br />
-          <span className={styles.ampersand}>&</span>
-          <br /> {Hero_Text.line2[selectedLanguage]}
-        </h1>
+        <AnimatePresence mode='wait'>
+          <m.h1
+            key={"heroh1" + selectedLanguage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.3 } }}
+            exit={{ opacity: 0, transition: { duration: 0 } }}
+          >
+            <span className={styles.lineOne}>{Hero_Text.line1[selectedLanguage]}</span>
+            <br />
+            <span className={styles.ampersand}>&</span>
+            <br /> {Hero_Text.line2[selectedLanguage]}
+          </m.h1>
+        </AnimatePresence>
         <div className={styles.videoWrapper}>
           <m.video
             ref={videoRef}

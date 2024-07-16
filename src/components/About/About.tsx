@@ -1,16 +1,15 @@
 "use client";
+import { useRef } from "react";
 import { LazyMotion, m, useInView } from "framer-motion";
 
 import styles from "./About.module.css";
 
 import SectionName from "../SectionName";
-
-import { useRefsContext } from "@/contexts/RefsContext";
-
-import { useRef } from "react";
 import PhotoSlider from "../PhotoSlider";
+
 import { useLanguageContext } from "@/contexts/LanguageContext";
-import { About_Text } from "@/constants";
+import { useRefsContext } from "@/contexts/RefsContext";
+import { About_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 

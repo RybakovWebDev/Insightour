@@ -21,7 +21,7 @@ function PhotoSlider() {
       transition: { duration: 1.5, ease: "easeInOut", delay: 1 },
     });
 
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     await controls.start({
       x: 0,
