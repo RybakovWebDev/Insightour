@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
 
@@ -6,7 +7,6 @@ import styles from "./ContactButton.module.css";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import { ICONS, smoothSpring, SOCIALS } from "@/constants";
-import { useState } from "react";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -35,10 +35,11 @@ function ContactButton() {
             href={whatsappIcon.link}
             whileTap={{ scale: 0.9 }}
             animate={{
-              opacity: logoReady ? 1 : 0,
+              opacity: logoReady ? 0.8 : 0,
             }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
             transition={smoothSpring}
           >
             <Image src={ICONS.WhatsappColor.src} alt={ICONS.WhatsappColor.alt} fill onLoad={handleLoad} />

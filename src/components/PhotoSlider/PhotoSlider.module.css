@@ -10,8 +10,6 @@
 }
 
 .innerWrapper {
-  /* width: 100%; */
-  /* height: 100%; */
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* Firefox */
@@ -23,13 +21,11 @@
 }
 
 .imageWrapper {
-  /* height: 100%; */
   display: flex;
   gap: 0.5rem;
 }
 
 .imageContainer {
-  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;

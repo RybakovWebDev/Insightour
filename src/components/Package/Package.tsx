@@ -3,6 +3,7 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
 import styles from "./Package.module.css";
 
+import { useLanguageContext } from "@/contexts/LanguageContext";
 import { OFFER_PACKAGES } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
@@ -26,6 +27,8 @@ interface PackageProps {
 }
 
 function Package({ slug }: PackageProps) {
+  const { selectedLanguage } = useLanguageContext();
+
   const selectedPackage = OFFER_PACKAGES.find((p) => p.slug === slug);
 
   return (
@@ -36,7 +39,7 @@ function Package({ slug }: PackageProps) {
             {selectedPackage?.benefits.map((l, i) => (
               <m.li variants={item} key={i}>
                 <span />
-                {l}
+                {l[selectedLanguage]}
               </m.li>
             ))}
           </AnimatePresence>

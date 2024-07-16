@@ -5,8 +5,17 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import styles from "./DaysBreakdown.module.css";
 
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
+import SectionName from "../SectionName";
 
-import { sevenDayTourBreakdown, tenDayTourBreakdown, threeDayTourBreakdown, TOUR_DURATIONS } from "@/constants";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { useRefsContext } from "@/contexts/RefsContext";
+import {
+  DaysBreakdown_Text,
+  sevenDayTourBreakdown,
+  tenDayTourBreakdown,
+  threeDayTourBreakdown,
+  TOUR_DURATIONS,
+} from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -70,6 +79,8 @@ const liVariants = {
 const DaysBreakdown = () => {
   const [currentDuration, setCurrentDuration] = useState("7days");
   const [openDays, setOpenDays] = useState<{ [key: string]: boolean }>({});
+  const { selectedLanguage } = useLanguageContext();
+  const { offersRef } = useRefsContext();
 
   const handleDurationClick = (slug: string) => {
     setCurrentDuration(slug);
@@ -95,8 +106,8 @@ const DaysBreakdown = () => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <section className={styles.wrapper}>
-        <h2 className={styles.title}>Daily breakdown</h2>
+      <section ref={offersRef} className={styles.wrapper}>
+        <SectionName>{DaysBreakdown_Text.sectionName[selectedLanguage]}</SectionName>
         <div className={styles.durationSelector}>
           {TOUR_DURATIONS.map((duration) => (
             <button
@@ -104,7 +115,7 @@ const DaysBreakdown = () => {
               onClick={() => handleDurationClick(duration.slug)}
               className={`${styles.durationButton} ${currentDuration === duration.slug ? styles.active : ""}`}
             >
-              {duration.title}
+              {duration.title[selectedLanguage]}
             </button>
           ))}
         </div>
@@ -113,7 +124,7 @@ const DaysBreakdown = () => {
           <AnimatePresence>
             {getCurrentTourBreakdown().map((day, i) => (
               <m.div
-                key={day.title}
+                key={day.title.en}
                 className={styles.dayItem}
                 initial='hidden'
                 animate='show'
@@ -121,13 +132,13 @@ const DaysBreakdown = () => {
                 variants={daysItemVariants}
               >
                 <button
-                  onClick={() => toggleDay(day.title)}
+                  onClick={() => toggleDay(day.title.en)}
                   className={styles.summary}
-                  aria-expanded={openDays[day.title]}
-                  aria-controls={`activities-on-${day.title}`}
+                  aria-expanded={openDays[day.title.en]}
+                  aria-controls={`activities-on-${day.title.en}`}
                 >
                   <div className={styles.titleWrapper}>
-                    <p className={styles.dayTitle}>{day.title}:</p>
+                    <p className={styles.dayTitle}>{day.title[selectedLanguage]}:</p>
                     <AnimatePresence mode='wait'>
                       <m.p
                         className={styles.dayDescription}
@@ -136,18 +147,18 @@ const DaysBreakdown = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                       >
-                        {day.description}
+                        {day.description[selectedLanguage]}
                       </m.p>
                     </AnimatePresence>
                   </div>
-                  <ArrowIcon isOpen={openDays[day.title]} />
+                  <ArrowIcon isOpen={openDays[day.title.en]} />
                 </button>
                 <AnimatePresence mode='wait'>
-                  {openDays[day.title] && (
-                    <m.ul key={day.title + i} initial='hidden' animate='show' exit='exit' variants={ulVariants}>
+                  {openDays[day.title.en] && (
+                    <m.ul key={day.title.en + i} initial='hidden' animate='show' exit='exit' variants={ulVariants}>
                       {day.activities.map((activity, index) => (
                         <m.li key={index} variants={liVariants}>
-                          {activity}
+                          {activity[selectedLanguage]}
                         </m.li>
                       ))}
                     </m.ul>

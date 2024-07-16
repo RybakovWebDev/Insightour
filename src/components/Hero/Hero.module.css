@@ -25,7 +25,8 @@
   border-radius: 50%;
 }
 
-.wrapper h1 {
+.wrapper h1,
+.ampersand {
   margin: 0 0 2rem 0;
   color: #35293b;
   font-size: clamp(30px, 8vw, 64px);
@@ -34,7 +35,12 @@
   text-transform: uppercase;
 }
 
-.wrapper h1 span {
+html[data-language-selected="ar"] .wrapper h1 {
+  line-height: 1;
+  font-size: clamp(43px, 14vw, 100px);
+}
+
+.lineOne {
   color: #6d309d;
 }
 

@@ -1,20 +1,18 @@
 "use client";
 import { useId, useRef, useState } from "react";
 import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
+import { Check, X } from "react-feather";
 
 import styles from "./Offers.module.css";
 
 import SectionName from "../SectionName";
 import Package from "../Package";
-
-import { useRefsContext } from "@/contexts/RefsContext";
-
-import { AnimateChangeInHeight } from "@/helpers";
-
-import { OFFER_PACKAGES } from "@/constants";
-import CallToActionButton from "../CallToActionButton";
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
-import { Check, X } from "react-feather";
+
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { useRefsContext } from "@/contexts/RefsContext";
+import { AnimateChangeInHeight } from "@/helpers";
+import { OFFER_PACKAGES, Offers_Text } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -63,8 +61,8 @@ const contentVariants = {
 function Offers() {
   const [currentPackage, setCurrentPackage] = useState("economy");
   const [openDetails, setOpenDetails] = useState({ services: false, notIncluded: false });
-
-  const { offersRef } = useRefsContext();
+  const { selectedLanguage } = useLanguageContext();
+  const { ratesRef } = useRefsContext();
 
   const id = useId();
   const packagesRef = useRef(null);
@@ -83,14 +81,14 @@ function Offers() {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <section ref={offersRef} className={styles.wrapper}>
-        <SectionName>our tours</SectionName>
+      <section ref={ratesRef} className={styles.wrapper}>
+        <SectionName>{Offers_Text.sectionName[selectedLanguage]}</SectionName>
         <div ref={packagesRef} className={styles.packagesWrapper}>
           <div className={styles.packageSelector}>
             {OFFER_PACKAGES.map((p) => {
               return (
                 <button key={p.slug} onClick={() => handleClick(p.slug)}>
-                  <h3>{p.title}</h3>
+                  <h3>{p.title[selectedLanguage]}</h3>
                   <AnimatePresence>
                     {currentPackage === p.slug ? (
                       <m.div
@@ -137,7 +135,7 @@ function Offers() {
                 aria-expanded={openDetails.services}
                 aria-controls='included-services-content'
               >
-                Services included
+                {Offers_Text.servicesIncluded[selectedLanguage]}
                 {packagesInView && <ArrowIcon isOpen={openDetails.services} />}
               </button>
               <AnimatePresence initial={false}>
@@ -145,22 +143,13 @@ function Offers() {
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
                       <ul>
-                        <li>
-                          <Check size={12} /> Pick-up and drop-off to and from the airport
-                        </li>
-                        <li>
-                          <Check size={12} /> Hotel reservations
-                        </li>
-                        <li>
-                          <Check size={12} /> Buffet breakfast
-                        </li>
-                        <li>
-                          <Check size={12} /> All transfers by private car for a tour to enjoy privacy with family or
-                          friends
-                        </li>
-                        <li>
-                          <Check size={12} /> Tour guide fluent in Arabic and English
-                        </li>
+                        {Offers_Text.includedArray.map((s) => {
+                          return (
+                            <li key={s.en}>
+                              <Check size={12} /> {s[selectedLanguage]}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </m.div>
                   </m.div>
@@ -175,7 +164,7 @@ function Offers() {
                 aria-expanded={openDetails.notIncluded}
                 aria-controls='not-included-services-content'
               >
-                Services not included
+                {Offers_Text.servicesNotIncluded[selectedLanguage]}
                 {packagesInView && <ArrowIcon isOpen={openDetails.notIncluded} />}
               </button>
               <AnimatePresence initial={false}>
@@ -183,15 +172,13 @@ function Offers() {
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
                       <ul>
-                        <li>
-                          <X size={12} /> Airline tickets
-                        </li>
-                        <li>
-                          <X size={12} /> Lunch and dinner
-                        </li>
-                        <li>
-                          <X size={12} /> Entry tickets to tourist places
-                        </li>
+                        {Offers_Text.notIncludedArray.map((s) => {
+                          return (
+                            <li key={s.en}>
+                              <X size={12} /> {s[selectedLanguage]}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </m.div>
                   </m.div>
@@ -202,7 +189,7 @@ function Offers() {
 
           <div className={styles.price}>
             <m.h3 initial={{ opacity: 0 }} animate={{ opacity: packagesInView ? 1 : 0 }}>
-              From&nbsp;
+              {Offers_Text.startingAt[selectedLanguage]}&nbsp;
             </m.h3>
             <AnimatePresence mode='wait'>
               <m.span

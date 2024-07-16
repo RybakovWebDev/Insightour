@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { LazyMotion, m, useInView } from "framer-motion";
 
 import styles from "./About.module.css";
@@ -8,10 +7,11 @@ import SectionName from "../SectionName";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 
-import { PHOTOS_ABOUT } from "@/constants";
 import CallToActionButton from "../CallToActionButton";
 import { useRef } from "react";
 import PhotoSlider from "../PhotoSlider";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { About_Text } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -53,6 +53,7 @@ function TextBlock({ rotation, children, left, right, top, bottom }: TextBlockPr
 }
 
 function About() {
+  const { selectedLanguage } = useLanguageContext();
   const { aboutRef } = useRefsContext();
 
   const h3WrapperRef = useRef(null);
@@ -64,10 +65,13 @@ function About() {
   return (
     <LazyMotion features={loadFeatures}>
       <section ref={aboutRef} className={styles.wrapper}>
-        <SectionName>about us</SectionName>
+        <SectionName>{About_Text.sectionName[selectedLanguage]}</SectionName>
         <h2>
-          WE OFFER A BRAND NEW FORMAT OF EXPLORING GEORGIA -
-          <span> THROUGH STORIES, URBAN&nbsp;LEGENDS AND&nbsp;THEIR&nbsp;HEROES.</span>
+          {About_Text.intro1[selectedLanguage]} -
+          <span>
+            {About_Text.intro2[selectedLanguage]}&nbsp;{About_Text.intro3[selectedLanguage]}&nbsp;
+            {About_Text.intro4[selectedLanguage]}&nbsp;{About_Text.intro5[selectedLanguage]}.
+          </span>
         </h2>
         <div ref={textBlocksRef} className={styles.textBlocksWrapper}>
           <svg className={styles.snakePath} viewBox='0 0 100 400' xmlns='http://www.w3.org/2000/svg'>
@@ -118,12 +122,12 @@ function About() {
               }}
             />
           </svg>
-          <TextBlock rotation={3}>Safety and comfort</TextBlock>
-          <TextBlock rotation={-3}>Nature and architecture</TextBlock>
+          <TextBlock rotation={3}>{About_Text.textBlock1[selectedLanguage]}</TextBlock>
+          <TextBlock rotation={-3}>{About_Text.textBlock2[selectedLanguage]}</TextBlock>
           <TextBlock rotation={3}>
-            Bright gastronomic <br /> experience
+            {About_Text.textBlock3[selectedLanguage]} <br /> {About_Text.textBlock3_5[selectedLanguage]}
           </TextBlock>
-          <TextBlock rotation={-3}>Local color and traditions</TextBlock>
+          <TextBlock rotation={-3}>{About_Text.textBlock4[selectedLanguage]}</TextBlock>
         </div>
         <m.div
           ref={h3WrapperRef}
@@ -132,14 +136,14 @@ function About() {
           animate={h3WrapperInView ? "show" : "hidden"}
           className={styles.h3Wrapper}
         >
-          <m.h3 variants={item}>DISCOVER</m.h3>
+          <m.h3 variants={item}>{About_Text.discover1[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={item}>GEORGIA</m.h3>
+          <m.h3 variants={item}>{About_Text.discover2[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={item}>THROUGH</m.h3>
+          <m.h3 variants={item}>{About_Text.discover3[selectedLanguage]}</m.h3>
           <br />
           <m.h3 variants={item} className={styles.accent}>
-            EMOTIONS
+            {About_Text.discover4[selectedLanguage]}
           </m.h3>
         </m.div>
         {/* <div className={styles.photosWrapper}>

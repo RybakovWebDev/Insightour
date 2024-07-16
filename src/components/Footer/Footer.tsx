@@ -6,15 +6,18 @@ import styles from "./Footer.module.css";
 
 import ExternalLinkIcon from "../ExternalLinkIcon";
 
+import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
-import { ICONS, PHONES, SOCIALS } from "@/constants";
+import { Footer_Text, ICONS, PHONES, SOCIALS } from "@/constants";
 
 function Footer() {
+  const { selectedLanguage } = useLanguageContext();
   const { contactRef } = useRefsContext();
+
   return (
     <footer ref={contactRef} className={styles.footer}>
       <div className={styles.btcWrapper}>
-        <p>We accept crypto!</p>
+        <p>{Footer_Text.acceptCrypto[selectedLanguage]}!</p>
         <Image src={ICONS.Bitcoin.src} alt={ICONS.Bitcoin.alt} height={32} width={32} />
       </div>
       <div className={styles.contactsWrapper}>
@@ -39,7 +42,7 @@ function Footer() {
         })}
       </div>
       <Link href={`/legal`} aria-label={`Legal information`} className={styles.legal}>
-        Legal
+        {Footer_Text.legal[selectedLanguage]}
       </Link>
     </footer>
   );

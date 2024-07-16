@@ -10,6 +10,7 @@ import HeaderNav from "../HeaderNav";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 import { logoImage } from "@/constants";
+import LanguageSelector from "../LanguageSelector";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -26,11 +27,11 @@ function Header() {
       <m.header
         ref={headerRef}
         className={styles.wrapper}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: logoLoaded ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: logoLoaded ? 1 : 0 }}
+        // transition={{ duration: 0.5 }}
       >
-        <Link href={"/"}>
+        <Link href={"/"} className={styles.logoLink}>
           <div className={styles.logoWrapper}>
             <Image
               className={styles.logo}
@@ -43,7 +44,10 @@ function Header() {
             />
           </div>
         </Link>
-        <HeaderNav />
+        <div className={styles.menuWrapper}>
+          <LanguageSelector />
+          <HeaderNav />
+        </div>
       </m.header>
     </LazyMotion>
   );

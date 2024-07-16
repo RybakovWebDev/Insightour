@@ -15,6 +15,10 @@
   z-index: 1;
 }
 
+html[data-language-selected="ar"] .wrapper h2 {
+  font-size: clamp(28px, 5vw, 45px);
+}
+
 .wrapper h2 span,
 .textBlock,
 .accent {
@@ -40,8 +44,12 @@
   background: #f8f0ff;
   border: 1px solid rgb(109, 48, 157, 0.1);
   border-radius: 20px;
-  font-size: clamp(22px, 6vw, 40px);
+  font-size: clamp(16px, 5vw, 35px);
   z-index: 10;
+}
+
+html[data-language-selected="ar"] .textBlock {
+  font-size: clamp(28px, 5vw, 50px);
 }
 
 .textBlock:nth-child(even) {
@@ -62,9 +70,13 @@
 
 .h3Wrapper h3 {
   margin: 1rem 0 0 0;
-  font-size: clamp(23px, 15vw, 80px);
+  font-size: clamp(23px, 12vw, 80px);
   text-transform: uppercase;
   font-weight: 500;
+}
+
+html[data-language-selected="ar"] .h3Wrapper h3 {
+  font-size: clamp(65px, 15vw, 100px);
 }
 
 .h3Wrapper h3:nth-last-child(3),

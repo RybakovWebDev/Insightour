@@ -9,6 +9,10 @@
   border-top: 1px solid rgb(176, 142, 206, 0.3);
 }
 
+html[data-language-selected="ar"] .footer p {
+  font-size: clamp(20px, 6vw, 28px);
+}
+
 .btcWrapper {
   margin: 0 0 0.5rem 0;
   display: flex;

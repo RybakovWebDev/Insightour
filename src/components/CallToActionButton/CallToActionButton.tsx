@@ -4,6 +4,8 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { X } from "react-feather";
 
 import styles from "./CallToActionButton.module.css";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { CallToActionButton_Text } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -11,19 +13,16 @@ function CallToActionButton() {
   const [modalOpen, setModalOpen] = useState(false);
   const [nameText, setNameText] = useState("");
   const [phoneText, setPhoneText] = useState("");
-  const [messengerText, setMessengerText] = useState("");
-  const [emailText, setEmailText] = useState("");
   const [commentText, setCommentText] = useState("");
   const [errorText, setErrorText] = useState("");
   const [messageSent, setMessageSent] = useState(false);
+  const { selectedLanguage } = useLanguageContext();
 
   const nameInputRef = useRef<HTMLInputElement>(null);
 
   const clearForm = () => {
     setNameText("");
     setPhoneText("");
-    setMessengerText("");
-    setEmailText("");
     setCommentText("");
     setErrorText("");
   };
@@ -57,8 +56,7 @@ function CallToActionButton() {
     const formData = {
       name: nameText,
       phone: phoneText,
-      messenger: messengerText,
-      email: emailText,
+
       comment: commentText,
     };
     setMessageSent(true);
@@ -88,7 +86,7 @@ function CallToActionButton() {
   return (
     <section>
       <button className={styles.button} onClick={handleOpenModal}>
-        Book Tour
+        {CallToActionButton_Text.button[selectedLanguage]}
       </button>
       <LazyMotion features={loadFeatures}>
         <AnimatePresence>
@@ -111,13 +109,13 @@ function CallToActionButton() {
               >
                 <div className={styles.topInputWrapper}>
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='name'>Name:</label>
+                    <label htmlFor='name'>{CallToActionButton_Text.name[selectedLanguage]}:</label>
                     <input
                       ref={nameInputRef}
                       type='text'
                       name='name'
                       required
-                      placeholder='Name'
+                      placeholder={CallToActionButton_Text.namePlaceholder[selectedLanguage]}
                       value={nameText}
                       maxLength={50}
                       onChange={(e) => setNameText(e.target.value)}
@@ -135,84 +133,71 @@ function CallToActionButton() {
                   </div>
 
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='phone'>Whatsapp number:</label>
+                    <label htmlFor='phone'>{CallToActionButton_Text.Whatsapp[selectedLanguage]}:</label>
                     <input
                       type='text'
                       name='phone'
                       required
-                      placeholder='Phone number'
+                      placeholder={CallToActionButton_Text.WhatsappPlaceholder[selectedLanguage]}
                       value={phoneText}
                       maxLength={50}
                       onChange={(e) => setPhoneText(e.target.value)}
                     />
                   </div>
 
-                  <div className={styles.inputWrapper}>
-                    <label htmlFor='email'>Contact email:</label>
-                    <input
-                      type='email'
-                      name='email'
-                      required
-                      placeholder='Email'
-                      value={emailText}
-                      maxLength={50}
-                      onChange={(e) => setEmailText(e.target.value)}
-                    />
-                  </div>
-                </div>
+                  <label htmlFor='comment'>{CallToActionButton_Text.comment[selectedLanguage]}:</label>
+                  <textarea
+                    name='comment'
+                    cols={60}
+                    rows={4}
+                    spellCheck
+                    placeholder={CallToActionButton_Text.commentPlaceholder[selectedLanguage]}
+                    value={commentText}
+                    onChange={(e) => setCommentText(e.target.value)}
+                  />
 
-                <label htmlFor='comment'>Comment:</label>
-                <textarea
-                  name='comment'
-                  cols={60}
-                  rows={4}
-                  spellCheck
-                  placeholder='Comment text'
-                  value={commentText}
-                  onChange={(e) => setCommentText(e.target.value)}
-                />
-
-                <div className={styles.sendWrapper}>
-                  <div>
-                    <AnimatePresence>
-                      {errorText ? (
-                        <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                          {errorText}
-                        </m.p>
-                      ) : null}
-                    </AnimatePresence>
-                  </div>
-
-                  <>
-                    {messageSent ? (
-                      <AnimatePresence mode='wait'>
-                        <m.p
-                          key='sentMessage'
-                          className={styles.sentMessage}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        >
-                          Message sent! We will contact you soon 😊
-                        </m.p>
+                  <div className={styles.sendWrapper}>
+                    <div>
+                      <AnimatePresence>
+                        {errorText ? (
+                          <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                            {errorText}
+                          </m.p>
+                        ) : null}
                       </AnimatePresence>
-                    ) : (
-                      <AnimatePresence mode='wait'>
-                        <m.button
-                          key='submitButton'
-                          type='submit'
-                          initial={{ background: "rgb(0, 0, 0, 0)", opacity: 0 }}
-                          whileHover={{ background: "rgb(0, 0, 0, 0.1)" }}
-                          whileTap={{ background: "rgb(0, 0, 0, 0.3)" }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ type: "spring", damping: 80, stiffness: 700 }}
-                        >
-                          <p>Send</p>
-                        </m.button>
-                      </AnimatePresence>
-                    )}
-                  </>
+                    </div>
+
+                    <>
+                      {messageSent ? (
+                        <AnimatePresence mode='wait'>
+                          <m.p
+                            key='sentMessage'
+                            className={styles.sentMessage}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                          >
+                            {CallToActionButton_Text.success[selectedLanguage]} 😊
+                          </m.p>
+                        </AnimatePresence>
+                      ) : (
+                        <AnimatePresence mode='wait'>
+                          <m.button
+                            key='submitButton'
+                            type='submit'
+                            initial={{ background: "rgb(0, 0, 0, 0)", opacity: 0 }}
+                            whileHover={{ background: "rgb(0, 0, 0, 0.1)" }}
+                            whileTap={{ background: "rgb(0, 0, 0, 0.3)" }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ type: "spring", damping: 80, stiffness: 700 }}
+                          >
+                            <p>{CallToActionButton_Text.send[selectedLanguage]}</p>
+                          </m.button>
+                        </AnimatePresence>
+                      )}
+                    </>
+                  </div>
                 </div>
               </m.form>
             </m.div>

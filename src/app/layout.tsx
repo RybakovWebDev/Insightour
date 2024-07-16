@@ -1,10 +1,12 @@
+import { cookies } from "next/headers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
 
 import { RefsProvider } from "@/contexts/RefsContext";
-import { DayProvider } from "@/contexts/DayContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { LanguageCode } from "@/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +21,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const savedLanguage = cookies().get("language-selected");
+  const language = (savedLanguage?.value || "en") as LanguageCode;
+
   return (
-    <html lang='en'>
+    <html lang='en' data-language-selected={language}>
       <body className={inter.className}>
         <RefsProvider>
-          <DayProvider>{children}</DayProvider>
+          <LanguageProvider initialLanguage={language}>{children}</LanguageProvider>
         </RefsProvider>
       </body>
     </html>

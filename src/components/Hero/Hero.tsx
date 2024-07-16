@@ -5,11 +5,14 @@ import { LazyMotion, m } from "framer-motion";
 import styles from "./Hero.module.css";
 
 import CallToActionButton from "../CallToActionButton";
+import { useLanguageContext } from "@/contexts/LanguageContext";
+import { Hero_Text } from "@/constants";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 function Hero() {
   const [isReady, setIsReady] = useState(false);
+  const { selectedLanguage } = useLanguageContext();
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   useEffect(() => {
@@ -39,10 +42,10 @@ function Hero() {
     <LazyMotion features={loadFeatures}>
       <section className={styles.wrapper}>
         <h1>
-          <span>Immersive tours</span>
+          <span className={styles.lineOne}>{Hero_Text.line1[selectedLanguage]}</span>
           <br />
-          &
-          <br /> experiences of Georgia
+          <span className={styles.ampersand}>&</span>
+          <br /> {Hero_Text.line2[selectedLanguage]}
         </h1>
         <div className={styles.videoWrapper}>
           <m.video

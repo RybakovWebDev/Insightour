@@ -11,6 +11,10 @@
   font-weight: 500;
 }
 
+html[data-language-selected="ar"] .sectionName {
+  font-size: clamp(26px, 5vw, 35px);
+}
+
 .sectionName span {
   padding: 0 0.5rem 0 0.5rem;
   font-size: 35px;

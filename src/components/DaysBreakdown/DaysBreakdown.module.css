@@ -1,8 +1,12 @@
 .wrapper {
   margin: 2rem 0 0 0;
-  width: 22rem;
-  max-width: 800px;
-  /* padding: 1rem; */
+  width: 80vw;
+  min-width: 22rem;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -33,12 +37,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html[data-language-selected="ar"] .durationButton {
+  font-size: clamp(18px, 6vw, 25px);
+}
+
 .durationButton.active {
   background-color: hsl(272, 100%, 90%);
   color: #6d309d;
 }
 
 .daysWrapper {
+  width: 100%;
   background-color: #f8f0ff;
   border-radius: 15px;
   overflow: hidden;
@@ -54,19 +63,21 @@
 }
 
 .dayItem ul {
+  padding: 0 3rem;
+  /* margin: 0 1rem 0 1rem; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 0 1rem 0 1rem;
+  /* border-top: 1px solid rgba(109, 48, 157, 0.1); */
 }
 
 .dayItem button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
   font-weight: 600;
   color: #6d309d;
   overflow: hidden;
@@ -77,9 +88,13 @@
 }
 
 .dayItem li {
-  padding: 0 0 0.5rem 0;
-  width: 80%;
-  color: #6d309d;
+  width: 100%;
+  /* color: #6d309d; */
+  font-size: 16px;
+}
+
+html[data-language-selected="ar"] .dayItem li {
+  font-size: clamp(22px, 6vw, 30px);
 }
 
 .dayItem li:last-child {
@@ -89,7 +104,7 @@
 .dayItem li::before {
   content: "•";
   color: #6d309d;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-right: 0.5rem;
   display: inline-block;
 }
@@ -99,15 +114,28 @@
   width: 75%;
 }
 
+html[data-language-selected="ar"] .titleWrapper {
+  width: 85%;
+}
+
 .dayTitle {
   margin: 0 0 0.5rem 0;
   font-size: 16px;
+  font-weight: 600;
+}
+
+html[data-language-selected="ar"] .dayTitle {
+  font-size: clamp(24px, 6vw, 30px);
 }
 
 .dayDescription {
   height: 2rem;
   font-size: 16px;
   font-weight: 400;
+}
+
+html[data-language-selected="ar"] .dayDescription {
+  font-size: clamp(20px, 6vw, 25px);
 }
 
 .summary {
@@ -135,7 +163,8 @@
 
 @media (max-width: 1080px) {
   .dayItem ul {
-    width: 80%;
+    padding: 0 1rem;
+    width: 100%;
     align-items: flex-start;
   }
 
@@ -152,5 +181,13 @@
 @media (max-width: 300px) {
   .wrapper {
     width: 95vw;
+  }
+
+  .daysWrapper {
+    width: 95vw;
+  }
+
+  .durationSelector {
+    width: 100vw;
   }
 }
