@@ -4,6 +4,10 @@
   width: 6rem;
 }
 
+.container button {
+  color: #6d309d;
+}
+
 .selector {
   padding: 10px;
   height: 2rem;

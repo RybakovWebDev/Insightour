@@ -15,12 +15,22 @@ import { scrollToRef } from "@/helpers";
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 function HeaderNav() {
+  const [isMobileView, setIsMobileView] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage } = useLanguageContext();
   const { aboutRef, ratesRef, offersRef, contactRef } = useRefsContext();
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobileView(window.innerWidth <= 450);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -72,8 +82,6 @@ function HeaderNav() {
     }, 1500);
   };
 
-  const isMobileView = window.innerWidth <= 450;
-
   return (
     <LazyMotion features={loadFeatures}>
       <div ref={navRef} className={styles.navContainer}>
@@ -81,7 +89,7 @@ function HeaderNav() {
           <Menu color='#6d309d' size={32} />
         </button>
         <AnimatePresence>
-          {(isOpen || window.innerWidth > 450) && (
+          {(isOpen || !isMobileView) && (
             <m.nav
               className={styles.nav}
               initial={isMobileView ? { height: 0, opacity: 0 } : false}

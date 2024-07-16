@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+"use client";
+import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { ChevronDown, ChevronUp } from "react-feather";
 
@@ -25,12 +26,14 @@ function LanguageSelector() {
     }
   }
 
-  useState(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  });
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }
+  }, []);
 
   function handleLanguageChange(code: LanguageCode) {
     setSelectedLanguage(code);
