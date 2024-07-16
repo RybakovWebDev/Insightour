@@ -13,6 +13,7 @@ import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
 import { OFFER_PACKAGES, Offers_Text } from "@/constants";
+import CallToActionButton from "../CallToActionButton";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -203,6 +204,7 @@ function Offers() {
             </AnimatePresence>
           </div>
         </div>
+        <CallToActionButton />
       </section>
     </LazyMotion>
   );

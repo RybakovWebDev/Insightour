@@ -7,7 +7,6 @@ import SectionName from "../SectionName";
 
 import { useRefsContext } from "@/contexts/RefsContext";
 
-import CallToActionButton from "../CallToActionButton";
 import { useRef } from "react";
 import PhotoSlider from "../PhotoSlider";
 import { useLanguageContext } from "@/contexts/LanguageContext";
@@ -156,7 +155,6 @@ function About() {
           })}
         </div> */}
         <PhotoSlider />
-        <CallToActionButton />
       </section>
     </LazyMotion>
   );

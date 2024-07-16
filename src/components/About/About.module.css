@@ -84,12 +84,6 @@ html[data-language-selected="ar"] .h3Wrapper h3 {
   align-self: flex-end;
 }
 
-.accent {
-  /* background: #f8f0ff; */
-  /* padding: 10px; */
-  /* border-radius: 15px; */
-}
-
 .infoWrapper {
   margin: 2rem;
   max-width: 30rem;
