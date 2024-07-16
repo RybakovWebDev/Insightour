@@ -27,9 +27,9 @@ function Header() {
       <m.header
         ref={headerRef}
         className={styles.wrapper}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: logoLoaded ? 1 : 0 }}
-        // transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: logoLoaded ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
       >
         <Link href={"/"} className={styles.logoLink}>
           <div className={styles.logoWrapper}>

@@ -15,6 +15,7 @@ import { scrollToRef } from "@/helpers";
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
 function HeaderNav() {
+  const [isMounted, setIsMounted] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage } = useLanguageContext();
@@ -22,6 +23,10 @@ function HeaderNav() {
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -86,15 +91,17 @@ function HeaderNav() {
     <LazyMotion features={loadFeatures}>
       <div ref={navRef} className={styles.navContainer}>
         <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-          <Menu color='#6d309d' size={32} />
+          <m.div initial={{ rotate: 0 }} animate={{ rotate: isOpen ? 90 : 0 }}>
+            <Menu color='#6d309d' size={32} />
+          </m.div>
         </button>
         <AnimatePresence>
-          {(isOpen || !isMobileView) && (
+          {isMounted && (isOpen || !isMobileView) && (
             <m.nav
               className={styles.nav}
-              initial={isMobileView ? { height: 0, opacity: 0 } : false}
+              initial={isMobileView ? { opacity: 0 } : false}
               animate={isMobileView ? { height: "auto", opacity: 1 } : {}}
-              exit={isMobileView ? { height: 0, opacity: 0 } : {}}
+              exit={isMobileView ? { opacity: 0 } : {}}
               transition={{ duration: 0.2 }}
             >
               <ul className={styles.list}>

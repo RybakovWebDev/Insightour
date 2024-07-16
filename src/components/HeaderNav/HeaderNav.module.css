@@ -9,8 +9,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px 10px 0 10px;
-  display: none; /* Hide by default, show on mobile */
+  padding: 0 10px 0 10px;
+  display: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav {
@@ -53,6 +54,11 @@ html[data-language-selected="ar"] .list a {
   }
 
   .nav {
+    position: absolute;
+    top: 5rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
     background-color: white;
     border: 1px solid rgba(109, 48, 157, 0.5);
     border-radius: 4px;

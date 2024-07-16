@@ -36,8 +36,8 @@
   .menuWrapper {
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 }
