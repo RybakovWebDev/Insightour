@@ -18,7 +18,7 @@ function Footer() {
   return (
     <footer ref={contactRef} className={styles.footer}>
       <div className={styles.btcWrapper}>
-        <p>{Footer_Text.acceptCrypto[selectedLanguage]}!</p>
+        <p>{Footer_Text.acceptCrypto[selectedLanguage]}</p>
         <Image src={ICONS.Bitcoin.src} alt={ICONS.Bitcoin.alt} height={32} width={32} />
       </div>
       <div className={styles.contactsWrapper}>

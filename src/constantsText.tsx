@@ -10,7 +10,7 @@ export const NAVLINKS = [
     href: "/",
     titles: {
       en: "About Us",
-      ar: "حولنا",
+      ar: "عنا",
     },
   },
   {
@@ -34,7 +34,7 @@ export const NAVLINKS = [
     href: "/",
     titles: {
       en: "Contacts",
-      ar: "جهات الاتصال",
+      ar: "اتصل بنا",
     },
   },
 ];
@@ -42,11 +42,11 @@ export const NAVLINKS = [
 export const Hero_Text = {
   line1: {
     en: "Immersive tours",
-    ar: "جولات متكاملة",
+    ar: "جولات وتجارب",
   },
   line2: {
     en: "experiences of Georgia",
-    ar: "وتجارب جورجيا",
+    ar: "غامرة في جورجيا",
   },
 };
 
@@ -96,11 +96,11 @@ export const About_Text = {
   },
   intro1: {
     en: "WE OFFER A BRAND NEW FORMAT OF EXPLORING GEORGIA",
-    ar: "نحن نقدم تنسيقًا جديدًا تمامًا لاستكشاف جورجيا",
+    ar: "نحن نقدم صيغة جديدة كلياً لاستكشاف جورجيا",
   },
   intro2: {
-    en: " THROUGH STORIES, URBAN",
-    ar: " من خلال القصص،",
+    en: "THROUGH STORIES, URBAN",
+    ar: "عبر القصص",
   },
   intro3: {
     en: "LEGENDS AND",
@@ -112,9 +112,8 @@ export const About_Text = {
   },
   intro5: {
     en: "HEROES",
-    ar: "",
+    ar: "الأبطال",
   },
-
   textBlock1: {
     en: "Safety and comfort",
     ar: "الأمان",
@@ -125,11 +124,11 @@ export const About_Text = {
   },
   textBlock3: {
     en: "Bright gastronomic",
-    ar: "تجربة غنية",
+    ar: "تجربة تذوقية مميزة",
   },
   textBlock3_5: {
     en: "experience",
-    ar: "للطعام",
+    ar: "",
   },
   textBlock4: {
     en: "Local color and traditions",
@@ -159,17 +158,17 @@ export const Offers_Text = {
     ar: "أسعارنا",
   },
   servicesIncluded: {
-    en: "Services included",
-    ar: "الخدمات المتضمنة",
+    en: "Services included:",
+    ar: ":خدمات الجولة",
   },
   servicesNotIncluded: {
-    en: "Services not included",
-    ar: "الخدمات غير المتضمنة",
+    en: "Services not included:",
+    ar: ":البرنامج لا يشمل التالي",
   },
   includedArray: [
     {
       en: "Pick-up and drop-off to and from the airport",
-      ar: "الاستقبال والتوصيل من وإلى المطار",
+      ar: "التوصيل من وإلى المطار",
     },
     {
       en: "Hotel reservations",
@@ -177,15 +176,15 @@ export const Offers_Text = {
     },
     {
       en: "Buffet breakfast",
-      ar: "إفطار بوفيه",
+      ar: "بوفيه الإفطار",
     },
     {
       en: "All transfers by private car for a tour to enjoy privacy with family or friends",
-      ar: "جميع التنقلات بسيارة خاصة لجولة للاستمتاع بالخصوصية مع العائلة أو الأصدقاء",
+      ar: "جميع التنقلات بسيارة خاصة للجولة للاستمتاع بالخصوصية مع العائلة أو الأصدقاء",
     },
     {
       en: "Tour guide fluent in Arabic and English",
-      ar: "مرشد سياحي يتحدث العربية والإنجليزية بطلاقة",
+      ar: "دليل سياحي يتحدث العربية والإنجليزية بطلاقة",
     },
   ],
   notIncludedArray: [
@@ -195,7 +194,7 @@ export const Offers_Text = {
     },
     {
       en: "Lunch and dinner",
-      ar: "وجبات الغداء والعشاء",
+      ar: "الغداء والعشاء",
     },
     {
       en: "Entry tickets to tourist places",
@@ -204,7 +203,7 @@ export const Offers_Text = {
   ],
   startingAt: {
     en: "From",
-    ar: "ابتداء من",
+    ar: "من",
   },
 };
 
@@ -223,11 +222,11 @@ export const OFFER_PACKAGES = [
       },
       {
         en: "Premium transportation",
-        ar: "نقل ممتاز",
+        ar: "نقل بريميوم",
       },
       {
         en: "2 activities per day",
-        ar: "نشاطان في اليوم",
+        ar: "نشاطان يومياً",
       },
     ],
     price: "300",
@@ -236,7 +235,7 @@ export const OFFER_PACKAGES = [
     slug: "lux",
     title: {
       en: "Lux",
-      ar: "فاخر",
+      ar: "فخم",
     },
     lengthDays: [1, 3, 7],
     benefits: [
@@ -246,11 +245,11 @@ export const OFFER_PACKAGES = [
       },
       {
         en: "Premium transportation",
-        ar: "نقل ممتاز",
+        ar: "نقل بريميوم",
       },
       {
         en: "3 activities per day",
-        ar: "ثلاثة أنشطة في اليوم",
+        ar: "3 أنشطة يومياً",
       },
       {
         en: "Memorable photoshoot",
@@ -277,7 +276,7 @@ export const OFFER_PACKAGES = [
       },
       {
         en: "3-4 activities per day",
-        ar: "3-4 أنشطة في اليوم",
+        ar: "3-4 أنشطة يومياً",
       },
       {
         en: "Real estate advisory",
@@ -289,7 +288,7 @@ export const OFFER_PACKAGES = [
       },
       {
         en: "Individually tailored tour",
-        ar: "جولة مصممة خصيصاً",
+        ar: "جولة مخصصة بشكل فردي",
       },
     ],
     price: "1000",
@@ -311,12 +310,12 @@ export const threeDayTourBreakdown = [
     },
     description: {
       en: "Discover the magic of Tbilisi",
-      ar: "اكتشف سحر تبليسي",
+      ar: "اكتشاف سحر تبليسي",
     },
     activities: [
       {
         en: "Visit the unique Immersive tour with actors in the city center",
-        ar: "قم بجولة غامرة فريدة مع الممثلين في وسط المدينة",
+        ar: "قم بزيارة الجولة الفريدة الغامرة مع الممثلين في وسط المدينة",
       },
       {
         en: "Enjoy nature in the Botanical Garden Park",
@@ -324,7 +323,7 @@ export const threeDayTourBreakdown = [
       },
       {
         en: "Experience Sulfur bath",
-        ar: "جرب حمام الكبريت",
+        ar: "استمتع بحمام الكبريت",
       },
     ],
   },
@@ -335,7 +334,7 @@ export const threeDayTourBreakdown = [
     },
     description: {
       en: "Hidden Gems in Georgia's Heart",
-      ar: "جواهر مخفية في قلب جورجيا",
+      ar: "الجواهر المخفية في قلب جورجيا",
     },
     activities: [
       {
@@ -367,12 +366,12 @@ export const threeDayTourBreakdown = [
     },
     description: {
       en: "Coastal Charm: Nature's Best Secrets",
-      ar: "جاذبية الساحل: أفضل أسرار الطبيعة",
+      ar: "سحر الساحل: أفضل أسرار الطبيعة",
     },
     activities: [
       {
         en: "Visit the most beautiful and the largest natural reservoir, which lies on the shores of the Black Sea",
-        ar: "قم بزيارة أجمل وأكبر خزان طبيعي، يقع على شواطئ البحر الأسود",
+        ar: "قم بزيارة أجمل وأكبر خزان طبيعي يقع على شواطئ البحر الأسود",
       },
       {
         en: "Watch the waterfall and bridge Queen Tamara in Makhuntseti",
@@ -380,7 +379,7 @@ export const threeDayTourBreakdown = [
       },
       {
         en: "Go back to Tbilisi",
-        ar: "العودة إلى تبليسي",
+        ar: "عد إلى تبليسي",
       },
     ],
   },
@@ -394,12 +393,12 @@ export const sevenDayTourBreakdown = [
     },
     description: {
       en: "Discover the magic of Tbilisi",
-      ar: "اكتشف سحر تبليسي",
+      ar: "اكتشاف سحر تبليسي",
     },
     activities: [
       {
         en: "Visit the unique Immersive tour with actors in the city center",
-        ar: "قم بجولة غامرة فريدة مع الممثلين في وسط المدينة",
+        ar: "قم بزيارة الجولة الفريدة الغامرة مع الممثلين في وسط المدينة",
       },
       {
         en: "Enjoy nature in the Botanical Garden Park",
@@ -407,7 +406,7 @@ export const sevenDayTourBreakdown = [
       },
       {
         en: "Experience Sulfur bath",
-        ar: "جرب حمام الكبريت",
+        ar: "استمتع بحمام الكبريت",
       },
     ],
   },
@@ -427,11 +426,11 @@ export const sevenDayTourBreakdown = [
       },
       {
         en: "See breathtaking view from peaks of the Caucasus Mountains at an altitude of 5500 meters above sea level",
-        ar: "شاهد المنظر الخلاب من قمم جبال القوقاز على ارتفاع 5500 متر فوق مستوى سطح البحر",
+        ar: "شاهد مناظر خلابة من قمم جبال القوقاز على ارتفاع 5500 متر فوق مستوى سطح البحر",
       },
       {
         en: "Dinner at a beautiful tavern with products from local farms",
-        ar: "عشاء في حانة جميلة بمنتجات من المزارع المحلية",
+        ar: "تناول العشاء في حانة جميلة مع منتجات من المزارع المحلية",
       },
       {
         en: "Get back to Tbilisi",
@@ -459,11 +458,11 @@ export const sevenDayTourBreakdown = [
       },
       {
         en: "Ride the rubber boats in the narrow valley of Martvili paradise",
-        ar: "اركب القوارب المطاطية في الوادي الضيق من جنة مارتفيلي",
+        ar: "اركب القوارب المطاطية في الوادي الضيق في جنة مارتفيلي",
       },
       {
         en: "Get to Batumi",
-        ar: "اذهب إلى باتومي",
+        ar: "الوصول إلى باتومي",
       },
     ],
   },
@@ -474,24 +473,24 @@ export const sevenDayTourBreakdown = [
     },
     description: {
       en: "Batumi: Where Lush Gardens Meet Cultural Splendor",
-      ar: "باتومي: حيث تلتقي الحدائق الخصبة مع الروعة الثقافية",
+      ar: "باتومي: حيث الحدائق الخضراء تلتقي بالفخامة الثقافية",
     },
     activities: [
       {
         en: "Visit the Botanical Garden, which was established 103 years ago and includes many rare trees from all over the world",
-        ar: "قم بزيارة الحديقة النباتية التي تأسست قبل 103 سنوات وتضم العديد من الأشجار النادرة من جميع أنحاء العالم",
+        ar: "قم بزيارة الحديقة النباتية، التي أنشئت قبل 103 سنوات وتضم العديد من الأشجار النادرة من جميع أنحاء العالم",
       },
       {
         en: "Have a walking tour around the city",
-        ar: "قم بجولة سيرًا على الأقدام حول المدينة",
+        ar: "قم بجولة سيرا على الأقدام حول المدينة",
       },
       {
         en: "Go to the sea side",
-        ar: "اذهب إلى البحر",
+        ar: "اذهب إلى شاطئ البحر",
       },
       {
         en: "Have a memorable Photoshoot",
-        ar: "احصل على جلسة تصوير لا تُنسى",
+        ar: "قم بجلسة تصوير لا تُنسى",
       },
     ],
   },
@@ -502,12 +501,12 @@ export const sevenDayTourBreakdown = [
     },
     description: {
       en: "Experience Batumi's Majestic Attractions",
-      ar: "اكتشف معالم باتومي المهيبة",
+      ar: "استكشاف معالم باتومي الرائعة",
     },
     activities: [
       {
         en: "Visit the Makhuntseti Waterfall and Makhuntseti Bridge named after Queen Tamara",
-        ar: "قم بزيارة شلال ماخونتسيتي وجسر ماخونتسيتي الذي سُمي على اسم الملكة تامارا",
+        ar: "قم بزيارة شلال ماخونساتي وجسر ماخونسيتي الذي يحمل اسم الملكة تمارا",
       },
       {
         en: "See the Dolphin show",
@@ -515,11 +514,11 @@ export const sevenDayTourBreakdown = [
       },
       {
         en: "Take a tour around Lake Batumi and ride the cable car",
-        ar: "قم بجولة حول بحيرة باتومي واركب التلفريك",
+        ar: "قم بجولة حول بحيرة باتومي وركوب التلفريك",
       },
       {
         en: "Observe the cityscape from a stunning vantage point",
-        ar: "شاهد المناظر الطبيعية للمدينة من نقطة مراقبة مذهلة",
+        ar: "تأمل منظر المدينة من نقطة رؤية رائعة",
       },
     ],
   },
@@ -535,19 +534,19 @@ export const sevenDayTourBreakdown = [
     activities: [
       {
         en: "Visit Borjomi, famous for its sulphuric waters and lush towering mountains",
-        ar: "قم بزيارة بورجومي المشهورة بمياهها الكبريتية وجبالها الشاهقة الخصبة",
+        ar: "قم بزيارة بورجومي، المشهورة بمياهها الكبريتية وجبالها الشاهقة الخصبة",
       },
       {
         en: "Go to Batumi",
-        ar: "اذهب إلى باتومي",
+        ar: "الذهاب إلى باتومي",
       },
       {
         en: "Wander through the national park, one of Europe's largest parks",
-        ar: "تجول في الحديقة الوطنية، واحدة من أكبر الحدائق في أوروبا",
+        ar: "تجول في الحديقة الوطنية، إحدى أكبر الحدائق في أوروبا",
       },
       {
         en: "Take a cable car ride to the mountain peak to admire the panoramic view of the city from above",
-        ar: "اركب التلفريك إلى قمة الجبل للاستمتاع بالإطلالة البانورامية على المدينة من الأعلى",
+        ar: "قم بركوب التلفريك إلى قمة الجبل للاستمتاع بالمنظر البانورامي للمدينة من الأعلى",
       },
     ],
   },
@@ -558,7 +557,7 @@ export const sevenDayTourBreakdown = [
     },
     description: {
       en: "From Mtskheta to Tbilisi: River Views & Retail Therapy",
-      ar: "من متسخيتا إلى تبليسي: إطلالات على النهر وتسوق",
+      ar: "من متسخيتا إلى تبليسي: مشاهد النهر وعلاج التسوق",
     },
     activities: [
       {
@@ -567,7 +566,7 @@ export const sevenDayTourBreakdown = [
       },
       {
         en: "See the confluence of the rivers Mtkvari and Argevi from the mountain Jvari",
-        ar: "شاهد التقاء نهري متكفاري وأرغفي من جبل جفاري",
+        ar: "شاهد التقاء نهري متكفاري وارجفي من جبل جفاري",
       },
       {
         en: "Come back to Tbilisi",
@@ -594,7 +593,7 @@ export const tenDayTourBreakdown = [
     activities: [
       {
         en: "Visit the unique Immersive tour with actors in the city center",
-        ar: "قم بجولة غامرة فريدة مع الممثلين في وسط المدينة",
+        ar: "قم بزيارة الجولة الفريدة الغامرة مع الممثلين في وسط المدينة",
       },
       {
         en: "Enjoy nature in the Botanical Garden Park",
@@ -602,7 +601,7 @@ export const tenDayTourBreakdown = [
       },
       {
         en: "Wander around the city with a tour guide",
-        ar: "تجول حول المدينة مع مرشد سياحي",
+        ar: "تجول في المدينة مع مرشد سياحي",
       },
     ],
   },
@@ -622,11 +621,11 @@ export const tenDayTourBreakdown = [
       },
       {
         en: "See breathtaking view from peaks of the Caucasus Mountains at an altitude of 5500 meters above sea level",
-        ar: "شاهد المنظر الخلاب من قمم جبال القوقاز على ارتفاع 5500 متر فوق مستوى سطح البحر",
+        ar: "شاهد مناظر خلابة من قمم جبال القوقاز على ارتفاع 5500 متر فوق مستوى سطح البحر",
       },
       {
         en: "Dinner at a beautiful tavern with products from local farms",
-        ar: "عشاء في حانة جميلة بمنتجات من المزارع المحلية",
+        ar: "تناول العشاء في حانة جميلة مع منتجات من المزارع المحلية",
       },
       {
         en: "Get back to Tbilisi",
@@ -641,28 +640,28 @@ export const tenDayTourBreakdown = [
     },
     description: {
       en: "Experience Georgian Natural Wonders",
-      ar: "اكتشف عجائب الطبيعة الجورجية",
+      ar: "تجربة عجائب الطبيعة الجورجية",
     },
     activities: [
       {
         en: "Visit Borjomi, famous for its sulfuric waters and green towering mountains",
-        ar: "قم بزيارة بورجومي، المشهورة بمياهها الكبريتية وجبالها الخضراء الشاهقة",
+        ar: "قم بزيارة بورجومي، المشهورة بمياهها الكبريتية وجبالها الشاهقة الخضراء",
       },
       {
         en: "Explore one of Europe's largest national parks and take a cable car ride to the top of the mountain to enjoy panoramic views",
-        ar: "استكشاف واحدة من أكبر الحدائق الوطنية في أوروبا وركوب التلفريك إلى قمة الجبل للاستمتاع بالإطلالات البانورامية",
+        ar: "استكشف واحدة من أكبر الحدائق الوطنية في أوروبا وركب التلفريك إلى قمة الجبل للاستمتاع بالمناظر البانورامية",
       },
       {
         en: "Relax in the sulfur swimming pool",
-        ar: "استرخِ في بركة السباحة الكبريتية",
+        ar: "استرخ في حمام السباحة الكبريتي",
       },
       {
         en: "Continue our journey to Kutaisi and visit the caves of Sataplia and Prometheus, the second-largest caves in Europe",
-        ar: "استمرار رحلتنا إلى كوتايسي وزيارة كهوف ساتابليا وبروميثيوس، ثاني أكبر كهوف في أوروبا",
+        ar: "تابع رحلتنا إلى كوتايسي وقم بزيارة كهوف ساتابليا وبروميثيوس، ثاني أكبر الكهوف في أوروبا",
       },
       {
         en: "Visit the bottom of the cave where there is a lake and take boat rides",
-        ar: "زيارة قاع الكهف حيث يوجد بحيرة وركوب القوارب",
+        ar: "قم بزيارة أسفل الكهف حيث يوجد بحيرة واركب القوارب",
       },
     ],
   },
@@ -678,11 +677,11 @@ export const tenDayTourBreakdown = [
     activities: [
       {
         en: "Visit the Okatse Valley, which is about 16 km long and boasts numerous waterfalls surrounded by lush green nature, offering picturesque scenery",
-        ar: "قم بزيارة وادي أوكاتسي، الذي يبلغ طوله حوالي 16 كم ويضم العديد من الشلالات المحاطة بالطبيعة الخضراء الخصبة، مما يوفر مناظر خلابة",
+        ar: "قم بزيارة وادي أوكاتسي، الذي يبلغ طوله حوالي 16 كم ويمتاز بالعديد من الشلالات المحاطة بالطبيعة الخضراء الخصبة، مما يوفر مناظر خلابة",
       },
       {
         en: "Proceed to Martvili Canyon to experience a boat ride in the narrow valley",
-        ar: "الانتقال إلى وادي مارتفيلي لتجربة ركوب القوارب في الوادي الضيق",
+        ar: "تابع إلى وادي مارتفيلي لتجربة ركوب القوارب في الوادي الضيق",
       },
     ],
   },
@@ -693,20 +692,20 @@ export const tenDayTourBreakdown = [
     },
     description: {
       en: "Batumi: Where Lush Gardens Meet Cultural Splendor",
-      ar: "باتومي: حيث تلتقي الحدائق الخصبة بالروعة الثقافية",
+      ar: "باتومي: حيث تلتقي الحدائق الخضراء بالفخامة الثقافية",
     },
     activities: [
       {
         en: "Visit the Botanical Garden, which was established 103 years ago and includes many rare trees from all over the world",
-        ar: "قم بزيارة الحديقة النباتية التي تأسست قبل 103 سنوات وتضم العديد من الأشجار النادرة من جميع أنحاء العالم",
+        ar: "قم بزيارة الحديقة النباتية، التي أنشئت قبل 103 سنوات وتضم العديد من الأشجار النادرة من جميع أنحاء العالم",
       },
       {
         en: "Have a walking tour around the city",
-        ar: "قم بجولة سيرًا على الأقدام حول المدينة",
+        ar: "قم بجولة سيرا على الأقدام حول المدينة",
       },
       {
         en: "Go to the sea side",
-        ar: "اذهب إلى البحر",
+        ar: "اذهب إلى شاطئ البحر",
       },
     ],
   },
@@ -717,20 +716,16 @@ export const tenDayTourBreakdown = [
     },
     description: {
       en: "Capture Unforgettable Memories",
-      ar: "التقاط ذكريات لا تُنسى",
+      ar: "التقط ذكريات لا تُنسى",
     },
     activities: [
       {
-        en: "Wander through the national park, one of Europe's largest parks",
-        ar: "تجول في الحديقة الوطنية، واحدة من أكبر الحدائق في أوروبا",
-      },
-      {
         en: "Take a cable car ride to the mountain peak to admire the panoramic view of the city from above",
-        ar: "اركب التلفريك إلى قمة الجبل للاستمتاع بالإطلالة البانورامية على المدينة من الأعلى",
+        ar: "قم بركوب التلفريك إلى قمة الجبل للاستمتاع بالمنظر البانورامي للمدينة من الأعلى",
       },
       {
         en: "Have a memorable Photoshoot",
-        ar: "احصل على جلسة تصوير لا تُنسى",
+        ar: "قم بجلسة تصوير لا تُنسى",
       },
     ],
   },
@@ -741,12 +736,12 @@ export const tenDayTourBreakdown = [
     },
     description: {
       en: "Experience Batumi's Majestic Attractions",
-      ar: "اكتشف معالم باتومي المهيبة",
+      ar: "استكشاف معالم باتومي الرائعة",
     },
     activities: [
       {
         en: "Travel 28 kilometers west to the town of Makhuntseti to visit the Makhuntseti waterfall and the Makhuntseti Bridge, known for its connection to Queen Tamara. Witness the stunning beauty of nature that is unparalleled in the world",
-        ar: "السفر 28 كيلومترًا غربًا إلى بلدة ماخونتسيتي لزيارة شلال ماخونتسيتي وجسر ماخونتسيتي، المعروف بارتباطه بالملكة تامارا. شاهد الجمال المذهل للطبيعة الذي لا مثيل له في العالم",
+        ar: "سافر 28 كيلومترًا غربًا إلى بلدة ماخونتسيتي لزيارة شلال ماخونتسيتي وجسر ماخونتسيتي، المعروف بعلاقته بالملكة تمارا. شاهد الجمال الطبيعي الرائع الذي لا مثيل له في العالم",
       },
       {
         en: "See a dolphin show and enjoy a free tour around Lake Batumi",
@@ -754,7 +749,7 @@ export const tenDayTourBreakdown = [
       },
       {
         en: "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above",
-        ar: "اركب التلفريك للاستمتاع بالقمم الخلابة ورؤية المناظر الطبيعية المذهلة للمدينة من الأعلى",
+        ar: "قم بركوب التلفريك للاستمتاع بالقمم الخلابة وتأمل مشهد المدينة الرائع من الأعلى",
       },
     ],
   },
@@ -770,15 +765,15 @@ export const tenDayTourBreakdown = [
     activities: [
       {
         en: "Visit Sighnaghi, famous city",
-        ar: "قم بزيارة مدينة سيغناغي الشهيرة",
+        ar: "قم بزيارة سغناغي، المدينة الشهيرة",
       },
       {
         en: "Сollect Georgia's cultural code by participating in a quest with professional actors",
-        ar: "جمع الرمز الثقافي لجورجيا من خلال المشاركة في مهمة مع ممثلين محترفين",
+        ar: "اجمع رموز الثقافة الجورجية من خلال المشاركة في مهمة مع ممثلين محترفين",
       },
       {
         en: "Visit local wineries to see breathtaking views from the mountain",
-        ar: "زيارة مصانع النبيذ المحلية لرؤية المناظر الخلابة من الجبل",
+        ar: "قم بزيارة مصنع النبيذ المحلية لمشاهدة مناظر خلابة من الجبل",
       },
       {
         en: "Come back to Tbilisi",
@@ -786,7 +781,7 @@ export const tenDayTourBreakdown = [
       },
       {
         en: "Explore the Chardin area with its many restaurants and cafes in European and Arab styles",
-        ar: "استكشاف منطقة شاردين مع العديد من المطاعم والمقاهي ذات الطراز الأوروبي والعربي",
+        ar: "استكشف منطقة شاردين التي تضم العديد من المطاعم والمقاهي بأساليب أوروبية وعربية",
       },
     ],
   },
@@ -806,11 +801,11 @@ export const tenDayTourBreakdown = [
       },
       {
         en: "See the confluence of the rivers Mtkvari and Argevi from the mountain Jvari",
-        ar: "شاهد التقاء نهري متكفاري وأرغفي من جبل جفاري",
+        ar: "شاهد التقاء نهري متكفاري وارجفي من جبل جفاري",
       },
       {
         en: "Have lunch at a beautiful tavern with products from local farms",
-        ar: "تناول الغداء في حانة جميلة بمنتجات من المزارع المحلية",
+        ar: "تناول الغداء في حانة جميلة مع منتجات من المزارع المحلية",
       },
       {
         en: "Get back to Tbilisi",
@@ -825,12 +820,12 @@ export const tenDayTourBreakdown = [
     },
     description: {
       en: "Explore Tbilisi's Hidden Gems!",
-      ar: "استكشاف جواهر تبليسي المخفية!",
+      ar: "اكتشاف جواهر تبليسي المخفية!",
     },
     activities: [
       {
         en: "Visit the European Park (Rike Park) to see the dancing fountain and the famous Bridge of Peace",
-        ar: "قم بزيارة الحديقة الأوروبية (حديقة ريكي) لمشاهدة النافورة الراقصة والجسر الشهير للسلام",
+        ar: "قم بزيارة الحديقة الأوروبية (حديقة ريكي) لمشاهدة النافورة الراقصة والجسر الشهير جسر السلام",
       },
       {
         en: "Go to the biggest mall in Georgia for shopping",
@@ -842,8 +837,8 @@ export const tenDayTourBreakdown = [
 
 export const Footer_Text = {
   acceptCrypto: {
-    en: "We accept crypto",
-    ar: "نحن نقبل التشفير",
+    en: "We accept crypto!",
+    ar: "!نقبل العملات الرقمية",
   },
   legal: {
     en: "Legal",
