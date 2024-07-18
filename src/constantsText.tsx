@@ -42,11 +42,11 @@ export const NAVLINKS = [
 export const Hero_Text = {
   line1: {
     en: "Immersive tours",
-    ar: "جولات وتجارب",
+    ar: "جولات غامرة",
   },
   line2: {
     en: "experiences of Georgia",
-    ar: "غامرة في جورجيا",
+    ar: "تجارب جورجيا",
   },
 };
 
@@ -85,7 +85,7 @@ export const CallToActionButton_Text = {
   },
   send: {
     en: "Send",
-    ar: "يرسل",
+    ar: "أرسل",
   },
 };
 
