@@ -60,7 +60,7 @@ export const SOCIALS: ContactsInterface[] = [
   },
   {
     title: "TikTok",
-    link: "https://www.instagram.com/insightour.ge",
+    link: "https://www.tiktok.com/@insightour.ge?_t=8o7Xv1NSq8N&_r=1",
     iconProps: ICONS.TikTok,
     description: "Follow us on TikTok",
   },
