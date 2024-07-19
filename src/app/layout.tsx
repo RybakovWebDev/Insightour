@@ -23,6 +23,13 @@ function getPreferredLanguage(): LanguageCode {
     }
   }
 
+  const headersList = headers();
+  const country = headersList.get("x-vercel-ip-country");
+
+  if (country === "SA" || country === "AE" || country === "EG") {
+    return "ar";
+  }
+
   const acceptLanguage = headers().get("accept-language");
 
   if (acceptLanguage) {
