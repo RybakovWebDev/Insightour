@@ -80,8 +80,8 @@ export const CallToActionButton_Text = {
     ar: "نص التعليق",
   },
   success: {
-    en: "Message sent! We will contact you soon",
-    ar: "تم الارسال! سوف نتصل بك قريبا",
+    en: "Message sent! We will contact you soon 😊",
+    ar: "تم إرسال الرسالة! سوف نتصل بك قريبًا 😊",
   },
   send: {
     en: "Send",

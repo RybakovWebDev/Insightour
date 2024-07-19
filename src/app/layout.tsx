@@ -1,9 +1,7 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import "./globals.css";
-
 import { RefsProvider } from "@/contexts/RefsContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LanguageCode } from "@/constants";
@@ -16,16 +14,37 @@ export const metadata: Metadata = {
     "Insightour is a new way to get to know the city, a project for those that believe that &quot;excursions are not their thing&quot;.We help discover the city not through a set of dry facts, but through emotions, all because we have long been in love with Georgia, its history, legends and architecture.",
 };
 
+function getPreferredLanguage(): LanguageCode {
+  const savedLanguage = cookies().get("language-selected");
+
+  if (savedLanguage?.value) {
+    if (savedLanguage.value === "en" || savedLanguage.value === "ar") {
+      return savedLanguage.value as LanguageCode;
+    }
+  }
+
+  const acceptLanguage = headers().get("accept-language");
+
+  if (acceptLanguage) {
+    const preferredLanguages = acceptLanguage.split(",").map((lang) => lang.split(";")[0]);
+    for (const lang of preferredLanguages) {
+      if (lang.startsWith("ar")) return "ar";
+      if (lang.startsWith("en")) return "en";
+    }
+  }
+
+  return "en";
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const savedLanguage = cookies().get("language-selected");
-  const language = (savedLanguage?.value || "en") as LanguageCode;
+  const language = getPreferredLanguage();
 
   return (
-    <html lang='en' data-language-selected={language}>
+    <html lang={language} data-language-selected={language}>
       <body className={inter.className}>
         <RefsProvider>
           <LanguageProvider initialLanguage={language}>{children}</LanguageProvider>

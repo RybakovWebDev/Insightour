@@ -4,18 +4,34 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import { X } from "react-feather";
 
 import styles from "./CallToActionButton.module.css";
+
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { CallToActionButton_Text } from "@/constantsText";
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
+const simpleFadeVarians = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
 function CallToActionButton() {
+  const isMobileView = useScreenWidthDetect(1080);
   const [modalOpen, setModalOpen] = useState(false);
   const [nameText, setNameText] = useState("");
   const [phoneText, setPhoneText] = useState("");
   const [commentText, setCommentText] = useState("");
   const [errorText, setErrorText] = useState("");
   const [messageSent, setMessageSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { selectedLanguage } = useLanguageContext();
 
   const nameInputRef = useRef<HTMLInputElement>(null);
@@ -27,11 +43,11 @@ function CallToActionButton() {
     setErrorText("");
   };
 
-  // useEffect(() => {
-  //   if (modalOpen && !smallScreen && nameInputRef.current) {
-  //     nameInputRef.current.focus();
-  //   }
-  // }, [modalOpen]);
+  useEffect(() => {
+    if (modalOpen && !isMobileView && nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
+  }, [modalOpen, isMobileView]);
 
   const handleOpenModal = () => {
     !modalOpen && setModalOpen(true);
@@ -42,45 +58,37 @@ function CallToActionButton() {
     clearForm();
     setMessageSent(false);
   };
-  // console.log(process.env.NEXT_PUBLIC_FORM_URL);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // const formURL = "";
-
-    // if (!formURL) {
-    //   return;
-    // }
+    setIsLoading(true);
 
     const formData = {
       name: nameText,
       phone: phoneText,
-
       comment: commentText,
     };
-    setMessageSent(true);
-    console.log("Sent");
-    try {
-      // const response = await fetch(formURL, {
-      //   method: "POST",
-      //   body: JSON.stringify(formData),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   mode: "no-cors",
-      // });
 
-      // if (!response.ok) {
-      //   throw new Error("Network response was not ok");
-      // }
-      // clearForm();
+    try {
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       setMessageSent(true);
       console.log("Sent");
     } catch (error) {
       setErrorText(`${error}. Could not send contact data 😥`);
       console.error("An error occurred while submitting the form!", error);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -94,9 +102,10 @@ function CallToActionButton() {
             <m.div className={styles.formWrapper}>
               <m.div
                 className={styles.formBackdrop}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial='hidden'
+                animate='show'
+                exit='exit'
+                variants={simpleFadeVarians}
                 onClick={handleCloseModal}
               />
               <m.form
@@ -125,8 +134,8 @@ function CallToActionButton() {
                       type='button'
                       className={styles.closeButton}
                       onClick={handleCloseModal}
-                      // initial={{ border: "1px solid rgb(0, 0, 0, 0)" }}
-                      // whileHover={!smallScreen && { border: "1px solid rgb(0, 0, 0, 0.3)", rotate: "90deg" }}
+                      initial={{ background: "rgb(248, 240, 255)" }}
+                      whileHover={{ background: "rgb(109, 48, 157, 0.3)" }}
                     >
                       <X size={30} strokeWidth={1} />
                     </m.button>
@@ -173,11 +182,12 @@ function CallToActionButton() {
                           <m.p
                             key='sentMessage'
                             className={styles.sentMessage}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial='hidden'
+                            animate='show'
+                            exit='exit'
+                            variants={simpleFadeVarians}
                           >
-                            {CallToActionButton_Text.success[selectedLanguage]} 😊
+                            {CallToActionButton_Text.success[selectedLanguage]}
                           </m.p>
                         </AnimatePresence>
                       ) : (
@@ -185,14 +195,36 @@ function CallToActionButton() {
                           <m.button
                             key='submitButton'
                             type='submit'
+                            disabled={isLoading}
                             initial={{ background: "rgb(0, 0, 0, 0)", opacity: 0 }}
-                            whileHover={{ background: "rgb(0, 0, 0, 0.1)" }}
-                            whileTap={{ background: "rgb(0, 0, 0, 0.3)" }}
-                            animate={{ opacity: 1 }}
+                            whileHover={{ background: isLoading ? "transparent" : "rgb(0, 0, 0, 0.1)" }}
+                            whileTap={{ background: isLoading ? "none" : "rgb(0, 0, 0, 0.3)" }}
+                            animate={{ opacity: isLoading ? 0.5 : 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ type: "spring", damping: 80, stiffness: 700 }}
                           >
-                            <p>{CallToActionButton_Text.send[selectedLanguage]}</p>
+                            <AnimatePresence mode='wait'>
+                              {isLoading ? (
+                                <m.span
+                                  key={"sendbtnspinner"}
+                                  initial='hidden'
+                                  animate='show'
+                                  exit='exit'
+                                  variants={simpleFadeVarians}
+                                  className={styles.loader}
+                                ></m.span>
+                              ) : (
+                                <m.p
+                                  key={"sendbtntext"}
+                                  initial='hidden'
+                                  animate='show'
+                                  exit='exit'
+                                  variants={simpleFadeVarians}
+                                >
+                                  {CallToActionButton_Text.send[selectedLanguage]}
+                                </m.p>
+                              )}
+                            </AnimatePresence>
                           </m.button>
                         </AnimatePresence>
                       )}

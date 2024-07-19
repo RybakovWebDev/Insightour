@@ -30,7 +30,7 @@ export const logoImage = logo;
 
 export const LANGUAGES = {
   en: "English",
-  ar: "Arabic",
+  ar: "العربية",
 } as const;
 
 export type LanguageCode = keyof typeof LANGUAGES;

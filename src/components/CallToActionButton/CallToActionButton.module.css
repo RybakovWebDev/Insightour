@@ -59,9 +59,9 @@ html[data-language-selected="ar"] .button {
   justify-content: center;
   align-items: center;
   border: none;
-  /* border-radius: 100%; */
-  /* border: 1px solid rgb(109, 48, 157, 0.3); */
+  border-radius: 100%;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .topInputWrapper {
@@ -123,11 +123,17 @@ html[data-language-selected="ar"] .form {
 
 .sendWrapper button {
   padding: 0rem 1rem;
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(109, 48, 157, 0.3);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.sendWrapper button:disabled {
+  cursor: not-allowed;
 }
 
 .sendWrapper p {
@@ -147,7 +153,6 @@ html[data-language-selected="ar"] .sendWrapper p {
 .closeButton,
 .sendWrapper button,
 .form label {
-  /* color: var(--color-text-secondary); */
   color: #6d309d;
 }
 
@@ -160,6 +165,26 @@ html[data-language-selected="ar"] .sendWrapper p {
 html[data-language-selected="ar"] .form input::placeholder,
 html[data-language-selected="ar"] .form textarea::placeholder {
   font-size: clamp(20px, 6vw, 25px);
+}
+
+.loader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #6d309d;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1430px) {

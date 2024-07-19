@@ -21,7 +21,6 @@ export default function Home() {
       <PhotoSlideshow portrait />
       <DaysBreakdown />
       <CallToActionButton />
-      {/* <PhotoSlideshow portrait /> */}
       <Footer />
       <BackToTop />
       <ContactButton />
