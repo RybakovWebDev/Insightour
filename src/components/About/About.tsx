@@ -37,7 +37,7 @@ const item = {
   show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
 };
 
-function TextBlock({ rotation, children, left, right, top, bottom }: TextBlockProps) {
+function TextBlock({ rotation, children }: TextBlockProps) {
   return (
     <div
       className={styles.textBlock}

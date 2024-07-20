@@ -44,7 +44,7 @@ html[data-language-selected="ar"] .wrapper h2 {
   background: #f8f0ff;
   border: 1px solid rgb(109, 48, 157, 0.1);
   border-radius: 20px;
-  font-size: clamp(16px, 5vw, 35px);
+  font-size: clamp(16px, 5vw, 32px);
   z-index: 10;
 }
 
@@ -136,5 +136,35 @@ html[data-language-selected="ar"] .h3Wrapper h3 {
   .h3Wrapper h3:nth-last-child(3),
   .h3Wrapper h3:nth-last-child(1) {
     align-self: flex-start;
+  }
+}
+
+@media (min-width: 690px) {
+  .textBlock {
+    padding: 18px;
+    margin: 0 0 2rem 0;
+  }
+
+  html[data-language-selected="ar"] .textBlock:nth-child(2) {
+    position: relative;
+    left: 30%;
+  }
+
+  html[data-language-selected="ar"] .textBlock:nth-child(even) {
+    margin: 0 0 2rem 0;
+  }
+
+  html[data-language-selected="ar"] .textBlock:nth-child(odd) {
+    margin: 0 0 2rem 0;
+  }
+
+  .textBlock:nth-child(even) {
+    align-self: flex-start;
+    margin-left: 4rem;
+  }
+
+  .textBlock:nth-child(odd) {
+    align-self: flex-end;
+    margin-right: 4rem;
   }
 }
