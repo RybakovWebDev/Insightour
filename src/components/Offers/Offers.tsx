@@ -143,11 +143,21 @@ function Offers() {
                 {openDetails.services && (
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
-                      <ul>
+                      <ul className={styles.servicesList}>
                         {Offers_Text.includedArray.map((s) => {
                           return (
                             <li key={s.en}>
-                              <Check size={12} /> {s[selectedLanguage]}
+                              {selectedLanguage !== "ar" && (
+                                <span>
+                                  <Check size={12} />
+                                </span>
+                              )}
+                              {s[selectedLanguage]}
+                              {selectedLanguage === "ar" && (
+                                <span>
+                                  <Check size={12} />
+                                </span>
+                              )}
                             </li>
                           );
                         })}
@@ -172,11 +182,21 @@ function Offers() {
                 {openDetails.notIncluded && (
                   <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
                     <m.div variants={contentVariants}>
-                      <ul>
+                      <ul className={styles.servicesList}>
                         {Offers_Text.notIncludedArray.map((s) => {
                           return (
                             <li key={s.en}>
-                              <X size={12} /> {s[selectedLanguage]}
+                              {selectedLanguage !== "ar" && (
+                                <span>
+                                  <X size={12} />
+                                </span>
+                              )}
+                              {s[selectedLanguage]}
+                              {selectedLanguage === "ar" && (
+                                <span>
+                                  <X size={12} />
+                                </span>
+                              )}
                             </li>
                           );
                         })}

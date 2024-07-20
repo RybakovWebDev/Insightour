@@ -7,7 +7,6 @@
 }
 
 .packagesWrapper {
-  /* height: 30rem; */
   width: 30rem;
   display: flex;
   flex-direction: column;
@@ -74,7 +73,6 @@ html[data-language-selected="ar"] .packageSelector button h3 {
 }
 
 .servicesWrapper button {
-  /* margin: 1rem 0 0 0; */
   font-size: 14px;
   font-weight: 600;
   color: #b08ece;
@@ -90,8 +88,16 @@ html[data-language-selected="ar"] .servicesWrapper button {
   color: #6d309d;
 }
 
+.servicesWrapper li span {
+  padding: 0 0.3rem;
+}
+
 html[data-language-selected="ar"] .servicesWrapper li {
   font-size: clamp(24px, 3vw, 35px);
+  text-align: right;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .summaryBtn {
@@ -108,6 +114,10 @@ html[data-language-selected="ar"] .servicesWrapper li {
   text-align: left;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+}
+
+html[data-language-selected="ar"] .summaryBtn {
+  flex-direction: row-reverse;
 }
 
 .summaryBtn svg {
@@ -143,7 +153,9 @@ html[data-language-selected="ar"] .servicesWrapper li {
 
 @media (max-width: 1080px) {
   .packagesWrapper {
-    width: 22rem;
+    min-width: 22rem;
+    width: 80vw;
+    max-width: 35rem;
     flex-direction: column;
   }
 
@@ -154,6 +166,7 @@ html[data-language-selected="ar"] .servicesWrapper li {
 
 @media (max-width: 300px) {
   .packagesWrapper {
+    min-width: 10rem;
     width: 95vw;
   }
 

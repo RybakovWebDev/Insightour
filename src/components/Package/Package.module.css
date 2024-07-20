@@ -2,6 +2,10 @@
   list-style: none;
 }
 
+html[data-language-selected="ar"] .wrapper ul {
+  text-align: right;
+}
+
 .wrapper li {
   padding: 1rem;
   font-size: 18px;
@@ -18,4 +22,8 @@ html[data-language-selected="ar"] .wrapper li {
   font-size: 1rem;
   padding-right: 0.5rem;
   display: inline-block;
+}
+
+html[data-language-selected="ar"] .wrapper span::before {
+  padding: 0 0 0 0.5rem;
 }

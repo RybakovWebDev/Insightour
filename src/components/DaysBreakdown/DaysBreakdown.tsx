@@ -82,6 +82,8 @@ const DaysBreakdown = () => {
   const { selectedLanguage } = useLanguageContext();
   const { offersRef } = useRefsContext();
 
+  const isArabic = selectedLanguage === "ar";
+
   const handleDurationClick = (slug: string) => {
     setCurrentDuration(slug);
     setOpenDays({});
@@ -138,7 +140,11 @@ const DaysBreakdown = () => {
                   aria-controls={`activities-on-${day.title.en}`}
                 >
                   <div className={styles.titleWrapper}>
-                    <p className={styles.dayTitle}>{day.title[selectedLanguage]}:</p>
+                    <p className={styles.dayTitle}>
+                      {isArabic && ":"}
+                      {day.title[selectedLanguage]}
+                      {!isArabic && ":"}
+                    </p>
                     <AnimatePresence mode='wait'>
                       <m.p
                         className={styles.dayDescription}

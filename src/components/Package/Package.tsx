@@ -38,8 +38,9 @@ function Package({ slug }: PackageProps) {
           <AnimatePresence>
             {selectedPackage?.benefits.map((l, i) => (
               <m.li variants={item} key={i}>
-                <span />
+                {selectedLanguage !== "ar" && <span />}
                 {l[selectedLanguage]}
+                {selectedLanguage === "ar" && <span />}
               </m.li>
             ))}
           </AnimatePresence>
