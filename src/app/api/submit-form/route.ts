@@ -1,19 +1,6 @@
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
-import path from "path";
-
-function formatDate(date: Date): string {
-  const pad = (num: number): string => num.toString().padStart(2, "0");
-
-  const year = date.getFullYear().toString().slice(-2);
-  const month = pad(date.getMonth() + 1);
-  const day = pad(date.getDate());
-  const hours = pad(date.getHours());
-  const minutes = pad(date.getMinutes());
-  const seconds = pad(date.getSeconds());
-
-  return `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
-}
+import { formatDate, rateLimit, sanitizeInput, validateFormData } from "@/lib/serverHelpers";
 
 interface FormData {
   name: string;
@@ -23,7 +10,30 @@ interface FormData {
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
-    const { name, phone, comment } = (await request.json()) as FormData;
+    const ip = request.ip ?? "127.0.0.1";
+
+    const { success: rateLimitSuccess } = await rateLimit(request);
+    if (!rateLimitSuccess) {
+      console.log("Rate limit exceeded for IP: ", ip);
+      return NextResponse.json({ message: "Too many requests" }, { status: 429 });
+    }
+
+    const rawData = await request.json();
+    console.log("Raw data received: ", rawData);
+
+    const validationResult = validateFormData(rawData);
+    if (!validationResult.success) {
+      console.error("Validation failed: ", validationResult.errors);
+      return NextResponse.json({ message: "Invalid input", errors: validationResult.errors }, { status: 400 });
+    }
+
+    const { name, phone, comment } = validationResult.data as FormData;
+    const sanitizedData = {
+      name: sanitizeInput(name),
+      phone: sanitizeInput(phone),
+      comment: sanitizeInput(comment),
+    };
+    console.log("Sanitized data: ", sanitizedData);
 
     const credentials = {
       type: process.env.GOOGLE_CLOUD_KEY_TYPE,
@@ -54,24 +64,22 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     const timestamp = formatDate(new Date());
 
-    const response = await sheets.spreadsheets.values.append({
+    await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
       valueInputOption: "USER_ENTERED",
       insertDataOption: "INSERT_ROWS",
       requestBody: {
-        values: [[timestamp, name, phone, comment]],
+        values: [[timestamp, sanitizedData.name, sanitizedData.phone, sanitizedData.comment]],
       },
     });
 
-    console.log("Sheets API Response:", JSON.stringify(response.data, null, 2));
+    console.log("Form submission successful");
 
     return NextResponse.json({ message: "Success" }, { status: 200 });
   } catch (error) {
-    console.error("Full error:", JSON.stringify(error, null, 2));
-    return NextResponse.json(
-      { message: "Failed to append data to Google Sheet", error: (error as Error).message },
-      { status: 500 }
-    );
+    console.error("Form submission error:", error);
+
+    return NextResponse.json({ message: "An error occurred while processing your request" }, { status: 500 });
   }
 }

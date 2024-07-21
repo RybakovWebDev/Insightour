@@ -39,10 +39,10 @@ html[data-language-selected="ar"] .button {
   position: fixed;
   top: 30%;
   min-height: 24rem;
+  width: 35rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
   background-color: #f8f0ff;
   box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -88,6 +88,12 @@ html[data-language-selected="ar"] .button {
   padding: 0.5rem 0;
 }
 
+html[data-language-selected="ar"] .form input,
+html[data-language-selected="ar"] .form textarea,
+html[data-language-selected="ar"] .form label {
+  text-align: right;
+}
+
 .form textarea {
   margin: 0 0 1rem 0;
   resize: none;
@@ -115,14 +121,17 @@ html[data-language-selected="ar"] .form {
 }
 
 .sendWrapper {
-  height: 3rem;
+  min-height: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .sendWrapper button {
   padding: 0rem 1rem;
+  margin: 0 0 0 1rem;
+  height: 3rem;
   width: 6rem;
   display: flex;
   justify-content: center;
@@ -142,7 +151,7 @@ html[data-language-selected="ar"] .form {
 }
 
 html[data-language-selected="ar"] .sendWrapper p {
-  font-size: clamp(30px, 6vw, 35px);
+  font-size: clamp(25px, 6vw, 32px);
 }
 
 .sentMessage {
@@ -187,12 +196,7 @@ html[data-language-selected="ar"] .form textarea::placeholder {
   }
 }
 
-@media (max-width: 1430px) {
-  .build {
-    width: 90%;
-    font-size: clamp(20px, 8vw, 35px);
-  }
-
+@media (max-width: 1080px) {
   .form {
     position: fixed;
     top: auto;
@@ -204,6 +208,10 @@ html[data-language-selected="ar"] .form textarea::placeholder {
     max-height: 30rem;
     transform: none;
     border-radius: 0;
+  }
+
+  .closeButton {
+    top: 1rem;
   }
 
   .topInputWrapper {

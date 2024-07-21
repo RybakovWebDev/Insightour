@@ -1,5 +1,4 @@
 .outerWrapper {
-  padding: 0 0.5rem;
   margin: 1rem 0 0 0;
   height: 30rem;
   width: 100vw;
@@ -43,6 +42,7 @@
 
 @media (max-width: 1080px) {
   .outerWrapper {
+    padding: 0 0.5rem;
     height: 19rem;
     width: 100vw;
   }

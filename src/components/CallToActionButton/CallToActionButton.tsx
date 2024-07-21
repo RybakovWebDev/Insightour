@@ -32,7 +32,10 @@ function CallToActionButton() {
   const [errorText, setErrorText] = useState("");
   const [messageSent, setMessageSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formTouched, setFormTouched] = useState(false);
   const { selectedLanguage } = useLanguageContext();
+
+  const isArabic = selectedLanguage === "ar";
 
   const nameInputRef = useRef<HTMLInputElement>(null);
 
@@ -41,6 +44,7 @@ function CallToActionButton() {
     setPhoneText("");
     setCommentText("");
     setErrorText("");
+    setFormTouched(false);
   };
 
   useEffect(() => {
@@ -59,9 +63,28 @@ function CallToActionButton() {
     setMessageSent(false);
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case "name":
+        setNameText(value);
+        break;
+      case "phone":
+        setPhoneText(value);
+        break;
+      case "comment":
+        setCommentText(value);
+        break;
+    }
+    setFormTouched(true);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorText("");
+    setMessageSent(false);
+    setFormTouched(false);
 
     const formData = {
       name: nameText,
@@ -78,17 +101,25 @@ function CallToActionButton() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      const data = await response.json();
 
-      setMessageSent(true);
-      console.log("Sent");
+      if (!response.ok) {
+        if (data.errors && Array.isArray(data.errors) && data.errors.length > 0) {
+          const errorMessage = data.errors.join(". ");
+          setErrorText(`${errorMessage}. Please check your input.`);
+        } else {
+          setErrorText(data.message || "Could not send contact data 😥");
+        }
+      } else {
+        setMessageSent(true);
+        console.log("Sent");
+      }
     } catch (error) {
-      setErrorText(`${error}. Could not send contact data 😥`);
       console.error("An error occurred while submitting the form!", error);
+      setErrorText("Could not send contact data. Please try again later. 😥");
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   return (
@@ -116,9 +147,22 @@ function CallToActionButton() {
                 exit={{ y: "100vh", transition: { duration: 0.3 } }}
                 onSubmit={(e) => handleSubmit(e)}
               >
+                <m.button
+                  type='button'
+                  className={styles.closeButton}
+                  onClick={handleCloseModal}
+                  initial={{ background: "rgb(248, 240, 255)" }}
+                  whileHover={{ background: "rgb(109, 48, 157, 0.3)" }}
+                >
+                  <X size={30} strokeWidth={1} />
+                </m.button>
                 <div className={styles.topInputWrapper}>
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='name'>{CallToActionButton_Text.name[selectedLanguage]}:</label>
+                    <label htmlFor='name'>
+                      {isArabic && ":"}
+                      {CallToActionButton_Text.name[selectedLanguage]}
+                      {!isArabic && ":"}
+                    </label>
                     <input
                       ref={nameInputRef}
                       type='text'
@@ -126,35 +170,34 @@ function CallToActionButton() {
                       required
                       placeholder={CallToActionButton_Text.namePlaceholder[selectedLanguage]}
                       value={nameText}
-                      maxLength={50}
-                      onChange={(e) => setNameText(e.target.value)}
+                      minLength={2}
+                      maxLength={80}
+                      onChange={handleInputChange}
                     />
-
-                    <m.button
-                      type='button'
-                      className={styles.closeButton}
-                      onClick={handleCloseModal}
-                      initial={{ background: "rgb(248, 240, 255)" }}
-                      whileHover={{ background: "rgb(109, 48, 157, 0.3)" }}
-                    >
-                      <X size={30} strokeWidth={1} />
-                    </m.button>
                   </div>
 
                   <div className={styles.inputWrapper}>
-                    <label htmlFor='phone'>{CallToActionButton_Text.Whatsapp[selectedLanguage]}:</label>
+                    <label htmlFor='phone'>
+                      {isArabic && ":"}
+                      {CallToActionButton_Text.Whatsapp[selectedLanguage]}
+                      {!isArabic && ":"}
+                    </label>
                     <input
                       type='text'
                       name='phone'
                       required
                       placeholder={CallToActionButton_Text.WhatsappPlaceholder[selectedLanguage]}
                       value={phoneText}
-                      maxLength={50}
-                      onChange={(e) => setPhoneText(e.target.value)}
+                      maxLength={25}
+                      onChange={handleInputChange}
                     />
                   </div>
 
-                  <label htmlFor='comment'>{CallToActionButton_Text.comment[selectedLanguage]}:</label>
+                  <label htmlFor='comment'>
+                    {isArabic && ":"}
+                    {CallToActionButton_Text.comment[selectedLanguage]}
+                    {!isArabic && ":"}
+                  </label>
                   <textarea
                     name='comment'
                     cols={60}
@@ -162,7 +205,8 @@ function CallToActionButton() {
                     spellCheck
                     placeholder={CallToActionButton_Text.commentPlaceholder[selectedLanguage]}
                     value={commentText}
-                    onChange={(e) => setCommentText(e.target.value)}
+                    maxLength={500}
+                    onChange={handleInputChange}
                   />
 
                   <div className={styles.sendWrapper}>
@@ -195,36 +239,34 @@ function CallToActionButton() {
                           <m.button
                             key='submitButton'
                             type='submit'
-                            disabled={isLoading}
+                            disabled={isLoading || !formTouched}
                             initial={{ background: "rgb(0, 0, 0, 0)", opacity: 0 }}
-                            whileHover={{ background: isLoading ? "transparent" : "rgb(0, 0, 0, 0.1)" }}
-                            whileTap={{ background: isLoading ? "none" : "rgb(0, 0, 0, 0.3)" }}
+                            whileHover={{ background: isLoading ? "rgb(0, 0, 0, 0)" : "rgb(0, 0, 0, 0.1)" }}
+                            whileTap={{ background: isLoading ? "rgb(0, 0, 0, 0)" : "rgb(0, 0, 0, 0.3)" }}
                             animate={{ opacity: isLoading ? 0.5 : 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ type: "spring", damping: 80, stiffness: 700 }}
                           >
-                            <AnimatePresence mode='wait'>
-                              {isLoading ? (
-                                <m.span
-                                  key={"sendbtnspinner"}
-                                  initial='hidden'
-                                  animate='show'
-                                  exit='exit'
-                                  variants={simpleFadeVarians}
-                                  className={styles.loader}
-                                ></m.span>
-                              ) : (
-                                <m.p
-                                  key={"sendbtntext"}
-                                  initial='hidden'
-                                  animate='show'
-                                  exit='exit'
-                                  variants={simpleFadeVarians}
-                                >
-                                  {CallToActionButton_Text.send[selectedLanguage]}
-                                </m.p>
-                              )}
-                            </AnimatePresence>
+                            {isLoading ? (
+                              <m.span
+                                key={"sendbtnspinner"}
+                                initial='hidden'
+                                animate='show'
+                                exit='exit'
+                                variants={simpleFadeVarians}
+                                className={styles.loader}
+                              ></m.span>
+                            ) : (
+                              <m.p
+                                key={"sendbtntext"}
+                                initial='hidden'
+                                animate='show'
+                                exit='exit'
+                                variants={simpleFadeVarians}
+                              >
+                                {CallToActionButton_Text.send[selectedLanguage]}
+                              </m.p>
+                            )}
                           </m.button>
                         </AnimatePresence>
                       )}
