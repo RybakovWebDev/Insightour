@@ -82,7 +82,13 @@ function HeaderNav() {
   return (
     <LazyMotion features={loadFeatures}>
       <div ref={navRef} className={styles.navContainer}>
-        <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className={styles.menuButton}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls='main-menu'
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
           <m.div initial={{ rotate: 0 }} animate={{ rotate: isOpen ? 90 : 0 }}>
             <Menu color='#6d309d' size={32} />
           </m.div>
@@ -90,11 +96,13 @@ function HeaderNav() {
         <AnimatePresence>
           {isMounted && (isOpen || !isMobileView) && (
             <m.nav
+              id='main-menu'
               className={styles.nav}
               initial={isMobileView ? { opacity: 0 } : false}
               animate={isMobileView ? { height: "auto", opacity: 1 } : {}}
               exit={isMobileView ? { opacity: 0 } : {}}
               transition={{ duration: 0.2 }}
+              aria-label='Main navigation'
             >
               <m.ul
                 className={styles.list}

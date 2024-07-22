@@ -53,7 +53,6 @@ function PhotoSlider() {
                     className={styles.image}
                     src={photo.src}
                     alt={photo.alt}
-                    priority={index < 2}
                     sizes={isMobileView ? "300px" : "600px"}
                   />
                 </m.div>

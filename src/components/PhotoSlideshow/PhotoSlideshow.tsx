@@ -74,9 +74,7 @@ function PhotoSlideshow({ portrait = false }: PhotoSlideshowProps) {
               src={photos[currentImage].src}
               alt={photos[currentImage].alt}
               width={isMobileView ? 350 : 550}
-              // height={1000}
               sizes={isMobileView ? "350px" : "550px"}
-              priority
               onLoad={handleImageLoad}
             />
           </m.div>

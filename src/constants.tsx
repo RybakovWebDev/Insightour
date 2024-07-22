@@ -1,21 +1,12 @@
 import logo from "../public/images/logo_image.webp";
-import photoAbout5 from "../public/images/photos/photo5.webp";
 import photoAbout6 from "../public/images/photos/photo6.webp";
-import photoAbout7 from "../public/images/photos/photo7.webp";
-import photoAbout8 from "../public/images/photos/photo8.webp";
 import photoAbout9 from "../public/images/photos/photo9.webp";
 import photoAbout10 from "../public/images/photos/photo10.webp";
-import photoAbout11 from "../public/images/photos/photo11.webp";
 import photoAbout12 from "../public/images/photos/photo12.webp";
-import photoAbout13 from "../public/images/photos/photo13.webp";
 import photoAbout14 from "../public/images/photos/photo14.webp";
-import photoAbout15 from "../public/images/photos/photo15.webp";
-import photoAbout16 from "../public/images/photos/photo16.webp";
 import photoAbout17 from "../public/images/photos/photo17.webp";
 import photoAbout18 from "../public/images/photos/photo18.webp";
 import photoAbout19 from "../public/images/photos/photo19.webp";
-import photoAbout20 from "../public/images/photos/photo20.webp";
-import photoAbout21 from "../public/images/photos/photo21.webp";
 import photoAbout22 from "../public/images/photos/photo22.webp";
 import photoAbout23 from "../public/images/photos/photo23.webp";
 import photoAbout24 from "../public/images/photos/photo24.webp";
@@ -74,26 +65,6 @@ export const PHONES: ContactsInterface[] = [
     iconProps: ICONS.Phone,
     description: "Contact us by phone",
   },
-];
-
-export const PHOTOS_ALL = [
-  { src: photoAbout5, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout6, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout7, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout8, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout9, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout10, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout11, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout12, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout13, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout14, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout15, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout16, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout17, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout18, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout19, alt: "Georgian landscape", isPortrait: true },
-  { src: photoAbout20, alt: "Georgian landscape", isPortrait: false },
-  { src: photoAbout21, alt: "Georgian landscape", isPortrait: true },
 ];
 
 export const PHOTOS_VERT = [

@@ -136,7 +136,7 @@ const DaysBreakdown = () => {
                 <button
                   onClick={() => toggleDay(day.title.en)}
                   className={styles.summary}
-                  aria-expanded={openDays[day.title.en]}
+                  aria-expanded={Boolean(openDays[day.title.en])}
                   aria-controls={`activities-on-${day.title.en}`}
                 >
                   <div className={styles.titleWrapper}>
