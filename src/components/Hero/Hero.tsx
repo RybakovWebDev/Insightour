@@ -5,6 +5,7 @@ import { AnimatePresence, LazyMotion, m } from "framer-motion";
 import styles from "./Hero.module.css";
 
 import CallToActionButton from "../CallToActionButton";
+
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { Hero_Text } from "@/constantsText";
 

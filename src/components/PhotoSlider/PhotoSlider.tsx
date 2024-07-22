@@ -4,6 +4,7 @@ import { LazyMotion, m, useAnimation, AnimatePresence, useInView } from "framer-
 
 import styles from "./PhotoSlider.module.css";
 
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { PHOTOS_HOR } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
@@ -11,6 +12,7 @@ const loadFeatures = () => import("../../features").then((res) => res.default);
 function PhotoSlider() {
   const controls = useAnimation();
   const ref = useRef(null);
+  const isMobileView = useScreenWidthDetect(450);
   const isInView = useInView(ref, { once: true });
 
   const filteredPhotos = PHOTOS_HOR;
@@ -47,7 +49,13 @@ function PhotoSlider() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Image className={styles.image} src={photo.src} alt={photo.alt} priority={index < 2} sizes='650px' />
+                  <Image
+                    className={styles.image}
+                    src={photo.src}
+                    alt={photo.alt}
+                    priority={index < 2}
+                    sizes={isMobileView ? "300px" : "600px"}
+                  />
                 </m.div>
               ))}
             </AnimatePresence>

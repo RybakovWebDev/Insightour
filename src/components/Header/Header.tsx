@@ -10,6 +10,7 @@ import HeaderNav from "../HeaderNav";
 import LanguageSelector from "../LanguageSelector";
 
 import { useRefsContext } from "@/contexts/RefsContext";
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { logoImage } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
@@ -17,6 +18,7 @@ const loadFeatures = () => import("../../features").then((res) => res.default);
 function Header() {
   const [logoLoaded, setLogoLoaded] = useState(false);
   const { headerRef } = useRefsContext();
+  const isMobileView = useScreenWidthDetect(450);
 
   const handleLoaded = () => {
     setLogoLoaded(true);
@@ -39,7 +41,7 @@ function Header() {
               alt='Insightour logo'
               priority
               fill
-              sizes={"400px"}
+              sizes={isMobileView ? "50px" : "100px"}
               onLoad={handleLoaded}
             />
           </div>
