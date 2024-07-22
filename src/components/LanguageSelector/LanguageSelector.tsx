@@ -8,7 +8,7 @@ import styles from "./LanguageSelector.module.css";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { LANGUAGES, LanguageCode } from "@/constants";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 const languages: { code: LanguageCode; name: string }[] = Object.entries(LANGUAGES).map(([code, name]) => ({
   code: code as LanguageCode,

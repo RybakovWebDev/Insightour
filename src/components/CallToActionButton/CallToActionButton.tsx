@@ -104,7 +104,9 @@ function CallToActionButton() {
       const data = await response.json();
 
       if (!response.ok) {
-        if (data.errors && Array.isArray(data.errors) && data.errors.length > 0) {
+        if (response.status === 429) {
+          setErrorText("You've submitted too many forms. Please try again later.");
+        } else if (data.errors && Array.isArray(data.errors) && data.errors.length > 0) {
           const errorMessage = data.errors.join(". ");
           setErrorText(`${errorMessage}. Please check your input.`);
         } else {

@@ -1,7 +1,7 @@
 "use client";
 import { LazyMotion, m } from "framer-motion";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 const ArrowIcon = ({ isOpen }: { isOpen: boolean }) => {
   return (

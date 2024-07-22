@@ -83,6 +83,15 @@ html[data-language-selected="ar"] .h3Wrapper h3 {
   align-self: flex-end;
 }
 
+html[data-language-selected="ar"] .h3Wrapper h3 {
+  align-self: flex-end;
+}
+
+html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(3),
+html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
+  align-self: flex-start;
+}
+
 .infoWrapper {
   margin: 2rem;
   max-width: 30rem;
@@ -140,6 +149,11 @@ html[data-language-selected="ar"] .h3Wrapper h3 {
   html[data-language-selected="ar"] .h3Wrapper h3 {
     align-self: flex-end;
   }
+
+  html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(3),
+  html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
+    align-self: flex-end;
+  }
 }
 
 @media (max-width: 440px) {
@@ -163,6 +177,7 @@ html[data-language-selected="ar"] .h3Wrapper h3 {
   html[data-language-selected="ar"] .textBlock:nth-child(odd) {
     margin: 0 0 2rem 0;
   }
+
   .textBlock:nth-child(even) {
     align-self: flex-start;
     margin-left: 4rem;

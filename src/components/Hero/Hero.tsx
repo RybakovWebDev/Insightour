@@ -8,7 +8,7 @@ import CallToActionButton from "../CallToActionButton";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { Hero_Text } from "@/constantsText";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function Hero() {
   const [isReady, setIsReady] = useState(false);

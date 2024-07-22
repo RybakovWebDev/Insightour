@@ -1,6 +1,3 @@
-import { LRUCache } from "lru-cache";
-import { NextRequest } from "next/server";
-
 export const formatDate = (date: Date): string => {
   const pad = (num: number): string => num.toString().padStart(2, "0");
 
@@ -12,26 +9,6 @@ export const formatDate = (date: Date): string => {
   const seconds = pad(date.getSeconds());
 
   return `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
-};
-
-const rateLimitCache = new LRUCache<string, number>({
-  max: 500,
-  ttl: 60 * 1000, // 1 minute
-});
-
-export const rateLimit = async (request: NextRequest): Promise<{ success: boolean }> => {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  const ip = forwardedFor ? forwardedFor.split(",")[0] : request.ip ?? "127.0.0.1";
-
-  const maxRequests = 5;
-  const requests = rateLimitCache.get(ip) || 0;
-
-  if (requests >= maxRequests) {
-    return { success: false };
-  }
-
-  rateLimitCache.set(ip, requests + 1);
-  return { success: true };
 };
 
 interface FormData {

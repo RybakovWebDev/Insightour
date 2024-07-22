@@ -1,3 +1,4 @@
+import BackToTop from "@/components/BackToTop";
 import styles from "./page.module.css";
 
 import Header from "@/components/Header";
@@ -491,6 +492,7 @@ export default function Legal() {
         <br />
         Email: insightour.tb@gmail.com
       </div>
+      <BackToTop />
     </article>
   );
 }

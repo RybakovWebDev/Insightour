@@ -1,19 +1,18 @@
 "use client";
 import { useId, useRef, useState } from "react";
 import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
-import { Check, X } from "react-feather";
 
 import styles from "./Offers.module.css";
 
 import SectionName from "../SectionName";
 import Package from "../Package";
-import ArrowIcon from "../DetailsArrow/DetailsArrow";
+import CallToActionButton from "../CallToActionButton";
+import OfferedServices from "../OfferedServices";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
 import { OFFER_PACKAGES, Offers_Text } from "@/constantsText";
-import CallToActionButton from "../CallToActionButton";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -27,36 +26,6 @@ const priceVariants = {
   hidden: { opacity: 0.5, y: "-3rem" },
   show: { opacity: 1, y: 0 },
   exit: { opacity: 0.5, y: "3rem" },
-};
-
-const detailsVariants = {
-  hidden: {
-    height: 0,
-    transition: {
-      when: "afterChildren",
-    },
-  },
-  show: {
-    height: "auto",
-    transition: {
-      when: "beforeChildren",
-    },
-  },
-};
-
-const contentVariants = {
-  hidden: {
-    opacity: 0,
-    transition: { duration: 0.2 },
-  },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.2 },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.2 },
-  },
 };
 
 function Offers() {
@@ -129,83 +98,22 @@ function Offers() {
             animate={{ opacity: packagesInView ? 1 : 0 }}
             className={styles.servicesWrapper}
           >
-            <div>
-              <button
-                onClick={() => toggleDetails("services")}
-                className={styles.summaryBtn}
-                aria-expanded={openDetails.services}
-                aria-controls='included-services-content'
-              >
-                {Offers_Text.servicesIncluded[selectedLanguage]}
-                {packagesInView && <ArrowIcon isOpen={openDetails.services} />}
-              </button>
-              <AnimatePresence initial={false}>
-                {openDetails.services && (
-                  <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
-                    <m.div variants={contentVariants}>
-                      <ul className={styles.servicesList}>
-                        {Offers_Text.includedArray.map((s) => {
-                          return (
-                            <li key={s.en}>
-                              {selectedLanguage !== "ar" && (
-                                <span>
-                                  <Check size={12} />
-                                </span>
-                              )}
-                              {s[selectedLanguage]}
-                              {selectedLanguage === "ar" && (
-                                <span>
-                                  <Check size={12} />
-                                </span>
-                              )}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </m.div>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <div>
-              <button
-                onClick={() => toggleDetails("notIncluded")}
-                className={styles.summaryBtn}
-                aria-expanded={openDetails.notIncluded}
-                aria-controls='not-included-services-content'
-              >
-                {Offers_Text.servicesNotIncluded[selectedLanguage]}
-                {packagesInView && <ArrowIcon isOpen={openDetails.notIncluded} />}
-              </button>
-              <AnimatePresence initial={false}>
-                {openDetails.notIncluded && (
-                  <m.div initial='hidden' animate='show' exit='hidden' variants={detailsVariants}>
-                    <m.div variants={contentVariants}>
-                      <ul className={styles.servicesList}>
-                        {Offers_Text.notIncludedArray.map((s) => {
-                          return (
-                            <li key={s.en}>
-                              {selectedLanguage !== "ar" && (
-                                <span>
-                                  <X size={12} />
-                                </span>
-                              )}
-                              {s[selectedLanguage]}
-                              {selectedLanguage === "ar" && (
-                                <span>
-                                  <X size={12} />
-                                </span>
-                              )}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </m.div>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <OfferedServices
+              title={Offers_Text.servicesIncluded[selectedLanguage]}
+              services={Offers_Text.includedArray}
+              isOpen={openDetails.services}
+              toggleDetails={() => toggleDetails("services")}
+              isIncluded={true}
+              packagesInView={packagesInView}
+            />
+            <OfferedServices
+              title={Offers_Text.servicesNotIncluded[selectedLanguage]}
+              services={Offers_Text.notIncludedArray}
+              isOpen={openDetails.notIncluded}
+              toggleDetails={() => toggleDetails("notIncluded")}
+              isIncluded={false}
+              packagesInView={packagesInView}
+            />
           </m.div>
 
           <div className={styles.price}>

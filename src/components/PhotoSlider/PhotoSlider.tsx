@@ -6,7 +6,7 @@ import styles from "./PhotoSlider.module.css";
 
 import { PHOTOS_HOR } from "@/constants";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function PhotoSlider() {
   const controls = useAnimation();

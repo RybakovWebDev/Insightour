@@ -11,6 +11,8 @@
   "dependencies": {
     "@types/js-cookie": "^3.0.6",
     "@types/lru-cache": "^7.10.10",
+    "@upstash/ratelimit": "^2.0.1",
+    "@vercel/kv": "^2.0.0",
     "framer-motion": "^11.2.10",
     "googleapis": "^140.0.1",
     "js-cookie": "^3.0.5",

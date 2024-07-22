@@ -9,7 +9,7 @@ import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { PHOTOS_HOR, PHOTOS_VERT } from "@/constants";
 import { shuffleArray } from "@/helpers";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 interface PhotoSlideshowProps {
   portrait?: boolean;

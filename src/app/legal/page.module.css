@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 1rem;
+  margin: 1rem;
   min-height: 100vh;
   width: 100%;
   max-width: 1080px;
@@ -9,7 +9,7 @@
 }
 
 .wrapper div {
-  margin: 2rem;
+  margin: 1rem 2rem;
 }
 
 .wrapper hr {

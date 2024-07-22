@@ -11,7 +11,7 @@ import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { About_Text } from "@/constantsText";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 interface TextBlockProps {
   rotation: number;
@@ -144,15 +144,6 @@ function About() {
             {About_Text.discover4[selectedLanguage]}
           </m.h3>
         </m.div>
-        {/* <div className={styles.photosWrapper}>
-          {PHOTOS_ABOUT.map((p, i) => {
-            return (
-              <div key={i} className={styles.imageWrapper}>
-                <Image src={p.src} alt={p.alt} width={350} priority sizes={"350px"} />
-              </div>
-            );
-          })}
-        </div> */}
         <PhotoSlider />
       </section>
     </LazyMotion>

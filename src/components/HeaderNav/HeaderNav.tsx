@@ -13,7 +13,7 @@ import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { NAVLINKS } from "@/constantsText";
 import { scrollToRef } from "@/helpers";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function HeaderNav() {
   const [isMounted, setIsMounted] = useState(false);

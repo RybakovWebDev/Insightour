@@ -17,7 +17,7 @@ import {
   TOUR_DURATIONS,
 } from "@/constantsText";
 
-const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
+const loadFeatures = () => import("../../features").then((res) => res.default);
 
 const daysVariants = {
   hidden: { opacity: 0 },

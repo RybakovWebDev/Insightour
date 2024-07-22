@@ -100,34 +100,6 @@ html[data-language-selected="ar"] .servicesWrapper li {
   justify-content: flex-end;
 }
 
-.summaryBtn {
-  padding: 0.5rem;
-  height: 2.5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: left;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-}
-
-html[data-language-selected="ar"] .summaryBtn {
-  flex-direction: row-reverse;
-}
-
-.summaryBtn svg {
-  margin: 0 0.5rem 0 0;
-}
-
-.summaryBtn:hover {
-  background-color: rgb(176, 142, 206, 0.1);
-}
-
 .price {
   margin: 1rem 1rem 0 1rem;
   height: 4rem;

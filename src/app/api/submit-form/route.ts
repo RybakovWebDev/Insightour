@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
-import { formatDate, rateLimit, sanitizeInput, validateFormData } from "@/lib/serverHelpers";
+import { formatDate, sanitizeInput, validateFormData } from "@/lib/serverHelpers";
 
 interface FormData {
   name: string;
@@ -10,14 +10,6 @@ interface FormData {
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
-    const ip = request.ip ?? "127.0.0.1";
-
-    const { success: rateLimitSuccess } = await rateLimit(request);
-    if (!rateLimitSuccess) {
-      console.log("Rate limit exceeded for IP: ", ip);
-      return NextResponse.json({ message: "Too many requests" }, { status: 429 });
-    }
-
     const rawData = await request.json();
     console.log("Raw data received: ", rawData);
 
