@@ -112,9 +112,11 @@ function HeaderNav() {
                 exit={{ opacity: 0, transition: { duration: 0 } }}
               >
                 {NAVLINKS.map((l) => (
-                  <Link key={l.slug} href={l.href} onClick={(e) => handleLinkClick(e, l.slug)}>
-                    <li>{l.titles[selectedLanguage]}</li>
-                  </Link>
+                  <li key={l.slug}>
+                    <Link href={l.href} onClick={(e) => handleLinkClick(e, l.slug)}>
+                      {l.titles[selectedLanguage]}
+                    </Link>
+                  </li>
                 ))}
               </m.ul>
             </m.nav>
