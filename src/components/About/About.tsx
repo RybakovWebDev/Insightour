@@ -32,8 +32,13 @@ const container = {
   },
 };
 
-const item = {
+const itemFromRight = {
   hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
+};
+
+const itemFromLeft = {
+  hidden: { opacity: 0, x: -100 },
   show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
 };
 
@@ -59,6 +64,8 @@ function About() {
 
   const textBlocksInView = useInView(textBlocksRef, { once: true, amount: 0.3 });
   const h3WrapperInView = useInView(h3WrapperRef, { once: true, amount: 0.5 });
+
+  const isArabic = selectedLanguage === "ar";
 
   return (
     <LazyMotion features={loadFeatures}>
@@ -134,13 +141,13 @@ function About() {
           animate={h3WrapperInView ? "show" : "hidden"}
           className={styles.h3Wrapper}
         >
-          <m.h3 variants={item}>{About_Text.discover1[selectedLanguage]}</m.h3>
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{About_Text.discover1[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={item}>{About_Text.discover2[selectedLanguage]}</m.h3>
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{About_Text.discover2[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={item}>{About_Text.discover3[selectedLanguage]}</m.h3>
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{About_Text.discover3[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={item} className={styles.accent}>
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft} className={styles.accent}>
             {About_Text.discover4[selectedLanguage]}
           </m.h3>
         </m.div>

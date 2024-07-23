@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { LazyMotion, m, useAnimation, AnimatePresence, useInView } from "framer-motion";
 
@@ -10,9 +10,10 @@ import { PHOTOS_HOR } from "@/constants";
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function PhotoSlider() {
+  const [loadedImages, setLoadedImages] = useState<number[]>([]);
   const controls = useAnimation();
-  const ref = useRef(null);
   const isMobileView = useScreenWidthDetect(450);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   const filteredPhotos = PHOTOS_HOR;
@@ -35,6 +36,10 @@ function PhotoSlider() {
     animateSequence();
   }
 
+  const handleLoad = (index: number) => {
+    setLoadedImages((prev) => [...prev, index]);
+  };
+
   return (
     <LazyMotion features={loadFeatures}>
       <m.section className={styles.outerWrapper} ref={ref}>
@@ -46,10 +51,11 @@ function PhotoSlider() {
                   key={index}
                   className={styles.imageContainer}
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={{ opacity: loadedImages.includes(index) ? 1 : 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Image
+                    onLoad={() => handleLoad(index)}
                     className={styles.image}
                     src={photo.src}
                     alt={photo.alt}
