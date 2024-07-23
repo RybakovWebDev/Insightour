@@ -4,8 +4,8 @@ import { kv } from "@vercel/kv";
 
 const ratelimit = new Ratelimit({
   redis: kv,
-  // 10 requests from the same IP in 60 seconds
-  limiter: Ratelimit.slidingWindow(10, "60 s"),
+  // 10 requests from the same IP in 300 seconds
+  limiter: Ratelimit.slidingWindow(10, "300 s"),
 });
 
 // Define which routes you want to rate limit
