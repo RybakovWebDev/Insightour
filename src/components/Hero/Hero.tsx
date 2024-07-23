@@ -42,7 +42,7 @@ function Hero() {
   return (
     <LazyMotion features={loadFeatures}>
       <section className={styles.wrapper}>
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode='wait' initial={false}>
           <m.h1
             key={"heroh1" + selectedLanguage}
             initial={{ opacity: 0 }}
