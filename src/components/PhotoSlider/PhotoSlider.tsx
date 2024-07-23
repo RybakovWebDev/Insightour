@@ -59,7 +59,7 @@ function PhotoSlider() {
                     className={styles.image}
                     src={photo.src}
                     alt={photo.alt}
-                    sizes={isMobileView ? "300px" : "600px"}
+                    sizes={isMobileView ? "300px" : "900px"}
                   />
                 </m.div>
               ))}
