@@ -848,4 +848,8 @@ export const Footer_Text = {
     en: "Legal",
     ar: "المعلومات القانونية",
   },
+  address: {
+    en: "Tbilisi Guramishvili Ave N 78",
+    ar: "",
+  },
 };

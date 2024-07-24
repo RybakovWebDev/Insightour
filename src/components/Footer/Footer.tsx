@@ -42,6 +42,14 @@ function Footer() {
           );
         })}
       </div>
+      <a
+        className={styles.address}
+        href='https://maps.app.goo.gl/VJGyRnFFAk46pkpYA'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        {Footer_Text.address.en}
+      </a>
       <Link href={`/legal`} aria-label={`Legal information`} className={styles.legal}>
         {Footer_Text.legal[selectedLanguage]}
       </Link>
