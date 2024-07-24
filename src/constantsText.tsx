@@ -659,10 +659,6 @@ export const tenDayTourBreakdown = [
         en: "Continue our journey to Kutaisi and visit the caves of Sataplia and Prometheus, the second-largest caves in Europe",
         ar: "تابع رحلتنا إلى كوتايسي وقم بزيارة كهوف ساتابليا وبروميثيوس، ثاني أكبر الكهوف في أوروبا",
       },
-      {
-        en: "Visit the bottom of the cave where there is a lake and take boat rides",
-        ar: "قم بزيارة أسفل الكهف حيث يوجد بحيرة واركب القوارب",
-      },
     ],
   },
   {
