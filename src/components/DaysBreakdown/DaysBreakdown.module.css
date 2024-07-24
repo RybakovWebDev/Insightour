@@ -136,6 +136,7 @@ html[data-language-selected="ar"] .dayItem li::after {
 }
 
 html[data-language-selected="ar"] .titleWrapper {
+  padding: 0 1rem 0 0;
   width: 85%;
 }
 
