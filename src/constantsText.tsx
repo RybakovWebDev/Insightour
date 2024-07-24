@@ -679,6 +679,10 @@ export const tenDayTourBreakdown = [
         en: "Proceed to Martvili Canyon to experience a boat ride in the narrow valley",
         ar: "تابع إلى وادي مارتفيلي لتجربة ركوب القوارب في الوادي الضيق",
       },
+      {
+        en: "Get to Batumi",
+        ar: "الوصول إلى باتومي",
+      },
     ],
   },
   {
