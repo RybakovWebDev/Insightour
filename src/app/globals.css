@@ -30,6 +30,11 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+::selection {
+  background-color: #6d309d;
+  color: #ffffff;
+}
+
 a {
   color: #b08ece;
   text-decoration: none;
