@@ -720,16 +720,16 @@ export const tenDayTourBreakdown = [
     },
     activities: [
       {
-        en: "Wander through the national park, one of Europe's largest parks",
-        ar: "تجول في الحديقة الوطنية، إحدى أكبر الحدائق في أوروبا",
-      },
-      {
         en: "Take a cable car ride to the mountain peak to admire the panoramic view of the city from above",
         ar: "قم بركوب التلفريك إلى قمة الجبل للاستمتاع بالمنظر البانورامي للمدينة من الأعلى",
       },
       {
         en: "Have a memorable Photoshoot",
         ar: "قم بجلسة تصوير لا تُنسى",
+      },
+      {
+        en: "Go to the main malls for shopping",
+        ar: "اذهب إلى المراكز التجارية الرئيسية للتسوق",
       },
     ],
   },
@@ -750,10 +750,6 @@ export const tenDayTourBreakdown = [
       {
         en: "See a dolphin show and enjoy a free tour around Lake Batumi",
         ar: "شاهد عرض الدلافين واستمتع بجولة مجانية حول بحيرة باتومي",
-      },
-      {
-        en: "Take a cable car ride to admire the picturesque peaks and behold the impressive city scenery from above",
-        ar: "قم بركوب التلفريك للاستمتاع بالقمم الخلابة وتأمل مشهد المدينة الرائع من الأعلى",
       },
     ],
   },
