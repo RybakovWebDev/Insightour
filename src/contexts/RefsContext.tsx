@@ -6,6 +6,7 @@ interface RefsContextType {
   aboutRef: RefObject<HTMLElement>;
   ratesRef: RefObject<HTMLElement>;
   offersRef: RefObject<HTMLElement>;
+  servicesRef: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
   footerRef: RefObject<HTMLParagraphElement>;
 }
@@ -15,6 +16,7 @@ const defaultValue: RefsContextType = {
   aboutRef: { current: null },
   ratesRef: { current: null },
   offersRef: { current: null },
+  servicesRef: { current: null },
   contactRef: { current: null },
   footerRef: { current: null },
 };
@@ -26,11 +28,12 @@ export function RefsProvider({ children }: { children: ReactNode }) {
   const aboutRef = useRef<HTMLElement>(null);
   const ratesRef = useRef<HTMLElement>(null);
   const offersRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <RefsContext.Provider value={{ headerRef, aboutRef, ratesRef, offersRef, contactRef, footerRef }}>
+    <RefsContext.Provider value={{ headerRef, aboutRef, ratesRef, offersRef, servicesRef, contactRef, footerRef }}>
       {children}
     </RefsContext.Provider>
   );

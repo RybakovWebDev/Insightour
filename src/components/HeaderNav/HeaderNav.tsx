@@ -38,6 +38,8 @@ function HeaderNav() {
         scrollToRef(ratesRef);
       } else if (hash === "#offers") {
         scrollToRef(offersRef);
+      } else if (hash === "#services") {
+        scrollToRef(contactRef);
       } else if (hash === "#contact") {
         scrollToRef(contactRef);
       }
@@ -69,6 +71,8 @@ function HeaderNav() {
         scrollToRef(ratesRef);
       } else if (slug === "offers") {
         scrollToRef(offersRef);
+      } else if (slug === "services") {
+        scrollToRef(contactRef);
       } else if (slug === "contact") {
         scrollToRef(contactRef);
       }
@@ -112,11 +116,15 @@ function HeaderNav() {
                 exit={{ opacity: 0, transition: { duration: 0 } }}
               >
                 {NAVLINKS.map((l) => (
-                  <li key={l.slug}>
+                  <m.li
+                    key={l.slug}
+                    initial={{ borderBottom: "1px solid rgba(109, 48, 157, 0)" }}
+                    whileHover={{ borderBottom: "1px solid rgba(109, 48, 157, 1)" }}
+                  >
                     <Link href={l.href} onClick={(e) => handleLinkClick(e, l.slug)}>
                       {l.titles[selectedLanguage]}
                     </Link>
-                  </li>
+                  </m.li>
                 ))}
               </m.ul>
             </m.nav>

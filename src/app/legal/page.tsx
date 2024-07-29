@@ -1,14 +1,15 @@
-import BackToTop from "@/components/BackToTop";
 import styles from "./page.module.css";
 
 import Header from "@/components/Header";
+import BackToTop from "@/components/BackToTop";
+import Footer from "@/components/Footer";
 
 export default function Legal() {
   return (
-    <article className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <Header />
       <h1>Legal</h1>
-      <div>
+      <div className={styles.legalSection}>
         <strong>PRIVACY POLICY</strong>
         <br />
         <strong>Last updated October 02, 2023</strong>
@@ -174,8 +175,8 @@ export default function Legal() {
         <br />
         Georgia
       </div>
-      <hr />
-      <div>
+      <hr className={styles.legalDivider} />
+      <div className={styles.legalSection}>
         <strong>TERMS OF USE</strong>
         <br />
         <strong>Last updated October 02, 2023</strong>
@@ -349,9 +350,9 @@ export default function Legal() {
         Email: insightour.tb@gmail.com
       </div>
 
-      <hr />
+      <hr className={styles.legalDivider} />
 
-      <div>
+      <div className={styles.legalSection}>
         <strong>TERMS OF SALE</strong>
         <br />
         <strong>Last updated October 02, 2023</strong>
@@ -493,6 +494,7 @@ export default function Legal() {
         Email: insightour.tb@gmail.com
       </div>
       <BackToTop />
-    </article>
+      <Footer />
+    </section>
   );
 }

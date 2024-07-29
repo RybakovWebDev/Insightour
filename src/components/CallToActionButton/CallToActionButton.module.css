@@ -9,6 +9,11 @@
   font-size: 22px;
   font-weight: 700;
   cursor: pointer;
+  transition: 300ms;
+}
+
+.button:hover {
+  background-color: #6d309d;
 }
 
 html[data-language-selected="ar"] .button {

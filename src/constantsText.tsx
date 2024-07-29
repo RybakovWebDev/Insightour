@@ -1,3 +1,8 @@
+import dentalIcon from "../public/images/icons/tooth.webp";
+import cosmeticIcon from "../public/images/icons/general_surgery.webp";
+import reproductiveIcon from "../public/images/icons/baby_0203m.webp";
+import wellnessIcon from "../public/images/icons/forest.webp";
+
 export const TOUR_DURATIONS = [
   { slug: "3days", title: { en: "3 Days", ar: "٣ أيام" } },
   { slug: "7days", title: { en: "7 Days", ar: "٧ أيام" } },
@@ -27,6 +32,16 @@ export const NAVLINKS = [
     titles: {
       en: "Tours",
       ar: "الجولات",
+    },
+  },
+  {
+    slug: "services",
+    href: "/",
+    titles: {
+      en: "Services",
+      //TODO
+      ar: "الجولات",
+      //TODO
     },
   },
   {
@@ -150,6 +165,44 @@ export const About_Text = {
     en: "EMOTIONS",
     ar: "العواطف",
   },
+  exploreSectionName: {
+    en: "Your Practical Guide in Georgia: Experience, Learn and Evolve",
+    er: "دليلك العملي في جورجيا: تجربة، تعلم، وتطور",
+  },
+  exploreRevealButton: {
+    en: "Explore Georgia",
+    ar: "استكشف جورجيا",
+  },
+  exploreSections: [
+    {
+      name: { en: "History", ar: "التاريخ" },
+      text: {
+        en: "Georgia’s history spans thousands of years, shaped by significant events such as its founding by ancient tribes and the establishment of the Kingdom of Colchis, which is associated with the legend of Jason and the Argonauts. Positioned at key trade routes, it has cultivated trade and cultural exchange, particularly during the Silk Road era. The country is known for its ancient winemaking traditions, with archaeological evidence suggesting winemaking as far back as 6000 BC, alongside unique handcrafted products, boosting its agricultural sector and gastronomic tourism. Recently, the growth of contemporary art and creative industries has made it attractive for young entrepreneurs and startups. Its contributions to global culture in literature, music, and the arts continue to inspire people worldwide.",
+        ar: "يعود تاريخ جورجيا إلى آلاف السنين، وقد تشكلت على يد أحداث هامة مثل تأسيسها بواسطة القبائل القديمة وإقامة مملكة كولخيس، المرتبطة بأسطورة جايسون والأرجونوت. وبفضل موقعها الاستراتيجي على طرق التجارة الرئيسية، قامت بتطوير التجارة وتبادل الثقافات، خاصة خلال فترة طريق الحرير. تشتهر البلاد بتقاليدها القديمة في صناعة النبيذ، مع وجود أدلة أثرية تشير إلى صناعة النبيذ منذ حوالي 6000 قبل الميلاد، إلى جانب المنتجات اليدوية الفريدة التي تعزز قطاعها الزراعي والسياحة الغذائية. مؤخراً، جعل نمو الفن المعاصر والصناعات الإبداعية البلاد جذابة لرواد الأعمال الشباب والشركات الناشئة. تواصل مساهماتها في الثقافة العالمية في الأدب والموسيقى والفنون إلهام الناس في جميع أنحاء العالم.",
+      },
+    },
+    {
+      name: { en: "Climate", ar: "المناخ" },
+      text: {
+        en: "Georgia is renowned for its diverse climate thanks to its unique geographical position. Here, one can encounter a mild subtropical climate along the Black Sea coast as well as a continental climate in the mountainous regions. Summers are warm and sunny, while winters can be cold in the highlands. Such a climate attracts not only tourists but also investors interested in the agricultural sector and ecotourism.",
+        ar: "تشتهر جورجيا بمناخها المتنوع بفضل موقعها الجغرافي الفريد. يمكن للمرء أن يواجه مناخاً شبه استوائي معتدل على ساحل البحر الأسود، فضلاً عن مناخ قاري في المناطق الجبلية. الصيف دافئ ومشمس، بينما قد تكون الشتاء باردة في المرتفعات. يجذب هذا المناخ ليس فقط السياح ولكن أيضاً المستثمرين المهتمين بالقطاع الزراعي والسياحة البيئية.",
+      },
+    },
+    {
+      name: { en: "Developing Economy", ar: "الاقتصاد المتطور" },
+      text: {
+        en: "Georgia demonstrates stable economic growth, making the country appealing for investments. Global rankings show that Georgia holds high positions for ease of doing business among CIS countries. The main sectors of the economy include agriculture, tourism, and IT technologies. In recent years, the government has initiated a series of reforms aimed at improving the business climate, attracting both local and foreign investors. Georgia is actively developing transportation infrastructure, linking Europe and Asia. This creates convenient conditions for logistics and trade, positively impacting the country's economy.",
+        ar: "تُظهر جورجيا نمواً اقتصادياً مستقراً، مما يجعل البلاد جذابة للاستثمارات. وتظهر التصنيفات العالمية أن جورجيا تحتل مراكز عالية من حيث سهولة ممارسة الأعمال التجارية بين دول رابطة الدول المستقلة. تشمل القطاعات الرئيسية في الاقتصاد الزراعة والسياحة وتقنيات المعلومات. في السنوات الأخيرة، أطلقت الحكومة سلسلة من الإصلاحات تهدف إلى تحسين مناخ الأعمال، وجذب كل من المستثمرين المحليين والأجانب. تقوم جورجيا بتطوير بنية النقل التحتية بنشاط، مما يربط بين أوروبا وآسيا، مما يخلق ظروفاً ملائمة للوجستيات والتجارة، ويؤثر إيجابياً على اقتصاد البلاد.",
+      },
+    },
+    {
+      name: { en: "Real Estate", ar: "العقارات" },
+      text: {
+        en: "Real estate in Georgia is becoming increasingly attractive to foreign investors. With moderate prices and ease of doing business, the country offers a wide selection of both primary and secondary housing. Coastal areas, such as Batumi, attract significant interest due to rapid infrastructure development. The government of Georgia actively supports programs for foreign citizens, simplifying the process of purchasing real estate. There are also favorable conditions for renting out properties. Investments in real estate here can provide stable income, and the location is becoming more popular among tourists.",
+        ar: "أصبحت العقارات في جورجيا جذابة بشكل متزايد للمستثمرين الأجانب. مع الأسعار المعتدلة وسهولة ممارسة الأعمال التجارية، تقدم البلاد مجموعة واسعة من المساكن الأولية والثانوية. المناطق الساحلية، مثل باتومي، تجذب اهتماماً كبيراً بسبب التطور السريع في البنية التحتية. تدعم حكومة جورجيا بنشاط البرامج للمواطنين الأجانب، مما يسهل عملية شراء العقارات. كما توجد شروط ملائمة لتأجير العقارات. يمكن أن توفر الاستثمارات في العقارات هنا دخلاً ثابتاً، والموقع يصبح أكثر شعبية بين السياح.",
+      },
+    },
+  ],
 };
 
 export const Offers_Text = {
@@ -834,6 +887,299 @@ export const tenDayTourBreakdown = [
     ],
   },
 ];
+
+export const ExtraServices_Text = {
+  sectionName: {
+    en: "extra services",
+    ar: "أسعارنا",
+  },
+};
+
+export const ExtraServicesPackages_Text = [
+  {
+    slug: "realEstate",
+    title: {
+      en: "Real estate advisory",
+      ar: "استشارات العقارات",
+    },
+    included: [
+      {
+        en: "4* hotel",
+        ar: "فندق 4 نجوم",
+      },
+      {
+        en: "Premium transportation",
+        ar: "نقل بريميوم",
+      },
+      {
+        en: "2 activities per day",
+        ar: "نشاطان يومياً",
+      },
+    ],
+    price: "300",
+  },
+  {
+    slug: "medical",
+    title: {
+      en: "Medical tourism",
+      ar: "السياحة الطبية",
+    },
+    included: [
+      {
+        en: "5* hotel",
+        ar: "فندق 5 نجوم",
+      },
+      {
+        en: "Premium transportation",
+        ar: "نقل بريميوم",
+      },
+      {
+        en: "3 activities per day",
+        ar: "3 أنشطة يومياً",
+      },
+      {
+        en: "Memorable photoshoot",
+        ar: "جلسة تصوير لا تُنسى",
+      },
+    ],
+    price: "600",
+  },
+  {
+    slug: "education",
+    title: {
+      en: "University admissions",
+      ar: "قبول الجامعات",
+    },
+    included: [
+      {
+        en: "5* hotel",
+        ar: "فندق 5 نجوم",
+      },
+      {
+        en: "VIP transportation",
+        ar: "نقل كبار الشخصيات",
+      },
+      {
+        en: "3-4 activities per day",
+        ar: "3-4 أنشطة يومياً",
+      },
+      {
+        en: "Real estate advisory",
+        ar: "استشارات عقارية",
+      },
+      {
+        en: "Memorable photoshoot",
+        ar: "جلسة تصوير لا تُنسى",
+      },
+      {
+        en: "Individually tailored tour",
+        ar: "جولة مخصصة بشكل فردي",
+      },
+    ],
+    price: "1000",
+  },
+];
+
+export const RealEstate_Text = {
+  headline: {
+    en: "Real estate advisory",
+    ar: "استشارات العقارات",
+  },
+};
+
+export const Medical_Text = {
+  headline: {
+    en: "Medical tourism",
+    ar: "السياحة الطبية",
+  },
+  introDescription: {
+    en: "Georgia is rapidly emerging as one of the leading destinations for medical, cosmetic, and dental healthcare services. With the rise in medical tourism, countries like Georgia are becoming valuable resources for individuals seeking high-quality care at remarkably low costs. The country boasts modern medical facilities and highly trained professionals, attracting patients not only from neighboring regions but also from Europe and beyond. In addition to affordability, Georgia offers a rich cultural experience, making it an appealing choice for those combining treatment with travel. As of 2023, the growing number of international patients and expanding healthcare options continue to position Georgia as a prominent player in the global medical tourism market.",
+    ar: "",
+  },
+  benefits: [
+    {
+      title: {
+        en: "Affordable Healthcare",
+        ar: "",
+      },
+      description: {
+        en: "Medical treatments in Georgia are significantly cheaper than in many other countries, appealing to those seeking quality care at lower prices",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Skilled Medical Staff",
+        ar: "",
+      },
+      description: {
+        en: "Georgia's healthcare system features well-trained doctors and medical professionals, many of whom have international credentials",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Easy Access",
+        ar: "",
+      },
+      description: {
+        en: "With lenient visa policies, Georgia is accessible for medical travelers from Europe, Asia, and the Middle East",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Cultural Experiences",
+        ar: "",
+      },
+      description: {
+        en: "Patients can enjoy Georgia's rich cultural heritage, historical landmarks, stunning landscapes, and delicious cuisine alongside their medical care",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Modern Facilities",
+        ar: "",
+      },
+      description: {
+        en: "Georgia offers healthcare facilities that meet international standards, with some hospitals accredited by global organizations",
+        ar: "",
+      },
+    },
+  ],
+  selection: [
+    {
+      slug: "dental",
+      icon: dentalIcon,
+      shortTitle: {
+        en: "Dental",
+        ar: "",
+      },
+      fullTitle: {
+        en: "Dental Care",
+        ar: "",
+      },
+      description: {
+        en: "Dental treatments such as implants, crowns, veneers, and teeth whitening are commonly sought by international patients.",
+        ar: "",
+      },
+    },
+    {
+      slug: "cosmetic",
+      icon: cosmeticIcon,
+      shortTitle: {
+        en: "Cosmetic",
+        ar: "",
+      },
+      fullTitle: {
+        en: "Cosmetic and Plastic Surgery",
+        ar: "",
+      },
+      description: {
+        en: "Procedures such as rhinoplasty, breast augmentation, liposuction, and facelifts are popular among medical tourists visiting Georgia.",
+        ar: "",
+      },
+    },
+    {
+      slug: "reproductive",
+      icon: reproductiveIcon,
+      shortTitle: {
+        en: "Reproductive",
+        ar: "",
+      },
+      fullTitle: {
+        en: "Reproductive Tourism",
+        ar: "",
+      },
+      description: {
+        en: "Georgia has become a popular destination for couples seeking fertility treatments, including in vitro fertilization (IVF) and surrogacy.",
+        ar: "",
+      },
+    },
+    {
+      slug: "wellness",
+      icon: wellnessIcon,
+      shortTitle: {
+        en: "Wellness",
+        ar: "",
+      },
+      fullTitle: {
+        en: "Wellness and Rehabilitation",
+        ar: "",
+      },
+      description: {
+        en: "The country's natural landscapes, including hot springs and therapeutic resorts, attract individuals seeking relaxation, wellness retreats, and rehabilitation services.",
+        ar: "",
+      },
+    },
+  ],
+  faq: [
+    {
+      title: {
+        en: "STEP 1",
+        ar: "",
+      },
+      headline: {
+        en: "Get in touch",
+        ar: "",
+      },
+      description: {
+        en: "Upon receiving your inquiry, our team will help you set up a virtual consultation with the doctor. After discussing all the necessary details, our coordinators will present you with a comprehensive surgery plan, covering costs and logistics.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "STEP 2",
+        ar: "",
+      },
+      headline: {
+        en: "Travel options",
+        ar: "",
+      },
+      description: {
+        en: "Feel free to ask for personalized travel arrangements, including leisure activities in Tbilisi and day excursions, tailored to fit your surgical timeline.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "STEP 3",
+        ar: "",
+      },
+      headline: {
+        en: "Lodging arrangements",
+        ar: "",
+      },
+      description: {
+        en: "We are happy to provide you with exclusive rates at one of our partner hotels conveniently located within walking distance from the hospital.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "STEP 4",
+        ar: "",
+      },
+      headline: {
+        en: "Final confirmation",
+        ar: "",
+      },
+      description: {
+        en: "Before you leave, we will send you a confirmation that includes your appointment details, reservations, travel plans, and lodging arrangements.",
+        ar: "",
+      },
+    },
+  ],
+};
+
+export const Education_Text = {
+  headline: {
+    en: "University admissions",
+    ar: "قبول الجامعات",
+  },
+};
 
 export const Footer_Text = {
   acceptCrypto: {

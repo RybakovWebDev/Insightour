@@ -1,0 +1,152 @@
+.wrapper {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.packagesWrapper {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f0ff;
+  border: 1px solid rgb(109, 48, 157, 0.1);
+  border-radius: 15px;
+}
+
+.packageSelector {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid rgb(109, 48, 157, 0.1);
+  overflow: hidden;
+}
+
+.packageSelector button:nth-child(2) {
+  border-left: 1px solid rgb(109, 48, 157, 0.1);
+  border-right: 1px solid rgb(109, 48, 157, 0.1);
+}
+
+.packageSelector button {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.packageSelector button h3 {
+  color: #6d309d;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 10;
+}
+
+html[data-language-selected="ar"] .packageSelector button h3 {
+  font-size: clamp(16px, 5vw, 28px);
+}
+
+.hovered {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(272, 100%, 90%);
+}
+
+.detailsWrapper {
+  width: 80%;
+}
+
+.includedListWrapper ul {
+  list-style: none;
+}
+
+html[data-language-selected="ar"] .includedListWrapper ul {
+  text-align: right;
+}
+
+.includedListWrapper li {
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+html[data-language-selected="ar"] .includedListWrapper li {
+  font-size: clamp(26px, 6vw, 35px);
+}
+
+.includedListWrapper span::before {
+  content: "•";
+  color: #6d309d;
+  font-size: 1rem;
+  padding-right: 0.5rem;
+  display: inline-block;
+}
+
+html[data-language-selected="ar"] .includedListWrapper span::before {
+  padding: 0 0 0 0.5rem;
+}
+
+.buttonWrapper {
+  margin: 1rem 0 0 0;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b08ece;
+  border-top: 1px solid rgb(109, 48, 157, 0.1);
+  overflow: hidden;
+}
+
+.buttonWrapper button {
+  height: 4rem;
+  width: 12rem;
+  border: none;
+  border-radius: 20px;
+  color: #6d309d;
+  background-color: hsl(272, 100%, 90%);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.buttonWrapper button:hover {
+  color: #ffffff;
+  background-color: #6d309d;
+}
+
+.buttonWrapper a {
+  color: inherit;
+}
+
+@media (max-width: 1080px) {
+  .packagesWrapper {
+    min-width: 22rem;
+    width: 80vw;
+    max-width: 35rem;
+    flex-direction: column;
+  }
+
+  .summaryBtn:hover {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 300px) {
+  .packagesWrapper {
+    min-width: 10rem;
+    width: 95vw;
+  }
+
+  .packageSelector button h3 {
+    font-size: 16px;
+  }
+}

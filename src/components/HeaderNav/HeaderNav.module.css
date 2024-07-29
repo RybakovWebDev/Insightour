@@ -39,11 +39,6 @@ html[data-language-selected="ar"] .list a {
 .list li {
   margin: 0 0 0 1rem;
 }
-
-.list li:hover {
-  border-bottom: 1px solid rgba(109, 48, 157, 0.5);
-}
-
 @media (max-width: 450px) {
   .navContainer {
     margin: 0;

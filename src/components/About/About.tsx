@@ -10,6 +10,8 @@ import PhotoSlider from "../PhotoSlider";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { About_Text } from "@/constantsText";
+import MapGeorgia from "../MapGeorgia";
+import ExploreGeorgiaDropdown from "../ExploreGeorgiaDropdown";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -72,12 +74,14 @@ function About() {
       <section ref={aboutRef} className={styles.wrapper}>
         <SectionName>{About_Text.sectionName[selectedLanguage]}</SectionName>
         <h2>
-          {About_Text.intro1[selectedLanguage]} -
+          {About_Text.intro1[selectedLanguage]} -{" "}
           <span>
             {About_Text.intro2[selectedLanguage]}&nbsp;{About_Text.intro3[selectedLanguage]}&nbsp;
             {About_Text.intro4[selectedLanguage]}&nbsp;{About_Text.intro5[selectedLanguage]}.
           </span>
         </h2>
+        <ExploreGeorgiaDropdown />
+        <MapGeorgia />
         <div ref={textBlocksRef} className={styles.textBlocksWrapper}>
           <svg className={styles.snakePath} viewBox='0 0 100 400' xmlns='http://www.w3.org/2000/svg'>
             <defs>
