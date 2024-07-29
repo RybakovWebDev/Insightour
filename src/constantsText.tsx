@@ -2,6 +2,7 @@ import dentalIcon from "../public/images/icons/tooth.webp";
 import cosmeticIcon from "../public/images/icons/general_surgery.webp";
 import reproductiveIcon from "../public/images/icons/baby_0203m.webp";
 import wellnessIcon from "../public/images/icons/forest.webp";
+import { ICONS } from "./constants";
 
 export const TOUR_DURATIONS = [
   { slug: "3days", title: { en: "3 Days", ar: "٣ أيام" } },
@@ -69,6 +70,10 @@ export const CallToActionButton_Text = {
   button: {
     en: "Book Tour",
     ar: "احجز جولة",
+  },
+  buttonAppointment: {
+    en: "Book an appointment",
+    ar: "",
   },
   name: {
     en: "Name",
@@ -165,14 +170,24 @@ export const About_Text = {
     en: "EMOTIONS",
     ar: "العواطف",
   },
-  exploreSectionName: {
-    en: "Your Practical Guide in Georgia: Experience, Learn and Evolve",
-    er: "دليلك العملي في جورجيا: تجربة، تعلم، وتطور",
+};
+
+export const Explore_Text = {
+  exploreSectionIntro: {
+    en: "Your Practical Guide in Georgia:",
+    ar: "دليلك العملي في جورجيا:",
   },
+
+  exploreSectionIntroAccent: {
+    en: "Experience, Learn and Evolve",
+    ar: "تجربة، تعلم، وتطور",
+  },
+
   exploreRevealButton: {
     en: "Explore Georgia",
     ar: "استكشف جورجيا",
   },
+
   exploreSections: [
     {
       name: { en: "History", ar: "التاريخ" },
@@ -899,7 +914,7 @@ export const ExtraServicesPackages_Text = [
   {
     slug: "realEstate",
     title: {
-      en: "Real estate advisory",
+      en: "Real estate",
       ar: "استشارات العقارات",
     },
     included: [
@@ -921,7 +936,7 @@ export const ExtraServicesPackages_Text = [
   {
     slug: "medical",
     title: {
-      en: "Medical tourism",
+      en: "Health",
       ar: "السياحة الطبية",
     },
     included: [
@@ -947,7 +962,7 @@ export const ExtraServicesPackages_Text = [
   {
     slug: "education",
     title: {
-      en: "University admissions",
+      en: "Education",
       ar: "قبول الجامعات",
     },
     included: [
@@ -989,11 +1004,32 @@ export const RealEstate_Text = {
 
 export const Medical_Text = {
   headline: {
-    en: "Medical tourism",
+    en: "Your ultimate medical tourism experience!",
     ar: "السياحة الطبية",
   },
+  aboutSectionName: {
+    en: "about us",
+    ar: "حولنا",
+  },
+  treatmentsSectionName: {
+    en: "treatments",
+    ar: "",
+  },
+  georgiaSectionName: {
+    en: "health in Georgia",
+    ar: "",
+  },
+  faqSectionName: {
+    en: "how does it work?",
+    ar: "",
+  },
+
   introDescription: {
-    en: "Georgia is rapidly emerging as one of the leading destinations for medical, cosmetic, and dental healthcare services. With the rise in medical tourism, countries like Georgia are becoming valuable resources for individuals seeking high-quality care at remarkably low costs. The country boasts modern medical facilities and highly trained professionals, attracting patients not only from neighboring regions but also from Europe and beyond. In addition to affordability, Georgia offers a rich cultural experience, making it an appealing choice for those combining treatment with travel. As of 2023, the growing number of international patients and expanding healthcare options continue to position Georgia as a prominent player in the global medical tourism market.",
+    en: "Discover high-quality medical care in georgia with insightour",
+    ar: "",
+  },
+  introDescriptionAccent: {
+    en: "your health is our priority!",
     ar: "",
   },
   benefits: [
@@ -1047,11 +1083,25 @@ export const Medical_Text = {
         ar: "",
       },
     },
+    {
+      title: {
+        en: "Accompaniment",
+        ar: "",
+      },
+      description: {
+        en: "We will meet you at the airport and arrange your transfer, hotel, and everything necessary for your comfort",
+        ar: "",
+      },
+    },
   ],
+  georgiaHealthText: {
+    en: "Georgia is rapidly emerging as one of the leading destinations for medical, cosmetic, and dental healthcare services. With the rise in medical tourism, countries like Georgia are becoming valuable resources for individuals seeking high-quality care at remarkably low costs. The country boasts modern medical facilities and highly trained professionals, attracting patients not only from neighboring regions but also from Europe and beyond. In addition to affordability, Georgia offers a rich cultural experience, making it an appealing choice for those combining treatment with travel. As of 2023, the growing number of international patients and expanding healthcare options continue to position Georgia as a prominent player in the global medical tourism market.",
+    ar: "",
+  },
   selection: [
     {
       slug: "dental",
-      icon: dentalIcon,
+      icon: ICONS.Tooth,
       shortTitle: {
         en: "Dental",
         ar: "",
@@ -1067,7 +1117,7 @@ export const Medical_Text = {
     },
     {
       slug: "cosmetic",
-      icon: cosmeticIcon,
+      icon: ICONS.Surgery,
       shortTitle: {
         en: "Cosmetic",
         ar: "",
@@ -1083,7 +1133,7 @@ export const Medical_Text = {
     },
     {
       slug: "reproductive",
-      icon: reproductiveIcon,
+      icon: ICONS.Baby,
       shortTitle: {
         en: "Reproductive",
         ar: "",
@@ -1099,7 +1149,7 @@ export const Medical_Text = {
     },
     {
       slug: "wellness",
-      icon: wellnessIcon,
+      icon: ICONS.Forest,
       shortTitle: {
         en: "Wellness",
         ar: "",

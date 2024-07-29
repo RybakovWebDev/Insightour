@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.wrapper h2 {
+.introText {
   padding: 0 1rem;
   margin: 0 0 2rem 0;
   max-width: 40rem;
@@ -14,11 +14,11 @@
   z-index: 1;
 }
 
-html[data-language-selected="ar"] .wrapper h2 {
+html[data-language-selected="ar"] .introText {
   font-size: clamp(28px, 5vw, 45px);
 }
 
-.wrapper h2 span,
+.introText span,
 .textBlock,
 .accent {
   color: #6d309d;
@@ -138,6 +138,19 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.exploreSectionIntro {
+  padding: 0 1rem;
+  margin: 2rem 0 0 0;
+  max-width: 40rem;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.exploreSectionIntro span {
+  color: #6d309d;
 }
 
 @media (max-width: 1080px) {

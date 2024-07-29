@@ -4,6 +4,7 @@ import styles from "./SectionName.module.css";
 
 interface SectionNameProps {
   children: ReactNode;
+  [key: string]: any;
 }
 
 function SectionName({ children }: SectionNameProps) {

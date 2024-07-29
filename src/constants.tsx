@@ -32,6 +32,12 @@ export const ICONS = {
   TikTok: { src: "/images/contacts/tiktok.svg", alt: "Contact on TikTok" },
   Phone: { src: "/images/contacts/phone-call.svg", alt: "Call phone number 1" },
   Bitcoin: { src: "/images/contacts/btc.svg", alt: "Bitcoin logo" },
+  Medicine: { src: "/images/icons/health_and_safety.svg", alt: "Medicine cross" },
+  Baby: { src: "/images/icons/baby_0203m.svg", alt: "Baby" },
+  Tooth: { src: "/images/icons/tooth.svg", alt: "Tooth" },
+  Surgery: { src: "/images/icons/general_surgery.svg", alt: "Scalpel" },
+  Spa: { src: "/images/icons/spa.svg", alt: "Spa leaf" },
+  Forest: { src: "/images/icons/forest.svg", alt: "Forest" },
 };
 
 interface ContactsInterface {

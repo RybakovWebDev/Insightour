@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
@@ -6,7 +7,7 @@ import styles from "./ExploreGeorgiaDropdown.module.css";
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
-import { About_Text } from "@/constantsText";
+import { Explore_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -44,7 +45,7 @@ function ExploreGeorgiaDropdown() {
           aria-expanded={isOpen}
           aria-controls={`Expand detailed Georgia information`}
         >
-          {About_Text.exploreRevealButton.en}
+          {Explore_Text.exploreRevealButton.en}
           <ArrowIcon isOpen={isOpen} />
         </button>
         <AnimatePresence initial={false}>
@@ -58,7 +59,7 @@ function ExploreGeorgiaDropdown() {
             >
               <m.div variants={contentVariants}>
                 <ul>
-                  {About_Text.exploreSections.map((s) => (
+                  {Explore_Text.exploreSections.map((s) => (
                     <li key={s.name[selectedLanguage]}>
                       <h4>{s.name[selectedLanguage]}</h4>
                       {s.text[selectedLanguage]}

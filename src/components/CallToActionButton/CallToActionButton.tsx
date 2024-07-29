@@ -11,6 +11,10 @@ import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
+interface CallToActionButtonProps {
+  appointment?: boolean;
+}
+
 const simpleFadeVarians = {
   hidden: {
     opacity: 0,
@@ -23,7 +27,7 @@ const simpleFadeVarians = {
   },
 };
 
-function CallToActionButton() {
+function CallToActionButton({ appointment }: CallToActionButtonProps) {
   const isMobileView = useScreenWidthDetect(1080);
   const [modalOpen, setModalOpen] = useState(false);
   const [nameText, setNameText] = useState("");
@@ -127,7 +131,9 @@ function CallToActionButton() {
   return (
     <section>
       <button className={styles.button} onClick={handleOpenModal}>
-        {CallToActionButton_Text.button[selectedLanguage]}
+        {appointment
+          ? CallToActionButton_Text.buttonAppointment[selectedLanguage]
+          : CallToActionButton_Text.button[selectedLanguage]}
       </button>
       <LazyMotion features={loadFeatures}>
         <AnimatePresence>

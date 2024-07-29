@@ -9,7 +9,7 @@ import PhotoSlider from "../PhotoSlider";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
-import { About_Text } from "@/constantsText";
+import { About_Text, Explore_Text } from "@/constantsText";
 import MapGeorgia from "../MapGeorgia";
 import ExploreGeorgiaDropdown from "../ExploreGeorgiaDropdown";
 
@@ -73,15 +73,14 @@ function About() {
     <LazyMotion features={loadFeatures}>
       <section ref={aboutRef} className={styles.wrapper}>
         <SectionName>{About_Text.sectionName[selectedLanguage]}</SectionName>
-        <h2>
+        <h2 className={styles.introText}>
           {About_Text.intro1[selectedLanguage]} -{" "}
           <span>
             {About_Text.intro2[selectedLanguage]}&nbsp;{About_Text.intro3[selectedLanguage]}&nbsp;
             {About_Text.intro4[selectedLanguage]}&nbsp;{About_Text.intro5[selectedLanguage]}.
           </span>
         </h2>
-        <ExploreGeorgiaDropdown />
-        <MapGeorgia />
+
         <div ref={textBlocksRef} className={styles.textBlocksWrapper}>
           <svg className={styles.snakePath} viewBox='0 0 100 400' xmlns='http://www.w3.org/2000/svg'>
             <defs>
@@ -156,6 +155,13 @@ function About() {
           </m.h3>
         </m.div>
         <PhotoSlider />
+        <h2 className={styles.exploreSectionIntro}>
+          {Explore_Text.exploreSectionIntro[selectedLanguage]}
+          <br />
+          <span>{Explore_Text.exploreSectionIntroAccent[selectedLanguage]}</span>
+        </h2>
+        <ExploreGeorgiaDropdown />
+        <MapGeorgia />
       </section>
     </LazyMotion>
   );
