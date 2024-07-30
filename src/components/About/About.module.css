@@ -140,19 +140,6 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   }
 }
 
-.exploreSectionIntro {
-  padding: 0 1rem;
-  margin: 2rem 0 0 0;
-  max-width: 40rem;
-  text-align: center;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.exploreSectionIntro span {
-  color: #6d309d;
-}
-
 @media (max-width: 1080px) {
   .h3Wrapper h3:nth-last-child(3),
   .h3Wrapper h3:nth-last-child(1) {

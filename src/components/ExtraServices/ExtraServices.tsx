@@ -10,7 +10,7 @@ import SectionName from "../SectionName";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
-import { ExtraServices_Text, ExtraServicesPackages_Text } from "@/constantsText";
+import { Explore_Text, ExtraServices_Text, ExtraServicesPackages_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -34,6 +34,24 @@ const container = {
   },
 };
 
+const containerh3 = {
+  show: {
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const itemFromRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
+};
+
+const itemFromLeft = {
+  hidden: { opacity: 0, x: -100 },
+  show: { opacity: 1, x: 0, transition: { type: "spring", damping: 40, stiffness: 250, restDelta: 0.01 } },
+};
+
 const item = {
   hidden: { opacity: 0, x: 20 },
   show: { opacity: 1, x: 0, transition: { duration: 0.2 } },
@@ -47,10 +65,13 @@ function ExtraServices() {
 
   const id = useId();
   const packagesRef = useRef(null);
+  const h3WrapperRef = useRef(null);
 
   const packagesInView = useInView(packagesRef, { once: true, amount: 0.5 });
+  const h3WrapperInView = useInView(h3WrapperRef, { once: true, amount: 0.5 });
 
   const selectedService = ExtraServicesPackages_Text.find((p) => p.slug === currentService);
+  const isArabic = selectedLanguage === "ar";
 
   const handleClick = (slug: string) => {
     setCurrentService(slug);
@@ -60,6 +81,33 @@ function ExtraServices() {
     <LazyMotion features={loadFeatures}>
       <section ref={servicesRef} className={styles.wrapper}>
         <SectionName>{ExtraServices_Text.sectionName[selectedLanguage]}</SectionName>
+
+        <h2 className={styles.exploreSectionIntro}>
+          {ExtraServices_Text.exploreSectionIntro[selectedLanguage]}
+          <br />
+          <span>{ExtraServices_Text.exploreSectionIntroAccent[selectedLanguage]}</span>
+        </h2>
+
+        <m.div
+          ref={h3WrapperRef}
+          variants={containerh3}
+          initial='hidden'
+          animate={h3WrapperInView ? "show" : "hidden"}
+          className={styles.h3Wrapper}
+        >
+          <m.h3 className={styles.accent} variants={isArabic ? itemFromRight : itemFromLeft}>
+            {ExtraServices_Text.more1[selectedLanguage]}
+          </m.h3>
+          <br />
+          <m.h3 className={styles.accent} variants={isArabic ? itemFromRight : itemFromLeft}>
+            {ExtraServices_Text.more2[selectedLanguage]}
+          </m.h3>
+          <br />
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{ExtraServices_Text.more3[selectedLanguage]}</m.h3>
+          <br />
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{ExtraServices_Text.more4[selectedLanguage]}</m.h3>
+        </m.div>
+
         <div ref={packagesRef} className={styles.packagesWrapper}>
           <div className={styles.packageSelector}>
             {ExtraServicesPackages_Text.map((p) => {
@@ -86,6 +134,7 @@ function ExtraServices() {
               );
             })}
           </div>
+
           <AnimateChangeInHeight className={styles.detailsWrapper}>
             <AnimatePresence mode='wait'>
               <m.article

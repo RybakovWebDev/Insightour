@@ -170,21 +170,6 @@ export default function Legal() {
         <SectionName>{Medical_Text.georgiaSectionName[selectedLanguage]}</SectionName>
         <p className={styles.georgiaDescription}>{Medical_Text.georgiaHealthText[selectedLanguage]}</p>
 
-        <SectionName>{Medical_Text.faqSectionName[selectedLanguage]}</SectionName>
-        <div className={styles.faqWrapper}>
-          <ol>
-            {Medical_Text.faq.map((step) => {
-              return (
-                <li key={step.title.en}>
-                  <h3>{step.title[selectedLanguage]}</h3>
-                  <h4>{step.headline[selectedLanguage]}</h4>
-                  <p>{step.description[selectedLanguage]}</p>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-
         <div ref={treatmentsRef} className={styles.treatmentsWrapper}>
           <SectionName>{Medical_Text.treatmentsSectionName[selectedLanguage]}</SectionName>
           <m.div
@@ -203,6 +188,21 @@ export default function Legal() {
               </>
             )}
           </m.div>
+        </div>
+
+        <SectionName>{Medical_Text.faqSectionName[selectedLanguage]}</SectionName>
+        <div className={styles.faqWrapper}>
+          <ol>
+            {Medical_Text.faq.map((step) => {
+              return (
+                <li key={step.title.en}>
+                  <h3>{step.title[selectedLanguage]}</h3>
+                  <h4>{step.headline[selectedLanguage]}</h4>
+                  <p>{step.description[selectedLanguage]}</p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
 
         <CallToActionButton appointment />

@@ -155,11 +155,6 @@ function About() {
           </m.h3>
         </m.div>
         <PhotoSlider />
-        <h2 className={styles.exploreSectionIntro}>
-          {Explore_Text.exploreSectionIntro[selectedLanguage]}
-          <br />
-          <span>{Explore_Text.exploreSectionIntroAccent[selectedLanguage]}</span>
-        </h2>
         <ExploreGeorgiaDropdown />
         <MapGeorgia />
       </section>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
 import styles from "./DaysBreakdown.module.css";
@@ -19,13 +19,13 @@ import {
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
-const daysVariants = {
-  hidden: { opacity: 0 },
+const daysVariants = (currentHeight: string) => ({
+  hidden: { opacity: 0, height: currentHeight },
   show: {
     opacity: 1,
+    height: currentHeight,
   },
-};
-
+});
 const daysItemVariants = {
   hidden: {
     height: 0,
@@ -78,11 +78,19 @@ const liVariants = {
 
 const DaysBreakdown = () => {
   const [currentDuration, setCurrentDuration] = useState("7days");
+  const [initialHeight, setInitialHeight] = useState("748px");
   const [openDays, setOpenDays] = useState<{ [key: string]: boolean }>({});
   const { selectedLanguage } = useLanguageContext();
   const { offersRef } = useRefsContext();
 
   const isArabic = selectedLanguage === "ar";
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setInitialHeight("auto");
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleDurationClick = (slug: string) => {
     setCurrentDuration(slug);
@@ -122,7 +130,7 @@ const DaysBreakdown = () => {
           ))}
         </div>
 
-        <m.div className={styles.daysWrapper} initial='hidden' animate='show' variants={daysVariants}>
+        <m.div className={styles.daysWrapper} initial='hidden' animate='show' variants={daysVariants(initialHeight)}>
           <AnimatePresence>
             {getCurrentTourBreakdown().map((day, i) => (
               <m.div

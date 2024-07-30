@@ -1,9 +1,61 @@
 .wrapper {
   margin: 2rem 0 0 0;
   width: 100%;
+  max-width: 55rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.h3Wrapper {
+  padding: 0 1rem 1rem 1rem;
+  margin: 0 0 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+.h3Wrapper h3 {
+  margin: 1rem 0 0 0;
+  font-size: clamp(23px, 12vw, 80px);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+html[data-language-selected="ar"] .h3Wrapper h3 {
+  font-size: clamp(65px, 15vw, 100px);
+}
+
+.h3Wrapper h3:nth-last-child(3),
+.h3Wrapper h3:nth-last-child(1) {
+  align-self: flex-end;
+}
+
+html[data-language-selected="ar"] .h3Wrapper h3 {
+  align-self: flex-end;
+}
+
+html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(3),
+html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
+  align-self: flex-start;
+}
+
+.h3Wrapper .accent {
+  color: #6d309d;
+}
+
+.exploreSectionIntro {
+  padding: 0 1rem;
+  margin: 0 0 1rem 0;
+  max-width: 40rem;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.exploreSectionIntro span {
+  color: #6d309d;
 }
 
 .packagesWrapper {
@@ -128,6 +180,20 @@ html[data-language-selected="ar"] .includedListWrapper span::before {
 }
 
 @media (max-width: 1080px) {
+  .h3Wrapper h3:nth-last-child(3),
+  .h3Wrapper h3:nth-last-child(1) {
+    align-self: flex-start;
+  }
+
+  html[data-language-selected="ar"] .h3Wrapper h3 {
+    align-self: flex-end;
+  }
+
+  html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(3),
+  html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
+    align-self: flex-end;
+  }
+
   .packagesWrapper {
     min-width: 22rem;
     width: 80vw;

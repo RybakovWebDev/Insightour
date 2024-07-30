@@ -136,6 +136,12 @@ html[data-language-selected="ar"] .servicesWrapper li {
   }
 }
 
+@media (max-width: 600px) {
+  .wrapper {
+    margin: 0;
+  }
+}
+
 @media (max-width: 300px) {
   .packagesWrapper {
     min-width: 10rem;

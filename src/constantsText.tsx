@@ -173,16 +173,6 @@ export const About_Text = {
 };
 
 export const Explore_Text = {
-  exploreSectionIntro: {
-    en: "Your Practical Guide in Georgia:",
-    ar: "دليلك العملي في جورجيا:",
-  },
-
-  exploreSectionIntroAccent: {
-    en: "Experience, Learn and Evolve",
-    ar: "تجربة، تعلم، وتطور",
-  },
-
   exploreRevealButton: {
     en: "Explore Georgia",
     ar: "استكشف جورجيا",
@@ -907,6 +897,36 @@ export const ExtraServices_Text = {
   sectionName: {
     en: "extra services",
     ar: "أسعارنا",
+  },
+
+  more1: {
+    en: "More",
+    ar: "",
+  },
+
+  more2: {
+    en: "than",
+    ar: "",
+  },
+
+  more3: {
+    en: "just",
+    ar: "",
+  },
+
+  more4: {
+    en: "tourism",
+    ar: "",
+  },
+
+  exploreSectionIntro: {
+    en: "Your Practical Guide in Georgia:",
+    ar: "دليلك العملي في جورجيا:",
+  },
+
+  exploreSectionIntroAccent: {
+    en: "Experience, Learn and Evolve",
+    ar: "تجربة، تعلم، وتطور",
   },
 };
 

@@ -9,7 +9,6 @@
 
 .dropdownBtn {
   padding: 0.5rem;
-  /* height: 3.5rem; */
   width: 20rem;
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@
   color: #6d309d;
   font-size: 26px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
@@ -69,5 +68,9 @@ html[data-language-selected="ar"] .dropdownBtn {
 
   .listWrapper ul {
     padding: 0 1rem;
+  }
+
+  .dropdownBtn {
+    width: 15rem;
   }
 }
