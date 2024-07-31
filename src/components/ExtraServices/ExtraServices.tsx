@@ -77,12 +77,6 @@ function ExtraServices() {
   return (
     <LazyMotion features={loadFeatures}>
       <section ref={servicesRef} className={styles.wrapper}>
-        <h2 className={styles.exploreSectionIntro}>
-          {ExtraServices_Text.exploreSectionIntro[selectedLanguage]}
-          <br />
-          <span>{ExtraServices_Text.exploreSectionIntroAccent[selectedLanguage]}</span>
-        </h2>
-
         <m.div
           ref={h3WrapperRef}
           variants={containerh3}
@@ -109,7 +103,12 @@ function ExtraServices() {
               return (
                 <button key={p.slug} onClick={() => handleClick(p.slug)}>
                   <h3>{p.title[selectedLanguage]}</h3>
-                  <Image src={p.icon.src} alt={p.icon.alt} width={30} height={30} />
+                  <Image
+                    src={p.icon.src}
+                    alt={p.icon.alt}
+                    width={isMobileView ? 30 : 50}
+                    height={isMobileView ? 30 : 50}
+                  />
                   <AnimatePresence>
                     {currentService === p.slug ? (
                       <m.div

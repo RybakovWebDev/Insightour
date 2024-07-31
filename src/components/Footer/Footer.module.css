@@ -12,6 +12,19 @@ html[data-language-selected="ar"] .footer p {
   font-size: clamp(20px, 6vw, 28px);
 }
 
+.practicalGuide {
+  padding: 0 1rem;
+  margin: 0 0 1rem 0;
+  max-width: 40rem;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.practicalGuide span {
+  color: #6d309d;
+}
+
 .btcWrapper {
   margin: 0 0 0.5rem 0;
   display: flex;

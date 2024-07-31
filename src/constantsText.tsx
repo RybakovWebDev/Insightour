@@ -918,16 +918,6 @@ export const ExtraServices_Text = {
     en: "tourism",
     ar: "",
   },
-
-  exploreSectionIntro: {
-    en: "Your Practical Guide in Georgia:",
-    ar: "دليلك العملي في جورجيا:",
-  },
-
-  exploreSectionIntroAccent: {
-    en: "Experience, Learn and Evolve",
-    ar: "تجربة، تعلم، وتطور",
-  },
 };
 
 export const ExtraServicesPackages_Text = [
@@ -1255,6 +1245,15 @@ export const Education_Text = {
 };
 
 export const Footer_Text = {
+  practicalGuide: {
+    en: "Your Practical Guide in Georgia:",
+    ar: "دليلك العملي في جورجيا:",
+  },
+
+  practicalGuideAccent: {
+    en: "Experience, Learn and Evolve",
+    ar: "تجربة، تعلم، وتطور",
+  },
   acceptCrypto: {
     en: "We accept crypto!",
     ar: "!نقبل العملات الرقمية",
