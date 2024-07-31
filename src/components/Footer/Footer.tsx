@@ -17,11 +17,13 @@ function Footer() {
 
   return (
     <footer ref={contactRef} className={styles.footer}>
-      <h2 className={styles.practicalGuide}>
-        {Footer_Text.practicalGuide[selectedLanguage]}
-        <br />
-        <span>{Footer_Text.practicalGuideAccent[selectedLanguage]}</span>
-      </h2>
+      <Link href={"/"}>
+        <h2 className={styles.practicalGuide}>
+          {Footer_Text.practicalGuide[selectedLanguage]}
+          <br />
+          <span>{Footer_Text.practicalGuideAccent[selectedLanguage]}</span>
+        </h2>
+      </Link>
       <div className={styles.btcWrapper}>
         <p>{Footer_Text.acceptCrypto[selectedLanguage]}</p>
         <Image src={ICONS.Bitcoin.src} alt={ICONS.Bitcoin.alt} height={32} width={32} />
