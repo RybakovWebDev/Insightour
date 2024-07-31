@@ -72,7 +72,7 @@ export const CallToActionButton_Text = {
     ar: "احجز جولة",
   },
   buttonAppointment: {
-    en: "Book an appointment",
+    en: "Book a call",
     ar: "",
   },
   name: {
@@ -335,10 +335,6 @@ export const OFFER_PACKAGES = [
       {
         en: "3-4 activities per day",
         ar: "3-4 أنشطة يومياً",
-      },
-      {
-        en: "Real estate advisory",
-        ar: "استشارات عقارية",
       },
       {
         en: "Memorable photoshoot",
@@ -928,21 +924,33 @@ export const ExtraServicesPackages_Text = [
       en: "Real estate",
       ar: "استشارات العقارات",
     },
+    heading: { en: "Real estate advisory", ar: "" },
     included: [
       {
-        en: "4* hotel",
-        ar: "فندق 4 نجوم",
+        en: "Brokerage Services",
+        ar: "",
       },
       {
-        en: "Premium transportation",
-        ar: "نقل بريميوم",
+        en: "Buying & Selling",
+        ar: "",
       },
       {
-        en: "2 activities per day",
-        ar: "نشاطان يومياً",
+        en: "Construction",
+        ar: "",
+      },
+      {
+        en: "Interior Design",
+        ar: "",
+      },
+      {
+        en: "Real Estate Management",
+        ar: "",
       },
     ],
-    price: "300",
+    description: {
+      en: "We offer expert guidance to help you choose the perfect property tailored to your needs. Let us help you find your dream property!",
+      ar: "",
+    },
   },
   {
     slug: "medical",
@@ -951,25 +959,21 @@ export const ExtraServicesPackages_Text = [
       en: "Health",
       ar: "السياحة الطبية",
     },
+    heading: { en: "Medical tourism", ar: "" },
     included: [
       {
-        en: "5* hotel",
-        ar: "فندق 5 نجوم",
+        en: "Healthcare Solutions",
+        ar: "",
       },
       {
-        en: "Premium transportation",
-        ar: "نقل بريميوم",
-      },
-      {
-        en: "3 activities per day",
-        ar: "3 أنشطة يومياً",
-      },
-      {
-        en: "Memorable photoshoot",
-        ar: "جلسة تصوير لا تُنسى",
+        en: "Wellness",
+        ar: "",
       },
     ],
-    price: "600",
+    description: {
+      en: "We provide personalized assistance for your medical travel needs. From connecting you with top-tier healthcare providers to arranging your travel and accommodation, our dedicated team ensures a smooth and stress-free experience. Trust us to support you on your journey towards better health and wellness!",
+      ar: "",
+    },
   },
   {
     slug: "education",
@@ -978,41 +982,154 @@ export const ExtraServicesPackages_Text = [
       en: "Education",
       ar: "قبول الجامعات",
     },
+    heading: { en: "University admissions", ar: "" },
     included: [
       {
-        en: "5* hotel",
-        ar: "فندق 5 نجوم",
+        en: "Expert Guidance",
+        ar: "",
       },
       {
-        en: "VIP transportation",
-        ar: "نقل كبار الشخصيات",
-      },
-      {
-        en: "3-4 activities per day",
-        ar: "3-4 أنشطة يومياً",
-      },
-      {
-        en: "Real estate advisory",
-        ar: "استشارات عقارية",
-      },
-      {
-        en: "Memorable photoshoot",
-        ar: "جلسة تصوير لا تُنسى",
-      },
-      {
-        en: "Individually tailored tour",
-        ar: "جولة مخصصة بشكل فردي",
+        en: "Support Services",
+        ar: "",
       },
     ],
-    price: "1000",
+    description: {
+      en: "We provide personalized assistance to help you navigate the university admissions process. Trust us to guide you every step of the way and turn your academic dreams into reality!",
+      ar: "",
+    },
   },
 ];
 
 export const RealEstate_Text = {
   headline: {
-    en: "Real estate advisory",
-    ar: "استشارات العقارات",
+    en: "Invest in your dream in the heart of Georgia!",
+    ar: "",
   },
+  propertyTypes: [
+    {
+      en: "Residential properties",
+      ar: "",
+    },
+    {
+      en: "Vacation homes",
+      ar: "",
+    },
+    {
+      en: "Apartments",
+      ar: "",
+    },
+    {
+      en: "Commercial properties",
+      ar: "",
+    },
+    {
+      en: "Land plots",
+      ar: "",
+    },
+    {
+      en: "Villas",
+      ar: "",
+    },
+    {
+      en: "Mansions",
+      ar: "",
+    },
+    {
+      en: "Hospitality properties (hotels, guesthouses)",
+      ar: "",
+    },
+    {
+      en: "Development projects",
+      ar: "",
+    },
+    {
+      en: "Agricultural land",
+      ar: "",
+    },
+  ],
+  aboutHeadline1: {
+    en: "Your future",
+    ar: "",
+  },
+  aboutHeadline2: {
+    en: "starts here!",
+    ar: "",
+  },
+
+  marketSectionName: {
+    en: "Georgia real estate market",
+    ar: "",
+  },
+
+  marketText1: {
+    en: `
+    Georgia is increasingly becoming one of the most dynamic real estate markets in the region. 
+    With its attractive investment opportunities and a steady influx of residents, the state is 
+    drawing attention from both domestic and international buyers. The diverse landscape, ranging 
+    from bustling urban centers like Atlanta to peaceful suburban neighborhoods, offers something 
+    for everyone. As of 2024, real estate developments are booming, fueled by a growing economy 
+    and a robust job market, making properties in Georgia more desirable than ever.
+  `,
+    ar: "",
+  },
+  marketText2: {
+    en: `Moreover, the affordability of housing in Georgia compared to other major cities in the U.S. 
+    enhances its appeal. Buyers benefit from relatively low property prices, making homeownership 
+    more accessible. The state is also rich in cultural heritage and recreational activities, 
+    providing an exceptional quality of life that attracts families and young professionals alike. 
+    As real estate trends continue to show positive growth, Georgia is set to be a prime location 
+    for investment, with opportunities for both residential and commercial properties expanding 
+    significantly.`,
+    ar: "",
+  },
+
+  whyUs: {
+    en: "Why Choose Us?",
+    ar: "",
+  },
+
+  benefits: [
+    {
+      title: {
+        en: "Extensive Property Selection",
+        ar: "",
+      },
+      description: {
+        en: "We pride ourselves on an impressive collection of properties that cater to diverse tastes and budgets. From charming starter homes to luxurious estates, our portfolio features something for everyone. Our listings are regularly updated, ensuring you have access to the latest opportunities on the market.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Effortless Financing Solutions",
+        ar: "",
+      },
+      description: {
+        en: "Navigating the financing process can be daunting, but we simplify it for you. Our team of financial experts works closely with you to find the best financing options available. Whether you’re a first-time buyer or looking to invest, we will guide you through every step, making the process seamless and stress-free.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Trusted by Thousands",
+        ar: "",
+      },
+      description: {
+        en: "Join a community of satisfied clients who have entrusted us with their real estate needs. Our reputation is built on transparency, integrity, and outstanding customer service. We take pride in our numerous positive testimonials and repeat clients, proving that we deliver results and exceed expectations.",
+        ar: "",
+      },
+    },
+    {
+      title: {
+        en: "Personalized Service and Expertise  ",
+        ar: "",
+      },
+      description: {
+        en: "What sets us apart is our commitment to providing personalized service tailored to your unique needs. Our experienced team takes the time to understand your goals and preferences, ensuring you receive expert advice and guidance throughout your real estate journey. We are dedicated to making your experience rewarding and successful.",
+        ar: "",
+      },
+    },
+  ],
 };
 
 export const Medical_Text = {

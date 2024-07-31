@@ -1,10 +1,20 @@
 .wrapper {
+  position: relative;
   width: 100%;
   height: 32rem;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.blackSea {
+  position: absolute;
+  left: 20%;
+  top: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cityLabel {
@@ -23,12 +33,31 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 800px) {
+  .wrapper {
+    height: 22rem;
+  }
+}
+
 @media (max-width: 600px) {
   .wrapper {
-    height: 15rem;
+    height: 22rem;
+  }
+
+  .blackSea {
+    position: absolute;
+    left: 20%;
+    top: 45%;
+    font-size: 12px;
   }
 
   .cityLabel {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrapper {
+    height: 15rem;
   }
 }

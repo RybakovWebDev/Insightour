@@ -13,6 +13,8 @@ import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
 import { OFFER_PACKAGES, Offers_Text } from "@/constantsText";
+import { ICONS_ACCESSIBLE } from "@/constants";
+import Image from "next/image";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -115,6 +117,15 @@ function Offers() {
               packagesInView={packagesInView}
             />
           </m.div>
+
+          <div className={styles.accessibilityWrapper}>
+            <p>Our experiences are accessible to anyone!</p>
+            <div className={styles.accessibilityIconsWrapper}>
+              {ICONS_ACCESSIBLE.map((i) => {
+                return <Image key={i.alt} src={i.src} alt={i.alt} height={35} width={35} />;
+              })}
+            </div>
+          </div>
 
           <div className={styles.price}>
             <m.h3 initial={{ opacity: 0 }} animate={{ opacity: packagesInView ? 1 : 0 }}>

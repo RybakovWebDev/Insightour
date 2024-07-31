@@ -46,6 +46,7 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
 }
 
 .packagesWrapper {
+  margin: 1rem 0 0 0;
   width: 50rem;
   display: flex;
   flex-direction: column;
@@ -53,10 +54,12 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   background-color: #f8f0ff;
   border: 1px solid rgb(109, 48, 157, 0.1);
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .packageSelector {
-  height: 8rem;
+  margin: 0 0 1rem 0;
+  height: 6rem;
   width: 100%;
   display: flex;
   border-bottom: 1px solid rgb(109, 48, 157, 0.1);
@@ -104,7 +107,31 @@ html[data-language-selected="ar"] .packageSelector button h3 {
 }
 
 .detailsWrapper {
-  width: 80%;
+  width: 60%;
+}
+
+.extrasHeadingWrapper {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(109, 48, 157, 0.1);
+  overflow: hidden;
+}
+
+.extrasHeading {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: #b08ece;
+  font-size: 24px;
+}
+
+.includedListWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .includedListWrapper ul {
@@ -117,8 +144,9 @@ html[data-language-selected="ar"] .includedListWrapper ul {
 
 .includedListWrapper li {
   padding: 1rem;
+  /* color: #6d309d; */
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 html[data-language-selected="ar"] .includedListWrapper li {
@@ -135,6 +163,24 @@ html[data-language-selected="ar"] .includedListWrapper li {
 
 html[data-language-selected="ar"] .includedListWrapper span::before {
   padding: 0 0 0 0.5rem;
+}
+
+.extrasDescriptionWrapper {
+  margin: 1rem 0 0 0;
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 204, 255, 0.5);
+  border-radius: 20px;
+}
+
+.extrasDescription {
+  color: #6d309d;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .buttonWrapper {
@@ -201,6 +247,26 @@ html[data-language-selected="ar"] .includedListWrapper span::before {
 @media (max-width: 600px) {
   .packageSelector {
     height: 5rem;
+  }
+
+  .packageSelector button h3 {
+    font-size: 16px;
+  }
+
+  html[data-language-selected="ar"] .packageSelector button h3 {
+    /* font-size: clamp(16px, 5vw, 28px); */
+  }
+
+  .detailsWrapper {
+    width: 90%;
+  }
+
+  .extrasDescriptionWrapper {
+    padding: 1rem 2rem;
+  }
+
+  .extrasDescription {
+    font-size: 16px;
   }
 }
 

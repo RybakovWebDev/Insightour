@@ -6,3 +6,190 @@
   flex-direction: column;
   align-items: center;
 }
+
+.wrapper h1 {
+  margin: 2rem 0 2rem 0;
+  font-size: 40px;
+  color: #6d309d;
+  text-align: center;
+}
+
+.introIcon {
+  margin: 0 0 2rem 0;
+}
+
+.introDescription {
+  /* margin: 0 0 2rem 0; */
+  min-width: 15rem;
+  width: 80vw;
+  max-width: 50rem;
+  color: #000000;
+  /* font-size: 25px; */
+  font-weight: 500;
+  /* line-height: 1.6; */
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.introDescription span {
+  color: #6d309d;
+}
+
+html[data-language-selected="ar"] .introDescription {
+  text-align: right;
+}
+
+.whyUs {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.benefitsWrapper {
+  margin: 2rem 0 2rem 0;
+  min-width: 15rem;
+  width: 90vw;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefitItem {
+  margin: 1rem 0;
+  min-width: 16rem;
+  width: 100%;
+  max-width: 35rem;
+  background-color: #f8f0ff;
+  border: 1px solid rgb(109, 48, 157, 0.1);
+  /* border-bottom: 1px solid rgb(109, 48, 157, 0.5); */
+  border-radius: 20px;
+}
+
+.benefitItem:first-child {
+  margin: 0 0 1rem 0;
+}
+
+.benefitItem:last-child {
+  margin: 1rem 0 0 0;
+}
+
+.benefitItem button {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html[data-language-selected="ar"] .benefitItem button {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.benefitItem button svg {
+  margin: 0 2rem 0 0;
+  color: #6d309d;
+}
+
+html[data-language-selected="ar"] .benefitItem button svg {
+  margin: 0 0 0 2rem;
+}
+
+.benefitTitle {
+  padding: 0 0 0 2rem;
+  color: #6d309d;
+  font-size: 16px;
+}
+
+html[data-language-selected="ar"] .benefitTitle {
+  margin: 0 2rem 0 0;
+}
+
+.benefitInfroWrapper p {
+  width: 90%;
+  padding: 0 2rem 2rem 2rem;
+  color: #6d309d;
+}
+
+.georgiaDescription {
+  margin: 0 0 2rem 0;
+  min-width: 15rem;
+  width: 80vw;
+  max-width: 50rem;
+  color: #6d309d;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.faqWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #6d309d;
+}
+
+/* .faqTitle {
+  margin: 4rem 0 0 0;
+  color: #6d309d;
+  font-size: 30px;
+} */
+
+.faqWrapper ol {
+  min-width: 15rem;
+  width: 80vw;
+  max-width: 50rem;
+  list-style: none;
+}
+
+.faqWrapper li {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #f8f0ff;
+}
+
+.faqWrapper li:first-child {
+  margin: 1rem 0 2rem 0;
+}
+
+.faqWrapper h3 {
+  font-size: 16px;
+}
+
+.faqWrapper h4 {
+  margin: 0.5rem 0;
+  font-size: 20px;
+}
+
+.partnersWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logoWrapper {
+  position: relative;
+  height: 10rem;
+  width: 15rem;
+}
+
+.logoWrapper img {
+  object-fit: contain;
+}
+
+@media (max-width: 1000px) {
+  .servicesOuterWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .partnersWrapper {
+    padding: 0 1rem;
+    width: 95vw;
+  }
+}

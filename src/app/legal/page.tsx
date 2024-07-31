@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Header from "@/components/Header";
 import BackToTop from "@/components/BackToTop";
 import Footer from "@/components/Footer";
+import ContactButton from "@/components/ContactButton";
 
 export default function Legal() {
   return (
@@ -494,6 +495,7 @@ export default function Legal() {
         Email: insightour.tb@gmail.com
       </div>
       <BackToTop />
+      <ContactButton />
       <Footer />
     </section>
   );

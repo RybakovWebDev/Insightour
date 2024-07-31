@@ -22,6 +22,12 @@ const listVariants = {
   exit: { opacity: 0, transition: { duration: 0.3 } },
 };
 
+const headingVariants = {
+  hidden: { opacity: 0, y: "-100%" },
+  show: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: "100%", transition: { duration: 0.3 } },
+};
+
 const container = {
   show: {
     transition: {
@@ -106,8 +112,8 @@ function ExtraServices() {
                   <Image
                     src={p.icon.src}
                     alt={p.icon.alt}
-                    width={isMobileView ? 30 : 50}
-                    height={isMobileView ? 30 : 50}
+                    width={isMobileView ? 30 : 40}
+                    height={isMobileView ? 30 : 40}
                   />
                   <AnimatePresence>
                     {currentService === p.slug ? (
@@ -128,6 +134,21 @@ function ExtraServices() {
                 </button>
               );
             })}
+          </div>
+
+          <div className={styles.extrasHeadingWrapper}>
+            <AnimatePresence mode='wait'>
+              <m.h3
+                className={styles.extrasHeading}
+                key={currentService}
+                initial='hidden'
+                animate={packagesInView ? "show" : "hidden"}
+                exit='exit'
+                variants={headingVariants}
+              >
+                {selectedService?.heading[selectedLanguage]}
+              </m.h3>
+            </AnimatePresence>
           </div>
 
           <AnimateChangeInHeight className={styles.detailsWrapper}>
@@ -152,6 +173,19 @@ function ExtraServices() {
                   </AnimatePresence>
                 </m.ul>
               </m.article>
+            </AnimatePresence>
+
+            <AnimatePresence mode='wait'>
+              <m.div
+                className={styles.extrasDescriptionWrapper}
+                key={currentService}
+                initial='hidden'
+                animate={packagesInView ? "show" : "hidden"}
+                exit='exit'
+                variants={listVariants}
+              >
+                <m.p className={styles.extrasDescription}>{selectedService?.description[selectedLanguage]}</m.p>
+              </m.div>
             </AnimatePresence>
           </AnimateChangeInHeight>
 

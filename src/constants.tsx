@@ -39,9 +39,20 @@ export const ICONS = {
   Spa: { src: "/images/icons/spa.svg", alt: "Spa leaf" },
   Forest: { src: "/images/icons/forest.svg", alt: "Forest" },
   House: { src: "/images/icons/house.svg", alt: "House" },
+  RealEstateAgent: { src: "/images/icons/real_estate_agent.svg", alt: "Real estate" },
   School: { src: "/images/icons/school.svg", alt: "University hat" },
   MedicalServices: { src: "/images/icons/medical_services.svg", alt: "Medical services" },
+  Swimming: { src: "/images/icons/swimming.svg", alt: "Swimming" },
+  Family: { src: "/images/icons/family.svg", alt: "Family" },
+  Elderly: { src: "/images/icons/elderly.svg", alt: "Elderly" },
+  Wheelchair: { src: "/images/icons/wheelchair.svg", alt: "Wheelchair" },
 };
+
+export const ICONS_ACCESSIBLE = [
+  { src: "/images/icons/family.svg", alt: "Family" },
+  { src: "/images/icons/elderly.svg", alt: "Elderly" },
+  { src: "/images/icons/wheelchair.svg", alt: "Wheelchair" },
+];
 
 interface ContactsInterface {
   title: string;
@@ -101,6 +112,24 @@ export const PHOTOS_HOR = [
 export const PHOTOS_ABOUT = [
   { src: photoAbout10, alt: "Georgian landscape" },
   { src: photoAbout18, alt: "Georgian landscape" },
+];
+
+export const PHOTOS_PROPERTY_HORIZONTAL = [
+  { src: "/images/photos/property1.webp", alt: "Real estate", text: "Villas" },
+  { src: "/images/photos/property2.webp", alt: "Real estate", text: "Mansions" },
+  { src: "/images/photos/property4.webp", alt: "Real estate", text: "Apartments" },
+  // { src: "/images/photos/property6.webp", alt: "Real estate", text: "Vacation homes" },
+  { src: "/images/photos/property7.webp", alt: "Real estate", text: "Development projects" },
+];
+
+export const PHOTOS_PROPERTY_VERTICAL = [
+  { src: "/images/photos/property3.webp", alt: "Real estate", text: "Residential properties" },
+  { src: "/images/photos/property5.webp", alt: "Real estate", text: "Apartments" },
+];
+
+export const PARTNER_LOGOS_PROPERTY = [
+  { src: "/images/partners/partner1.webp", alt: "Batumi View logo" },
+  { src: "/images/partners/partner2.webp", alt: "ELT Building Development logo" },
 ];
 
 export const smoothSpring = {

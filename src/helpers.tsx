@@ -4,6 +4,7 @@ import { m, Variants } from "framer-motion";
 interface AnimateChangeInHeightProps {
   children: React.ReactNode;
   className?: string;
+  classNameInner?: string;
   enterDuration?: number;
   enterDelay?: number;
   exitDuration?: number;
@@ -13,6 +14,7 @@ interface AnimateChangeInHeightProps {
 export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({
   children,
   className,
+  classNameInner,
   enterDuration = 0.3,
   enterDelay = 0,
   exitDuration = 0.3,
@@ -57,7 +59,9 @@ export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({
 
   return (
     <m.div className={className} style={{ height }} variants={variants} initial='hidden' animate='show'>
-      <div ref={containerRef}>{children}</div>
+      <div className={classNameInner} ref={containerRef}>
+        {children}
+      </div>
     </m.div>
   );
 };

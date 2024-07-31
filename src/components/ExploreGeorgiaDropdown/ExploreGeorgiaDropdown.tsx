@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { AnimatePresence, LazyMotion, m } from "framer-motion";
 
 import styles from "./ExploreGeorgiaDropdown.module.css";
@@ -10,6 +10,11 @@ import { useLanguageContext } from "@/contexts/LanguageContext";
 import { Explore_Text } from "@/constantsText";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
+
+interface ExploreGeorgiaDropdownProps {
+  buttonText: string;
+  children: ReactNode;
+}
 
 const detailsVariants = {
   hidden: {
@@ -28,7 +33,7 @@ const contentVariants = {
   exit: { opacity: 0, transition: { duration: 0.2 } },
 };
 
-function ExploreGeorgiaDropdown() {
+function ExploreGeorgiaDropdown({ buttonText, children }: ExploreGeorgiaDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage } = useLanguageContext();
 
@@ -45,7 +50,7 @@ function ExploreGeorgiaDropdown() {
           aria-expanded={isOpen}
           aria-controls={`Expand detailed Georgia information`}
         >
-          {Explore_Text.exploreRevealButton.en}
+          {buttonText}
           <ArrowIcon isOpen={isOpen} />
         </button>
         <AnimatePresence initial={false}>
@@ -57,16 +62,7 @@ function ExploreGeorgiaDropdown() {
               exit='hidden'
               variants={detailsVariants}
             >
-              <m.div variants={contentVariants}>
-                <ul>
-                  {Explore_Text.exploreSections.map((s) => (
-                    <li key={s.name[selectedLanguage]}>
-                      <h4>{s.name[selectedLanguage]}</h4>
-                      {s.text[selectedLanguage]}
-                    </li>
-                  ))}
-                </ul>
-              </m.div>
+              <m.div variants={contentVariants}>{children}</m.div>
             </m.div>
           )}
         </AnimatePresence>

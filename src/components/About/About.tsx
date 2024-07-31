@@ -155,7 +155,16 @@ function About() {
           </m.h3>
         </m.div>
         <PhotoSlider />
-        <ExploreGeorgiaDropdown />
+        <ExploreGeorgiaDropdown buttonText={Explore_Text.exploreRevealButton[selectedLanguage]}>
+          <ul>
+            {Explore_Text.exploreSections.map((s) => (
+              <li key={s.name[selectedLanguage]}>
+                <h4>{s.name[selectedLanguage]}</h4>
+                {s.text[selectedLanguage]}
+              </li>
+            ))}
+          </ul>
+        </ExploreGeorgiaDropdown>
         <MapGeorgia />
       </section>
     </LazyMotion>

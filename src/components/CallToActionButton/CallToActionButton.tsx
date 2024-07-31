@@ -12,7 +12,7 @@ import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 interface CallToActionButtonProps {
-  appointment?: boolean;
+  call?: boolean;
 }
 
 const simpleFadeVarians = {
@@ -27,7 +27,7 @@ const simpleFadeVarians = {
   },
 };
 
-function CallToActionButton({ appointment }: CallToActionButtonProps) {
+function CallToActionButton({ call }: CallToActionButtonProps) {
   const isMobileView = useScreenWidthDetect(1080);
   const [modalOpen, setModalOpen] = useState(false);
   const [nameText, setNameText] = useState("");
@@ -131,7 +131,7 @@ function CallToActionButton({ appointment }: CallToActionButtonProps) {
   return (
     <section>
       <button className={styles.button} onClick={handleOpenModal}>
-        {appointment
+        {call
           ? CallToActionButton_Text.buttonAppointment[selectedLanguage]
           : CallToActionButton_Text.button[selectedLanguage]}
       </button>

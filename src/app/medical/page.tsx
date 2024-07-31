@@ -17,6 +17,7 @@ import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { Medical_Text } from "@/constantsText";
 import ArrowIcon from "@/components/DetailsArrow/DetailsArrow";
 import { ICONS } from "@/constants";
+import ContactButton from "@/components/ContactButton";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -68,7 +69,7 @@ const servicesContentVariants: Variants = {
   show: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export default function Legal() {
+export default function Medical() {
   const [openServices, setOpenServices] = useState<string[]>([]);
   const [openBenefits, setOpenBenefits] = useState<string[]>([]);
   const { selectedLanguage } = useLanguageContext();
@@ -165,7 +166,7 @@ export default function Legal() {
           </AnimatePresence>
         </m.div>
 
-        <CallToActionButton appointment />
+        <CallToActionButton call />
 
         <SectionName>{Medical_Text.georgiaSectionName[selectedLanguage]}</SectionName>
         <p className={styles.georgiaDescription}>{Medical_Text.georgiaHealthText[selectedLanguage]}</p>
@@ -205,8 +206,9 @@ export default function Legal() {
           </ol>
         </div>
 
-        <CallToActionButton appointment />
+        <CallToActionButton call />
         <BackToTop />
+        <ContactButton />
         <Footer />
       </section>
     </LazyMotion>
