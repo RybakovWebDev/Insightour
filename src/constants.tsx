@@ -38,6 +38,9 @@ export const ICONS = {
   Surgery: { src: "/images/icons/general_surgery.svg", alt: "Scalpel" },
   Spa: { src: "/images/icons/spa.svg", alt: "Spa leaf" },
   Forest: { src: "/images/icons/forest.svg", alt: "Forest" },
+  House: { src: "/images/icons/house.svg", alt: "House" },
+  School: { src: "/images/icons/school.svg", alt: "University hat" },
+  MedicalServices: { src: "/images/icons/medical_services.svg", alt: "Medical services" },
 };
 
 interface ContactsInterface {

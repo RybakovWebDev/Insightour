@@ -8,7 +8,7 @@
 }
 
 .h3Wrapper {
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 1rem 0 1rem;
   margin: 0 0 2rem 0;
   width: 100%;
   display: flex;
@@ -69,7 +69,7 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
 }
 
 .packageSelector {
-  height: 5rem;
+  height: 8rem;
   width: 100%;
   display: flex;
   border-bottom: 1px solid rgb(109, 48, 157, 0.1);
@@ -85,12 +85,17 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   position: relative;
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: none;
   background-color: inherit;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+}
+
+.packageSelector button img {
+  z-index: 100;
 }
 
 .packageSelector button h3 {
@@ -203,6 +208,12 @@ html[data-language-selected="ar"] .includedListWrapper span::before {
 
   .summaryBtn:hover {
     background-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .packageSelector {
+    height: 5rem;
   }
 }
 

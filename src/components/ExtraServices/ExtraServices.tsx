@@ -10,7 +10,9 @@ import SectionName from "../SectionName";
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
-import { Explore_Text, ExtraServices_Text, ExtraServicesPackages_Text } from "@/constantsText";
+import { ExtraServices_Text, ExtraServicesPackages_Text } from "@/constantsText";
+import Image from "next/image";
+import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
@@ -18,12 +20,6 @@ const listVariants = {
   hidden: { opacity: 0 },
   show: { opacity: 1 },
   exit: { opacity: 0, transition: { duration: 0.3 } },
-};
-
-const priceVariants = {
-  hidden: { opacity: 0.5, y: "-3rem" },
-  show: { opacity: 1, y: 0 },
-  exit: { opacity: 0.5, y: "3rem" },
 };
 
 const container = {
@@ -62,6 +58,7 @@ function ExtraServices() {
   const [currentService, setCurrentService] = useState("medical");
   const { selectedLanguage } = useLanguageContext();
   const { servicesRef } = useRefsContext();
+  const isMobileView = useScreenWidthDetect(600);
 
   const id = useId();
   const packagesRef = useRef(null);
@@ -80,8 +77,6 @@ function ExtraServices() {
   return (
     <LazyMotion features={loadFeatures}>
       <section ref={servicesRef} className={styles.wrapper}>
-        <SectionName>{ExtraServices_Text.sectionName[selectedLanguage]}</SectionName>
-
         <h2 className={styles.exploreSectionIntro}>
           {ExtraServices_Text.exploreSectionIntro[selectedLanguage]}
           <br />
@@ -99,21 +94,22 @@ function ExtraServices() {
             {ExtraServices_Text.more1[selectedLanguage]}
           </m.h3>
           <br />
-          <m.h3 className={styles.accent} variants={isArabic ? itemFromRight : itemFromLeft}>
-            {ExtraServices_Text.more2[selectedLanguage]}
-          </m.h3>
+          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{ExtraServices_Text.more2[selectedLanguage]}</m.h3>
           <br />
           <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{ExtraServices_Text.more3[selectedLanguage]}</m.h3>
           <br />
-          <m.h3 variants={isArabic ? itemFromRight : itemFromLeft}>{ExtraServices_Text.more4[selectedLanguage]}</m.h3>
+          <m.h3 className={styles.accent} variants={isArabic ? itemFromRight : itemFromLeft}>
+            {ExtraServices_Text.more4[selectedLanguage]}
+          </m.h3>
         </m.div>
-
+        <SectionName>{ExtraServices_Text.sectionName[selectedLanguage]}</SectionName>
         <div ref={packagesRef} className={styles.packagesWrapper}>
           <div className={styles.packageSelector}>
             {ExtraServicesPackages_Text.map((p) => {
               return (
                 <button key={p.slug} onClick={() => handleClick(p.slug)}>
                   <h3>{p.title[selectedLanguage]}</h3>
+                  <Image src={p.icon.src} alt={p.icon.alt} width={30} height={30} />
                   <AnimatePresence>
                     {currentService === p.slug ? (
                       <m.div

@@ -933,6 +933,7 @@ export const ExtraServices_Text = {
 export const ExtraServicesPackages_Text = [
   {
     slug: "realEstate",
+    icon: ICONS.House,
     title: {
       en: "Real estate",
       ar: "استشارات العقارات",
@@ -955,6 +956,7 @@ export const ExtraServicesPackages_Text = [
   },
   {
     slug: "medical",
+    icon: ICONS.MedicalServices,
     title: {
       en: "Health",
       ar: "السياحة الطبية",
@@ -981,6 +983,7 @@ export const ExtraServicesPackages_Text = [
   },
   {
     slug: "education",
+    icon: ICONS.School,
     title: {
       en: "Education",
       ar: "قبول الجامعات",
