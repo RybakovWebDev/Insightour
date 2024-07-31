@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import { LazyMotion, m, useInView, Variants, AnimatePresence } from "framer-motion";
 import { FeatureCollection } from "geojson";
@@ -30,12 +30,25 @@ const mapVariants: Variants = {
   },
 };
 
-const lineVariants: Variants = {
+const initialPathVariants: Variants = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: {
     pathLength: 1,
     opacity: 1,
-    transition: { duration: 3, delay: 0.5 },
+    transition: { duration: 3.5, ease: "easeInOut" },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const subsequentPathVariants: Variants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    transition: { duration: 2.5, ease: "easeInOut" },
   },
   exit: {
     opacity: 0,
@@ -49,8 +62,11 @@ const GeorgiaMap = () => {
   const [projectedCities, setProjectedCities] = useState<{ name: string; x: number; y: number }[]>([]);
   const [showCities, setShowCities] = useState(false);
   const [linePathData, setLinePathData] = useState("");
-  const [lineKey, setLineKey] = useState(0);
-  const [isInitialPath, setIsInitialPath] = useState(true);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [resizeKey, setResizeKey] = useState(0);
+  const [isInitialAnimation, setIsInitialAnimation] = useState(true);
+  const [animationKey, setAnimationKey] = useState(0);
+  const animationTimer = useRef<NodeJS.Timeout | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const isMobileView = useScreenWidthDetect(600);
@@ -74,23 +90,36 @@ const GeorgiaMap = () => {
       .catch((error) => console.error("Error loading regions GeoJSON:", error));
   }, []);
 
-  const dimensions = useMemo(() => {
+  const resetAnimation = useCallback(() => {
+    if (animationTimer.current) {
+      clearTimeout(animationTimer.current);
+    }
+    setShowCities(false);
+    setAnimationKey((prevKey) => prevKey + 1);
+  }, []);
+
+  const updateDimensions = useCallback(() => {
     if (wrapperRef.current) {
       const wrapperWidth = wrapperRef.current.offsetWidth;
       const wrapperHeight = isMobileView ? 240 : 520;
-      return {
+      setDimensions({
         width: wrapperWidth,
         height: wrapperHeight,
-      };
+      });
+      setResizeKey((prev) => prev + 1);
+      resetAnimation();
     }
-    return { width: 0, height: 0 };
-  }, [isMobileView, wrapperRef.current?.offsetWidth]);
+  }, [isMobileView, resetAnimation]);
 
   useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [updateDimensions]);
+
+  const drawMap = useCallback(() => {
     if (countryData && regionsData && svgRef.current && dimensions.width > 0 && dimensions.height > 0) {
       const svg = d3.select(svgRef.current);
-
-      svg.selectAll("*").remove();
 
       const projection = d3
         .geoMercator()
@@ -100,29 +129,35 @@ const GeorgiaMap = () => {
 
       const path = d3.geoPath().projection(projection);
 
-      // Draw regions
-      svg
-        .append("g")
-        .selectAll("path")
-        .data(regionsData.features)
+      // Update regions
+      const regions = svg.selectAll<SVGPathElement, any>(".region").data(regionsData.features);
+
+      regions
         .enter()
         .append("path")
+        .attr("class", "region")
+        .merge(regions)
         .attr("d", path)
         .attr("fill", "none")
         .attr("stroke", "rgb(0, 0, 0, 0.3)")
         .attr("stroke-width", 0.5);
 
-      // Draw country border
-      svg
-        .append("g")
-        .selectAll("path")
-        .data(countryData.features)
+      regions.exit().remove();
+
+      // Update country border
+      const country = svg.selectAll<SVGPathElement, any>(".country").data(countryData.features);
+
+      country
         .enter()
         .append("path")
+        .attr("class", "country")
+        .merge(country)
         .attr("d", path)
         .attr("fill", "none")
         .attr("stroke", "rgb(0, 0, 0, 0.5)")
         .attr("stroke-width", 1);
+
+      country.exit().remove();
 
       const newProjectedCities = cities.map((city) => ({
         name: city.name,
@@ -132,18 +167,11 @@ const GeorgiaMap = () => {
 
       setProjectedCities(newProjectedCities);
     }
-  }, [countryData, regionsData, dimensions]);
+  }, [countryData, regionsData, dimensions, isMobileView]);
 
   useEffect(() => {
-    if (mapInView && projectedCities.length > 0) {
-      // Delay showing cities and initial path
-      setTimeout(() => {
-        setShowCities(true);
-        setLinePathData(generateInitialPath(projectedCities));
-        setLineKey((prevKey) => prevKey + 1);
-      }, 1000);
-    }
-  }, [mapInView, projectedCities]);
+    drawMap();
+  }, [drawMap, resizeKey]);
 
   const generateInitialPath = (cities: { x: number; y: number }[]) => {
     return `M${cities.map((city) => `${city.x},${city.y}`).join(" L")}`;
@@ -155,26 +183,37 @@ const GeorgiaMap = () => {
   };
 
   useEffect(() => {
-    if (mapInView && projectedCities.length > 0 && showCities) {
-      const initialDelay = 4500; // seconds for initial path to complete
-      const updateInterval = 5000; // seconds between updates
+    if (mapInView && projectedCities.length > 0) {
+      const showCitiesTimeout = setTimeout(() => {
+        setShowCities(true);
+        setLinePathData(generateInitialPath(projectedCities));
+        setAnimationKey((prevKey) => prevKey + 1);
+        setIsInitialAnimation(true);
 
-      const updatePath = () => {
-        setLinePathData(generateRandomPath());
-        setLineKey((prevKey) => prevKey + 1);
+        // Set up the animation cycle
+        const cycleAnimation = () => {
+          setIsInitialAnimation(false); // Trigger exit animation
+
+          setTimeout(() => {
+            setLinePathData(generateRandomPath());
+            setAnimationKey((prevKey) => prevKey + 1);
+
+            animationTimer.current = setTimeout(cycleAnimation, 3000); // 2.5s draw + 0.5s exit
+          }, 500); // Wait for exit animation to complete
+        };
+
+        // Start the cycle after the initial animation
+        setTimeout(cycleAnimation, 3500); // Wait for initial draw to complete
+      }, 1000);
+
+      return () => {
+        clearTimeout(showCitiesTimeout);
+        if (animationTimer.current) {
+          clearTimeout(animationTimer.current);
+        }
       };
-
-      // Set up interval for random paths after initial delay
-      const timeout = setTimeout(() => {
-        setIsInitialPath(false);
-        updatePath();
-        const interval = setInterval(updatePath, updateInterval);
-        return () => clearInterval(interval);
-      }, initialDelay);
-
-      return () => clearTimeout(timeout);
     }
-  }, [mapInView, projectedCities, showCities]);
+  }, [mapInView, projectedCities, resizeKey]);
 
   return (
     <LazyMotion features={loadFeatures}>
@@ -192,13 +231,13 @@ const GeorgiaMap = () => {
           <AnimatePresence mode='wait'>
             {showCities && mapInView && (
               <m.path
-                key={lineKey}
+                key={animationKey}
                 d={linePathData}
                 fill='none'
                 stroke='#6d309d'
                 strokeWidth={1}
                 strokeDasharray='5,5'
-                variants={lineVariants}
+                variants={isInitialAnimation ? initialPathVariants : subsequentPathVariants}
                 initial='hidden'
                 animate='visible'
                 exit='exit'
