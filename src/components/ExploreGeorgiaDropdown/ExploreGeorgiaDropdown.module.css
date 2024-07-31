@@ -32,10 +32,6 @@ html[data-language-selected="ar"] .dropdownBtn {
   flex-direction: row-reverse;
 }
 
-.dropdownBtn svg {
-  /* margin: 0 0.5rem 0 0; */
-}
-
 .dropdownBtn:hover {
   background-color: rgb(176, 142, 206, 0.3);
 }

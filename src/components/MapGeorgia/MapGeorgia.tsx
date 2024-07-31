@@ -223,7 +223,7 @@ const GeorgiaMap = () => {
                   transition={{ delay: index * 0.8, duration: 0.5 }}
                 />
                 <foreignObject
-                  x={city.x - 40}
+                  x={city.x - (isMobileView ? 28 : 40)}
                   y={city.y - dimensions.height * 0.05 - (isMobileView ? 25 : 15)}
                   width={isMobileView ? 55 : 80}
                   height={isMobileView ? 25 : 30}
