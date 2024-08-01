@@ -52,6 +52,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  overflow: hidden;
 }
 
 .imageWrapper {
@@ -64,8 +65,9 @@
   position: absolute;
   bottom: 1rem;
   padding: 0.5rem 1rem;
-  color: #ffffff;
-  background-color: #6d309d;
+  color: #6d309d;
+  background-color: #f8f0ff;
+  border: 1px solid rgb(109, 48, 157, 0.1);
   border-radius: 20px;
   z-index: 50;
   white-space: nowrap;
