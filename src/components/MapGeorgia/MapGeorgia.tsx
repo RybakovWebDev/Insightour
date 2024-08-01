@@ -10,6 +10,7 @@ import styles from "./MapGeorgia.module.css";
 import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import Image from "next/image";
 import { ICONS } from "@/constants";
+import { debounce } from "@/helpers";
 
 interface City {
   name: string;
@@ -18,7 +19,7 @@ interface City {
 
 interface LabelConfig {
   x: number;
-  y: string;
+  y: number;
   width: number;
   height: number;
 }
@@ -68,6 +69,8 @@ const GeorgiaMap = () => {
   const [showCities, setShowCities] = useState(false);
   const [linePathData, setLinePathData] = useState("");
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const previousDimensions = useRef({ width: 0, height: 0 });
+  const resizeThreshold = 50; // 50 pixel threshold for dimension changes
   const [resizeKey, setResizeKey] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
   const animationTimer = useRef<NodeJS.Timeout | null>(null);
@@ -80,43 +83,43 @@ const GeorgiaMap = () => {
     () => ({
       default: {
         x: isMobileView ? 28 : 40,
-        y: `${isMobileView ? 25 : 15}px`,
+        y: isMobileView ? 22 : 15,
         width: isMobileView ? 55 : 80,
         height: isMobileView ? 25 : 30,
       },
       Tbilisi: {
         x: isMobileView ? 28 : 40,
-        y: `${isMobileView ? -25 : -35}px`,
+        y: isMobileView ? -20 : -35,
         width: isMobileView ? 55 : 80,
         height: isMobileView ? 25 : 30,
       },
       Batumi: {
         x: isMobileView ? 28 : 40,
-        y: `${isMobileView ? -25 : -35}px`,
+        y: isMobileView ? -25 : -35,
         width: isMobileView ? 55 : 80,
         height: isMobileView ? 25 : 30,
       },
       Sighnaghi: {
         x: isMobileView ? 28 : 40,
-        y: `${isMobileView ? -25 : -35}px`,
+        y: isMobileView ? -20 : -35,
         width: isMobileView ? 70 : 95,
         height: isMobileView ? 25 : 30,
       },
       Zugdidi: {
         x: isMobileView ? 48 : 40,
-        y: `${isMobileView ? 20 : 15}px`,
+        y: isMobileView ? 20 : 15,
         width: isMobileView ? 55 : 80,
         height: isMobileView ? 25 : 30,
       },
       Mtskheta: {
         x: isMobileView ? 48 : 40,
-        y: `${isMobileView ? 20 : 15}px`,
+        y: isMobileView ? 20 : 15,
         width: isMobileView ? 65 : 80,
         height: isMobileView ? 25 : 30,
       },
       Telavi: {
         x: isMobileView ? 18 : 40,
-        y: `${isMobileView ? 25 : 15}px`,
+        y: isMobileView ? 25 : 15,
         width: isMobileView ? 55 : 80,
         height: isMobileView ? 25 : 30,
       },
@@ -154,19 +157,28 @@ const GeorgiaMap = () => {
     if (wrapperRef.current) {
       const wrapperWidth = wrapperRef.current.offsetWidth;
       const wrapperHeight = isMobileView ? 240 : 520;
-      setDimensions({
-        width: wrapperWidth,
-        height: wrapperHeight,
-      });
-      setResizeKey((prev) => prev + 1);
-      resetAnimation();
+
+      const widthDiff = Math.abs(wrapperWidth - previousDimensions.current.width);
+      const heightDiff = Math.abs(wrapperHeight - previousDimensions.current.height);
+
+      if (widthDiff >= resizeThreshold || heightDiff >= resizeThreshold) {
+        setDimensions({
+          width: wrapperWidth,
+          height: wrapperHeight,
+        });
+        setResizeKey((prev) => prev + 1);
+        resetAnimation();
+
+        previousDimensions.current = { width: wrapperWidth, height: wrapperHeight };
+      }
     }
   }, [isMobileView, resetAnimation]);
 
   useEffect(() => {
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+    const debouncedUpdateDimensions = debounce(updateDimensions, 100);
+    window.addEventListener("resize", debouncedUpdateDimensions);
+    return () => window.removeEventListener("resize", debouncedUpdateDimensions);
   }, [updateDimensions]);
 
   const drawMap = useCallback(() => {
@@ -333,7 +345,7 @@ const GeorgiaMap = () => {
                   />
                   <foreignObject
                     x={city.x - labelConfig.x}
-                    y={`calc(${city.y}px - ${dimensions.height * 0.05}px - ${labelConfig.y})`}
+                    y={city.y - dimensions.height * 0.05 - labelConfig.y}
                     width={labelConfig.width}
                     height={labelConfig.height}
                   >

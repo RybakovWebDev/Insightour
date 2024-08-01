@@ -81,3 +81,11 @@ export const shuffleArray = <T,>(array: T[], resultCount: number = array.length)
   }
   return array.slice(0, resultCount);
 };
+
+export const debounce = (func: (...args: any[]) => void, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: any[]) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
