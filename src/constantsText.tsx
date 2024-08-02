@@ -1130,6 +1130,64 @@ export const RealEstate_Text = {
       },
     },
   ],
+  faq: [
+    {
+      title: { en: "STEP 1", ar: "" },
+      headline: { en: "BOOK A CONSULTATION", ar: "" },
+      description: {
+        en: "Reach out to us to book a call where we can discuss your specific needs and preferences in detail. This conversation will help us identify the best properties suited to your goals and budget while providing you with essential insights into the Georgia real estate market.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 2", ar: "" },
+      headline: { en: "RECEIVE PERSONALIZED PROPERTY RECOMMENDATIONS", ar: "" },
+      description: {
+        en: "Based on your preferences discussed during the consultation, our team will provide you with tailored property recommendations. We will guide you through various options, highlighting features that match your lifestyle and investment goals.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 3", ar: "" },
+      headline: { en: "ARRIVING IN GEORGIA", ar: "" },
+      description: {
+        en: "Our team is committed to making your arrival in Georgia seamless. We will assist you in obtaining a residence permit and settling into your accommodation smoothly. To help you acclimate, we provide introductory sessions about the local real estate market and lifestyle, ensuring you have all the necessary information to begin your property search with confidence.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 4", ar: "" },
+      headline: { en: "ARRANGE PROPERTY VIEWINGS", ar: "" },
+      description: {
+        en: "Once you have selected properties of interest, we will schedule viewings to give you a firsthand experience of your top choices. Our agents will accompany you to answer any questions and give you in-depth information about each property and its location.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 5", ar: "" },
+      headline: { en: "SECURE FINANCING OPTIONS", ar: "" },
+      description: {
+        en: "If you require financing, our financial experts will assist you in navigating the process. We will help you identify the best financing solutions that fit your needs, ensuring a smooth transaction whether you're a first-time buyer or an experienced investor.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 6", ar: "" },
+      headline: { en: "FINALIZE YOUR PROPERTY PURCHASE", ar: "" },
+      description: {
+        en: "Once you have selected the property and secured financing, our team will support you in negotiating the terms and finalizing the purchase. We will ensure all necessary paperwork is completed accurately and efficiently, making the process hassle-free.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 7", ar: "" },
+      headline: { en: "WELCOME TO YOUR NEW HOME OR INVESTMENT", ar: "" },
+      description: {
+        en: "After closing the deal, we’ll assist you in settling into your new property smoothly. Whether it’s your new home, vacation spot, or investment, our support doesn’t end with the sale. We are here to help you with any questions or needs as you start this exciting new chapter!",
+        ar: "",
+      },
+    },
+  ],
 };
 
 export const Medical_Text = {

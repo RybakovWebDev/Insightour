@@ -150,6 +150,7 @@ html[data-language-selected="ar"] .benefitTitle {
   margin: 2rem 0;
   padding: 2rem;
   background-color: #f8f0ff;
+  border: 1px solid rgb(109, 48, 157, 0.1);
   border-radius: 20px;
 }
 

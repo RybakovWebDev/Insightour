@@ -155,30 +155,10 @@ export default function RealEstate() {
           </AnimatePresence>
         </m.div>
 
-        {/* <div ref={treatmentsRef} className={styles.treatmentsWrapper}>
-          <SectionName>{Medical_Text.treatmentsSectionName[selectedLanguage]}</SectionName>
-          <m.div
-            className={styles.servicesOuterWrapper}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: treatmentsInView ? 1 : 0 }}
-          >
-            {isMobileView ? (
-              renderServiceCards(Medical_Text.selection)
-            ) : (
-              <>
-                <div className={styles.serviceColumnWrapper}>
-                  {renderServiceCards(Medical_Text.selection.slice(0, 2))}
-                </div>
-                <div className={styles.serviceColumnWrapper}>{renderServiceCards(Medical_Text.selection.slice(2))}</div>
-              </>
-            )}
-          </m.div>
-        </div> */}
-
         <SectionName>{Medical_Text.faqSectionName[selectedLanguage]}</SectionName>
         <div className={styles.faqWrapper}>
           <ol>
-            {Medical_Text.faq.map((step) => {
+            {RealEstate_Text.faq.map((step) => {
               return (
                 <li key={step.title.en}>
                   <h3>{step.title[selectedLanguage]}</h3>
