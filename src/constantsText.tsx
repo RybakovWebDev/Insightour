@@ -1,7 +1,3 @@
-import dentalIcon from "../public/images/icons/tooth.webp";
-import cosmeticIcon from "../public/images/icons/general_surgery.webp";
-import reproductiveIcon from "../public/images/icons/baby_0203m.webp";
-import wellnessIcon from "../public/images/icons/forest.webp";
 import { ICONS } from "./constants";
 
 export const TOUR_DURATIONS = [
@@ -918,7 +914,7 @@ export const ExtraServices_Text = {
 
 export const ExtraServicesPackages_Text = [
   {
-    slug: "realEstate",
+    slug: "realestate",
     icon: ICONS.House,
     title: {
       en: "Real estate",
@@ -1003,6 +999,10 @@ export const ExtraServicesPackages_Text = [
 export const RealEstate_Text = {
   headline: {
     en: "Invest in your dream in the heart of Georgia!",
+    ar: "",
+  },
+  faqSectionName: {
+    en: "how does it work?",
     ar: "",
   },
   propertyTypes: [
@@ -1356,9 +1356,304 @@ export const Medical_Text = {
 
 export const Education_Text = {
   headline: {
-    en: "University admissions",
-    ar: "قبول الجامعات",
+    en: "Experience excellence in Georgia's leading universities!",
+    ar: "",
   },
+
+  aboutSectionName: {
+    en: "about us",
+    ar: "حولنا",
+  },
+
+  georgiaSectionName: {
+    en: "Georgian Education",
+    ar: "",
+  },
+
+  faqSectionName: {
+    en: "how does it work?",
+    ar: "",
+  },
+
+  embarkText: {
+    en: "Embark on a journey to knowledge in Georgia",
+    ar: "",
+  },
+
+  embarkTextAccent: {
+    en: "your success is our mission!",
+    ar: "",
+  },
+
+  georgiaText: {
+    en: "Georgia is rapidly becoming a premier destination for higher education, attracting students from around the globe. Known for its diverse academic programs and modern universities, Georgia offers high-quality education at affordable prices, making it an attractive option for those seeking a valuable degree. With experienced faculty and innovative teaching methods, students can immerse themselves in a rich learning environment. As of 2024, the increasing number of international students and expanding educational opportunities position Georgia as a significant player in the global higher education landscape.",
+    ar: "",
+  },
+
+  benefits: [
+    {
+      title: { en: "Convenient Transport", ar: "" },
+      description: {
+        en: "Navigating Georgia is simple with low-cost bus and metro tickets.  A bus or metro ticket costs just 1.00 Gel ($0.4) for everyone. Students with a valid ‘student’s card’ pay only 0.20 Gel ($0.08) per ticket. Students benefit even more with a valid ‘student’s card,’ enjoying discounted fares. Free transfers are available within a 1.30-hour period. Prefer taxis? Yandex and BOLT offer affordable rides, with a 7 km journey costing around 6 Gel ($2.30). If you're considering buying a vehicle, cars are reasonably priced and accessible.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "Affordable Education", ar: "" },
+      description: {
+        en: "Realize your ambitions with accessible tuition fees for both MBBS and non-MBBS programs in Georgia. Georgia has great options for you! The average tuition fee for MBBS programs ranges from $5,000 to $9,000 per academic year. Non-MBBS programs such as Business, Engineering, and Technology are also competitively priced, starting from $4,000 to $6,000. Investing in your education has never been more attainable.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "Comfortable Living", ar: "" },
+      description: {
+        en: "Welcome to Tbilisi, where comfortable living is attainable. Budgeting can be around $250 per room, or  $500-$800 per month for accommodation. This reasonable figure allows you to enjoy a comfortable living space while soaking in the vibrant atmosphere of this enchanting city.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "Safety", ar: "" },
+      description: {
+        en: "Georgia ranks in the top 15 safest countries in the world!",
+        ar: "",
+      },
+    },
+  ],
+  faqSteps: [
+    {
+      title: { en: "STEP 1", ar: "" },
+      headline: { en: "CONTACT US", ar: "" },
+      description: {
+        en: "Upon receiving your application, our team will assist you in selecting your preferred program and institution. After reviewing all necessary documentation, our coordinators will prepare you a detailed enrollment plan, outlining important deadlines and requirements.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 2", ar: "" },
+      headline: { en: "COMPLETE THE APPLICATION FORM", ar: "" },
+      description: {
+        en: "After contacting us, we will send you the application form. Fill out this application with your contact details and upload your passport copy. A non-refundable $50 consultation fee will be required upon submission.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 3", ar: "" },
+      headline: { en: "CONSULT WITH OUR VISA EXPERT", ar: "" },
+      description: {
+        en: "After your initial consultation, if you qualify for a study visa, we'll provide a list of required documents and an invoice for our visa documentation service, ranging from $600 to $1,500 based on factors such as the applicant’s age, location, university, and the protocols set by the Georgian Embassy assigned to the applicant’s nationality.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 4", ar: "" },
+      headline: { en: "SUBMIT YOUR APPLICATION", ar: "" },
+      description: {
+        en: "Once the service fee is paid and all requirements are met, we'll submit your application to the Embassy. They typically decide within 30 days, although you may receive a response sooner.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 5", ar: "" },
+      headline: { en: "FINAL CONFIRMATION", ar: "" },
+      description: {
+        en: "Before you embark on your journey, we will send you a confirmation that includes your enrollment details, important dates, travel itinerary, and accommodation arrangements. Your preparation will be complete with our detailed information, ensuring a stress-free start to your studies in Georgia.",
+        ar: "",
+      },
+    },
+    {
+      title: { en: "STEP 6", ar: "" },
+      headline: { en: "ARRIVING IN GEORGIA", ar: "" },
+      description: {
+        en: "Our team is committed to making your arrival in Georgia special. We'll meet you at the airport, help you obtain your residence permit and settle into your accommodation smoothly. We also provide introductory sessions to familiarize you with student life in Georgia, ensuring you have the knowledge to adjust easily. Trust us to guide you through each step as you begin your new academic adventure in Georgia with confidence!",
+        ar: "",
+      },
+    },
+  ],
+  welcomeText: {
+    en: "Georgia welcomes international students interested in academic offerings",
+    ar: "",
+  },
+  applyText: {
+    en: "To apply, you need:",
+    ar: "",
+  },
+  applicationRequirements: [
+    {
+      number: 1,
+      title: { en: "Valid Documents", ar: "" },
+      requirements: [
+        { en: "High school certificate for undergraduate studies", ar: "" },
+        { en: "Bachelor's degree for master's programs", ar: "" },
+      ],
+    },
+    {
+      number: 2,
+      title: { en: "For Transfer Students", ar: "" },
+      requirements: [{ en: "Transcript and syllabus of previous coursework", ar: "" }],
+    },
+    {
+      number: 3,
+      title: { en: "English Proficiency", ar: "" },
+      requirements: [
+        {
+          en: "All universities will assess English fluency through an interview as per Ministry regulations.",
+          ar: "",
+        },
+      ],
+    },
+    {
+      number: 4,
+      title: { en: "Next Steps", ar: "" },
+      requirements: [
+        { en: "After submitting your application, you will receive a confirmation email within 48 hours.", ar: "" },
+      ],
+    },
+  ],
+
+  fastProcessingTitle: { en: "Fast Processing", ar: "" },
+
+  fastProcessingDescription: {
+    en: "We value your time and aim to process your application swiftly. Our goal is to reduce waiting time so you can start your next academic semester without delay.",
+    ar: "",
+  },
+
+  universitiesSectionName: {
+    en: "universities",
+    ar: "",
+  },
+
+  universitiesOffered: [
+    {
+      title: { en: "Ilia State University", ar: "" },
+      description: {
+        en: "Discover Ilia State University, founded in 2006 through the merger of six institutions, Georgia's leading research and educational institution! ISU blends tradition with innovation, creating a vibrant academic community. Their focus on academic freedom prepares students for real-world challenges through a mix of liberal arts and specialized education. Join a collaborative environment that fosters research and learning, and be part of ISU’s transformative journey to unlock your potential! Step into a future of possibilities at Ilia State University!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "Programs available", ar: "" },
+          options: [
+            { title: { en: "Bachelor's Degree Program in Business Administration", ar: "" }, price: 4500 },
+            { title: { en: "Medical Doctor program MD in the English language", ar: "" }, price: 5500 },
+            { title: { en: "Dental Medicine program in English language", ar: "" }, price: 5500 },
+          ],
+        },
+      ],
+    },
+    {
+      title: { en: "University Of Georgia", ar: "" },
+      description: {
+        en: "The University of Georgia (UG) is a leading institution in Tbilisi, dedicated to liberal values and academic excellence while promoting global engagement through innovative education and research. UG serves over 8,000 students and offers accredited Bachelor, Master, and PhD programs in English and Georgian, making it the top private university in Georgia. With a focus on a well-rounded education, UG prepares students for modern challenges through specialized training. UG customizes programs to align with job market needs, advocating for integrity and the democratic development of society. Be part of a transformative institution committed to high-quality education and international collaboration!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "BA programs in English", ar: "" },
+          options: [
+            { title: { en: "Bachelor Degree of Business Administration (BBA)", ar: "" }, price: 4000 },
+            { title: { en: "Bachelor Degree of Engineering (Computer Science)", ar: "" }, price: 4000 },
+            { title: { en: "Bachelor Degree in Information Technology", ar: "" }, price: 4000 },
+            { title: { en: "Bachelor Degree of Nursing", ar: "" }, price: 3500 },
+            { title: { en: "Bachelor Degree of Pharmacy", ar: "" }, price: 4500 },
+            { title: { en: "Bachelor Degree of English Philology", ar: "" }, price: 3000 },
+            { title: { en: "Dental Program in English (Dentistry)", ar: "" }, price: 5500 },
+            { title: { en: "English Program of Medical Education (MD)", ar: "" }, price: 6000 },
+          ],
+        },
+        {
+          type: { en: "MA programs in English", ar: "" },
+          options: [
+            { title: { en: "International Business Law Program", ar: "" }, price: 3000 },
+            { title: { en: "English Master’s Program of Business Administration (MBA)", ar: "" }, price: 4000 },
+            { title: { en: "Educational Management", ar: "" }, price: 3500 },
+            { title: { en: "Information Technology", ar: "" }, price: 4000 },
+            { title: { en: "English Philology", ar: "" }, price: 3500 },
+            { title: { en: "Security Studies", ar: "" }, price: 4000 },
+            { title: { en: "Global Governance", ar: "" }, price: 4000 },
+          ],
+        },
+      ],
+    },
+    {
+      title: { en: "European University", ar: "" },
+      description: {
+        en: "European University (EU) is a hub of innovation and creativity, offering diverse programs that bridge the gap between theory and practice in fields like Medicine, Business, Law, Public Administration, and Education. With programs designed for the global job market, students benefit from a curriculum that includes workshops, internships, and industry collaborations, ensuring they are career-ready at graduation. Education at EU goes beyond the classroom, encouraging involvement in research, innovation hubs, and activities that build leadership and teamwork skills. The university’s modern facilities foster an interactive and collaborative learning atmosphere. With partnerships with over 40 international institutions, EU offers opportunities for dual degrees and cultural exchanges, enriching the academic experience and providing insights from diverse cultures. Join a dynamic community where passion meets purpose, and your success is prioritized!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "Programs available", ar: "" },
+          options: [
+            { title: { en: "Bachelor's Degree Program in Business Administration", ar: "" }, price: 4500 },
+            { title: { en: "Medical Doctor program MD in the English language", ar: "" }, price: 5500 },
+            { title: { en: "Dental Medicine program in English language", ar: "" }, price: 5500 },
+          ],
+        },
+      ],
+    },
+    {
+      title: { en: "Caucasus University", ar: "" },
+      description: {
+        en: "Caucasus University (CU) blends modern teaching with practical applications across diverse disciplines, including Business, Law, Media, and more. As a member of AACSB and holding the TEDQUAL Certificate, CU offers Bachelor, Master, and Doctorate degrees while providing opportunities for dual degrees and exchanges with 200 partner universities worldwide. Join a vibrant academic community that ensures impressive employment rates, with 98% of graduates securing roles in various sectors!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "Bachelor & One-Step Programs", ar: "" },
+          options: [
+            { title: { en: "Business Administration (BBA)", ar: "" }, price: 5000 },
+            { title: { en: "Informatics", ar: "" }, price: 5000 },
+            { title: { en: "International Relations", ar: "" }, price: 5000 },
+            { title: { en: "Sociology", ar: "" }, price: 5000 },
+            { title: { en: "Psychology", ar: "" }, price: 5000 },
+            { title: { en: "Economics", ar: "" }, price: 5000 },
+            { title: { en: "Tourism", ar: "" }, price: 5000 },
+            { title: { en: "Medical Doctor", ar: "" }, price: 5000 },
+          ],
+        },
+      ],
+    },
+    {
+      title: { en: "New Vision University", ar: "" },
+      description: {
+        en: "New Vision University (NVU) integrates diverse academic programs with an emphasis on practical skills, encompassing fields such as Medicine, Business, Law, and Social Sciences. Accredited and recognized for its quality, NVU offers Bachelor, Master, and Doctorate degrees, fostering an environment of academic excellence and collaboration with over 50 partner universities around the globe for exchange programs and dual degrees. Join a dynamic academic community aimed at preparing students for successful careers, with a strong track record of graduate employability!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "Bachelor & One-Step Programs", ar: "" },
+          options: [
+            { title: { en: "Business Administration", ar: "" }, price: 4500 },
+            { title: { en: "Business and Information Technologies", ar: "" }, price: 4500 },
+            { title: { en: "Politics and International Relations", ar: "" }, price: 4500 },
+            { title: { en: "Medical Doctor", ar: "" }, price: 7000 },
+            { title: { en: "Dentistry", ar: "" }, price: 4500 },
+            { title: { en: "Medical Rehabilitation and Nursing Care", ar: "" }, price: 4500 },
+            { title: { en: "Pharmacy", ar: "" }, price: 4500 },
+          ],
+        },
+      ],
+    },
+    {
+      title: { en: "Tbilisi State Medical University", ar: "" },
+      description: {
+        en: "Tbilisi State Medical University (TSMU) is a leader in medical education and research, offering programs that blend theoretical knowledge with practical skills in Medicine. Education at TSMU goes beyond traditional learning; students participate in scientific research, community health initiatives, and activities that develop critical thinking and teamwork. The university’s modern facilities provide an engaging and collaborative learning environment. TSMU partners with numerous international institutions, offering opportunities for dual degrees and cultural exchanges that enrich the educational experience. Join a vibrant academic community where dedication meets excellence, and your future in healthcare is prioritized!",
+        ar: "",
+      },
+      programs: [
+        {
+          type: { en: "Programs available", ar: "" },
+          options: [
+            { title: { en: "Dentistry", ar: "" }, price: 7000 },
+            { title: { en: "Pharmacy", ar: "" }, price: 4500 },
+            { title: { en: "Physical Medicine and Rehabilitation", ar: "" }, price: 8000 },
+            { title: { en: "Medicine", ar: "" }, price: 8000 },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 export const Footer_Text = {

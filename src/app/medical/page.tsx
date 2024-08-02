@@ -129,7 +129,7 @@ export default function Medical() {
         <SectionName>{Medical_Text.aboutSectionName[selectedLanguage]}</SectionName>
 
         <h2 className={styles.introDescription}>
-          {Medical_Text.introDescription[selectedLanguage]} -{" "}
+          {Medical_Text.introDescription[selectedLanguage]} —{" "}
           <span>{Medical_Text.introDescriptionAccent[selectedLanguage]}</span>
         </h2>
         <m.div className={styles.benefitsWrapper} initial='hidden' animate='show' variants={benefitsVariants}>

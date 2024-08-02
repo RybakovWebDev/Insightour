@@ -74,7 +74,7 @@ function About() {
       <section ref={aboutRef} className={styles.wrapper}>
         <SectionName>{About_Text.sectionName[selectedLanguage]}</SectionName>
         <h2 className={styles.introText}>
-          {About_Text.intro1[selectedLanguage]} -{" "}
+          {About_Text.intro1[selectedLanguage]} —{" "}
           <span>
             {About_Text.intro2[selectedLanguage]}&nbsp;{About_Text.intro3[selectedLanguage]}&nbsp;
             {About_Text.intro4[selectedLanguage]}&nbsp;{About_Text.intro5[selectedLanguage]}.
