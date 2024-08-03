@@ -54,6 +54,15 @@ export const ICONS_ACCESSIBLE = [
   { src: "/images/icons/wheelchair.svg", alt: "Wheelchair" },
 ];
 
+export const ICONS_UNIVERSITIES = {
+  Caucasus: { src: "/images/universities/cu_logo.webp", alt: "Caucasus University" },
+  European: { src: "/images/universities/eu_logo.webp", alt: "European University" },
+  Ilia: { src: "/images/universities/ilia_logo.webp", alt: "Ilia University" },
+  NewVision: { src: "/images/universities/nv_logo.webp", alt: "New Vision University" },
+  Tsmu: { src: "/images/universities/tsmu_logo.webp", alt: "Tbilisi State Medical University" },
+  Georgia: { src: "/images/universities/ug_logo.webp", alt: "University of Georgia" },
+};
+
 interface ContactsInterface {
   title: string;
   link: string;

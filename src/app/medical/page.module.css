@@ -146,6 +146,10 @@ html[data-language-selected="ar"] .benefitTitle {
   /* width: 35%; */
 }
 
+.treatmentCardWrapper {
+  margin: 0 1rem 1rem 1rem;
+}
+
 .faqWrapper {
   width: 100%;
   display: flex;

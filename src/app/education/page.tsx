@@ -13,10 +13,11 @@ import CallToActionButton from "@/components/CallToActionButton";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
-import { Education_Text, Medical_Text } from "@/constantsText";
+import { Education_Text } from "@/constantsText";
 import ArrowIcon from "@/components/DetailsArrow/DetailsArrow";
 import { ICONS } from "@/constants";
 import ContactButton from "@/components/ContactButton";
+import ExpandableCardEducation from "@/components/ExpandableCardEducation";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -33,11 +34,9 @@ const benefitsVariants: Variants = {
 const benefitsItemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 30,
   },
   show: {
     opacity: 1,
-    y: 0,
   },
 };
 
@@ -72,10 +71,14 @@ export default function Medical() {
   const [openUniPrograms, setOpenUniPrograms] = useState<string[]>([]);
   const [openBenefits, setOpenBenefits] = useState<string[]>([]);
   const { selectedLanguage } = useLanguageContext();
-  const isMobileView = useScreenWidthDetect(1000);
+  const isMobileView = useScreenWidthDetect(720);
   const isArabic = selectedLanguage === "ar";
 
-  const treatmentsRef = useRef(null);
+  const applyRef = useRef(null);
+  const unisRef = useRef(null);
+
+  const applyInView = useInView(applyRef, { once: true, amount: 0.3 });
+  const unisInView = useInView(unisRef, { once: true, amount: isMobileView ? 0.15 : 0.3 });
 
   const toggleBenefit = (benefit: string) => {
     setOpenBenefits((prev) => (prev.includes(benefit) ? prev.filter((i) => i !== benefit) : [...prev, benefit]));
@@ -83,6 +86,40 @@ export default function Medical() {
 
   const toggleUniProgram = (program: string) => {
     setOpenUniPrograms((prev) => (prev.includes(program) ? prev.filter((i) => i !== program) : [...prev, program]));
+  };
+
+  const renderUniversityCards = (universities: typeof Education_Text.universitiesOffered) => {
+    return universities.map((u, i) => (
+      <li key={u.title.en} className={styles.uniItem}>
+        <ExpandableCardEducation
+          title={u.title[selectedLanguage]}
+          icon={u.icon}
+          isOpen={openUniPrograms.includes(u.title.en)}
+          onToggle={() => toggleUniProgram(u.title.en)}
+          expandedHeight='auto'
+        >
+          <div className={styles.programContentHeaderWrapper}>
+            <a className={styles.website} href={u.website} target='_blank' rel='noopener noreferrer'>
+              Website
+            </a>
+            <p className={styles.programDescription}>{u.description[selectedLanguage]}</p>
+          </div>
+          {u.programs.map((programOffer) => (
+            <div key={programOffer.type.en + i} className={styles.programTypeItem}>
+              <h3 className={styles.programTypeTitle}>{programOffer.type[selectedLanguage]}</h3>
+              <ul className={styles.programList}>
+                {programOffer.options.map((program) => (
+                  <li key={program.title.en} className={styles.programItem}>
+                    <p className={styles.programItemName}>{program.title[selectedLanguage]}</p>
+                    <p className={styles.programItemPrice}>${program.price}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </ExpandableCardEducation>
+      </li>
+    ));
   };
 
   return (
@@ -139,7 +176,7 @@ export default function Medical() {
         </m.div>
 
         <SectionName>{Education_Text.faqSectionName[selectedLanguage]}</SectionName>
-        <div className={styles.faqWrapper}>
+        <m.div className={styles.faqWrapper} initial='hidden' animate='show' variants={benefitsVariants}>
           <ol>
             {Education_Text.faqSteps.map((step) => {
               return (
@@ -151,18 +188,24 @@ export default function Medical() {
               );
             })}
           </ol>
-        </div>
+        </m.div>
 
         <h2 className={styles.subheading}>{Education_Text.welcomeText[selectedLanguage]}</h2>
 
         <CallToActionButton call />
 
-        <div className={styles.applicationWrapper}>
+        <m.div
+          ref={applyRef}
+          className={styles.applicationWrapper}
+          initial='hidden'
+          animate={applyInView ? "show" : "hidden"}
+          variants={benefitsVariants}
+        >
           <h3>{Education_Text.applyText[selectedLanguage]}</h3>
           <ol>
             {Education_Text.applicationRequirements.map((r) => {
               return (
-                <li key={r.number} className={styles.applicationRequirement}>
+                <m.li key={r.number} className={styles.applicationRequirement} variants={benefitsItemVariants}>
                   <h4>
                     {r.number}. {r.title[selectedLanguage]}
                   </h4>
@@ -177,70 +220,30 @@ export default function Medical() {
                       );
                     })}
                   </ul>
-                </li>
+                </m.li>
               );
             })}
           </ol>
-        </div>
+        </m.div>
 
         <SectionName>{Education_Text.universitiesSectionName[selectedLanguage]}</SectionName>
 
-        <div className={styles.universitiesWrapper}>
-          <ul>
-            {Education_Text.universitiesOffered.map((u, i) => {
-              return (
-                <li key={u.title.en} className={styles.uniItem}>
-                  <h4 className={styles.uniTitle}>{u.title[selectedLanguage]}</h4>
-                  <p className={styles.uniDescription}>{u.description[selectedLanguage]}</p>
-                  {u.programs.map((programOffer) => {
-                    return (
-                      <m.div
-                        key={programOffer.type.en + i}
-                        className={styles.programTypeItem}
-                        variants={benefitsItemVariants}
-                      >
-                        <button
-                          onClick={() => toggleUniProgram(programOffer.type.en + i)}
-                          className={styles.summary}
-                          aria-expanded={openUniPrograms.includes(programOffer.type.en + i)}
-                          aria-controls={programOffer.type[selectedLanguage]}
-                        >
-                          <h3 className={styles.programTypeTitle}>{programOffer.type[selectedLanguage]}</h3>
-
-                          <ArrowIcon isOpen={openUniPrograms.includes(programOffer.type.en + i)} />
-                        </button>
-                        <AnimatePresence initial={false}>
-                          {openUniPrograms.includes(programOffer.type.en + i) && (
-                            <m.div
-                              className={styles.programSelectionWrapper}
-                              initial='hidden'
-                              animate='show'
-                              exit='hidden'
-                              variants={benefitsUlVariants}
-                            >
-                              <m.div variants={servicesContentVariants}>
-                                <ul>
-                                  {programOffer.options.map((program) => {
-                                    return (
-                                      <li key={program.title.en} className={styles.programItem}>
-                                        <p className={styles.programItemName}>{program.title[selectedLanguage]}</p>
-                                        <p>${program.price}</p>
-                                      </li>
-                                    );
-                                  })}
-                                </ul>
-                              </m.div>
-                            </m.div>
-                          )}
-                        </AnimatePresence>
-                      </m.div>
-                    );
-                  })}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <m.div
+          ref={unisRef}
+          className={styles.universitiesWrapper}
+          initial='hidden'
+          animate={unisInView ? "show" : "hidden"}
+          variants={benefitsVariants}
+        >
+          {isMobileView ? (
+            <ul>{renderUniversityCards(Education_Text.universitiesOffered)}</ul>
+          ) : (
+            <div className={styles.universityColumns}>
+              <ul>{renderUniversityCards(Education_Text.universitiesOffered.slice(0, 3))}</ul>
+              <ul>{renderUniversityCards(Education_Text.universitiesOffered.slice(3))}</ul>
+            </div>
+          )}
+        </m.div>
 
         <CallToActionButton call />
         <BackToTop />

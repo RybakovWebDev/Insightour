@@ -10,14 +10,14 @@ import BackToTop from "@/components/BackToTop";
 import Footer from "@/components/Footer";
 import SectionName from "@/components/SectionName";
 import CallToActionButton from "@/components/CallToActionButton";
-import ServiceCard from "@/components/ServiceCard";
+import ContactButton from "@/components/ContactButton";
+import ArrowIcon from "@/components/DetailsArrow/DetailsArrow";
+import ExpandableCardMedical from "@/components/ExpandableCardMedical";
 
 import { useLanguageContext } from "@/contexts/LanguageContext";
 import useScreenWidthDetect from "@/hooks/useScreenWidthDetect";
 import { Medical_Text } from "@/constantsText";
-import ArrowIcon from "@/components/DetailsArrow/DetailsArrow";
 import { ICONS } from "@/constants";
-import ContactButton from "@/components/ContactButton";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
@@ -101,16 +101,17 @@ export default function Medical() {
 
   const renderServiceCards = (services: typeof Medical_Text.selection) => {
     return services.map((service, i) => (
-      <ServiceCard
-        key={service.slug}
-        shortTitle={service.shortTitle[selectedLanguage]}
-        fullTitle={service.fullTitle[selectedLanguage]}
-        description={service.description[selectedLanguage]}
-        icon={service.icon}
-        isOpen={openServices.includes(service.slug)}
-        onToggle={() => handleService(service.slug)}
-        servicesDetailsVariants={servicesDetailsVariants}
-      />
+      <div key={service.slug} className={styles.treatmentCardWrapper}>
+        <ExpandableCardMedical
+          title={service.shortTitle[selectedLanguage]}
+          icon={service.icon}
+          isOpen={openServices.includes(service.slug)}
+          onToggle={() => handleService(service.slug)}
+        >
+          <h3>{service.fullTitle[selectedLanguage]}</h3>
+          <p>{service.description[selectedLanguage]}</p>
+        </ExpandableCardMedical>
+      </div>
     ));
   };
 

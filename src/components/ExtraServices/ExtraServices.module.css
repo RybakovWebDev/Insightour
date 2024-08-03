@@ -154,7 +154,7 @@ html[data-language-selected="ar"] .includedListWrapper li {
 }
 
 .includedListWrapper span::before {
-  content: "•";
+  content: "—";
   color: #6d309d;
   font-size: 1rem;
   padding-right: 0.5rem;

@@ -1,4 +1,4 @@
-import { ICONS } from "./constants";
+import { ICONS, ICONS_UNIVERSITIES } from "./constants";
 
 export const TOUR_DURATIONS = [
   { slug: "3days", title: { en: "3 Days", ar: "٣ أيام" } },
@@ -939,12 +939,24 @@ export const ExtraServicesPackages_Text = [
         ar: "",
       },
       {
-        en: "Real Estate Management",
+        en: "Real Estate Legal Services",
+        ar: "",
+      },
+      {
+        en: "Property Investment Consulting",
+        ar: "",
+      },
+      {
+        en: "Property Valuation",
+        ar: "",
+      },
+      {
+        en: "Property Management",
         ar: "",
       },
     ],
     description: {
-      en: "We offer expert guidance to help you choose the perfect property tailored to your needs. Let us help you find your dream property!",
+      en: "We offer expert guidance, tailored to your real estate aspirations. Our skilled team is dedicated to facilitating a smooth experience, whether it’s connecting you with premium properties, coordinating viewings, or managing legalities. Trust us to accompany you every step of the way in your home search journey!",
       ar: "",
     },
   },
@@ -958,11 +970,27 @@ export const ExtraServicesPackages_Text = [
     heading: { en: "Medical tourism", ar: "" },
     included: [
       {
-        en: "Healthcare Solutions",
+        en: "Medical Appointments and Treatments",
         ar: "",
       },
       {
-        en: "Wellness",
+        en: "Wellness and Retreats",
+        ar: "",
+      },
+      {
+        en: "Hospital and Clinic Transfers",
+        ar: "",
+      },
+      {
+        en: "Accommodation & Local SIM Card",
+        ar: "",
+      },
+      {
+        en: "Health Visa Assistance",
+        ar: "",
+      },
+      {
+        en: "Translation and Notarization of Medical Documents",
         ar: "",
       },
     ],
@@ -981,16 +1009,32 @@ export const ExtraServicesPackages_Text = [
     heading: { en: "University admissions", ar: "" },
     included: [
       {
-        en: "Expert Guidance",
+        en: "Admission to any University in Georgia",
         ar: "",
       },
       {
-        en: "Support Services",
+        en: "Transfer Service",
+        ar: "",
+      },
+      {
+        en: "Accommodation & Local SIM Card",
+        ar: "",
+      },
+      {
+        en: "Residence Permit",
+        ar: "",
+      },
+      {
+        en: "Student Visa",
+        ar: "",
+      },
+      {
+        en: "Translation and Notarization of Documents",
         ar: "",
       },
     ],
     description: {
-      en: "We provide personalized assistance to help you navigate the university admissions process. Trust us to guide you every step of the way and turn your academic dreams into reality!",
+      en: "We provide personalized assistance to help you navigate the university admissions process and support you during your studies. Trust us to guide you every step of the way, helping you to assimilate into the country and offering continuous support to ensure your academic dreams become a reality!",
       ar: "",
     },
   },
@@ -1584,8 +1628,10 @@ export const Education_Text = {
   universitiesOffered: [
     {
       title: { en: "Ilia State University", ar: "" },
+      icon: ICONS_UNIVERSITIES.Ilia,
+      website: "https://iliauni.edu.ge/en/",
       description: {
-        en: "Discover Ilia State University, founded in 2006 through the merger of six institutions, Georgia's leading research and educational institution! ISU blends tradition with innovation, creating a vibrant academic community. Their focus on academic freedom prepares students for real-world challenges through a mix of liberal arts and specialized education. Join a collaborative environment that fosters research and learning, and be part of ISU’s transformative journey to unlock your potential! Step into a future of possibilities at Ilia State University!",
+        en: "A public university in Tbilisi founded in 2006.",
         ar: "",
       },
       programs: [
@@ -1601,8 +1647,10 @@ export const Education_Text = {
     },
     {
       title: { en: "University Of Georgia", ar: "" },
+      icon: ICONS_UNIVERSITIES.Georgia,
+      website: "https://www.ug.edu.ge/en",
       description: {
-        en: "The University of Georgia (UG) is a leading institution in Tbilisi, dedicated to liberal values and academic excellence while promoting global engagement through innovative education and research. UG serves over 8,000 students and offers accredited Bachelor, Master, and PhD programs in English and Georgian, making it the top private university in Georgia. With a focus on a well-rounded education, UG prepares students for modern challenges through specialized training. UG customizes programs to align with job market needs, advocating for integrity and the democratic development of society. Be part of a transformative institution committed to high-quality education and international collaboration!",
+        en: "A private university in Tbilisi founded in 2004.",
         ar: "",
       },
       programs: [
@@ -1635,8 +1683,10 @@ export const Education_Text = {
     },
     {
       title: { en: "European University", ar: "" },
+      icon: ICONS_UNIVERSITIES.European,
+      website: "https://eu.edu.ge/en",
       description: {
-        en: "European University (EU) is a hub of innovation and creativity, offering diverse programs that bridge the gap between theory and practice in fields like Medicine, Business, Law, Public Administration, and Education. With programs designed for the global job market, students benefit from a curriculum that includes workshops, internships, and industry collaborations, ensuring they are career-ready at graduation. Education at EU goes beyond the classroom, encouraging involvement in research, innovation hubs, and activities that build leadership and teamwork skills. The university’s modern facilities foster an interactive and collaborative learning atmosphere. With partnerships with over 40 international institutions, EU offers opportunities for dual degrees and cultural exchanges, enriching the academic experience and providing insights from diverse cultures. Join a dynamic community where passion meets purpose, and your success is prioritized!",
+        en: "A public university in Tbilisi founded in 2011.",
         ar: "",
       },
       programs: [
@@ -1652,8 +1702,10 @@ export const Education_Text = {
     },
     {
       title: { en: "Caucasus University", ar: "" },
+      icon: ICONS_UNIVERSITIES.Caucasus,
+      website: "https://www.cu.edu.ge/en",
       description: {
-        en: "Caucasus University (CU) blends modern teaching with practical applications across diverse disciplines, including Business, Law, Media, and more. As a member of AACSB and holding the TEDQUAL Certificate, CU offers Bachelor, Master, and Doctorate degrees while providing opportunities for dual degrees and exchanges with 200 partner universities worldwide. Join a vibrant academic community that ensures impressive employment rates, with 98% of graduates securing roles in various sectors!",
+        en: "A private university in Tbilisi founded in 2004.",
         ar: "",
       },
       programs: [
@@ -1674,8 +1726,10 @@ export const Education_Text = {
     },
     {
       title: { en: "New Vision University", ar: "" },
+      icon: ICONS_UNIVERSITIES.NewVision,
+      website: "https://newvision.ge/en",
       description: {
-        en: "New Vision University (NVU) integrates diverse academic programs with an emphasis on practical skills, encompassing fields such as Medicine, Business, Law, and Social Sciences. Accredited and recognized for its quality, NVU offers Bachelor, Master, and Doctorate degrees, fostering an environment of academic excellence and collaboration with over 50 partner universities around the globe for exchange programs and dual degrees. Join a dynamic academic community aimed at preparing students for successful careers, with a strong track record of graduate employability!",
+        en: "A private university in Tbilisi founded in 2013.",
         ar: "",
       },
       programs: [
@@ -1695,8 +1749,10 @@ export const Education_Text = {
     },
     {
       title: { en: "Tbilisi State Medical University", ar: "" },
+      icon: ICONS_UNIVERSITIES.Tsmu,
+      website: "https://tsmu.edu/ts/index.php?&lang=en",
       description: {
-        en: "Tbilisi State Medical University (TSMU) is a leader in medical education and research, offering programs that blend theoretical knowledge with practical skills in Medicine. Education at TSMU goes beyond traditional learning; students participate in scientific research, community health initiatives, and activities that develop critical thinking and teamwork. The university’s modern facilities provide an engaging and collaborative learning environment. TSMU partners with numerous international institutions, offering opportunities for dual degrees and cultural exchanges that enrich the educational experience. Join a vibrant academic community where dedication meets excellence, and your future in healthcare is prioritized!",
+        en: "A public university in Tbilisi founded in 1918.",
         ar: "",
       },
       programs: [
