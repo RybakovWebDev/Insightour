@@ -67,7 +67,7 @@ const servicesContentVariants: Variants = {
   show: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export default function Medical() {
+export default function Education() {
   const [openUniPrograms, setOpenUniPrograms] = useState<string[]>([]);
   const [openBenefits, setOpenBenefits] = useState<string[]>([]);
   const { selectedLanguage } = useLanguageContext();
@@ -102,7 +102,7 @@ export default function Medical() {
         >
           <div className={styles.programContentHeaderWrapper}>
             <a className={styles.website} href={u.website} target='_blank' rel='noopener noreferrer'>
-              Website
+              {Education_Text.website[selectedLanguage]}
             </a>
             <p className={styles.programDescription}>{u.description[selectedLanguage]}</p>
           </div>

@@ -69,7 +69,7 @@ export const CallToActionButton_Text = {
   },
   buttonAppointment: {
     en: "Book a call",
-    ar: "",
+    ar: "احجز مكالمة",
   },
   name: {
     en: "Name",
@@ -1459,310 +1459,380 @@ export const Medical_Text = {
 export const Education_Text = {
   headline: {
     en: "Experience excellence in Georgia's leading universities!",
-    ar: "",
-  },
-
-  aboutSectionName: {
-    en: "about us",
-    ar: "حولنا",
+    ar: "اختبر التميز في أفضل جامعات جورجيا!",
   },
 
   georgiaSectionName: {
     en: "Georgian Education",
-    ar: "",
+    ar: "التعليم في جورجيا",
   },
 
   faqSectionName: {
     en: "how does it work?",
-    ar: "",
+    ar: "كيف يعمل؟",
   },
 
   embarkText: {
     en: "Embark on a journey to knowledge in Georgia",
-    ar: "",
+    ar: "انطلق في رحلة إلى المعرفة في جورجيا",
   },
 
   embarkTextAccent: {
     en: "your success is our mission!",
-    ar: "",
+    ar: "نجاحك هو مهمتنا!",
   },
 
   georgiaText: {
     en: "Georgia is rapidly becoming a premier destination for higher education, attracting students from around the globe. Known for its diverse academic programs and modern universities, Georgia offers high-quality education at affordable prices, making it an attractive option for those seeking a valuable degree. With experienced faculty and innovative teaching methods, students can immerse themselves in a rich learning environment. As of 2024, the increasing number of international students and expanding educational opportunities position Georgia as a significant player in the global higher education landscape.",
-    ar: "",
+    ar: "أصبحت جورجيا بسرعة وجهة رئيسية للتعليم العالي، حيث تجذب الطلاب من جميع أنحاء العالم. معروفة ببرامجها الأكاديمية المتنوعة وجامعاتها الحديثة، تقدم جورجيا تعليمًا عالي الجودة بأسعار معقولة، مما يجعلها خيارًا جذابًا لأولئك الذين يبحثون عن درجة قيمة. مع هيئة تدريسية ذات خبرة وطرق تدريس مبتكرة، يمكن للطلاب الانغماس في بيئة تعليمية غنية. اعتبارًا من عام 2024، يضع العدد المتزايد من الطلاب الدوليين وتوسع الفرص التعليمية جورجيا كلاعب رئيسي في مشهد التعليم العالي العالمي.",
   },
 
   benefits: [
     {
-      title: { en: "Convenient Transport", ar: "" },
+      title: { en: "Convenient Transport", ar: "نقل مريح" },
       description: {
-        en: "Navigating Georgia is simple with low-cost bus and metro tickets.  A bus or metro ticket costs just 1.00 Gel ($0.4) for everyone. Students with a valid ‘student’s card’ pay only 0.20 Gel ($0.08) per ticket. Students benefit even more with a valid ‘student’s card,’ enjoying discounted fares. Free transfers are available within a 1.30-hour period. Prefer taxis? Yandex and BOLT offer affordable rides, with a 7 km journey costing around 6 Gel ($2.30). If you're considering buying a vehicle, cars are reasonably priced and accessible.",
-        ar: "",
+        en: "Navigating Georgia is simple with low-cost bus and metro tickets. A bus or metro ticket costs just 1.00 Gel ($0.4) for everyone. Students with a valid ‘student’s card’ pay only 0.20 Gel ($0.08) per ticket. Students benefit even more with a valid ‘student’s card,’ enjoying discounted fares. Free transfers are available within a 1.30-hour period. Prefer taxis? Yandex and BOLT offer affordable rides, with a 7 km journey costing around 6 Gel ($2.30). If you're considering buying a vehicle, cars are reasonably priced and accessible.",
+        ar: "التنقل في جورجيا بسيط بفضل تذاكر الحافلات والمترو منخفضة التكلفة. تبلغ تكلفة تذكرة الحافلة أو المترو 1.00 لاري جورجي (0.4 دولار) للجميع. الطلاب الذين يحملون بطاقة طالب صالحة يدفعون فقط 0.20 لاري جورجي (0.08 دولار) لكل تذكرة. يستفيد الطلاب بشكل أكبر مع بطاقة طالب صالحة، حيث يتمتعون بأجرة مخفضة. تتوفر التحويلات المجانية خلال فترة 1.30 ساعة. تفضل سيارات الأجرة؟ تقدم ياندكس وبولت رحلات بأسعار معقولة، حيث تكلف رحلة 7 كم حوالي 6 لاري جورجي (2.30 دولار). إذا كنت تفكر في شراء سيارة، فإن السيارات ذات أسعار معقولة ويمكن الوصول إليها.",
       },
     },
     {
-      title: { en: "Affordable Education", ar: "" },
+      title: { en: "Affordable Education", ar: "التعليم الميسر" },
       description: {
         en: "Realize your ambitions with accessible tuition fees for both MBBS and non-MBBS programs in Georgia. Georgia has great options for you! The average tuition fee for MBBS programs ranges from $5,000 to $9,000 per academic year. Non-MBBS programs such as Business, Engineering, and Technology are also competitively priced, starting from $4,000 to $6,000. Investing in your education has never been more attainable.",
-        ar: "",
+        ar: "حقق طموحاتك مع رسوم دراسية ميسرة لبرامج MBBS وغير MBBS في جورجيا. تمتلك جورجيا خيارات رائعة لك! تتراوح الرسوم الدراسية لبرامج MBBS بين 5000 إلى 9000 دولار لكل عام دراسي. برامج غير MBBS مثل الأعمال والهندسة والتكنولوجيا تتميز أيضًا بأسعار تنافسية، بدءًا من 4000 إلى 6000 دولار. الاستثمار في تعليمك لم يكن أكثر سهولة من ذلك.",
       },
     },
     {
-      title: { en: "Comfortable Living", ar: "" },
+      title: { en: "Comfortable Living", ar: "العيش المريح" },
       description: {
-        en: "Welcome to Tbilisi, where comfortable living is attainable. Budgeting can be around $250 per room, or  $500-$800 per month for accommodation. This reasonable figure allows you to enjoy a comfortable living space while soaking in the vibrant atmosphere of this enchanting city.",
-        ar: "",
+        en: "Welcome to Tbilisi, where comfortable living is attainable. Budgeting can be around $250 per room, or $500-$800 per month for accommodation. This reasonable figure allows you to enjoy a comfortable living space while soaking in the vibrant atmosphere of this enchanting city.",
+        ar: "مرحبًا بكم في تبليسي، حيث يمكن العيش المريح. يمكن أن تكون الميزانية حوالي 250 دولارًا لكل غرفة، أو 500-800 دولار شهريًا للإقامة. يتيح لك هذا الرقم المعقول الاستمتاع بمساحة معيشية مريحة بينما تستمتع بالأجواء النابضة بالحياة لهذه المدينة الساحرة.",
       },
     },
     {
-      title: { en: "Safety", ar: "" },
+      title: { en: "Safety", ar: "الأمان" },
       description: {
         en: "Georgia ranks in the top 15 safest countries in the world!",
-        ar: "",
+        ar: "تحتل جورجيا المرتبة ضمن أفضل 15 دولة أمانًا في العالم!",
       },
     },
   ],
   faqSteps: [
     {
-      title: { en: "STEP 1", ar: "" },
-      headline: { en: "CONTACT US", ar: "" },
+      title: { en: "STEP 1", ar: "الخطوة 1" },
+      headline: { en: "CONTACT US", ar: "اتصل بنا" },
       description: {
         en: "Upon receiving your application, our team will assist you in selecting your preferred program and institution. After reviewing all necessary documentation, our coordinators will prepare you a detailed enrollment plan, outlining important deadlines and requirements.",
-        ar: "",
+        ar: "عند استلام طلبك، سيساعدك فريقنا في اختيار برنامجك ومؤسستك المفضلة. بعد مراجعة جميع الوثائق اللازمة، سيقوم منسقونا بإعداد خطة تسجيل مفصلة لك، توضح المواعيد النهائية والمتطلبات الهامة.",
       },
     },
     {
-      title: { en: "STEP 2", ar: "" },
-      headline: { en: "COMPLETE THE APPLICATION FORM", ar: "" },
+      title: { en: "STEP 2", ar: "الخطوة 2" },
+      headline: { en: "COMPLETE THE APPLICATION FORM", ar: "أكمل نموذج الطلب" },
       description: {
         en: "After contacting us, we will send you the application form. Fill out this application with your contact details and upload your passport copy. A non-refundable $50 consultation fee will be required upon submission.",
-        ar: "",
+        ar: "بعد الاتصال بنا، سنرسل لك نموذج الطلب. املأ هذا النموذج بمعلومات الاتصال الخاصة بك وقم بتحميل نسخة من جواز سفرك. ستتطلب رسوم استشارة غير قابلة للاسترداد قدرها 50 دولارًا عند التقديم.",
       },
     },
     {
-      title: { en: "STEP 3", ar: "" },
-      headline: { en: "CONSULT WITH OUR VISA EXPERT", ar: "" },
+      title: { en: "STEP 3", ar: "الخطوة 3" },
+      headline: { en: "CONSULT WITH OUR VISA EXPERT", ar: "تشاور مع خبير التأشيرات لدينا" },
       description: {
         en: "After your initial consultation, if you qualify for a study visa, we'll provide a list of required documents and an invoice for our visa documentation service, ranging from $600 to $1,500 based on factors such as the applicant’s age, location, university, and the protocols set by the Georgian Embassy assigned to the applicant’s nationality.",
-        ar: "",
+        ar: "بعد الاستشارة الأولية، إذا كنت مؤهلاً للحصول على تأشيرة دراسية، سنقدم لك قائمة بالوثائق المطلوبة وفاتورة لخدمة وثائق التأشيرة لدينا، تتراوح بين 600 إلى 1500 دولار بناءً على عوامل مثل عمر المتقدم، الموقع، الجامعة، والبروتوكولات التي حددتها السفارة الجورجية المخصصة لجنسية المتقدم.",
       },
     },
     {
-      title: { en: "STEP 4", ar: "" },
-      headline: { en: "SUBMIT YOUR APPLICATION", ar: "" },
+      title: { en: "STEP 4", ar: "الخطوة 4" },
+      headline: { en: "SUBMIT YOUR APPLICATION", ar: "قدم طلبك" },
       description: {
         en: "Once the service fee is paid and all requirements are met, we'll submit your application to the Embassy. They typically decide within 30 days, although you may receive a response sooner.",
-        ar: "",
+        ar: "بمجرد دفع رسوم الخدمة وتلبية جميع المتطلبات، سنقدم طلبك إلى السفارة. عادةً ما يقررون خلال 30 يومًا، على الرغم من أنك قد تتلقى ردًا في وقت أقرب.",
       },
     },
     {
-      title: { en: "STEP 5", ar: "" },
-      headline: { en: "FINAL CONFIRMATION", ar: "" },
+      title: { en: "STEP 5", ar: "الخطوة 5" },
+      headline: { en: "FINAL CONFIRMATION", ar: "التأكيد النهائي" },
       description: {
         en: "Before you embark on your journey, we will send you a confirmation that includes your enrollment details, important dates, travel itinerary, and accommodation arrangements. Your preparation will be complete with our detailed information, ensuring a stress-free start to your studies in Georgia.",
-        ar: "",
+        ar: "قبل أن تبدأ رحلتك، سنرسل لك تأكيدًا يتضمن تفاصيل تسجيلك، المواعيد الهامة، جدول الرحلات، وترتيبات الإقامة. ستكون تحضيراتك كاملة بمعلوماتنا المفصلة، مما يضمن بداية خالية من التوتر لدراستك في جورجيا.",
       },
     },
     {
-      title: { en: "STEP 6", ar: "" },
-      headline: { en: "ARRIVING IN GEORGIA", ar: "" },
+      title: { en: "STEP 6", ar: "الخطوة 6" },
+      headline: { en: "ARRIVING IN GEORGIA", ar: "الوصول إلى جورجيا" },
       description: {
         en: "Our team is committed to making your arrival in Georgia special. We'll meet you at the airport, help you obtain your residence permit and settle into your accommodation smoothly. We also provide introductory sessions to familiarize you with student life in Georgia, ensuring you have the knowledge to adjust easily. Trust us to guide you through each step as you begin your new academic adventure in Georgia with confidence!",
-        ar: "",
+        ar: "يلتزم فريقنا بجعل وصولك إلى جورجيا مميزًا. سنقابلك في المطار، ونساعدك في الحصول على تصريح الإقامة والاستقرار في مكان إقامتك بسلاسة. كما نوفر جلسات تعريفية لتعريفك بحياة الطلاب في جورجيا، لضمان أن تكون لديك المعرفة اللازمة للتكيف بسهولة. ثق بنا لإرشادك في كل خطوة بينما تبدأ مغامرتك الأكاديمية الجديدة في جورجيا بثقة!",
       },
     },
   ],
+
   welcomeText: {
     en: "Georgia welcomes international students interested in academic offerings",
-    ar: "",
+    ar: "ترحب جورجيا بالطلاب الدوليين المهتمين بالعروض الأكاديمية",
   },
   applyText: {
     en: "To apply, you need:",
-    ar: "",
+    ar: ":للتقديم، تحتاج إلى",
   },
+
   applicationRequirements: [
     {
       number: 1,
-      title: { en: "Valid Documents", ar: "" },
+      title: { en: "Valid Documents", ar: "وثائق صالحة" },
       requirements: [
-        { en: "High school certificate for undergraduate studies", ar: "" },
-        { en: "Bachelor's degree for master's programs", ar: "" },
+        { en: "High school certificate for undergraduate studies", ar: "شهادة الثانوية العامة للدراسات الجامعية" },
+        { en: "Bachelor's degree for master's programs", ar: "درجة البكالوريوس لبرامج الماجستير" },
       ],
     },
     {
       number: 2,
-      title: { en: "For Transfer Students", ar: "" },
-      requirements: [{ en: "Transcript and syllabus of previous coursework", ar: "" }],
+      title: { en: "For Transfer Students", ar: "للطلاب المنقولين" },
+      requirements: [
+        { en: "Transcript and syllabus of previous coursework", ar: "كشف الدرجات والمناهج الدراسية للأعمال السابقة" },
+      ],
     },
     {
       number: 3,
-      title: { en: "English Proficiency", ar: "" },
+      title: { en: "English Proficiency", ar: "إتقان اللغة الإنجليزية" },
       requirements: [
         {
           en: "All universities will assess English fluency through an interview as per Ministry regulations.",
-          ar: "",
+          ar: "ستقوم جميع الجامعات بتقييم الطلاقة في اللغة الإنجليزية من خلال مقابلة وفقًا للوائح الوزارة.",
         },
       ],
     },
     {
       number: 4,
-      title: { en: "Next Steps", ar: "" },
+      title: { en: "Next Steps", ar: "الخطوات التالية" },
       requirements: [
-        { en: "After submitting your application, you will receive a confirmation email within 48 hours.", ar: "" },
+        {
+          en: "After submitting your application, you will receive a confirmation email within 48 hours.",
+          ar: "بعد تقديم طلبك، ستتلقى بريدًا إلكترونيًا للتأكيد في غضون 48 ساعة.",
+        },
       ],
     },
   ],
 
-  fastProcessingTitle: { en: "Fast Processing", ar: "" },
+  fastProcessingTitle: { en: "Fast Processing", ar: "معالجة سريعة" },
 
   fastProcessingDescription: {
     en: "We value your time and aim to process your application swiftly. Our goal is to reduce waiting time so you can start your next academic semester without delay.",
-    ar: "",
+    ar: "نحن نقدر وقتك ونسعى لمعالجة طلبك بسرعة. هدفنا هو تقليل وقت الانتظار حتى تتمكن من بدء الفصل الدراسي الأكاديمي التالي دون تأخير.",
   },
 
   universitiesSectionName: {
     en: "universities",
-    ar: "",
+    ar: "الجامعات",
+  },
+
+  website: {
+    en: "Website",
+    ar: "الموقع الإلكتروني",
   },
 
   universitiesOffered: [
     {
-      title: { en: "Ilia State University", ar: "" },
+      title: { en: "Ilia State University", ar: "جامعة إليا الحكومية" },
       icon: ICONS_UNIVERSITIES.Ilia,
       website: "https://iliauni.edu.ge/en/",
       description: {
         en: "A public university in Tbilisi founded in 2006.",
-        ar: "",
+        ar: "جامعة حكومية في تبليسي تأسست في عام 2006.",
       },
       programs: [
         {
-          type: { en: "Programs available", ar: "" },
+          type: { en: "Programs available", ar: "البرامج المتاحة" },
           options: [
-            { title: { en: "Bachelor's Degree Program in Business Administration", ar: "" }, price: 4500 },
-            { title: { en: "Medical Doctor program MD in the English language", ar: "" }, price: 5500 },
-            { title: { en: "Dental Medicine program in English language", ar: "" }, price: 5500 },
+            {
+              title: {
+                en: "Bachelor's Degree Program in Business Administration",
+                ar: "برنامج درجة البكالوريوس في إدارة الأعمال",
+              },
+              price: 4500,
+            },
+            {
+              title: {
+                en: "Medical Doctor program MD in the English language",
+                ar: "برنامج دكتور في الطب باللغة الإنجليزية",
+              },
+              price: 5500,
+            },
+            {
+              title: { en: "Dental Medicine program in English language", ar: "برنامج طب الأسنان باللغة الإنجليزية" },
+              price: 5500,
+            },
           ],
         },
       ],
     },
     {
-      title: { en: "University Of Georgia", ar: "" },
+      title: { en: "University Of Georgia", ar: "جامعة جورجيا" },
       icon: ICONS_UNIVERSITIES.Georgia,
       website: "https://www.ug.edu.ge/en",
       description: {
         en: "A private university in Tbilisi founded in 2004.",
-        ar: "",
+        ar: "جامعة خاصة في تبليسي تأسست في عام 2004.",
       },
       programs: [
         {
-          type: { en: "BA programs in English", ar: "" },
+          type: { en: "BA programs in English", ar: "برامج البكالوريوس باللغة الإنجليزية" },
           options: [
-            { title: { en: "Bachelor Degree of Business Administration (BBA)", ar: "" }, price: 4000 },
-            { title: { en: "Bachelor Degree of Engineering (Computer Science)", ar: "" }, price: 4000 },
-            { title: { en: "Bachelor Degree in Information Technology", ar: "" }, price: 4000 },
-            { title: { en: "Bachelor Degree of Nursing", ar: "" }, price: 3500 },
-            { title: { en: "Bachelor Degree of Pharmacy", ar: "" }, price: 4500 },
-            { title: { en: "Bachelor Degree of English Philology", ar: "" }, price: 3000 },
-            { title: { en: "Dental Program in English (Dentistry)", ar: "" }, price: 5500 },
-            { title: { en: "English Program of Medical Education (MD)", ar: "" }, price: 6000 },
+            {
+              title: {
+                en: "Bachelor Degree of Business Administration (BBA)",
+                ar: "درجة البكالوريوس في إدارة الأعمال",
+              },
+              price: 4000,
+            },
+            {
+              title: {
+                en: "Bachelor Degree of Engineering (Computer Science)",
+                ar: "درجة البكالوريوس في الهندسة (علوم الحاسوب)",
+              },
+              price: 4000,
+            },
+            {
+              title: { en: "Bachelor Degree in Information Technology", ar: "درجة البكالوريوس في تكنولوجيا المعلومات" },
+              price: 4000,
+            },
+            { title: { en: "Bachelor Degree of Nursing", ar: "درجة البكالوريوس في التمريض" }, price: 3500 },
+            { title: { en: "Bachelor Degree of Pharmacy", ar: "درجة البكالوريوس في الصيدلة" }, price: 4500 },
+            {
+              title: { en: "Bachelor Degree of English Philology", ar: "درجة البكالوريوس في فقه اللغة الإنجليزية" },
+              price: 3000,
+            },
+            {
+              title: { en: "Dental Program in English (Dentistry)", ar: "برنامج طب الأسنان باللغة الإنجليزية" },
+              price: 5500,
+            },
+            {
+              title: { en: "English Program of Medical Education (MD)", ar: "برنامج التعليم الطبي باللغة الإنجليزية" },
+              price: 6000,
+            },
           ],
         },
         {
-          type: { en: "MA programs in English", ar: "" },
+          type: { en: "MA programs in English", ar: "برامج الماجستير باللغة الإنجليزية" },
           options: [
-            { title: { en: "International Business Law Program", ar: "" }, price: 3000 },
-            { title: { en: "English Master’s Program of Business Administration (MBA)", ar: "" }, price: 4000 },
-            { title: { en: "Educational Management", ar: "" }, price: 3500 },
-            { title: { en: "Information Technology", ar: "" }, price: 4000 },
-            { title: { en: "English Philology", ar: "" }, price: 3500 },
-            { title: { en: "Security Studies", ar: "" }, price: 4000 },
-            { title: { en: "Global Governance", ar: "" }, price: 4000 },
+            { title: { en: "International Business Law Program", ar: "برنامج قانون الأعمال الدولي" }, price: 3000 },
+            {
+              title: {
+                en: "English Master’s Program of Business Administration (MBA)",
+                ar: "برنامج الماجستير في إدارة الأعمال (MBA)",
+              },
+              price: 4000,
+            },
+            { title: { en: "Educational Management", ar: "إدارة التعليم" }, price: 3500 },
+            { title: { en: "Information Technology", ar: "تكنولوجيا المعلومات" }, price: 4000 },
+            { title: { en: "English Philology", ar: "فقه اللغة الإنجليزية" }, price: 3500 },
+            { title: { en: "Security Studies", ar: "دراسات الأمن" }, price: 4000 },
+            { title: { en: "Global Governance", ar: "الحوكمة العالمية" }, price: 4000 },
           ],
         },
       ],
     },
     {
-      title: { en: "European University", ar: "" },
+      title: { en: "European University", ar: "الجامعة الأوروبية" },
       icon: ICONS_UNIVERSITIES.European,
       website: "https://eu.edu.ge/en",
       description: {
         en: "A public university in Tbilisi founded in 2011.",
-        ar: "",
+        ar: "جامعة حكومية في تبليسي تأسست في عام 2011.",
       },
       programs: [
         {
-          type: { en: "Programs available", ar: "" },
+          type: { en: "Programs available", ar: "البرامج المتاحة" },
           options: [
-            { title: { en: "Bachelor's Degree Program in Business Administration", ar: "" }, price: 4500 },
-            { title: { en: "Medical Doctor program MD in the English language", ar: "" }, price: 5500 },
-            { title: { en: "Dental Medicine program in English language", ar: "" }, price: 5500 },
+            {
+              title: {
+                en: "Bachelor's Degree Program in Business Administration",
+                ar: "برنامج درجة البكالوريوس في إدارة الأعمال",
+              },
+              price: 4500,
+            },
+            {
+              title: {
+                en: "Medical Doctor program MD in the English language",
+                ar: "برنامج دكتور في الطب باللغة الإنجليزية",
+              },
+              price: 5500,
+            },
+            {
+              title: { en: "Dental Medicine program in English language", ar: "برنامج طب الأسنان باللغة الإنجليزية" },
+              price: 5500,
+            },
           ],
         },
       ],
     },
     {
-      title: { en: "Caucasus University", ar: "" },
+      title: { en: "Caucasus University", ar: "جامعة القوقاز" },
       icon: ICONS_UNIVERSITIES.Caucasus,
       website: "https://www.cu.edu.ge/en",
       description: {
         en: "A private university in Tbilisi founded in 2004.",
-        ar: "",
+        ar: "جامعة خاصة في تبليسي تأسست في عام 2004.",
       },
       programs: [
         {
-          type: { en: "Bachelor & One-Step Programs", ar: "" },
+          type: { en: "Bachelor & One-Step Programs", ar: "برامج البكالوريوس وبرامج خطوة واحدة" },
           options: [
-            { title: { en: "Business Administration (BBA)", ar: "" }, price: 5000 },
-            { title: { en: "Informatics", ar: "" }, price: 5000 },
-            { title: { en: "International Relations", ar: "" }, price: 5000 },
-            { title: { en: "Sociology", ar: "" }, price: 5000 },
-            { title: { en: "Psychology", ar: "" }, price: 5000 },
-            { title: { en: "Economics", ar: "" }, price: 5000 },
-            { title: { en: "Tourism", ar: "" }, price: 5000 },
-            { title: { en: "Medical Doctor", ar: "" }, price: 5000 },
+            { title: { en: "Business Administration (BBA)", ar: "إدارة الأعمال" }, price: 5000 },
+            { title: { en: "Informatics", ar: "علوم المعلومات" }, price: 5000 },
+            { title: { en: "International Relations", ar: "العلاقات الدولية" }, price: 5000 },
+            { title: { en: "Sociology", ar: "علم الاجتماع" }, price: 5000 },
+            { title: { en: "Psychology", ar: "علم النفس" }, price: 5000 },
+            { title: { en: "Economics", ar: "الاقتصاد" }, price: 5000 },
+            { title: { en: "Tourism", ar: "السياحة" }, price: 5000 },
+            { title: { en: "Medical Doctor", ar: "دكتور في الطب" }, price: 5000 },
           ],
         },
       ],
     },
     {
-      title: { en: "New Vision University", ar: "" },
+      title: { en: "New Vision University", ar: "جامعة نيو فيجن" },
       icon: ICONS_UNIVERSITIES.NewVision,
       website: "https://newvision.ge/en",
       description: {
         en: "A private university in Tbilisi founded in 2013.",
-        ar: "",
+        ar: "جامعة خاصة في تبليسي تأسست في عام 2013.",
       },
       programs: [
         {
-          type: { en: "Bachelor & One-Step Programs", ar: "" },
+          type: { en: "Bachelor & One-Step Programs", ar: "برامج البكالوريوس وبرامج خطوة واحدة" },
           options: [
-            { title: { en: "Business Administration", ar: "" }, price: 4500 },
-            { title: { en: "Business and Information Technologies", ar: "" }, price: 4500 },
-            { title: { en: "Politics and International Relations", ar: "" }, price: 4500 },
-            { title: { en: "Medical Doctor", ar: "" }, price: 7000 },
-            { title: { en: "Dentistry", ar: "" }, price: 4500 },
-            { title: { en: "Medical Rehabilitation and Nursing Care", ar: "" }, price: 4500 },
-            { title: { en: "Pharmacy", ar: "" }, price: 4500 },
+            { title: { en: "Business Administration", ar: "إدارة الأعمال" }, price: 4500 },
+            { title: { en: "Business and Information Technologies", ar: "الأعمال وتكنولوجيا المعلومات" }, price: 4500 },
+            { title: { en: "Politics and International Relations", ar: "السياسة والعلاقات الدولية" }, price: 4500 },
+            { title: { en: "Medical Doctor", ar: "دكتور في الطب" }, price: 7000 },
+            { title: { en: "Dentistry", ar: "طب الأسنان" }, price: 4500 },
+            {
+              title: { en: "Medical Rehabilitation and Nursing Care", ar: "إعادة التأهيل الطبي والرعاية التمريضية" },
+              price: 4500,
+            },
+            { title: { en: "Pharmacy", ar: "الصيدلة" }, price: 4500 },
           ],
         },
       ],
     },
     {
-      title: { en: "Tbilisi State Medical University", ar: "" },
+      title: { en: "Tbilisi State Medical University", ar: "جامعة تبليسي الطبية الحكومية" },
       icon: ICONS_UNIVERSITIES.Tsmu,
       website: "https://tsmu.edu/ts/index.php?&lang=en",
       description: {
         en: "A public university in Tbilisi founded in 1918.",
-        ar: "",
+        ar: "جامعة حكومية في تبليسي تأسست في عام 1918.",
       },
       programs: [
         {
-          type: { en: "Programs available", ar: "" },
+          type: { en: "Programs available", ar: "البرامج المتاحة" },
           options: [
-            { title: { en: "Dentistry", ar: "" }, price: 7000 },
-            { title: { en: "Pharmacy", ar: "" }, price: 4500 },
-            { title: { en: "Physical Medicine and Rehabilitation", ar: "" }, price: 8000 },
-            { title: { en: "Medicine", ar: "" }, price: 8000 },
+            { title: { en: "Dentistry", ar: "طب الأسنان" }, price: 7000 },
+            { title: { en: "Pharmacy", ar: "الصيدلة" }, price: 4500 },
+            { title: { en: "Physical Medicine and Rehabilitation", ar: "الطب الطبيعي وإعادة التأهيل" }, price: 8000 },
+            { title: { en: "Medicine", ar: "الطب" }, price: 8000 },
           ],
         },
       ],
