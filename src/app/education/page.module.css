@@ -204,6 +204,20 @@ html[data-language-selected="ar"] .benefitTitle {
   padding: 0.5rem;
 }
 
+.fastProcessingWrapper p {
+  padding: 0 2rem 0 0;
+  /* color: #b08ece; */
+}
+
+.fastProcessingWrapper p:first-child {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.fastProcessingWrapper p:last-child {
+  font-size: 16px;
+}
+
 .universitiesWrapper {
   min-width: 15rem;
   width: 90vw;
@@ -303,7 +317,7 @@ html[data-language-selected="ar"] .programTypeTitle {
 }
 
 .programDescription {
-  margin: 1.3rem 0 1rem 0;
+  margin: 1.3rem 0 2rem 0;
 }
 
 .programTypeItem ul {

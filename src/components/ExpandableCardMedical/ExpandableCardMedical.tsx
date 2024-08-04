@@ -24,7 +24,7 @@ function ExpandableCard({ title, icon, isOpen, onToggle, children, expandedHeigh
       <div className={styles.cardHeaderWrapper}>
         <Image src={icon.src} alt={icon.alt} width={100} height={100} />
         <h2>{title}</h2>
-        <DetailsArrow isOpen={isOpen} size={50} />
+        <DetailsArrow isOpen={isOpen} size={50} rotate />
       </div>
       <AnimatePresence initial={false}>
         {isOpen && (

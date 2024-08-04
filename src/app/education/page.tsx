@@ -232,6 +232,10 @@ export default function Medical() {
               );
             })}
           </ol>
+          <div className={styles.fastProcessingWrapper}>
+            <p>{Education_Text.fastProcessingTitle[selectedLanguage]}</p>
+            <p>{Education_Text.fastProcessingDescription[selectedLanguage]}</p>
+          </div>
         </m.div>
 
         <SectionName>{Education_Text.universitiesSectionName[selectedLanguage]}</SectionName>

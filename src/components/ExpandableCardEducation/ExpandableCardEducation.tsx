@@ -26,7 +26,7 @@ function ExpandableCard({ title, icon, isOpen, onToggle, children, expandedHeigh
           <Image src={icon.src} alt={icon.alt} fill sizes='150px' />
         </div>
         <h2>{title}</h2>
-        <DetailsArrow isOpen={isOpen} size={50} />
+        <DetailsArrow isOpen={isOpen} size={50} rotate />
       </div>
       <AnimatePresence initial={false}>
         {isOpen && (
