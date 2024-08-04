@@ -260,6 +260,7 @@ html[data-language-selected="ar"] .benefitTitle {
 
 .programContentHeaderWrapper {
   margin: 1rem 0 0 0;
+  /* border-bottom: 1px solid rgb(109, 48, 157, 0.1); */
 }
 
 .uniDescription {
@@ -275,7 +276,7 @@ html[data-language-selected="ar"] .benefitTitle {
 }
 
 .website:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .programTypeItem {
@@ -286,11 +287,13 @@ html[data-language-selected="ar"] .benefitTitle {
 }
 
 .programTypeTitle {
-  padding: 0 0 0 0.5rem;
-  height: 2rem;
+  padding: 0.5rem 0 0 0.5rem;
+  height: 2.5rem;
   color: #6d309d;
   font-size: 16px;
+  font-weight: 700;
   text-align: left;
+  border-top: 1px solid rgb(109, 48, 157, 0.1);
   border-bottom: 1px solid rgb(109, 48, 157, 0.1);
 }
 

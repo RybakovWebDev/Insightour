@@ -74,9 +74,11 @@ export default function Medical() {
   const isMobileView = useScreenWidthDetect(720);
   const isArabic = selectedLanguage === "ar";
 
+  const faqRef = useRef(null);
   const applyRef = useRef(null);
   const unisRef = useRef(null);
 
+  const faqInView = useInView(faqRef, { once: true, amount: isMobileView ? 0.15 : 0.3 });
   const applyInView = useInView(applyRef, { once: true, amount: 0.3 });
   const unisInView = useInView(unisRef, { once: true, amount: isMobileView ? 0.15 : 0.3 });
 
@@ -176,7 +178,13 @@ export default function Medical() {
         </m.div>
 
         <SectionName>{Education_Text.faqSectionName[selectedLanguage]}</SectionName>
-        <m.div className={styles.faqWrapper} initial='hidden' animate='show' variants={benefitsVariants}>
+        <m.div
+          ref={faqRef}
+          className={styles.faqWrapper}
+          initial='hidden'
+          animate={faqInView ? "show" : "hidden"}
+          variants={benefitsVariants}
+        >
           <ol>
             {Education_Text.faqSteps.map((step) => {
               return (
