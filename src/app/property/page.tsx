@@ -69,7 +69,7 @@ const servicesContentVariants: Variants = {
   show: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-export default function RealEstate() {
+export default function Property() {
   const [openBenefits, setOpenBenefits] = useState<string[]>([]);
   const { selectedLanguage } = useLanguageContext();
   const isMobileView = useScreenWidthDetect(1000);

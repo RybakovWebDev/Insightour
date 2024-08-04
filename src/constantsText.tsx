@@ -914,7 +914,7 @@ export const ExtraServices_Text = {
 
 export const ExtraServicesPackages_Text = [
   {
-    slug: "realestate",
+    slug: "property",
     icon: ICONS.House,
     title: {
       en: "Real estate",
