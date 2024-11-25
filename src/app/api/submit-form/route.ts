@@ -11,7 +11,6 @@ interface FormData {
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const rawData = await request.json();
-    console.log("Raw data received: ", rawData);
 
     const validationResult = validateFormData(rawData);
     if (!validationResult.success) {
@@ -25,7 +24,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       phone: sanitizeInput(phone),
       comment: sanitizeInput(comment),
     };
-    console.log("Sanitized data: ", sanitizedData);
 
     const credentials = {
       type: process.env.GOOGLE_CLOUD_KEY_TYPE,
@@ -65,8 +63,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         values: [[timestamp, sanitizedData.name, sanitizedData.phone, sanitizedData.comment]],
       },
     });
-
-    console.log("Form submission successful");
 
     return NextResponse.json({ message: "Success" }, { status: 200 });
   } catch (error) {

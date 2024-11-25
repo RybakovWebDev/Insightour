@@ -17,8 +17,6 @@ export default async function middleware(request: NextRequest) {
   const ip = request.ip ?? "127.0.0.1";
   const { success } = await ratelimit.limit(ip);
 
-  console.log("Checking rate limit for ", ip);
-
   if (!success) {
     console.log(`Rate limit exceeded for IP: ${ip}`);
     return new NextResponse(JSON.stringify({ error: "Rate limit exceeded" }), {

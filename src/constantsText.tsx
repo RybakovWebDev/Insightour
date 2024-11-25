@@ -259,6 +259,10 @@ export const Offers_Text = {
     en: "From",
     ar: "من",
   },
+  accessibleToAnyone: {
+    en: "Our experiences are accessible to anyone!",
+    ar: "تجاربنا متاحة للجميع!",
+  },
 };
 
 export const OFFER_PACKAGES = [
@@ -888,27 +892,31 @@ export const tenDayTourBreakdown = [
 export const ExtraServices_Text = {
   sectionName: {
     en: "extra services",
-    ar: "أسعارنا",
+    ar: "خدمات إضافية",
   },
 
   more1: {
     en: "More",
-    ar: "",
+    ar: "أكثر",
   },
 
   more2: {
     en: "than",
-    ar: "",
+    ar: "من",
   },
 
   more3: {
     en: "just",
-    ar: "",
+    ar: "مجرد",
   },
 
   more4: {
     en: "tourism",
-    ar: "",
+    ar: "السياحة",
+  },
+  details: {
+    en: "Details",
+    ar: "التفاصيل",
   },
 };
 
@@ -920,44 +928,44 @@ export const ExtraServicesPackages_Text = [
       en: "Real estate",
       ar: "استشارات العقارات",
     },
-    heading: { en: "Real estate advisory", ar: "" },
+    heading: { en: "Real estate advisory", ar: "الاستشارات العقارية" },
     included: [
       {
         en: "Brokerage Services",
-        ar: "",
+        ar: "خدمات الوساطة",
       },
       {
         en: "Buying & Selling",
-        ar: "",
+        ar: "الشراء والبيع",
       },
       {
         en: "Construction",
-        ar: "",
+        ar: "البناء",
       },
       {
         en: "Interior Design",
-        ar: "",
+        ar: "التصميم الداخلي",
       },
       {
         en: "Real Estate Legal Services",
-        ar: "",
+        ar: "الخدمات القانونية العقارية",
       },
       {
         en: "Property Investment Consulting",
-        ar: "",
+        ar: "استشارات استثمار العقارات",
       },
       {
         en: "Property Valuation",
-        ar: "",
+        ar: "تقييم العقارات",
       },
       {
         en: "Property Management",
-        ar: "",
+        ar: "إدارة العقارات",
       },
     ],
     description: {
       en: "We offer expert guidance, tailored to your real estate aspirations. Our skilled team is dedicated to facilitating a smooth experience, whether it’s connecting you with premium properties, coordinating viewings, or managing legalities. Trust us to accompany you every step of the way in your home search journey!",
-      ar: "",
+      ar: "نقدم إرشادات خبراء مخصصة لتلبية طموحاتك العقارية. يكرس فريقنا الماهر جهوده لضمان تجربة سلسة، سواء من خلال ربطك بالعقارات الفاخرة، أو تنسيق المشاهدات، أو إدارة الجوانب القانونية. ثق بنا لمرافقتك في كل خطوة من رحلتك للبحث عن منزل!",
     },
   },
   {
@@ -967,36 +975,36 @@ export const ExtraServicesPackages_Text = [
       en: "Health",
       ar: "السياحة الطبية",
     },
-    heading: { en: "Medical tourism", ar: "" },
+    heading: { en: "Medical tourism", ar: "السياحة الطبية" },
     included: [
       {
         en: "Medical Appointments and Treatments",
-        ar: "",
+        ar: "المواعيد والعلاجات الطبية",
       },
       {
         en: "Wellness and Retreats",
-        ar: "",
+        ar: "الاستجمام والعافية",
       },
       {
         en: "Hospital and Clinic Transfers",
-        ar: "",
+        ar: "النقل إلى المستشفيات والعيادات",
       },
       {
         en: "Accommodation & Local SIM Card",
-        ar: "",
+        ar: "الإقامة وبطاقة SIM المحلية",
       },
       {
         en: "Health Visa Assistance",
-        ar: "",
+        ar: "مساعدة في تأشيرة الصحة",
       },
       {
         en: "Translation and Notarization of Medical Documents",
-        ar: "",
+        ar: "ترجمة وتوثيق المستندات الطبية",
       },
     ],
     description: {
       en: "We provide personalized assistance for your medical travel needs. From connecting you with top-tier healthcare providers to arranging your travel and accommodation, our dedicated team ensures a smooth and stress-free experience. Trust us to support you on your journey towards better health and wellness!",
-      ar: "",
+      ar: "نقدم مساعدة شخصية لتلبية احتياجات سفرك الطبي. من ربطك بمقدمي الرعاية الصحية المتميزين إلى ترتيب السفر والإقامة، يضمن فريقنا المخصص تجربة سلسة وخالية من المتاعب. ثق بنا لدعمك في رحلتك نحو صحة وعافية أفضل!",
     },
   },
   {
@@ -1006,36 +1014,39 @@ export const ExtraServicesPackages_Text = [
       en: "Education",
       ar: "قبول الجامعات",
     },
-    heading: { en: "University admissions", ar: "" },
+    heading: {
+      en: "University admissions",
+      ar: "القبول الجامعي",
+    },
     included: [
       {
         en: "Admission to any University in Georgia",
-        ar: "",
+        ar: "القبول في أي جامعة في جورجيا",
       },
       {
         en: "Transfer Service",
-        ar: "",
+        ar: "خدمة التحويل",
       },
       {
         en: "Accommodation & Local SIM Card",
-        ar: "",
+        ar: "الإقامة وبطاقة SIM المحلية",
       },
       {
         en: "Residence Permit",
-        ar: "",
+        ar: "تصريح الإقامة",
       },
       {
         en: "Student Visa",
-        ar: "",
+        ar: "تأشيرة الطالب",
       },
       {
         en: "Translation and Notarization of Documents",
-        ar: "",
+        ar: "ترجمة وتوثيق المستندات",
       },
     ],
     description: {
       en: "We provide personalized assistance to help you navigate the university admissions process and support you during your studies. Trust us to guide you every step of the way, helping you to assimilate into the country and offering continuous support to ensure your academic dreams become a reality!",
-      ar: "",
+      ar: "نقدم مساعدة شخصية لمساعدتك على اجتياز عملية القبول الجامعي ودعمك أثناء دراستك. ثق بنا لإرشادك في كل خطوة، لمساعدتك على التأقلم في البلاد وتقديم الدعم المستمر لضمان تحقيق أحلامك الأكاديمية!",
     },
   },
 ];

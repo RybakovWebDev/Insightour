@@ -119,7 +119,7 @@ function Offers() {
           </m.div>
 
           <div className={styles.accessibilityWrapper}>
-            <p>Our experiences are accessible to anyone!</p>
+            <p>{Offers_Text.accessibleToAnyone[selectedLanguage]}</p>
             <div className={styles.accessibilityIconsWrapper}>
               {ICONS_ACCESSIBLE.map((i) => {
                 return <Image key={i.alt} src={i.src} alt={i.alt} height={35} width={35} />;

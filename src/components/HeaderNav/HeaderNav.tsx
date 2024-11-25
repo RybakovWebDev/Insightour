@@ -85,7 +85,7 @@ function HeaderNav() {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <div ref={navRef} className={styles.navContainer}>
+      <nav ref={navRef} className={styles.navContainer}>
         <button
           className={styles.menuButton}
           onClick={() => setIsOpen(!isOpen)}
@@ -130,7 +130,7 @@ function HeaderNav() {
             </m.nav>
           )}
         </AnimatePresence>
-      </div>
+      </nav>
     </LazyMotion>
   );
 }

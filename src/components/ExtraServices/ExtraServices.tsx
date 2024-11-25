@@ -195,7 +195,7 @@ function ExtraServices() {
               aria-label={`More about ${selectedService?.title}`}
               className={styles.legal}
             >
-              <button>Details</button>
+              <button>{ExtraServices_Text.details[selectedLanguage]}</button>
             </Link>
           </div>
         </div>
