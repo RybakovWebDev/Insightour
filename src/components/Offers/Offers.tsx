@@ -1,6 +1,7 @@
 "use client";
 import { useId, useRef, useState } from "react";
 import { AnimatePresence, LazyMotion, m, useInView } from "framer-motion";
+import Image from "next/image";
 
 import styles from "./Offers.module.css";
 
@@ -14,7 +15,6 @@ import { useRefsContext } from "@/contexts/RefsContext";
 import { AnimateChangeInHeight } from "@/helpers";
 import { OFFER_PACKAGES, Offers_Text } from "@/constantsText";
 import { ICONS_ACCESSIBLE } from "@/constants";
-import Image from "next/image";
 
 const loadFeatures = () => import("../../featuresMax").then((res) => res.default);
 
