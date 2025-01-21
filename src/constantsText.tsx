@@ -9,7 +9,7 @@ export const TOUR_DURATIONS = [
 export const NAVLINKS = [
   {
     slug: "about",
-    href: "/",
+    href: "/#about",
     titles: {
       en: "About Us",
       ar: "عنا",
@@ -17,7 +17,7 @@ export const NAVLINKS = [
   },
   {
     slug: "rates",
-    href: "/",
+    href: "/#rates",
     titles: {
       en: "Rates",
       ar: "الأسعار",
@@ -25,7 +25,7 @@ export const NAVLINKS = [
   },
   {
     slug: "offers",
-    href: "/",
+    href: "/#offers",
     titles: {
       en: "Tours",
       ar: "الجولات",
@@ -33,17 +33,15 @@ export const NAVLINKS = [
   },
   {
     slug: "services",
-    href: "/",
+    href: "/#services",
     titles: {
       en: "Services",
-      //TODO
       ar: "الجولات",
-      //TODO
     },
   },
   {
     slug: "contact",
-    href: "/",
+    href: "/#contact",
     titles: {
       en: "Contacts",
       ar: "اتصل بنا",

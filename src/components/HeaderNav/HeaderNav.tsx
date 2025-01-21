@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu } from "react-feather";
@@ -25,58 +25,76 @@ function HeaderNav() {
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setIsMounted(true);
+  const handleHashScroll = useCallback(
+    (hash: string) => {
+      if (!hash) return;
+
+      if (hash === "#about" && aboutRef.current) {
+        scrollToRef(aboutRef);
+      } else if (hash === "#rates" && ratesRef.current) {
+        scrollToRef(ratesRef);
+      } else if (hash === "#offers" && offersRef.current) {
+        scrollToRef(offersRef);
+      } else if (hash === "#services" && contactRef.current) {
+        scrollToRef(contactRef);
+      } else if (hash === "#contact" && contactRef.current) {
+        scrollToRef(contactRef);
+      }
+    },
+    [aboutRef, ratesRef, offersRef, contactRef]
+  );
+
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (navRef.current && !navRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      const hash = window.location.hash;
-      if (hash === "#about") {
-        scrollToRef(aboutRef);
-      } else if (hash === "#rates") {
-        scrollToRef(ratesRef);
-      } else if (hash === "#offers") {
-        scrollToRef(offersRef);
-      } else if (hash === "#services") {
-        scrollToRef(contactRef);
-      } else if (hash === "#contact") {
-        scrollToRef(contactRef);
-      }
-    }, 50);
-  });
+    setIsMounted(true);
+
+    const scrollAttempts = [100, 300, 800];
+    scrollAttempts.forEach((delay) => {
+      setTimeout(() => {
+        if (window.location.hash) {
+          handleHashScroll(window.location.hash);
+        }
+      }, delay);
+    });
+  }, [handleHashScroll]);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
+    const handleHashChange = () => {
+      handleHashScroll(window.location.hash);
+    };
 
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
+    };
+  }, [aboutRef, ratesRef, offersRef, contactRef, handleHashScroll]);
+
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
     e.preventDefault();
 
-    if (pathname !== "/") router.push(`/#${slug}`);
-
-    if (pathname === "/") {
-      if (slug === "about") {
-        scrollToRef(aboutRef);
-      } else if (slug === "rates") {
-        scrollToRef(ratesRef);
-      } else if (slug === "offers") {
-        scrollToRef(offersRef);
-      } else if (slug === "services") {
-        scrollToRef(contactRef);
-      } else if (slug === "contact") {
-        scrollToRef(contactRef);
-      }
+    if (pathname !== "/") {
+      router.push(`/#${slug}`);
+      return;
     }
+
+    window.history.replaceState(null, "", `/#${slug}`);
+
+    handleHashScroll(`#${slug}`);
 
     setTimeout(() => {
       setIsOpen(false);

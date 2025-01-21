@@ -71,7 +71,6 @@ export const scrollToRef = (ref: React.RefObject<HTMLElement>): void => {
     behavior: "smooth",
     block: "start",
   });
-  window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
 };
 
 export const shuffleArray = <T,>(array: T[], resultCount: number = array.length): T[] => {

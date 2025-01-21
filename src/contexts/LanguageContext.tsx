@@ -23,6 +23,7 @@ export function LanguageProvider({ children, initialLanguage }: LanguageProvider
     setSelectedLanguage(language);
     Cookies.set("language-selected", language, { expires: 1000 });
     document.documentElement.setAttribute("data-language-selected", language);
+    document.documentElement.lang = language;
   };
 
   return (

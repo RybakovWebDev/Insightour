@@ -12,9 +12,16 @@ const loadFeatures = () => import("../../features").then((res) => res.default);
 
 function BackToTop() {
   const { headerRef } = useRefsContext();
+
   const handleClick = () => {
-    if (headerRef.current) headerRef.current.scrollIntoView({ behavior: "smooth" });
+    if (headerRef.current) {
+      headerRef.current.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+      }, 800);
+    }
   };
+
   const showButton = !useInView(headerRef);
 
   return (
