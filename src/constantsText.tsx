@@ -1052,66 +1052,66 @@ export const ExtraServicesPackages_Text = [
 export const RealEstate_Text = {
   headline: {
     en: "Invest in your dream in the heart of Georgia!",
-    ar: "",
+    ar: "استثمر في حلمك في قلب جورجيا!",
   },
   faqSectionName: {
     en: "how does it work?",
-    ar: "",
+    ar: "كيف يعمل؟",
   },
   propertyTypes: [
     {
       en: "Residential properties",
-      ar: "",
+      ar: "عقارات سكنية",
     },
     {
       en: "Vacation homes",
-      ar: "",
+      ar: "منازل للعطلات",
     },
     {
       en: "Apartments",
-      ar: "",
+      ar: "شقق",
     },
     {
       en: "Commercial properties",
-      ar: "",
+      ar: "عقارات تجارية",
     },
     {
       en: "Land plots",
-      ar: "",
+      ar: "قطع أراضي",
     },
     {
       en: "Villas",
-      ar: "",
+      ar: "فلل",
     },
     {
       en: "Mansions",
-      ar: "",
+      ar: "قصور",
     },
     {
       en: "Hospitality properties (hotels, guesthouses)",
-      ar: "",
+      ar: "عقارات الضيافة (فنادق، بيوت ضيافة)",
     },
     {
       en: "Development projects",
-      ar: "",
+      ar: "مشاريع تطويرية",
     },
     {
       en: "Agricultural land",
-      ar: "",
+      ar: "أراض زراعية",
     },
   ],
   aboutHeadline1: {
     en: "Your future",
-    ar: "",
+    ar: "مستقبلك",
   },
   aboutHeadline2: {
     en: "starts here!",
-    ar: "",
+    ar: "يبدأ هنا!",
   },
 
   marketSectionName: {
     en: "Georgia real estate market",
-    ar: "",
+    ar: "سوق العقارات في جورجيا",
   },
 
   marketText1: {
@@ -1123,7 +1123,9 @@ export const RealEstate_Text = {
     for everyone. As of 2024, real estate developments are booming, fueled by a growing economy 
     and a robust job market, making properties in Georgia more desirable than ever.
   `,
-    ar: "",
+    ar: `
+    تُعد جورجيا بشكل متزايد واحدة من أكثر أسواق العقارات ديناميكية في المنطقة. بفضل فرصها الاستثمارية الجذابة والتدفق المستمر للسكان، تجذب الولاية انتباه كل من المشترين المحليين والدوليين. توفر المناظر الطبيعية المتنوعة، التي تتراوح من المراكز الحضرية الصاخبة مثل أتلانتا إلى الأحياء الهادئة في الضواحي، شيئًا للجميع. اعتبارًا من عام 2024، تشهد التطورات العقارية ازدهارًا، مدفوعة باقتصاد متنامٍ وسوق عمل قوي، مما يجعل العقارات في جورجيا مرغوبة أكثر من أي وقت مضى.
+  `,
   },
   marketText2: {
     en: `Moreover, the affordability of housing in Georgia compared to other major cities in the U.S. 
@@ -1133,111 +1135,111 @@ export const RealEstate_Text = {
     As real estate trends continue to show positive growth, Georgia is set to be a prime location 
     for investment, with opportunities for both residential and commercial properties expanding 
     significantly.`,
-    ar: "",
+    ar: `علاوة على ذلك، فإن القدرة على تحمل تكاليف السكن في جورجيا مقارنة بالمدن الرئيسية الأخرى في الولايات المتحدة تعزز جاذبيتها. يستفيد المشترون من أسعار العقارات المنخفضة نسبيًا، مما يجعل ملكية المنازل أكثر سهولة. كما أن الولاية غنية بالتراث الثقافي والأنشطة الترفيهية، مما يوفر جودة حياة استثنائية تجذب العائلات والمهنيين الشباب على حد سواء. مع استمرار اتجاهات العقارات في إظهار نمو إيجابي، من المقرر أن تكون جورجيا موقعًا رئيسيًا للاستثمار، مع فرص لكل من العقارات السكنية والتجارية التي تتوسع بشكل كبير.`,
   },
 
   whyUs: {
     en: "Why Choose Us?",
-    ar: "",
+    ar: "لماذا تختارنا؟",
   },
 
   benefits: [
     {
       title: {
         en: "Extensive Property Selection",
-        ar: "",
+        ar: "مجموعة واسعة من العقارات",
       },
       description: {
         en: "We pride ourselves on an impressive collection of properties that cater to diverse tastes and budgets. From charming starter homes to luxurious estates, our portfolio features something for everyone. Our listings are regularly updated, ensuring you have access to the latest opportunities on the market.",
-        ar: "",
+        ar: "نحن نفخر بمجموعتنا الرائعة من العقارات التي تلبي الأذواق والميزانيات المتنوعة. من المنازل الأولية الساحرة إلى العقارات الفاخرة، تتضمن محفظتنا شيئًا للجميع. يتم تحديث قوائمنا بانتظام، مما يضمن حصولك على أحدث الفرص في السوق.",
       },
     },
     {
       title: {
         en: "Effortless Financing Solutions",
-        ar: "",
+        ar: "حلول تمويل سهلة",
       },
       description: {
         en: "Navigating the financing process can be daunting, but we simplify it for you. Our team of financial experts works closely with you to find the best financing options available. Whether you’re a first-time buyer or looking to invest, we will guide you through every step, making the process seamless and stress-free.",
-        ar: "",
+        ar: "قد يكون التعامل مع عملية التمويل أمرًا شاقًا، لكننا نبسطها لك. يعمل فريقنا من الخبراء الماليين معك عن كثب للعثور على أفضل خيارات التمويل المتاحة. سواء كنت مشتريًا لأول مرة أو تتطلع إلى الاستثمار، فسنوجهك خلال كل خطوة، مما يجعل العملية سلسة وخالية من التوتر.",
       },
     },
     {
       title: {
         en: "Trusted by Thousands",
-        ar: "",
+        ar: "موثوق به من قبل الآلاف",
       },
       description: {
         en: "Join a community of satisfied clients who have entrusted us with their real estate needs. Our reputation is built on transparency, integrity, and outstanding customer service. We take pride in our numerous positive testimonials and repeat clients, proving that we deliver results and exceed expectations.",
-        ar: "",
+        ar: "انضم إلى مجتمع من العملاء الراضين الذين وثقوا بنا في احتياجاتهم العقارية. تُبنى سمعتنا على الشفافية والنزاهة وخدمة العملاء المتميزة. نحن نفخر بشهاداتنا الإيجابية العديدة وعملائنا المتكررين، مما يثبت أننا نحقق النتائج ونتجاوز التوقعات.",
       },
     },
     {
       title: {
-        en: "Personalized Service and Expertise  ",
-        ar: "",
+        en: "Personalized Service and Expertise",
+        ar: "خدمة شخصية وخبرة",
       },
       description: {
         en: "What sets us apart is our commitment to providing personalized service tailored to your unique needs. Our experienced team takes the time to understand your goals and preferences, ensuring you receive expert advice and guidance throughout your real estate journey. We are dedicated to making your experience rewarding and successful.",
-        ar: "",
+        ar: "ما يميزنا هو التزامنا بتقديم خدمة شخصية مصممة خصيصًا لتلبية احتياجاتك الفريدة. يكرس فريقنا ذو الخبرة الوقت لفهم أهدافك وتفضيلاتك، مما يضمن حصولك على مشورة وتوجيهات الخبراء طوال رحلتك العقارية. نحن ملتزمون بجعل تجربتك مُجزية وناجحة.",
       },
     },
   ],
   faq: [
     {
-      title: { en: "STEP 1", ar: "" },
-      headline: { en: "BOOK A CONSULTATION", ar: "" },
+      title: { en: "STEP 1", ar: "الخطوة ١" },
+      headline: { en: "BOOK A CONSULTATION", ar: "احجز استشارة" },
       description: {
         en: "Reach out to us to book a call where we can discuss your specific needs and preferences in detail. This conversation will help us identify the best properties suited to your goals and budget while providing you with essential insights into the Georgia real estate market.",
-        ar: "",
+        ar: "تواصل معنا لحجز مكالمة حيث يمكننا مناقشة احتياجاتك وتفضيلاتك الخاصة بالتفصيل. ستساعدنا هذه المحادثة في تحديد أفضل العقارات التي تناسب أهدافك وميزانيتك مع تزويدك برؤى أساسية حول سوق العقارات في جورجيا.",
       },
     },
     {
-      title: { en: "STEP 2", ar: "" },
-      headline: { en: "RECEIVE PERSONALIZED PROPERTY RECOMMENDATIONS", ar: "" },
+      title: { en: "STEP 2", ar: "الخطوة ٢" },
+      headline: { en: "RECEIVE PERSONALIZED PROPERTY RECOMMENDATIONS", ar: "تلقي توصيات عقارية مخصصة" },
       description: {
         en: "Based on your preferences discussed during the consultation, our team will provide you with tailored property recommendations. We will guide you through various options, highlighting features that match your lifestyle and investment goals.",
-        ar: "",
+        ar: "بناءً على تفضيلاتك التي تمت مناقشتها خلال الاستشارة، سيقدم لك فريقنا توصيات عقارية مصممة خصيصًا. سنوجهك عبر خيارات متنوعة، مع تسليط الضوء على الميزات التي تتناسب مع نمط حياتك وأهدافك الاستثمارية.",
       },
     },
     {
-      title: { en: "STEP 3", ar: "" },
-      headline: { en: "ARRIVING IN GEORGIA", ar: "" },
+      title: { en: "STEP 3", ar: "الخطوة ٣" },
+      headline: { en: "ARRIVING IN GEORGIA", ar: "الوصول إلى جورجيا" },
       description: {
         en: "Our team is committed to making your arrival in Georgia seamless. We will assist you in obtaining a residence permit and settling into your accommodation smoothly. To help you acclimate, we provide introductory sessions about the local real estate market and lifestyle, ensuring you have all the necessary information to begin your property search with confidence.",
-        ar: "",
+        ar: "يلتزم فريقنا بجعل وصولك إلى جورجيا سلسًا. سنساعدك في الحصول على تصريح إقامة والاستقرار في مكان إقامتك بسلاسة. لمساعدتك على التأقلم، نقدم جلسات تعريفية حول سوق العقارات المحلي ونمط الحياة، مما يضمن حصولك على جميع المعلومات الضرورية لبدء البحث عن عقارك بثقة.",
       },
     },
     {
-      title: { en: "STEP 4", ar: "" },
-      headline: { en: "ARRANGE PROPERTY VIEWINGS", ar: "" },
+      title: { en: "STEP 4", ar: "الخطوة ٤" },
+      headline: { en: "ARRANGE PROPERTY VIEWINGS", ar: "ترتيب معاينة العقارات" },
       description: {
         en: "Once you have selected properties of interest, we will schedule viewings to give you a firsthand experience of your top choices. Our agents will accompany you to answer any questions and give you in-depth information about each property and its location.",
-        ar: "",
+        ar: "بمجرد اختيارك للعقارات التي تهتم بها، سنقوم بجدولة معاينات لمنحك تجربة مباشرة لاختياراتك المفضلة. سيرافقك وكلاؤنا للإجابة على أي أسئلة وتقديم معلومات متعمقة حول كل عقار وموقعه.",
       },
     },
     {
-      title: { en: "STEP 5", ar: "" },
-      headline: { en: "SECURE FINANCING OPTIONS", ar: "" },
+      title: { en: "STEP 5", ar: "الخطوة ٥" },
+      headline: { en: "SECURE FINANCING OPTIONS", ar: "تأمين خيارات التمويل" },
       description: {
         en: "If you require financing, our financial experts will assist you in navigating the process. We will help you identify the best financing solutions that fit your needs, ensuring a smooth transaction whether you're a first-time buyer or an experienced investor.",
-        ar: "",
+        ar: "إذا كنت تحتاج إلى تمويل، فسيساعدك خبراؤنا الماليون في التعامل مع العملية. سنساعدك في تحديد أفضل حلول التمويل التي تناسب احتياجاتك، مما يضمن إجراء معاملة سلسة سواء كنت مشتريًا لأول مرة أو مستثمرًا ذا خبرة.",
       },
     },
     {
-      title: { en: "STEP 6", ar: "" },
-      headline: { en: "FINALIZE YOUR PROPERTY PURCHASE", ar: "" },
+      title: { en: "STEP 6", ar: "الخطوة ٦" },
+      headline: { en: "FINALIZE YOUR PROPERTY PURCHASE", ar: "إنهاء شراء عقارك" },
       description: {
         en: "Once you have selected the property and secured financing, our team will support you in negotiating the terms and finalizing the purchase. We will ensure all necessary paperwork is completed accurately and efficiently, making the process hassle-free.",
-        ar: "",
+        ar: "بمجرد اختيارك للعقار وتأمين التمويل، سيدعمك فريقنا في التفاوض على الشروط وإنهاء عملية الشراء. سنتأكد من إكمال جميع الأوراق اللازمة بدقة وكفاءة، مما يجعل العملية خالية من المتاعب.",
       },
     },
     {
-      title: { en: "STEP 7", ar: "" },
-      headline: { en: "WELCOME TO YOUR NEW HOME OR INVESTMENT", ar: "" },
+      title: { en: "STEP 7", ar: "الخطوة ٧" },
+      headline: { en: "WELCOME TO YOUR NEW HOME OR INVESTMENT", ar: "مرحباً بك في منزلك الجديد أو استثمارك" },
       description: {
         en: "After closing the deal, we’ll assist you in settling into your new property smoothly. Whether it’s your new home, vacation spot, or investment, our support doesn’t end with the sale. We are here to help you with any questions or needs as you start this exciting new chapter!",
-        ar: "",
+        ar: "بعد إتمام الصفقة، سنساعدك في الاستقرار في عقارك الجديد بسلاسة. سواء كان منزلك الجديد أو مكان عطلتك أو استثمارك، فإن دعمنا لا ينتهي بانتهاء البيع. نحن هنا لمساعدتك في أي أسئلة أو احتياجات بينما تبدأ هذا الفصل الجديد المثير!",
       },
     },
   ],
@@ -1246,7 +1248,7 @@ export const RealEstate_Text = {
 export const Medical_Text = {
   headline: {
     en: "Your ultimate medical tourism experience!",
-    ar: "السياحة الطبية",
+    ar: "تجربتك المثالية في السياحة الطبية!",
   },
   aboutSectionName: {
     en: "about us",
@@ -1254,90 +1256,90 @@ export const Medical_Text = {
   },
   treatmentsSectionName: {
     en: "treatments",
-    ar: "",
+    ar: "العلاجات",
   },
   georgiaSectionName: {
     en: "health in Georgia",
-    ar: "",
+    ar: "الصحة في جورجيا",
   },
   faqSectionName: {
     en: "how does it work?",
-    ar: "",
+    ar: "كيف يعمل؟",
   },
 
   introDescription: {
     en: "Discover high-quality medical care in georgia with insightour",
-    ar: "",
+    ar: "اكتشف رعاية طبية عالية الجودة في جورجيا مع insightour",
   },
   introDescriptionAccent: {
     en: "your health is our priority!",
-    ar: "",
+    ar: "صحتك هي أولويتنا!",
   },
   benefits: [
     {
       title: {
         en: "Affordable Healthcare",
-        ar: "",
+        ar: "رعاية صحية ميسورة التكلفة",
       },
       description: {
         en: "Medical treatments in Georgia are significantly cheaper than in many other countries, appealing to those seeking quality care at lower prices",
-        ar: "",
+        ar: "العلاجات الطبية في جورجيا أرخص بكثير من العديد من البلدان الأخرى، مما يجذب أولئك الذين يبحثون عن رعاية جيدة بأسعار أقل",
       },
     },
     {
       title: {
         en: "Skilled Medical Staff",
-        ar: "",
+        ar: "طاقم طبي ماهر",
       },
       description: {
         en: "Georgia's healthcare system features well-trained doctors and medical professionals, many of whom have international credentials",
-        ar: "",
+        ar: "يضم نظام الرعاية الصحية في جورجيا أطباء ومتخصصين طبيين مدربين تدريباً جيداً، والكثير منهم حاصلون على شهادات دولية",
       },
     },
     {
       title: {
         en: "Easy Access",
-        ar: "",
+        ar: "سهولة الوصول",
       },
       description: {
         en: "With lenient visa policies, Georgia is accessible for medical travelers from Europe, Asia, and the Middle East",
-        ar: "",
+        ar: "بفضل سياسات التأشيرات المتساهلة، يمكن للمسافرين للعلاج من أوروبا وآسيا والشرق الأوسط الوصول إلى جورجيا بسهولة",
       },
     },
     {
       title: {
         en: "Cultural Experiences",
-        ar: "",
+        ar: "تجارب ثقافية",
       },
       description: {
         en: "Patients can enjoy Georgia's rich cultural heritage, historical landmarks, stunning landscapes, and delicious cuisine alongside their medical care",
-        ar: "",
+        ar: "يمكن للمرضى الاستمتاع بالتراث الثقافي الغني لجورجيا والمعالم التاريخية والمناظر الطبيعية الخلابة والمأكولات اللذيذة إلى جانب رعايتهم الطبية",
       },
     },
     {
       title: {
         en: "Modern Facilities",
-        ar: "",
+        ar: "مرافق حديثة",
       },
       description: {
         en: "Georgia offers healthcare facilities that meet international standards, with some hospitals accredited by global organizations",
-        ar: "",
+        ar: "توفر جورجيا مرافق رعاية صحية تلبي المعايير الدولية، مع اعتماد بعض المستشفيات من قبل منظمات عالمية",
       },
     },
     {
       title: {
         en: "Accompaniment",
-        ar: "",
+        ar: "المرافقة",
       },
       description: {
         en: "We will meet you at the airport and arrange your transfer, hotel, and everything necessary for your comfort",
-        ar: "",
+        ar: "سنستقبلك في المطار ونرتب نقلك وفندقك وكل ما يلزم لراحتك",
       },
     },
   ],
   georgiaHealthText: {
     en: "Georgia is rapidly emerging as one of the leading destinations for medical, cosmetic, and dental healthcare services. With the rise in medical tourism, countries like Georgia are becoming valuable resources for individuals seeking high-quality care at remarkably low costs. The country boasts modern medical facilities and highly trained professionals, attracting patients not only from neighboring regions but also from Europe and beyond. In addition to affordability, Georgia offers a rich cultural experience, making it an appealing choice for those combining treatment with travel. As of 2023, the growing number of international patients and expanding healthcare options continue to position Georgia as a prominent player in the global medical tourism market.",
-    ar: "",
+    ar: "تبرز جورجيا بسرعة كإحدى الوجهات الرائدة لخدمات الرعاية الصحية الطبية والتجميلية والأسنان. مع ارتفاع سياحة العلاج، أصبحت دول مثل جورجيا موارد قيمة للأفراد الذين يبحثون عن رعاية عالية الجودة بتكاليف منخفضة بشكل ملحوظ. تفتخر البلاد بمرافق طبية حديثة وأخصائيين مدربين تدريباً عالياً، تجذب المرضى ليس فقط من المناطق المجاورة ولكن أيضًا من أوروبا وخارجها. بالإضافة إلى القدرة على تحمل التكاليف، تقدم جورجيا تجربة ثقافية غنية، مما يجعلها خيارًا جذابًا لأولئك الذين يجمعون العلاج مع السفر. اعتبارًا من عام 2023، يواصل عدد المرضى الدوليين المتزايد وخيارات الرعاية الصحية المتوسعة ترسيخ مكانة جورجيا كلاعب بارز في سوق السياحة العلاجية العالمية.",
   },
   selection: [
     {
@@ -1345,15 +1347,15 @@ export const Medical_Text = {
       icon: ICONS.Tooth,
       shortTitle: {
         en: "Dental",
-        ar: "",
+        ar: "أسنان",
       },
       fullTitle: {
         en: "Dental Care",
-        ar: "",
+        ar: "رعاية الأسنان",
       },
       description: {
         en: "Dental treatments such as implants, crowns, veneers, and teeth whitening are commonly sought by international patients.",
-        ar: "",
+        ar: "علاجات الأسنان مثل الزرع والتلبيس والقشور وتبييض الأسنان يطلبها المرضى الدوليين بشكل شائع.",
       },
     },
     {
@@ -1361,15 +1363,15 @@ export const Medical_Text = {
       icon: ICONS.Surgery,
       shortTitle: {
         en: "Cosmetic",
-        ar: "",
+        ar: "تجميلي",
       },
       fullTitle: {
         en: "Cosmetic and Plastic Surgery",
-        ar: "",
+        ar: "الجراحة التجميلية والترميمية",
       },
       description: {
         en: "Procedures such as rhinoplasty, breast augmentation, liposuction, and facelifts are popular among medical tourists visiting Georgia.",
-        ar: "",
+        ar: "إجراءات مثل تجميل الأنف و تكبير الثدي وشفط الدهون وشد الوجه تحظى بشعبية بين سياح العلاج الذين يزورون جورجيا.",
       },
     },
     {
@@ -1377,15 +1379,15 @@ export const Medical_Text = {
       icon: ICONS.Baby,
       shortTitle: {
         en: "Reproductive",
-        ar: "",
+        ar: "الإنجابية",
       },
       fullTitle: {
         en: "Reproductive Tourism",
-        ar: "",
+        ar: "سياحة الإنجاب",
       },
       description: {
         en: "Georgia has become a popular destination for couples seeking fertility treatments, including in vitro fertilization (IVF) and surrogacy.",
-        ar: "",
+        ar: "أصبحت جورجيا وجهة شهيرة للأزواج الذين يبحثون عن علاجات الخصوبة، بما في ذلك التلقيح الصناعي (IVF) والرحم البديل.",
       },
     },
     {
@@ -1393,15 +1395,15 @@ export const Medical_Text = {
       icon: ICONS.Forest,
       shortTitle: {
         en: "Wellness",
-        ar: "",
+        ar: "العافية",
       },
       fullTitle: {
         en: "Wellness and Rehabilitation",
-        ar: "",
+        ar: "العافية وإعادة التأهيل",
       },
       description: {
         en: "The country's natural landscapes, including hot springs and therapeutic resorts, attract individuals seeking relaxation, wellness retreats, and rehabilitation services.",
-        ar: "",
+        ar: "تجتذب المناظر الطبيعية الخلابة في البلاد، بما في ذلك الينابيع الساخنة والمنتجعات العلاجية، الأفراد الذين يبحثون عن الاسترخاء والعافية وإعادة التأهيل.",
       },
     },
   ],
@@ -1409,57 +1411,57 @@ export const Medical_Text = {
     {
       title: {
         en: "STEP 1",
-        ar: "",
+        ar: "الخطوة 1",
       },
       headline: {
         en: "Get in touch",
-        ar: "",
+        ar: "تواصل معنا",
       },
       description: {
         en: "Upon receiving your inquiry, our team will help you set up a virtual consultation with the doctor. After discussing all the necessary details, our coordinators will present you with a comprehensive surgery plan, covering costs and logistics.",
-        ar: "",
+        ar: "عند استلام استفسارك، سيساعدك فريقنا في تحديد موعد استشارة افتراضية مع الطبيب. بعد مناقشة جميع التفاصيل الضرورية، سيقدم لك منسقونا خطة جراحية شاملة تغطي التكاليف واللوجستيات.",
       },
     },
     {
       title: {
         en: "STEP 2",
-        ar: "",
+        ar: "الخطوة 2",
       },
       headline: {
         en: "Travel options",
-        ar: "",
+        ar: "خيارات السفر",
       },
       description: {
         en: "Feel free to ask for personalized travel arrangements, including leisure activities in Tbilisi and day excursions, tailored to fit your surgical timeline.",
-        ar: "",
+        ar: "لا تتردد في طلب ترتيبات سفر مخصصة، بما في ذلك الأنشطة الترفيهية في تبليسي والرحلات اليومية، المصممة لتناسب الجدول الزمني لجراحتك.",
       },
     },
     {
       title: {
         en: "STEP 3",
-        ar: "",
+        ar: "الخطوة 3",
       },
       headline: {
         en: "Lodging arrangements",
-        ar: "",
+        ar: "ترتيبات الإقامة",
       },
       description: {
         en: "We are happy to provide you with exclusive rates at one of our partner hotels conveniently located within walking distance from the hospital.",
-        ar: "",
+        ar: "يسعدنا أن نقدم لك أسعارًا حصرية في أحد فنادقنا الشريكة التي تقع على مسافة قريبة من المستشفى.",
       },
     },
     {
       title: {
         en: "STEP 4",
-        ar: "",
+        ar: "الخطوة 4",
       },
       headline: {
         en: "Final confirmation",
-        ar: "",
+        ar: "التأكيد النهائي",
       },
       description: {
         en: "Before you leave, we will send you a confirmation that includes your appointment details, reservations, travel plans, and lodging arrangements.",
-        ar: "",
+        ar: "قبل مغادرتك، سنرسل لك تأكيدًا يتضمن تفاصيل موعدك وحجوزاتك وخطط سفرك وترتيبات إقامتك.",
       },
     },
   ],

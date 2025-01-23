@@ -165,41 +165,41 @@ function CallToActionButton({ call }: CallToActionButtonProps) {
                   <X size={30} strokeWidth={1} />
                 </m.button>
                 <div className={styles.topInputWrapper}>
-                  <div className={styles.inputWrapper}>
-                    <label htmlFor='name'>
-                      {isArabic && ":"}
-                      {CallToActionButton_Text.name[selectedLanguage]}
-                      {!isArabic && ":"}
-                    </label>
-                    <input
-                      ref={nameInputRef}
-                      type='text'
-                      name='name'
-                      required
-                      placeholder={CallToActionButton_Text.namePlaceholder[selectedLanguage]}
-                      value={nameText}
-                      minLength={2}
-                      maxLength={80}
-                      onChange={handleInputChange}
-                    />
-                  </div>
+                  <label htmlFor='name'>
+                    {isArabic && ":"}
+                    {CallToActionButton_Text.name[selectedLanguage]}
+                    {!isArabic && ":"}
+                  </label>
+                  <input
+                    ref={nameInputRef}
+                    type='text'
+                    name='name'
+                    autoComplete='name'
+                    aria-required
+                    required
+                    placeholder={CallToActionButton_Text.namePlaceholder[selectedLanguage]}
+                    value={nameText}
+                    minLength={2}
+                    maxLength={80}
+                    onChange={handleInputChange}
+                  />
 
-                  <div className={styles.inputWrapper}>
-                    <label htmlFor='phone'>
-                      {isArabic && ":"}
-                      {CallToActionButton_Text.Whatsapp[selectedLanguage]}
-                      {!isArabic && ":"}
-                    </label>
-                    <input
-                      type='text'
-                      name='phone'
-                      required
-                      placeholder={CallToActionButton_Text.WhatsappPlaceholder[selectedLanguage]}
-                      value={phoneText}
-                      maxLength={25}
-                      onChange={handleInputChange}
-                    />
-                  </div>
+                  <label htmlFor='phone'>
+                    {isArabic && ":"}
+                    {CallToActionButton_Text.Whatsapp[selectedLanguage]}
+                    {!isArabic && ":"}
+                  </label>
+                  <input
+                    type='tel'
+                    name='phone'
+                    autoComplete='tel'
+                    aria-required
+                    required
+                    placeholder={CallToActionButton_Text.WhatsappPlaceholder[selectedLanguage]}
+                    value={phoneText}
+                    maxLength={25}
+                    onChange={handleInputChange}
+                  />
 
                   <label htmlFor='comment'>
                     {isArabic && ":"}
@@ -208,6 +208,7 @@ function CallToActionButton({ call }: CallToActionButtonProps) {
                   </label>
                   <textarea
                     name='comment'
+                    autoComplete='off'
                     cols={60}
                     rows={4}
                     spellCheck

@@ -36,7 +36,7 @@
 }
 
 html[data-language-selected="ar"] .introDescription {
-  text-align: right;
+  font-size: clamp(40px, 5vw, 55px);
 }
 
 .whyUs {
@@ -86,6 +86,10 @@ html[data-language-selected="ar"] .introDescription {
   -webkit-tap-highlight-color: transparent;
 }
 
+html[data-language-selected="ar"] .benefitItem {
+  text-align: right;
+}
+
 html[data-language-selected="ar"] .benefitItem button {
   flex-direction: row-reverse;
   text-align: right;
@@ -111,7 +115,6 @@ html[data-language-selected="ar"] .benefitTitle {
 }
 
 .benefitInfroWrapper p {
-  width: 90%;
   padding: 0 2rem 2rem 2rem;
   color: #6d309d;
 }
@@ -133,11 +136,9 @@ html[data-language-selected="ar"] .benefitTitle {
   color: #6d309d;
 }
 
-/* .faqTitle {
-  margin: 4rem 0 0 0;
-  color: #6d309d;
-  font-size: 30px;
-} */
+html[data-language-selected="ar"] .faqWrapper {
+  text-align: right;
+}
 
 .faqWrapper ol {
   min-width: 15rem;

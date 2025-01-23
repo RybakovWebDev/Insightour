@@ -26,6 +26,28 @@ const daysVariants = (currentHeight: string) => ({
     height: currentHeight,
   },
 });
+const daysListVariants = {
+  hidden: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+  show: {
+    height: "auto",
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
+
 const daysItemVariants = {
   hidden: {
     height: 0,
@@ -131,56 +153,58 @@ const DaysBreakdown = () => {
         </div>
 
         <m.div className={styles.daysWrapper} initial='hidden' animate='show' variants={daysVariants(initialHeight)}>
-          <AnimatePresence>
-            {getCurrentTourBreakdown().map((day, i) => (
-              <m.div
-                key={day.title.en}
-                className={styles.dayItem}
-                initial='hidden'
-                animate='show'
-                exit='hidden'
-                variants={daysItemVariants}
-              >
-                <button
-                  onClick={() => toggleDay(day.title.en)}
-                  className={styles.summary}
-                  aria-expanded={Boolean(openDays[day.title.en])}
-                  aria-controls={`activities-on-${day.title.en}`}
+          <ul>
+            <AnimatePresence>
+              {getCurrentTourBreakdown().map((day, i) => (
+                <m.li
+                  key={day.title.en}
+                  className={styles.dayItem}
+                  initial='hidden'
+                  animate='show'
+                  exit='hidden'
+                  variants={daysItemVariants}
                 >
-                  <div className={styles.titleWrapper}>
-                    <p className={styles.dayTitle}>
-                      {isArabic && ":"}
-                      {day.title[selectedLanguage]}
-                      {!isArabic && ":"}
-                    </p>
-                    <AnimatePresence mode='wait'>
-                      <m.p
-                        className={styles.dayDescription}
-                        key={day.description + currentDuration}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        {day.description[selectedLanguage]}
-                      </m.p>
-                    </AnimatePresence>
-                  </div>
-                  <ArrowIcon isOpen={openDays[day.title.en]} />
-                </button>
-                <AnimatePresence mode='wait'>
-                  {openDays[day.title.en] && (
-                    <m.ul key={day.title.en + i} initial='hidden' animate='show' exit='exit' variants={ulVariants}>
-                      {day.activities.map((activity, index) => (
-                        <m.li key={index} variants={liVariants}>
-                          {activity[selectedLanguage]}
-                        </m.li>
-                      ))}
-                    </m.ul>
-                  )}
-                </AnimatePresence>
-              </m.div>
-            ))}
-          </AnimatePresence>
+                  <button
+                    onClick={() => toggleDay(day.title.en)}
+                    className={styles.summary}
+                    aria-expanded={Boolean(openDays[day.title.en])}
+                    aria-controls={`activities-on-${day.title.en}`}
+                  >
+                    <div className={styles.titleWrapper}>
+                      <p className={styles.dayTitle}>
+                        {isArabic && ":"}
+                        {day.title[selectedLanguage]}
+                        {!isArabic && ":"}
+                      </p>
+                      <AnimatePresence mode='wait'>
+                        <m.p
+                          className={styles.dayDescription}
+                          key={day.description + currentDuration}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                        >
+                          {day.description[selectedLanguage]}
+                        </m.p>
+                      </AnimatePresence>
+                    </div>
+                    <ArrowIcon isOpen={openDays[day.title.en]} />
+                  </button>
+                  <AnimatePresence mode='wait'>
+                    {openDays[day.title.en] && (
+                      <m.ul key={day.title.en + i} initial='hidden' animate='show' exit='exit' variants={ulVariants}>
+                        {day.activities.map((activity, index) => (
+                          <m.li key={index} variants={liVariants}>
+                            {activity[selectedLanguage]}
+                          </m.li>
+                        ))}
+                      </m.ul>
+                    )}
+                  </AnimatePresence>
+                </m.li>
+              ))}
+            </AnimatePresence>
+          </ul>
         </m.div>
       </section>
     </LazyMotion>

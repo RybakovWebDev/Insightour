@@ -1,11 +1,11 @@
 "use client";
-
 import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence, LazyMotion, m, Variants } from "framer-motion";
 import Image from "next/image";
 
 import styles from "./MasonryGrid.module.css";
 
+import { useLanguageContext } from "@/contexts/LanguageContext";
 import { PHOTOS_PROPERTY_HORIZONTAL, PHOTOS_PROPERTY_VERTICAL } from "@/constants";
 
 const loadFeatures = () => import("../../features").then((res) => res.default);
@@ -42,6 +42,7 @@ function MasonryGrid() {
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
   const [firstImageLoaded, setFirstImageLoaded] = useState(false);
   const [isInitialRender, setIsInitialRender] = useState(true);
+  const { selectedLanguage } = useLanguageContext();
 
   const paginate = (newIndex: number, maxLength: number): IndexState => {
     const direction = Math.random() < 0.5 ? 1 : -1;
@@ -142,7 +143,9 @@ function MasonryGrid() {
                     onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].src)}
                   />
                 </div>
-                <h3 className={styles.propertyType}>{PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].text}</h3>
+                <h3 className={styles.propertyType}>
+                  {PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].text[selectedLanguage]}
+                </h3>
               </m.div>
             </AnimatePresence>
           </div>
@@ -172,7 +175,9 @@ function MasonryGrid() {
                     onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].src)}
                   />
                 </div>
-                <h3 className={styles.propertyType}>{PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].text}</h3>
+                <h3 className={styles.propertyType}>
+                  {PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].text[selectedLanguage]}
+                </h3>
               </m.div>
             </AnimatePresence>
           </div>
@@ -201,7 +206,9 @@ function MasonryGrid() {
                   onLoad={() => handleImageLoad(PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].src)}
                 />
               </div>
-              <h3 className={styles.propertyType}>{PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].text}</h3>
+              <h3 className={styles.propertyType}>
+                {PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].text[selectedLanguage]}
+              </h3>
             </m.div>
           </AnimatePresence>
         </div>

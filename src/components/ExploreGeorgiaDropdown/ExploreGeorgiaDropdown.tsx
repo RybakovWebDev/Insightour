@@ -6,9 +6,6 @@ import styles from "./ExploreGeorgiaDropdown.module.css";
 
 import ArrowIcon from "../DetailsArrow/DetailsArrow";
 
-import { useLanguageContext } from "@/contexts/LanguageContext";
-import { Explore_Text } from "@/constantsText";
-
 const loadFeatures = () => import("../../features").then((res) => res.default);
 
 interface ExploreGeorgiaDropdownProps {
@@ -35,7 +32,6 @@ const contentVariants = {
 
 function ExploreGeorgiaDropdown({ buttonText, children }: ExploreGeorgiaDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { selectedLanguage } = useLanguageContext();
 
   const toggleDetails = () => {
     setIsOpen(!isOpen);

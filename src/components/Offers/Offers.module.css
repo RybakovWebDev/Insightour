@@ -17,7 +17,7 @@
 }
 
 .packageSelector {
-  height: 3rem;
+  height: 4rem;
   width: 100%;
   display: flex;
   border-bottom: 1px solid rgb(109, 48, 157, 0.1);
@@ -48,8 +48,12 @@
   z-index: 10;
 }
 
+html[data-language-selected="ar"] .packageSelector {
+  height: 5rem;
+}
+
 html[data-language-selected="ar"] .packageSelector button h3 {
-  font-size: clamp(16px, 5vw, 28px);
+  font-size: clamp(16px, 4vw, 25px);
 }
 
 .hovered {
@@ -64,7 +68,7 @@ html[data-language-selected="ar"] .packageSelector button h3 {
 }
 
 .servicesWrapper {
-  width: 80%;
+  width: 90%;
 }
 
 .servicesWrapper ul {
@@ -79,7 +83,7 @@ html[data-language-selected="ar"] .packageSelector button h3 {
 }
 
 html[data-language-selected="ar"] .servicesWrapper button {
-  font-size: clamp(20px, 6vw, 28px);
+  font-size: clamp(20px, 6vw, 25px);
 }
 
 .servicesWrapper li {
@@ -152,7 +156,7 @@ html[data-language-selected="ar"] .accessibilityWrapper p {
 @media (max-width: 1080px) {
   .packagesWrapper {
     min-width: 22rem;
-    width: 80vw;
+    width: 90vw;
     max-width: 35rem;
     flex-direction: column;
   }

@@ -95,13 +95,25 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   z-index: 10;
 }
 
+html[data-language-selected="ar"] .packageSelector {
+  height: auto;
+}
+
+html[data-language-selected="ar"] .packageSelector button img {
+  margin: 0.5rem 0 1rem 0;
+}
+
 html[data-language-selected="ar"] .packageSelector button h3 {
-  font-size: clamp(16px, 5vw, 28px);
+  margin: 1rem 0 0 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: clamp(16px, 5vw, 22px);
 }
 
 .hovered {
   position: absolute;
-  height: 100%;
+  height: 101%;
   width: 100%;
   background-color: hsl(272, 100%, 90%);
 }
@@ -144,13 +156,12 @@ html[data-language-selected="ar"] .includedListWrapper ul {
 
 .includedListWrapper li {
   padding: 1rem;
-  /* color: #6d309d; */
   font-size: 18px;
   font-weight: 500;
 }
 
 html[data-language-selected="ar"] .includedListWrapper li {
-  font-size: clamp(26px, 6vw, 35px);
+  font-size: clamp(22px, 5vw, 30px);
 }
 
 .includedListWrapper span::before {
@@ -233,8 +244,8 @@ html[data-language-selected="ar"] .includedListWrapper span::before {
   }
 
   .packagesWrapper {
-    min-width: 22rem;
-    width: 80vw;
+    min-width: 20rem;
+    width: 90vw;
     max-width: 35rem;
     flex-direction: column;
   }
@@ -251,10 +262,6 @@ html[data-language-selected="ar"] .includedListWrapper span::before {
 
   .packageSelector button h3 {
     font-size: 16px;
-  }
-
-  html[data-language-selected="ar"] .packageSelector button h3 {
-    /* font-size: clamp(16px, 5vw, 28px); */
   }
 
   .detailsWrapper {

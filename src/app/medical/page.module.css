@@ -80,6 +80,10 @@ html[data-language-selected="ar"] .introDescription {
   -webkit-tap-highlight-color: transparent;
 }
 
+html[data-language-selected="ar"] .benefitItem {
+  text-align: right;
+}
+
 html[data-language-selected="ar"] .benefitItem button {
   flex-direction: row-reverse;
   text-align: right;
@@ -105,7 +109,6 @@ html[data-language-selected="ar"] .benefitTitle {
 }
 
 .benefitInfroWrapper p {
-  width: 90%;
   padding: 0 2rem 2rem 2rem;
   color: #6d309d;
 }
@@ -118,6 +121,10 @@ html[data-language-selected="ar"] .benefitTitle {
   color: #6d309d;
   font-size: 20px;
   line-height: 1.6;
+}
+
+html[data-language-selected="ar"] .georgiaDescription {
+  text-align: right;
 }
 
 .treatmentsWrapper {
@@ -178,6 +185,10 @@ html[data-language-selected="ar"] .benefitTitle {
   border-radius: 20px;
 }
 
+html[data-language-selected="ar"] .faqWrapper {
+  text-align: right;
+}
+
 .faqWrapper li:first-child {
   margin: 1rem 0 2rem 0;
 }
@@ -189,9 +200,6 @@ html[data-language-selected="ar"] .benefitTitle {
 .faqWrapper h4 {
   margin: 0.5rem 0;
   font-size: 20px;
-}
-
-.faqWrapper p {
 }
 
 @media (max-width: 1000px) {

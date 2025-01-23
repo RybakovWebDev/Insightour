@@ -156,7 +156,7 @@ function About() {
         </m.div>
         <PhotoSlider />
         <ExploreGeorgiaDropdown buttonText={Explore_Text.exploreRevealButton[selectedLanguage]}>
-          <ul>
+          <ul className={styles.exploreList}>
             {Explore_Text.exploreSections.map((s) => (
               <li key={s.name[selectedLanguage]}>
                 <h4>{s.name[selectedLanguage]}</h4>

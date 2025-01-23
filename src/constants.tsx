@@ -124,16 +124,57 @@ export const PHOTOS_ABOUT = [
 ];
 
 export const PHOTOS_PROPERTY_HORIZONTAL = [
-  { src: "/images/photos/property1.webp", alt: "Real estate", text: "Villas" },
-  { src: "/images/photos/property2.webp", alt: "Real estate", text: "Mansions" },
-  { src: "/images/photos/property4.webp", alt: "Real estate", text: "Apartments" },
-  // { src: "/images/photos/property6.webp", alt: "Real estate", text: "Vacation homes" },
-  { src: "/images/photos/property7.webp", alt: "Real estate", text: "Development projects" },
+  {
+    src: "/images/photos/property1.webp",
+    alt: "Real estate",
+    text: {
+      en: "Villas",
+      ar: "فلل",
+    },
+  },
+  {
+    src: "/images/photos/property2.webp",
+    alt: "Real estate",
+    text: {
+      en: "Mansions",
+      ar: "قصور",
+    },
+  },
+  {
+    src: "/images/photos/property4.webp",
+    alt: "Real estate",
+    text: {
+      en: "Apartments",
+      ar: "شقق",
+    },
+  },
+  {
+    src: "/images/photos/property7.webp",
+    alt: "Real estate",
+    text: {
+      en: "Development projects",
+      ar: "مشاريع تطويرية",
+    },
+  },
 ];
 
 export const PHOTOS_PROPERTY_VERTICAL = [
-  { src: "/images/photos/property3.webp", alt: "Real estate", text: "Residential properties" },
-  { src: "/images/photos/property5.webp", alt: "Real estate", text: "Apartments" },
+  {
+    src: "/images/photos/property3.webp",
+    alt: "Real estate",
+    text: {
+      en: "Residential properties",
+      ar: "عقارات سكنية",
+    },
+  },
+  {
+    src: "/images/photos/property5.webp",
+    alt: "Real estate",
+    text: {
+      en: "Apartments",
+      ar: "شقق",
+    },
+  },
 ];
 
 export const PARTNER_LOGOS_PROPERTY = [

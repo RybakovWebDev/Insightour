@@ -134,6 +134,10 @@ html[data-language-selected="ar"] .h3Wrapper h3:nth-last-child(1) {
   animation: drawPath 2s ease-in-out forwards;
 }
 
+html[data-language-selected="ar"] .exploreList {
+  text-align: right;
+}
+
 @keyframes drawPath {
   to {
     stroke-dashoffset: 0;
