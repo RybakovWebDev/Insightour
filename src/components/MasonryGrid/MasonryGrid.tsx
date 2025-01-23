@@ -126,9 +126,7 @@ function MasonryGrid() {
                 custom={directionH1}
                 variants={isInitialRender ? {} : slideVariants}
                 initial={isInitialRender ? { opacity: 1, x: 0 } : "enter"}
-                animate={
-                  loadedImages.includes(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].src) ? "center" : "enter"
-                }
+                animate='center'
                 exit='exit'
                 transition={{
                   duration: isInitialRender ? 0 : 0.5,
@@ -140,7 +138,7 @@ function MasonryGrid() {
                     alt={PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].alt}
                     fill
                     sizes='350px'
-                    onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].src)}
+                    onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex1].slug)}
                   />
                 </div>
                 <h3 className={styles.propertyType}>
@@ -158,9 +156,7 @@ function MasonryGrid() {
                 custom={directionH2}
                 variants={isInitialRender ? {} : slideVariants}
                 initial={isInitialRender ? { opacity: 1, x: 0 } : "enter"}
-                animate={
-                  loadedImages.includes(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].src) ? "center" : "enter"
-                }
+                animate='center'
                 exit='exit'
                 transition={{
                   duration: isInitialRender ? 0 : 0.5,
@@ -172,7 +168,7 @@ function MasonryGrid() {
                     alt={PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].alt}
                     fill
                     sizes='350px'
-                    onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].src)}
+                    onLoad={() => handleImageLoad(PHOTOS_PROPERTY_HORIZONTAL[currentHorizontalIndex2].slug)}
                   />
                 </div>
                 <h3 className={styles.propertyType}>
@@ -191,7 +187,7 @@ function MasonryGrid() {
               custom={directionV}
               variants={isInitialRender ? {} : slideVariants}
               initial={isInitialRender ? { opacity: 1, x: 0 } : "enter"}
-              animate={loadedImages.includes(PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].src) ? "center" : "enter"}
+              animate='center'
               exit='exit'
               transition={{
                 duration: isInitialRender ? 0 : 0.5,
@@ -203,7 +199,7 @@ function MasonryGrid() {
                   alt={PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].alt}
                   fill
                   sizes='350px'
-                  onLoad={() => handleImageLoad(PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].src)}
+                  onLoad={() => handleImageLoad(PHOTOS_PROPERTY_VERTICAL[currentVerticalIndex].slug)}
                 />
               </div>
               <h3 className={styles.propertyType}>

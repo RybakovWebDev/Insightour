@@ -10,7 +10,7 @@
   font-size: 22px;
   font-weight: 700;
   cursor: pointer;
-  transition: 300ms;
+  transition: background-color 300ms;
 }
 
 .button:hover {
@@ -68,6 +68,10 @@ html[data-language-selected="ar"] .button {
   border-radius: 100%;
   background-color: transparent;
   cursor: pointer;
+}
+
+html[data-language-selected="ar"] .closeButton {
+  left: 1rem;
 }
 
 .topInputWrapper {

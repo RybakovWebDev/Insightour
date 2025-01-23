@@ -16,6 +16,12 @@ import photoAbout27 from "../public/images/photos/photo27.webp";
 import photoAbout28 from "../public/images/photos/photo28.webp";
 import photoAbout29 from "../public/images/photos/photo29.webp";
 import photoAbout30 from "../public/images/photos/photo30.webp";
+import photoProperty1 from "../public/images/photos/property1.webp";
+import photoProperty2 from "../public/images/photos/property2.webp";
+import photoProperty3 from "../public/images/photos/property3.webp";
+import photoProperty4 from "../public/images/photos/property4.webp";
+import photoProperty5 from "../public/images/photos/property5.webp";
+import photoProperty7 from "../public/images/photos/property7.webp";
 
 export const logoImage = logo;
 
@@ -125,32 +131,36 @@ export const PHOTOS_ABOUT = [
 
 export const PHOTOS_PROPERTY_HORIZONTAL = [
   {
-    src: "/images/photos/property1.webp",
+    src: photoProperty1,
     alt: "Real estate",
+    slug: "villas",
     text: {
       en: "Villas",
       ar: "فلل",
     },
   },
   {
-    src: "/images/photos/property2.webp",
+    src: photoProperty2,
     alt: "Real estate",
+    slug: "mansions",
     text: {
       en: "Mansions",
       ar: "قصور",
     },
   },
   {
-    src: "/images/photos/property4.webp",
+    src: photoProperty4,
     alt: "Real estate",
+    slug: "apartmentsHorizontal",
     text: {
       en: "Apartments",
       ar: "شقق",
     },
   },
   {
-    src: "/images/photos/property7.webp",
+    src: photoProperty7,
     alt: "Real estate",
+    slug: "developmentProjects",
     text: {
       en: "Development projects",
       ar: "مشاريع تطويرية",
@@ -160,16 +170,18 @@ export const PHOTOS_PROPERTY_HORIZONTAL = [
 
 export const PHOTOS_PROPERTY_VERTICAL = [
   {
-    src: "/images/photos/property3.webp",
+    src: photoProperty3,
     alt: "Real estate",
+    slug: "residentialProperties",
     text: {
       en: "Residential properties",
       ar: "عقارات سكنية",
     },
   },
   {
-    src: "/images/photos/property5.webp",
+    src: photoProperty5,
     alt: "Real estate",
+    slug: "apartmentsVertical",
     text: {
       en: "Apartments",
       ar: "شقق",
