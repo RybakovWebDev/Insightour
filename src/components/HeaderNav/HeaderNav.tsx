@@ -20,7 +20,7 @@ function HeaderNav() {
   const isMobileView = useScreenWidthDetect(450);
   const [isOpen, setIsOpen] = useState(false);
   const { selectedLanguage } = useLanguageContext();
-  const { aboutRef, ratesRef, offersRef, contactRef } = useRefsContext();
+  const { aboutRef, ratesRef, offersRef, servicesRef, contactRef } = useRefsContext();
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -36,12 +36,12 @@ function HeaderNav() {
       } else if (hash === "#offers" && offersRef.current) {
         scrollToRef(offersRef);
       } else if (hash === "#services" && contactRef.current) {
-        scrollToRef(contactRef);
+        scrollToRef(servicesRef);
       } else if (hash === "#contact" && contactRef.current) {
         scrollToRef(contactRef);
       }
     },
-    [aboutRef, ratesRef, offersRef, contactRef]
+    [aboutRef, ratesRef, offersRef, servicesRef, contactRef]
   );
 
   const handleClickOutside = useCallback((event: MouseEvent) => {

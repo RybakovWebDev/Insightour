@@ -118,7 +118,6 @@ function CallToActionButton({ call }: CallToActionButtonProps) {
         }
       } else {
         setMessageSent(true);
-        console.log("Sent");
       }
     } catch (error) {
       console.error("An error occurred while submitting the form!", error);

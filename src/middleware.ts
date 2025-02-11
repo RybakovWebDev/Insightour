@@ -18,7 +18,6 @@ export default async function middleware(request: NextRequest) {
   const { success } = await ratelimit.limit(ip);
 
   if (!success) {
-    console.log(`Rate limit exceeded for IP: ${ip}`);
     return new NextResponse(JSON.stringify({ error: "Rate limit exceeded" }), {
       status: 429,
       headers: { "Content-Type": "application/json" },
